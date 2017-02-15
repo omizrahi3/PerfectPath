@@ -1,2 +1,2 @@
 # PerfectPath
-iOS application to generate customized running routes
+iOS and Apple Watch applications to generate and display customized running routes
