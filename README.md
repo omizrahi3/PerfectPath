@@ -1,3 +1,1 @@
 # PerfectPath
-
-Odell Mizrahi
