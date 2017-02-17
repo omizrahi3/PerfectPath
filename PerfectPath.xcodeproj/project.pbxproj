@@ -1,0 +1,772 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5739F00C1E567FB3000AF4B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5739F00B1E567FB3000AF4B0 /* AppDelegate.swift */; };
+		5739F00E1E567FB3000AF4B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5739F00D1E567FB3000AF4B0 /* ViewController.swift */; };
+		5739F0111E567FB3000AF4B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5739F00F1E567FB3000AF4B0 /* Main.storyboard */; };
+		5739F0131E567FB3000AF4B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5739F0121E567FB3000AF4B0 /* Assets.xcassets */; };
+		5739F0161E567FB3000AF4B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5739F0141E567FB3000AF4B0 /* LaunchScreen.storyboard */; };
+		5739F0211E567FB3000AF4B0 /* PerfectPathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5739F0201E567FB3000AF4B0 /* PerfectPathTests.swift */; };
+		5739F02C1E567FB3000AF4B0 /* PerfectPathUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5739F02B1E567FB3000AF4B0 /* PerfectPathUITests.swift */; };
+		5739F0311E567FB3000AF4B0 /* PerfectPath WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5739F0301E567FB3000AF4B0 /* PerfectPath WatchKit App.app */; };
+		5739F0371E567FB4000AF4B0 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5739F0351E567FB4000AF4B0 /* Interface.storyboard */; };
+		5739F0391E567FB4000AF4B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5739F0381E567FB4000AF4B0 /* Assets.xcassets */; };
+		5739F0401E567FB4000AF4B0 /* PerfectPath WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5739F03F1E567FB4000AF4B0 /* PerfectPath WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5739F0471E567FB4000AF4B0 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5739F0461E567FB4000AF4B0 /* InterfaceController.swift */; };
+		5739F0491E567FB4000AF4B0 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5739F0481E567FB4000AF4B0 /* ExtensionDelegate.swift */; };
+		5739F04B1E567FB4000AF4B0 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5739F04A1E567FB4000AF4B0 /* NotificationController.swift */; };
+		5739F04D1E567FB4000AF4B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5739F04C1E567FB4000AF4B0 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5739F01D1E567FB3000AF4B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5739F0001E567FB3000AF4B0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5739F0071E567FB3000AF4B0;
+			remoteInfo = PerfectPath;
+		};
+		5739F0281E567FB3000AF4B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5739F0001E567FB3000AF4B0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5739F0071E567FB3000AF4B0;
+			remoteInfo = PerfectPath;
+		};
+		5739F0321E567FB3000AF4B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5739F0001E567FB3000AF4B0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5739F02F1E567FB3000AF4B0;
+			remoteInfo = "PerfectPath WatchKit App";
+		};
+		5739F0411E567FB4000AF4B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5739F0001E567FB3000AF4B0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5739F03E1E567FB4000AF4B0;
+			remoteInfo = "PerfectPath WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5739F0541E567FB4000AF4B0 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5739F0401E567FB4000AF4B0 /* PerfectPath WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5739F0581E567FB4000AF4B0 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				5739F0311E567FB3000AF4B0 /* PerfectPath WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5739F0081E567FB3000AF4B0 /* PerfectPath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PerfectPath.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5739F00B1E567FB3000AF4B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5739F00D1E567FB3000AF4B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5739F0101E567FB3000AF4B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5739F0121E567FB3000AF4B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5739F0151E567FB3000AF4B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5739F0171E567FB3000AF4B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5739F01C1E567FB3000AF4B0 /* PerfectPathTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PerfectPathTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5739F0201E567FB3000AF4B0 /* PerfectPathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfectPathTests.swift; sourceTree = "<group>"; };
+		5739F0221E567FB3000AF4B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5739F0271E567FB3000AF4B0 /* PerfectPathUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PerfectPathUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5739F02B1E567FB3000AF4B0 /* PerfectPathUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfectPathUITests.swift; sourceTree = "<group>"; };
+		5739F02D1E567FB3000AF4B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5739F0301E567FB3000AF4B0 /* PerfectPath WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PerfectPath WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5739F0361E567FB4000AF4B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		5739F0381E567FB4000AF4B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5739F03A1E567FB4000AF4B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5739F03F1E567FB4000AF4B0 /* PerfectPath WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "PerfectPath WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5739F0451E567FB4000AF4B0 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		5739F0461E567FB4000AF4B0 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		5739F0481E567FB4000AF4B0 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		5739F04A1E567FB4000AF4B0 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		5739F04C1E567FB4000AF4B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5739F04E1E567FB4000AF4B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5739F0051E567FB3000AF4B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5739F0191E567FB3000AF4B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5739F0241E567FB3000AF4B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5739F03C1E567FB4000AF4B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5739EFFF1E567FB3000AF4B0 = {
+			isa = PBXGroup;
+			children = (
+				5739F00A1E567FB3000AF4B0 /* PerfectPath */,
+				5739F01F1E567FB3000AF4B0 /* PerfectPathTests */,
+				5739F02A1E567FB3000AF4B0 /* PerfectPathUITests */,
+				5739F0341E567FB4000AF4B0 /* PerfectPath WatchKit App */,
+				5739F0431E567FB4000AF4B0 /* PerfectPath WatchKit Extension */,
+				5739F0091E567FB3000AF4B0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5739F0091E567FB3000AF4B0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5739F0081E567FB3000AF4B0 /* PerfectPath.app */,
+				5739F01C1E567FB3000AF4B0 /* PerfectPathTests.xctest */,
+				5739F0271E567FB3000AF4B0 /* PerfectPathUITests.xctest */,
+				5739F0301E567FB3000AF4B0 /* PerfectPath WatchKit App.app */,
+				5739F03F1E567FB4000AF4B0 /* PerfectPath WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5739F00A1E567FB3000AF4B0 /* PerfectPath */ = {
+			isa = PBXGroup;
+			children = (
+				5739F00B1E567FB3000AF4B0 /* AppDelegate.swift */,
+				5739F00D1E567FB3000AF4B0 /* ViewController.swift */,
+				5739F00F1E567FB3000AF4B0 /* Main.storyboard */,
+				5739F0121E567FB3000AF4B0 /* Assets.xcassets */,
+				5739F0141E567FB3000AF4B0 /* LaunchScreen.storyboard */,
+				5739F0171E567FB3000AF4B0 /* Info.plist */,
+			);
+			path = PerfectPath;
+			sourceTree = "<group>";
+		};
+		5739F01F1E567FB3000AF4B0 /* PerfectPathTests */ = {
+			isa = PBXGroup;
+			children = (
+				5739F0201E567FB3000AF4B0 /* PerfectPathTests.swift */,
+				5739F0221E567FB3000AF4B0 /* Info.plist */,
+			);
+			path = PerfectPathTests;
+			sourceTree = "<group>";
+		};
+		5739F02A1E567FB3000AF4B0 /* PerfectPathUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5739F02B1E567FB3000AF4B0 /* PerfectPathUITests.swift */,
+				5739F02D1E567FB3000AF4B0 /* Info.plist */,
+			);
+			path = PerfectPathUITests;
+			sourceTree = "<group>";
+		};
+		5739F0341E567FB4000AF4B0 /* PerfectPath WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				5739F0351E567FB4000AF4B0 /* Interface.storyboard */,
+				5739F0381E567FB4000AF4B0 /* Assets.xcassets */,
+				5739F03A1E567FB4000AF4B0 /* Info.plist */,
+			);
+			path = "PerfectPath WatchKit App";
+			sourceTree = "<group>";
+		};
+		5739F0431E567FB4000AF4B0 /* PerfectPath WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5739F0461E567FB4000AF4B0 /* InterfaceController.swift */,
+				5739F0481E567FB4000AF4B0 /* ExtensionDelegate.swift */,
+				5739F04A1E567FB4000AF4B0 /* NotificationController.swift */,
+				5739F04C1E567FB4000AF4B0 /* Assets.xcassets */,
+				5739F04E1E567FB4000AF4B0 /* Info.plist */,
+				5739F0441E567FB4000AF4B0 /* Supporting Files */,
+			);
+			path = "PerfectPath WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		5739F0441E567FB4000AF4B0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5739F0451E567FB4000AF4B0 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5739F0071E567FB3000AF4B0 /* PerfectPath */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5739F0591E567FB4000AF4B0 /* Build configuration list for PBXNativeTarget "PerfectPath" */;
+			buildPhases = (
+				5739F0041E567FB3000AF4B0 /* Sources */,
+				5739F0051E567FB3000AF4B0 /* Frameworks */,
+				5739F0061E567FB3000AF4B0 /* Resources */,
+				5739F0581E567FB4000AF4B0 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5739F0331E567FB3000AF4B0 /* PBXTargetDependency */,
+			);
+			name = PerfectPath;
+			productName = PerfectPath;
+			productReference = 5739F0081E567FB3000AF4B0 /* PerfectPath.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5739F01B1E567FB3000AF4B0 /* PerfectPathTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5739F05C1E567FB4000AF4B0 /* Build configuration list for PBXNativeTarget "PerfectPathTests" */;
+			buildPhases = (
+				5739F0181E567FB3000AF4B0 /* Sources */,
+				5739F0191E567FB3000AF4B0 /* Frameworks */,
+				5739F01A1E567FB3000AF4B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5739F01E1E567FB3000AF4B0 /* PBXTargetDependency */,
+			);
+			name = PerfectPathTests;
+			productName = PerfectPathTests;
+			productReference = 5739F01C1E567FB3000AF4B0 /* PerfectPathTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5739F0261E567FB3000AF4B0 /* PerfectPathUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5739F05F1E567FB4000AF4B0 /* Build configuration list for PBXNativeTarget "PerfectPathUITests" */;
+			buildPhases = (
+				5739F0231E567FB3000AF4B0 /* Sources */,
+				5739F0241E567FB3000AF4B0 /* Frameworks */,
+				5739F0251E567FB3000AF4B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5739F0291E567FB3000AF4B0 /* PBXTargetDependency */,
+			);
+			name = PerfectPathUITests;
+			productName = PerfectPathUITests;
+			productReference = 5739F0271E567FB3000AF4B0 /* PerfectPathUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		5739F02F1E567FB3000AF4B0 /* PerfectPath WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5739F0551E567FB4000AF4B0 /* Build configuration list for PBXNativeTarget "PerfectPath WatchKit App" */;
+			buildPhases = (
+				5739F02E1E567FB3000AF4B0 /* Resources */,
+				5739F0541E567FB4000AF4B0 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5739F0421E567FB4000AF4B0 /* PBXTargetDependency */,
+			);
+			name = "PerfectPath WatchKit App";
+			productName = "PerfectPath WatchKit App";
+			productReference = 5739F0301E567FB3000AF4B0 /* PerfectPath WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		5739F03E1E567FB4000AF4B0 /* PerfectPath WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5739F0511E567FB4000AF4B0 /* Build configuration list for PBXNativeTarget "PerfectPath WatchKit Extension" */;
+			buildPhases = (
+				5739F03B1E567FB4000AF4B0 /* Sources */,
+				5739F03C1E567FB4000AF4B0 /* Frameworks */,
+				5739F03D1E567FB4000AF4B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PerfectPath WatchKit Extension";
+			productName = "PerfectPath WatchKit Extension";
+			productReference = 5739F03F1E567FB4000AF4B0 /* PerfectPath WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5739F0001E567FB3000AF4B0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = PerfectPath;
+				TargetAttributes = {
+					5739F0071E567FB3000AF4B0 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					5739F01B1E567FB3000AF4B0 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 5739F0071E567FB3000AF4B0;
+					};
+					5739F0261E567FB3000AF4B0 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 5739F0071E567FB3000AF4B0;
+					};
+					5739F02F1E567FB3000AF4B0 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					5739F03E1E567FB4000AF4B0 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 5739F0031E567FB3000AF4B0 /* Build configuration list for PBXProject "PerfectPath" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5739EFFF1E567FB3000AF4B0;
+			productRefGroup = 5739F0091E567FB3000AF4B0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5739F0071E567FB3000AF4B0 /* PerfectPath */,
+				5739F01B1E567FB3000AF4B0 /* PerfectPathTests */,
+				5739F0261E567FB3000AF4B0 /* PerfectPathUITests */,
+				5739F02F1E567FB3000AF4B0 /* PerfectPath WatchKit App */,
+				5739F03E1E567FB4000AF4B0 /* PerfectPath WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5739F0061E567FB3000AF4B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5739F0161E567FB3000AF4B0 /* LaunchScreen.storyboard in Resources */,
+				5739F0131E567FB3000AF4B0 /* Assets.xcassets in Resources */,
+				5739F0111E567FB3000AF4B0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5739F01A1E567FB3000AF4B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5739F0251E567FB3000AF4B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5739F02E1E567FB3000AF4B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5739F0391E567FB4000AF4B0 /* Assets.xcassets in Resources */,
+				5739F0371E567FB4000AF4B0 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5739F03D1E567FB4000AF4B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5739F04D1E567FB4000AF4B0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5739F0041E567FB3000AF4B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5739F00E1E567FB3000AF4B0 /* ViewController.swift in Sources */,
+				5739F00C1E567FB3000AF4B0 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5739F0181E567FB3000AF4B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5739F0211E567FB3000AF4B0 /* PerfectPathTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5739F0231E567FB3000AF4B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5739F02C1E567FB3000AF4B0 /* PerfectPathUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5739F03B1E567FB4000AF4B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5739F04B1E567FB4000AF4B0 /* NotificationController.swift in Sources */,
+				5739F0491E567FB4000AF4B0 /* ExtensionDelegate.swift in Sources */,
+				5739F0471E567FB4000AF4B0 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5739F01E1E567FB3000AF4B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5739F0071E567FB3000AF4B0 /* PerfectPath */;
+			targetProxy = 5739F01D1E567FB3000AF4B0 /* PBXContainerItemProxy */;
+		};
+		5739F0291E567FB3000AF4B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5739F0071E567FB3000AF4B0 /* PerfectPath */;
+			targetProxy = 5739F0281E567FB3000AF4B0 /* PBXContainerItemProxy */;
+		};
+		5739F0331E567FB3000AF4B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5739F02F1E567FB3000AF4B0 /* PerfectPath WatchKit App */;
+			targetProxy = 5739F0321E567FB3000AF4B0 /* PBXContainerItemProxy */;
+		};
+		5739F0421E567FB4000AF4B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5739F03E1E567FB4000AF4B0 /* PerfectPath WatchKit Extension */;
+			targetProxy = 5739F0411E567FB4000AF4B0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5739F00F1E567FB3000AF4B0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5739F0101E567FB3000AF4B0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5739F0141E567FB3000AF4B0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5739F0151E567FB3000AF4B0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5739F0351E567FB4000AF4B0 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5739F0361E567FB4000AF4B0 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5739F04F1E567FB4000AF4B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5739F0501E567FB4000AF4B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5739F0521E567FB4000AF4B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "PerfectPath WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PerfectPath.PerfectPath.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		5739F0531E567FB4000AF4B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "PerfectPath WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PerfectPath.PerfectPath.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		5739F0561E567FB4000AF4B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = PerfectPath_WatchKit_Extension;
+				INFOPLIST_FILE = "PerfectPath WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = PerfectPath.PerfectPath.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		5739F0571E567FB4000AF4B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = PerfectPath_WatchKit_Extension;
+				INFOPLIST_FILE = "PerfectPath WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = PerfectPath.PerfectPath.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		5739F05A1E567FB4000AF4B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PerfectPath/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PerfectPath.PerfectPath;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5739F05B1E567FB4000AF4B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PerfectPath/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PerfectPath.PerfectPath;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5739F05D1E567FB4000AF4B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PerfectPathTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PerfectPath.PerfectPathTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PerfectPath.app/PerfectPath";
+			};
+			name = Debug;
+		};
+		5739F05E1E567FB4000AF4B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PerfectPathTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PerfectPath.PerfectPathTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PerfectPath.app/PerfectPath";
+			};
+			name = Release;
+		};
+		5739F0601E567FB4000AF4B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PerfectPathUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PerfectPath.PerfectPathUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PerfectPath;
+			};
+			name = Debug;
+		};
+		5739F0611E567FB4000AF4B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PerfectPathUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PerfectPath.PerfectPathUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PerfectPath;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5739F0031E567FB3000AF4B0 /* Build configuration list for PBXProject "PerfectPath" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5739F04F1E567FB4000AF4B0 /* Debug */,
+				5739F0501E567FB4000AF4B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5739F0511E567FB4000AF4B0 /* Build configuration list for PBXNativeTarget "PerfectPath WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5739F0521E567FB4000AF4B0 /* Debug */,
+				5739F0531E567FB4000AF4B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5739F0551E567FB4000AF4B0 /* Build configuration list for PBXNativeTarget "PerfectPath WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5739F0561E567FB4000AF4B0 /* Debug */,
+				5739F0571E567FB4000AF4B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5739F0591E567FB4000AF4B0 /* Build configuration list for PBXNativeTarget "PerfectPath" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5739F05A1E567FB4000AF4B0 /* Debug */,
+				5739F05B1E567FB4000AF4B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5739F05C1E567FB4000AF4B0 /* Build configuration list for PBXNativeTarget "PerfectPathTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5739F05D1E567FB4000AF4B0 /* Debug */,
+				5739F05E1E567FB4000AF4B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5739F05F1E567FB4000AF4B0 /* Build configuration list for PBXNativeTarget "PerfectPathUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5739F0601E567FB4000AF4B0 /* Debug */,
+				5739F0611E567FB4000AF4B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5739F0001E567FB3000AF4B0 /* Project object */;
+}
