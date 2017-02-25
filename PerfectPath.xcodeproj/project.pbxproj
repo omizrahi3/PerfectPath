@@ -22,6 +22,7 @@
 		5739F0491E567FB4000AF4B0 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5739F0481E567FB4000AF4B0 /* ExtensionDelegate.swift */; };
 		5739F04B1E567FB4000AF4B0 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5739F04A1E567FB4000AF4B0 /* NotificationController.swift */; };
 		5739F04D1E567FB4000AF4B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5739F04C1E567FB4000AF4B0 /* Assets.xcassets */; };
+		90D087DF1E615766009464B4 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D087DE1E615766009464B4 /* DashboardVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		5739F04A1E567FB4000AF4B0 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		5739F04C1E567FB4000AF4B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5739F04E1E567FB4000AF4B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90D087DE1E615766009464B4 /* DashboardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 				5739F00B1E567FB3000AF4B0 /* AppDelegate.swift */,
 				5739F00D1E567FB3000AF4B0 /* ViewController.swift */,
 				5739F00F1E567FB3000AF4B0 /* Main.storyboard */,
+				90D087DE1E615766009464B4 /* DashboardVC.swift */,
 				5739F0121E567FB3000AF4B0 /* Assets.xcassets */,
 				5739F0141E567FB3000AF4B0 /* LaunchScreen.storyboard */,
 				5739F0171E567FB3000AF4B0 /* Info.plist */,
@@ -423,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5739F00E1E567FB3000AF4B0 /* ViewController.swift in Sources */,
+				90D087DF1E615766009464B4 /* DashboardVC.swift in Sources */,
 				5739F00C1E567FB3000AF4B0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
