@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		201C5B089428F74237A04FE0 /* Pods_PerfectPathTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70ADE7CADA66DB0DCBAE054E /* Pods_PerfectPathTests.framework */; };
+		572941C71A8D97C65AF9CD3F /* Pods_PerfectPath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C6847A5BDC54C3C5BE6529B /* Pods_PerfectPath.framework */; };
 		5739F00C1E567FB3000AF4B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5739F00B1E567FB3000AF4B0 /* AppDelegate.swift */; };
 		5739F00E1E567FB3000AF4B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5739F00D1E567FB3000AF4B0 /* ViewController.swift */; };
 		5739F0111E567FB3000AF4B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5739F00F1E567FB3000AF4B0 /* Main.storyboard */; };
@@ -22,7 +24,11 @@
 		5739F0491E567FB4000AF4B0 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5739F0481E567FB4000AF4B0 /* ExtensionDelegate.swift */; };
 		5739F04B1E567FB4000AF4B0 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5739F04A1E567FB4000AF4B0 /* NotificationController.swift */; };
 		5739F04D1E567FB4000AF4B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5739F04C1E567FB4000AF4B0 /* Assets.xcassets */; };
+		60A115EFE402D38216F03704 /* Pods_PerfectPath_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E047FF3283BB75F38F47D79 /* Pods_PerfectPath_WatchKit_Extension.framework */; };
+		7A329621714993193FD25852 /* Pods_PerfectPathUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F0B4B4F15C15B9337FD562 /* Pods_PerfectPathUITests.framework */; };
+		907883611E61E0750088EDBF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 907883601E61E0750088EDBF /* GoogleService-Info.plist */; };
 		90D087DF1E615766009464B4 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D087DE1E615766009464B4 /* DashboardVC.swift */; };
+		FD7AA16A98DFE6FCEB268542 /* Pods_PerfectPath_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FA1DE13FD23F12F3F846F2 /* Pods_PerfectPath_WatchKit_App.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +88,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		032752E1F5F0F57038024CE5 /* Pods-PerfectPath WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerfectPath WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PerfectPath WatchKit Extension/Pods-PerfectPath WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		27E41B6A6A1910BD9773313E /* Pods-PerfectPathTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerfectPathTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PerfectPathTests/Pods-PerfectPathTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2B6E29E7E85B6A1685863E03 /* Pods-PerfectPathUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerfectPathUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PerfectPathUITests/Pods-PerfectPathUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2C6847A5BDC54C3C5BE6529B /* Pods_PerfectPath.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PerfectPath.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B3D7E31C84F95EAF6894F83 /* Pods-PerfectPath WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerfectPath WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-PerfectPath WatchKit Extension/Pods-PerfectPath WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		4E047FF3283BB75F38F47D79 /* Pods_PerfectPath_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PerfectPath_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53AB53A8818C8632BAED57E5 /* Pods-PerfectPathTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerfectPathTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PerfectPathTests/Pods-PerfectPathTests.release.xcconfig"; sourceTree = "<group>"; };
 		5739F0081E567FB3000AF4B0 /* PerfectPath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PerfectPath.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5739F00B1E567FB3000AF4B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5739F00D1E567FB3000AF4B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,7 +119,16 @@
 		5739F04A1E567FB4000AF4B0 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		5739F04C1E567FB4000AF4B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5739F04E1E567FB4000AF4B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70ADE7CADA66DB0DCBAE054E /* Pods_PerfectPathTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PerfectPathTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		764452D74BE58758F9782445 /* Pods-PerfectPath.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerfectPath.release.xcconfig"; path = "Pods/Target Support Files/Pods-PerfectPath/Pods-PerfectPath.release.xcconfig"; sourceTree = "<group>"; };
+		84FA1DE13FD23F12F3F846F2 /* Pods_PerfectPath_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PerfectPath_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C8EF712ED335260C1488007 /* Pods-PerfectPath WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerfectPath WatchKit App.release.xcconfig"; path = "Pods/Target Support Files/Pods-PerfectPath WatchKit App/Pods-PerfectPath WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		907883601E61E0750088EDBF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		90D087DE1E615766009464B4 /* DashboardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
+		941B86785EEB007AE229D544 /* Pods-PerfectPathUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerfectPathUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PerfectPathUITests/Pods-PerfectPathUITests.release.xcconfig"; sourceTree = "<group>"; };
+		AD02E450BF22F70DA4A12D25 /* Pods-PerfectPath.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerfectPath.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PerfectPath/Pods-PerfectPath.debug.xcconfig"; sourceTree = "<group>"; };
+		C3F0B4B4F15C15B9337FD562 /* Pods_PerfectPathUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PerfectPathUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1E37C91D25AA92ACA408AD7 /* Pods-PerfectPath WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerfectPath WatchKit App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PerfectPath WatchKit App/Pods-PerfectPath WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				572941C71A8D97C65AF9CD3F /* Pods_PerfectPath.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				201C5B089428F74237A04FE0 /* Pods_PerfectPathTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A329621714993193FD25852 /* Pods_PerfectPathUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,12 +160,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60A115EFE402D38216F03704 /* Pods_PerfectPath_WatchKit_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDBEED6D8FC8E8A8C8D606DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD7AA16A98DFE6FCEB268542 /* Pods_PerfectPath_WatchKit_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F0E9C23AEC074876A067F4D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C6847A5BDC54C3C5BE6529B /* Pods_PerfectPath.framework */,
+				84FA1DE13FD23F12F3F846F2 /* Pods_PerfectPath_WatchKit_App.framework */,
+				4E047FF3283BB75F38F47D79 /* Pods_PerfectPath_WatchKit_Extension.framework */,
+				70ADE7CADA66DB0DCBAE054E /* Pods_PerfectPathTests.framework */,
+				C3F0B4B4F15C15B9337FD562 /* Pods_PerfectPathUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5739EFFF1E567FB3000AF4B0 = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +196,8 @@
 				5739F0341E567FB4000AF4B0 /* PerfectPath WatchKit App */,
 				5739F0431E567FB4000AF4B0 /* PerfectPath WatchKit Extension */,
 				5739F0091E567FB3000AF4B0 /* Products */,
+				F9B861BF9F988495485C02CE /* Pods */,
+				3F0E9C23AEC074876A067F4D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -174,6 +222,7 @@
 				90D087DE1E615766009464B4 /* DashboardVC.swift */,
 				5739F0121E567FB3000AF4B0 /* Assets.xcassets */,
 				5739F0141E567FB3000AF4B0 /* LaunchScreen.storyboard */,
+				907883601E61E0750088EDBF /* GoogleService-Info.plist */,
 				5739F0171E567FB3000AF4B0 /* Info.plist */,
 			);
 			path = PerfectPath;
@@ -228,6 +277,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F9B861BF9F988495485C02CE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AD02E450BF22F70DA4A12D25 /* Pods-PerfectPath.debug.xcconfig */,
+				764452D74BE58758F9782445 /* Pods-PerfectPath.release.xcconfig */,
+				D1E37C91D25AA92ACA408AD7 /* Pods-PerfectPath WatchKit App.debug.xcconfig */,
+				8C8EF712ED335260C1488007 /* Pods-PerfectPath WatchKit App.release.xcconfig */,
+				032752E1F5F0F57038024CE5 /* Pods-PerfectPath WatchKit Extension.debug.xcconfig */,
+				4B3D7E31C84F95EAF6894F83 /* Pods-PerfectPath WatchKit Extension.release.xcconfig */,
+				27E41B6A6A1910BD9773313E /* Pods-PerfectPathTests.debug.xcconfig */,
+				53AB53A8818C8632BAED57E5 /* Pods-PerfectPathTests.release.xcconfig */,
+				2B6E29E7E85B6A1685863E03 /* Pods-PerfectPathUITests.debug.xcconfig */,
+				941B86785EEB007AE229D544 /* Pods-PerfectPathUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -235,10 +301,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5739F0591E567FB4000AF4B0 /* Build configuration list for PBXNativeTarget "PerfectPath" */;
 			buildPhases = (
+				D5AAD8CB354FFD3D533A4380 /* [CP] Check Pods Manifest.lock */,
 				5739F0041E567FB3000AF4B0 /* Sources */,
 				5739F0051E567FB3000AF4B0 /* Frameworks */,
 				5739F0061E567FB3000AF4B0 /* Resources */,
 				5739F0581E567FB4000AF4B0 /* Embed Watch Content */,
+				D5534C29EA54F471FA63A0EE /* [CP] Embed Pods Frameworks */,
+				76ACF9158DC9EAD75ED6773F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,9 +323,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5739F05C1E567FB4000AF4B0 /* Build configuration list for PBXNativeTarget "PerfectPathTests" */;
 			buildPhases = (
+				53584FAEEC19271328BCD6A9 /* [CP] Check Pods Manifest.lock */,
 				5739F0181E567FB3000AF4B0 /* Sources */,
 				5739F0191E567FB3000AF4B0 /* Frameworks */,
 				5739F01A1E567FB3000AF4B0 /* Resources */,
+				0FC29D25942A4AF3D7E09F8F /* [CP] Embed Pods Frameworks */,
+				7228302FC6423B2A7C75E2EC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -272,9 +344,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5739F05F1E567FB4000AF4B0 /* Build configuration list for PBXNativeTarget "PerfectPathUITests" */;
 			buildPhases = (
+				61A40A17651261CAFE87D5C1 /* [CP] Check Pods Manifest.lock */,
 				5739F0231E567FB3000AF4B0 /* Sources */,
 				5739F0241E567FB3000AF4B0 /* Frameworks */,
 				5739F0251E567FB3000AF4B0 /* Resources */,
+				7588B259D50DF48447D1BC9F /* [CP] Embed Pods Frameworks */,
+				95CA11C06DDF340BD05657BE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -290,8 +365,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5739F0551E567FB4000AF4B0 /* Build configuration list for PBXNativeTarget "PerfectPath WatchKit App" */;
 			buildPhases = (
+				C30C8F52A7F5341FF6218B5F /* [CP] Check Pods Manifest.lock */,
 				5739F02E1E567FB3000AF4B0 /* Resources */,
 				5739F0541E567FB4000AF4B0 /* Embed App Extensions */,
+				CDBEED6D8FC8E8A8C8D606DC /* Frameworks */,
+				DED709C0A90CD614BECE1A0C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -307,9 +385,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5739F0511E567FB4000AF4B0 /* Build configuration list for PBXNativeTarget "PerfectPath WatchKit Extension" */;
 			buildPhases = (
+				5E617CB37B0F2815FC90CFF9 /* [CP] Check Pods Manifest.lock */,
 				5739F03B1E567FB4000AF4B0 /* Sources */,
 				5739F03C1E567FB4000AF4B0 /* Frameworks */,
 				5739F03D1E567FB4000AF4B0 /* Resources */,
+				52F9E793C438BC0D1DD85B55 /* [CP] Embed Pods Frameworks */,
+				BFAC90239CE71C0AD56BA2C5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -382,6 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5739F0161E567FB3000AF4B0 /* LaunchScreen.storyboard in Resources */,
+				907883611E61E0750088EDBF /* GoogleService-Info.plist in Resources */,
 				5739F0131E567FB3000AF4B0 /* Assets.xcassets in Resources */,
 				5739F0111E567FB3000AF4B0 /* Main.storyboard in Resources */,
 			);
@@ -419,6 +501,219 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0FC29D25942A4AF3D7E09F8F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PerfectPathTests/Pods-PerfectPathTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		52F9E793C438BC0D1DD85B55 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PerfectPath WatchKit Extension/Pods-PerfectPath WatchKit Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		53584FAEEC19271328BCD6A9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5E617CB37B0F2815FC90CFF9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		61A40A17651261CAFE87D5C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7228302FC6423B2A7C75E2EC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PerfectPathTests/Pods-PerfectPathTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7588B259D50DF48447D1BC9F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PerfectPathUITests/Pods-PerfectPathUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		76ACF9158DC9EAD75ED6773F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PerfectPath/Pods-PerfectPath-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		95CA11C06DDF340BD05657BE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PerfectPathUITests/Pods-PerfectPathUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFAC90239CE71C0AD56BA2C5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PerfectPath WatchKit Extension/Pods-PerfectPath WatchKit Extension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C30C8F52A7F5341FF6218B5F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D5534C29EA54F471FA63A0EE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PerfectPath/Pods-PerfectPath-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5AAD8CB354FFD3D533A4380 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DED709C0A90CD614BECE1A0C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PerfectPath WatchKit App/Pods-PerfectPath WatchKit App-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5739F0041E567FB3000AF4B0 /* Sources */ = {
@@ -602,10 +897,11 @@
 		};
 		5739F0521E567FB4000AF4B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 032752E1F5F0F57038024CE5 /* Pods-PerfectPath WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "PerfectPath WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = PerfectPath.PerfectPath.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cs4261.PerfectPath.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -617,10 +913,11 @@
 		};
 		5739F0531E567FB4000AF4B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B3D7E31C84F95EAF6894F83 /* Pods-PerfectPath WatchKit Extension.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "PerfectPath WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = PerfectPath.PerfectPath.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cs4261.PerfectPath.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -632,12 +929,13 @@
 		};
 		5739F0561E567FB4000AF4B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1E37C91D25AA92ACA408AD7 /* Pods-PerfectPath WatchKit App.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				IBSC_MODULE = PerfectPath_WatchKit_Extension;
 				INFOPLIST_FILE = "PerfectPath WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = PerfectPath.PerfectPath.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cs4261.PerfectPath.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -649,12 +947,13 @@
 		};
 		5739F0571E567FB4000AF4B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C8EF712ED335260C1488007 /* Pods-PerfectPath WatchKit App.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				IBSC_MODULE = PerfectPath_WatchKit_Extension;
 				INFOPLIST_FILE = "PerfectPath WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = PerfectPath.PerfectPath.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cs4261.PerfectPath.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -666,11 +965,12 @@
 		};
 		5739F05A1E567FB4000AF4B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD02E450BF22F70DA4A12D25 /* Pods-PerfectPath.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PerfectPath/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = PerfectPath.PerfectPath;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cs4261.PerfectPath;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -678,11 +978,12 @@
 		};
 		5739F05B1E567FB4000AF4B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 764452D74BE58758F9782445 /* Pods-PerfectPath.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PerfectPath/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = PerfectPath.PerfectPath;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cs4261.PerfectPath;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -690,6 +991,7 @@
 		};
 		5739F05D1E567FB4000AF4B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27E41B6A6A1910BD9773313E /* Pods-PerfectPathTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PerfectPathTests/Info.plist;
@@ -703,6 +1005,7 @@
 		};
 		5739F05E1E567FB4000AF4B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53AB53A8818C8632BAED57E5 /* Pods-PerfectPathTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PerfectPathTests/Info.plist;
@@ -716,6 +1019,7 @@
 		};
 		5739F0601E567FB4000AF4B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B6E29E7E85B6A1685863E03 /* Pods-PerfectPathUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = PerfectPathUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -728,6 +1032,7 @@
 		};
 		5739F0611E567FB4000AF4B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 941B86785EEB007AE229D544 /* Pods-PerfectPathUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = PerfectPathUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

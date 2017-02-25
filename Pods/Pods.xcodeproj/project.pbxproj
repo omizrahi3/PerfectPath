@@ -1,0 +1,1268 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3159D7CAFD56B809F40CA3330DA10889 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9AE61DEB7F70B8D5B09290911F0E1C8 /* Foundation.framework */; };
+		4955154F61277C051F7CAA065DCE4F72 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9AE61DEB7F70B8D5B09290911F0E1C8 /* Foundation.framework */; };
+		541C5362289CC44D4F067D097F231250 /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = F6D7B16721E888846204CBA21B058064 /* GTMDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		659DAA6A95DF54DB4F8E9558CA9F3A79 /* Pods-PerfectPath-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 668EE324FFE931D10BC2C9C81501C55D /* Pods-PerfectPath-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		81E4B6988FF26F9249B79C6C8CC667B4 /* GoogleToolboxForMac-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BF6E1E29787F5CB39A8070C28D96016 /* GoogleToolboxForMac-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		83A56485EB2204A85E62149715E96294 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9AE61DEB7F70B8D5B09290911F0E1C8 /* Foundation.framework */; };
+		83CF3F35B51B57D71E9BFDFE083CE301 /* Pods-PerfectPathTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E7988D7FC96B78FE686304AC2A5E8B /* Pods-PerfectPathTests-dummy.m */; };
+		908455CD7A3A996E2E62FF41CD01138E /* Pods-PerfectPathUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DDCD821CF55267B8BD2830BA859C6DA /* Pods-PerfectPathUITests-dummy.m */; };
+		A289310C12680B8BC81B5093907A5EC0 /* Pods-PerfectPathTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F093A49FF307CD75B3786C687D45D7F7 /* Pods-PerfectPathTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A755F6B8D9184BE81C6933CF76CEE9AB /* Pods-PerfectPath WatchKit Extension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 094A8FB334B76215ECFD153E27ACCC0D /* Pods-PerfectPath WatchKit Extension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AC75D7B5E24CB5C901FC70D1FB51B902 /* Pods-PerfectPathUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BEA2AD138D420D6044180F05CF5676B7 /* Pods-PerfectPathUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C2C3EB592E34EF643BA7B213A7DBF661 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7752798AED75D2190758A21548AB728 /* Foundation.framework */; };
+		C3534B459012548C83C06EA52FA57562 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9AE61DEB7F70B8D5B09290911F0E1C8 /* Foundation.framework */; };
+		D4824A297380191C6A7A5A1F34CCDE74 /* Pods-PerfectPath WatchKit App-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 09BEF4E9DD7DD5EB76C30332D4DBB45B /* Pods-PerfectPath WatchKit App-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D62C0591D719C47D9D72352945405742 /* Pods-PerfectPath WatchKit App-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBCF286701E901BD9694595F7220A68 /* Pods-PerfectPath WatchKit App-dummy.m */; };
+		DBFECCB0BBE3F11CC41A3C1A8C4879D3 /* GTMNSData+zlib.h in Headers */ = {isa = PBXBuildFile; fileRef = AFCDD21E7F88A39173EDAA6772C0A4F5 /* GTMNSData+zlib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E0DC05821108176175EA25BAD71BC980 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7752798AED75D2190758A21548AB728 /* Foundation.framework */; };
+		EC5ECBE2DBBE83616C4C2300CEBA1330 /* Pods-PerfectPath WatchKit Extension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B782AC2540FEB5E1239CD94B1CC6EA /* Pods-PerfectPath WatchKit Extension-dummy.m */; };
+		EDC9034C721C757F2C5D7CEDB7544D4C /* Pods-PerfectPath-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F355D3CED01A3BC631140D01C5DDA42E /* Pods-PerfectPath-dummy.m */; };
+		F7D889906DECB078EAAECB9D4A320E9C /* GTMNSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C2DE2C83F22D19F1BCBF830F013496 /* GTMNSData+zlib.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		FAC3F3CAABA60EF76069431C5BB5032A /* GoogleToolboxForMac-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A7291714F1AFB288EBD6B7AD923825 /* GoogleToolboxForMac-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C8A9CD766D0178112C810EEB6D9A7800 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00103D6C821BE85971C563025527BA5D;
+			remoteInfo = GoogleToolboxForMac;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00B066CF63DB0DDA23E27133072D6867 /* Pods_PerfectPathTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PerfectPathTests.framework; path = "Pods-PerfectPathTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		07E100621A701068E9E1228EE1A15B3A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		094A8FB334B76215ECFD153E27ACCC0D /* Pods-PerfectPath WatchKit Extension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PerfectPath WatchKit Extension-umbrella.h"; sourceTree = "<group>"; };
+		09BEF4E9DD7DD5EB76C30332D4DBB45B /* Pods-PerfectPath WatchKit App-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PerfectPath WatchKit App-umbrella.h"; sourceTree = "<group>"; };
+		09D2C92E6A7F1419FFFD23FF3B067C43 /* Pods-PerfectPathTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PerfectPathTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0B338144DAA1C68EF5427236581D4AFD /* Pods-PerfectPath WatchKit Extension-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PerfectPath WatchKit Extension-resources.sh"; sourceTree = "<group>"; };
+		0F5CC8AD02A160475E05657EEEF829DB /* Pods-PerfectPath WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PerfectPath WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		11EB160BAC46D3817500332BACC95622 /* Pods-PerfectPathUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PerfectPathUITests-resources.sh"; sourceTree = "<group>"; };
+		1BF6E1E29787F5CB39A8070C28D96016 /* GoogleToolboxForMac-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-umbrella.h"; sourceTree = "<group>"; };
+		20FCB9F370E6E0DF2829A71D3AC2637D /* GoogleToolboxForMac.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = GoogleToolboxForMac.modulemap; sourceTree = "<group>"; };
+		23E7988D7FC96B78FE686304AC2A5E8B /* Pods-PerfectPathTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PerfectPathTests-dummy.m"; sourceTree = "<group>"; };
+		255CDDAEC576C506D7B7712710AC0A21 /* Pods_PerfectPath.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PerfectPath.framework; path = "Pods-PerfectPath.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EBCF286701E901BD9694595F7220A68 /* Pods-PerfectPath WatchKit App-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PerfectPath WatchKit App-dummy.m"; sourceTree = "<group>"; };
+		30C80A815502C1CB27D04872CC509FD7 /* Pods-PerfectPathUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PerfectPathUITests.release.xcconfig"; sourceTree = "<group>"; };
+		336E6362F02A8726281EF86781EFBAC8 /* Pods-PerfectPath WatchKit Extension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-PerfectPath WatchKit Extension.modulemap"; sourceTree = "<group>"; };
+		3DCC6E3E66B7E3BC6BAA0594C8B6F3CE /* Pods-PerfectPathUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PerfectPathUITests-frameworks.sh"; sourceTree = "<group>"; };
+		4402B1BB7AE7F323998E1C88743C9DD0 /* Pods-PerfectPath WatchKit App.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-PerfectPath WatchKit App.modulemap"; sourceTree = "<group>"; };
+		4ACAB3557585BE4D2A43538B1E649196 /* Pods-PerfectPath WatchKit App-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PerfectPath WatchKit App-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4CF71EF26B01196B18B3FA47BA05B777 /* Pods-PerfectPathUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-PerfectPathUITests.modulemap"; sourceTree = "<group>"; };
+		4D4B3E642F1B1A1715539A200A03CF95 /* Pods-PerfectPath.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PerfectPath.release.xcconfig"; sourceTree = "<group>"; };
+		4D8AA72E8BA3674893D4232DB3286FAC /* Pods-PerfectPath WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PerfectPath WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		55C5EAFCCB1AD284A6631AB05E7ADB1C /* Pods-PerfectPathUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PerfectPathUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		591D1218661A08F8168406EBF353DD23 /* Pods-PerfectPath WatchKit App-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PerfectPath WatchKit App-acknowledgements.plist"; sourceTree = "<group>"; };
+		5A01952EF859C11F794BC563E9C458E0 /* Pods-PerfectPathTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PerfectPathTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5AA23A68E53D60BFB51B5553DAF4243D /* Pods-PerfectPath WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PerfectPath WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		61F532435497F03B658DA425EED92E99 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		657063A39B048CA1C1DC78A2D9120552 /* Pods-PerfectPath-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PerfectPath-acknowledgements.markdown"; sourceTree = "<group>"; };
+		668EE324FFE931D10BC2C9C81501C55D /* Pods-PerfectPath-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PerfectPath-umbrella.h"; sourceTree = "<group>"; };
+		6AAEC23EE10B94E2D32DD21586CF2655 /* Pods-PerfectPath WatchKit App-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PerfectPath WatchKit App-resources.sh"; sourceTree = "<group>"; };
+		6C3399AD19503307D5238E4DE2570A3B /* Pods-PerfectPathTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PerfectPathTests.release.xcconfig"; sourceTree = "<group>"; };
+		73B782AC2540FEB5E1239CD94B1CC6EA /* Pods-PerfectPath WatchKit Extension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PerfectPath WatchKit Extension-dummy.m"; sourceTree = "<group>"; };
+		796E1FD28E8DCD306AB8F90449BD5D48 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E46F11D9C5822D3717DB23F00ACBBE3 /* Pods_PerfectPath_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PerfectPath_WatchKit_Extension.framework; path = "Pods-PerfectPath WatchKit Extension.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		83B4035AD6B053191268B619448652DB /* Pods-PerfectPath WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PerfectPath WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
+		89776470BE73F249FD8EEF3C350A54FC /* GoogleToolboxForMac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleToolboxForMac.xcconfig; sourceTree = "<group>"; };
+		8FD57337047155181F7A43F416CF74AE /* Pods-PerfectPath WatchKit App-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PerfectPath WatchKit App-frameworks.sh"; sourceTree = "<group>"; };
+		92C2DE2C83F22D19F1BCBF830F013496 /* GTMNSData+zlib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GTMNSData+zlib.m"; path = "Foundation/GTMNSData+zlib.m"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		982C47675E0924A48DF4F9D326BE3114 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Core/Sources/Firebase.h; sourceTree = "<group>"; };
+		98BBD0041689225C06FBDDA2E2844B02 /* Pods_PerfectPathUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PerfectPathUITests.framework; path = "Pods-PerfectPathUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C52B81508F8D19C511BA487A48F4918 /* Pods-PerfectPath WatchKit Extension-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PerfectPath WatchKit Extension-frameworks.sh"; sourceTree = "<group>"; };
+		9DDCD821CF55267B8BD2830BA859C6DA /* Pods-PerfectPathUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PerfectPathUITests-dummy.m"; sourceTree = "<group>"; };
+		A21B846AC67CF7696C36BE2F0F0D83AB /* GoogleToolboxForMac-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-prefix.pch"; sourceTree = "<group>"; };
+		A34319E3F610A2EA94C2DBC9BF47078B /* Pods-PerfectPath.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-PerfectPath.modulemap"; sourceTree = "<group>"; };
+		A699E5001B4F27E6A8A48DEA906D6CCF /* Pods-PerfectPathTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PerfectPathTests-frameworks.sh"; sourceTree = "<group>"; };
+		AEB790D6D3F8652B72107E17B713D472 /* Pods-PerfectPathTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PerfectPathTests-resources.sh"; sourceTree = "<group>"; };
+		AFCDD21E7F88A39173EDAA6772C0A4F5 /* GTMNSData+zlib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GTMNSData+zlib.h"; path = "Foundation/GTMNSData+zlib.h"; sourceTree = "<group>"; };
+		B2A7291714F1AFB288EBD6B7AD923825 /* GoogleToolboxForMac-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GoogleToolboxForMac-dummy.m"; sourceTree = "<group>"; };
+		B540B02DD36EE8B030D7616374718D2D /* Pods-PerfectPath WatchKit Extension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PerfectPath WatchKit Extension-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B7752798AED75D2190758A21548AB728 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		B948ACA544D6120882AB6769EED48066 /* Pods-PerfectPathUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PerfectPathUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		BC9C1F9826ADF91E249C84143FE9E09E /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GoogleToolboxForMac.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEA2AD138D420D6044180F05CF5676B7 /* Pods-PerfectPathUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PerfectPathUITests-umbrella.h"; sourceTree = "<group>"; };
+		C044B1E70A79A7D2BB60BFC2333A376D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C28FBE9B7DF77A72F63BEA3BDD112BDB /* Pods-PerfectPathTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-PerfectPathTests.modulemap"; sourceTree = "<group>"; };
+		C39C8A4BC496F02C446EB2EB26F26A7A /* Pods-PerfectPathUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PerfectPathUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C3A3F406625FAC2389967C1BD3F538DC /* Pods-PerfectPath-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PerfectPath-resources.sh"; sourceTree = "<group>"; };
+		C622A9C2854728ECAA52D4F01FB97C31 /* Pods_PerfectPath_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PerfectPath_WatchKit_App.framework; path = "Pods-PerfectPath WatchKit App.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7141B9842B6353055EFAB5E4B503153 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8A66DAB35CE25777827326770709A53 /* Pods-PerfectPathTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PerfectPathTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		CC8956A908362BD4BDA591E2B46B380B /* Pods-PerfectPath.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PerfectPath.debug.xcconfig"; sourceTree = "<group>"; };
+		CCCAD26268B40786B31C58F5891E8022 /* Pods-PerfectPath-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PerfectPath-acknowledgements.plist"; sourceTree = "<group>"; };
+		CD68B7F522A7A3C46A0008C0037D3306 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6A48BBEE02C58826FF4CEA5B050133E /* Pods-PerfectPath WatchKit Extension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PerfectPath WatchKit Extension-acknowledgements.plist"; sourceTree = "<group>"; };
+		DB970382F8889D98D165BDC71FD5F657 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		E1AFD0DFA3094C10F9F3F60E4C8F935E /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		F093A49FF307CD75B3786C687D45D7F7 /* Pods-PerfectPathTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PerfectPathTests-umbrella.h"; sourceTree = "<group>"; };
+		F355D3CED01A3BC631140D01C5DDA42E /* Pods-PerfectPath-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PerfectPath-dummy.m"; sourceTree = "<group>"; };
+		F3F0D356EF63ED688C223E1FB5744434 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
+		F6D7B16721E888846204CBA21B058064 /* GTMDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		F9AE61DEB7F70B8D5B09290911F0E1C8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		FDBBB1986A57D5B5F3EE039176A41907 /* Pods-PerfectPath-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PerfectPath-frameworks.sh"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		155BFEBB048FB2802BA77F2E1C8F2D88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3534B459012548C83C06EA52FA57562 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9254ED31355F254F20A5F067F0D1FF29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4955154F61277C051F7CAA065DCE4F72 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C280E891071E280A391089AD684757C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2C3EB592E34EF643BA7B213A7DBF661 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB798797B1C51552FF5D14D6F0987534 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83A56485EB2204A85E62149715E96294 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2A27E6AA91DC00B7E920D99573B1044 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0DC05821108176175EA25BAD71BC980 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9BC43EEAF05BCB201B3D28C244AA7E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3159D7CAFD56B809F40CA3330DA10889 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00B9DD195B2EB39875CE4F9DB0CA2B46 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1AFD0DFA3094C10F9F3F60E4C8F935E /* FirebaseAnalytics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0F661C3C91B498281B0DD65BA7511AF1 /* Defines */ = {
+			isa = PBXGroup;
+			children = (
+				F6D7B16721E888846204CBA21B058064 /* GTMDefines.h */,
+			);
+			name = Defines;
+			sourceTree = "<group>";
+		};
+		1902584E8A324636B983CA3D69528EAC /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				982C47675E0924A48DF4F9D326BE3114 /* Firebase.h */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		1BB83A55EE4F26A09FDEB7D8C4EFE9D4 /* FirebaseAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				00B9DD195B2EB39875CE4F9DB0CA2B46 /* Frameworks */,
+			);
+			name = FirebaseAnalytics;
+			path = FirebaseAnalytics;
+			sourceTree = "<group>";
+		};
+		1EE6C40DEAB56583720DC8110049EBAE /* GoogleToolboxForMac */ = {
+			isa = PBXGroup;
+			children = (
+				0F661C3C91B498281B0DD65BA7511AF1 /* Defines */,
+				993CE1B8349B2BD154287EDDE86393AF /* NSData+zlib */,
+				DD3A40A5414B21FDD8FC8F3258B79CED /* Support Files */,
+			);
+			name = GoogleToolboxForMac;
+			path = GoogleToolboxForMac;
+			sourceTree = "<group>";
+		};
+		2284E6854AEBDD17F420B24354609F96 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				43C8441995161C3CDF44AADF5762D23F /* Firebase */,
+				1BB83A55EE4F26A09FDEB7D8C4EFE9D4 /* FirebaseAnalytics */,
+				258BB75673CE772971E44717A9FE161E /* FirebaseCore */,
+				E87A63BCF37F31D242208A3C2B333B8B /* FirebaseInstanceID */,
+				1EE6C40DEAB56583720DC8110049EBAE /* GoogleToolboxForMac */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		24449EE68F70D049F3E2D193CEF8486A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F3F0D356EF63ED688C223E1FB5744434 /* FirebaseCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		258BB75673CE772971E44717A9FE161E /* FirebaseCore */ = {
+			isa = PBXGroup;
+			children = (
+				24449EE68F70D049F3E2D193CEF8486A /* Frameworks */,
+			);
+			name = FirebaseCore;
+			path = FirebaseCore;
+			sourceTree = "<group>";
+		};
+		35A90A7F90110C4A54DFEC6D06B6F739 /* Pods-PerfectPath WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				61F532435497F03B658DA425EED92E99 /* Info.plist */,
+				4402B1BB7AE7F323998E1C88743C9DD0 /* Pods-PerfectPath WatchKit App.modulemap */,
+				4ACAB3557585BE4D2A43538B1E649196 /* Pods-PerfectPath WatchKit App-acknowledgements.markdown */,
+				591D1218661A08F8168406EBF353DD23 /* Pods-PerfectPath WatchKit App-acknowledgements.plist */,
+				2EBCF286701E901BD9694595F7220A68 /* Pods-PerfectPath WatchKit App-dummy.m */,
+				8FD57337047155181F7A43F416CF74AE /* Pods-PerfectPath WatchKit App-frameworks.sh */,
+				6AAEC23EE10B94E2D32DD21586CF2655 /* Pods-PerfectPath WatchKit App-resources.sh */,
+				09BEF4E9DD7DD5EB76C30332D4DBB45B /* Pods-PerfectPath WatchKit App-umbrella.h */,
+				83B4035AD6B053191268B619448652DB /* Pods-PerfectPath WatchKit App.debug.xcconfig */,
+				0F5CC8AD02A160475E05657EEEF829DB /* Pods-PerfectPath WatchKit App.release.xcconfig */,
+			);
+			name = "Pods-PerfectPath WatchKit App";
+			path = "Target Support Files/Pods-PerfectPath WatchKit App";
+			sourceTree = "<group>";
+		};
+		43C8441995161C3CDF44AADF5762D23F /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				1902584E8A324636B983CA3D69528EAC /* Core */,
+			);
+			name = Firebase;
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		59E1C8FE8865061F4ECEF94AE228A903 /* Pods-PerfectPathTests */ = {
+			isa = PBXGroup;
+			children = (
+				796E1FD28E8DCD306AB8F90449BD5D48 /* Info.plist */,
+				C28FBE9B7DF77A72F63BEA3BDD112BDB /* Pods-PerfectPathTests.modulemap */,
+				5A01952EF859C11F794BC563E9C458E0 /* Pods-PerfectPathTests-acknowledgements.markdown */,
+				C8A66DAB35CE25777827326770709A53 /* Pods-PerfectPathTests-acknowledgements.plist */,
+				23E7988D7FC96B78FE686304AC2A5E8B /* Pods-PerfectPathTests-dummy.m */,
+				A699E5001B4F27E6A8A48DEA906D6CCF /* Pods-PerfectPathTests-frameworks.sh */,
+				AEB790D6D3F8652B72107E17B713D472 /* Pods-PerfectPathTests-resources.sh */,
+				F093A49FF307CD75B3786C687D45D7F7 /* Pods-PerfectPathTests-umbrella.h */,
+				09D2C92E6A7F1419FFFD23FF3B067C43 /* Pods-PerfectPathTests.debug.xcconfig */,
+				6C3399AD19503307D5238E4DE2570A3B /* Pods-PerfectPathTests.release.xcconfig */,
+			);
+			name = "Pods-PerfectPathTests";
+			path = "Target Support Files/Pods-PerfectPathTests";
+			sourceTree = "<group>";
+		};
+		67FBF3DFEE74F461757574B796B2C988 /* Pods-PerfectPath */ = {
+			isa = PBXGroup;
+			children = (
+				07E100621A701068E9E1228EE1A15B3A /* Info.plist */,
+				A34319E3F610A2EA94C2DBC9BF47078B /* Pods-PerfectPath.modulemap */,
+				657063A39B048CA1C1DC78A2D9120552 /* Pods-PerfectPath-acknowledgements.markdown */,
+				CCCAD26268B40786B31C58F5891E8022 /* Pods-PerfectPath-acknowledgements.plist */,
+				F355D3CED01A3BC631140D01C5DDA42E /* Pods-PerfectPath-dummy.m */,
+				FDBBB1986A57D5B5F3EE039176A41907 /* Pods-PerfectPath-frameworks.sh */,
+				C3A3F406625FAC2389967C1BD3F538DC /* Pods-PerfectPath-resources.sh */,
+				668EE324FFE931D10BC2C9C81501C55D /* Pods-PerfectPath-umbrella.h */,
+				CC8956A908362BD4BDA591E2B46B380B /* Pods-PerfectPath.debug.xcconfig */,
+				4D4B3E642F1B1A1715539A200A03CF95 /* Pods-PerfectPath.release.xcconfig */,
+			);
+			name = "Pods-PerfectPath";
+			path = "Target Support Files/Pods-PerfectPath";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				8F91EE078EA3977443D1BDC2601132EF /* Frameworks */,
+				2284E6854AEBDD17F420B24354609F96 /* Pods */,
+				B3ECAC5FB5F9D21231D0377574B5AA1B /* Products */,
+				9ED9CD346692BF61B000657F586B667B /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8F91EE078EA3977443D1BDC2601132EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE50AB4B3645EA9432322BA2E72BE2F9 /* iOS */,
+				9880A75209637E3915A438772C6A676D /* watchOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9880A75209637E3915A438772C6A676D /* watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				B7752798AED75D2190758A21548AB728 /* Foundation.framework */,
+			);
+			name = watchOS;
+			sourceTree = "<group>";
+		};
+		993CE1B8349B2BD154287EDDE86393AF /* NSData+zlib */ = {
+			isa = PBXGroup;
+			children = (
+				AFCDD21E7F88A39173EDAA6772C0A4F5 /* GTMNSData+zlib.h */,
+				92C2DE2C83F22D19F1BCBF830F013496 /* GTMNSData+zlib.m */,
+			);
+			name = "NSData+zlib";
+			sourceTree = "<group>";
+		};
+		9ED9CD346692BF61B000657F586B667B /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				67FBF3DFEE74F461757574B796B2C988 /* Pods-PerfectPath */,
+				35A90A7F90110C4A54DFEC6D06B6F739 /* Pods-PerfectPath WatchKit App */,
+				D2D1917523864387393E59B8B1B3FD4F /* Pods-PerfectPath WatchKit Extension */,
+				59E1C8FE8865061F4ECEF94AE228A903 /* Pods-PerfectPathTests */,
+				D8C5595F0406E5A260848F0649B680E6 /* Pods-PerfectPathUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		A74D88AB047B2B5C4DE5A5AA644ADCAB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DB970382F8889D98D165BDC71FD5F657 /* FirebaseInstanceID.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B3ECAC5FB5F9D21231D0377574B5AA1B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BC9C1F9826ADF91E249C84143FE9E09E /* GoogleToolboxForMac.framework */,
+				255CDDAEC576C506D7B7712710AC0A21 /* Pods_PerfectPath.framework */,
+				C622A9C2854728ECAA52D4F01FB97C31 /* Pods_PerfectPath_WatchKit_App.framework */,
+				7E46F11D9C5822D3717DB23F00ACBBE3 /* Pods_PerfectPath_WatchKit_Extension.framework */,
+				00B066CF63DB0DDA23E27133072D6867 /* Pods_PerfectPathTests.framework */,
+				98BBD0041689225C06FBDDA2E2844B02 /* Pods_PerfectPathUITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BE50AB4B3645EA9432322BA2E72BE2F9 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F9AE61DEB7F70B8D5B09290911F0E1C8 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		D2D1917523864387393E59B8B1B3FD4F /* Pods-PerfectPath WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CD68B7F522A7A3C46A0008C0037D3306 /* Info.plist */,
+				336E6362F02A8726281EF86781EFBAC8 /* Pods-PerfectPath WatchKit Extension.modulemap */,
+				B540B02DD36EE8B030D7616374718D2D /* Pods-PerfectPath WatchKit Extension-acknowledgements.markdown */,
+				D6A48BBEE02C58826FF4CEA5B050133E /* Pods-PerfectPath WatchKit Extension-acknowledgements.plist */,
+				73B782AC2540FEB5E1239CD94B1CC6EA /* Pods-PerfectPath WatchKit Extension-dummy.m */,
+				9C52B81508F8D19C511BA487A48F4918 /* Pods-PerfectPath WatchKit Extension-frameworks.sh */,
+				0B338144DAA1C68EF5427236581D4AFD /* Pods-PerfectPath WatchKit Extension-resources.sh */,
+				094A8FB334B76215ECFD153E27ACCC0D /* Pods-PerfectPath WatchKit Extension-umbrella.h */,
+				4D8AA72E8BA3674893D4232DB3286FAC /* Pods-PerfectPath WatchKit Extension.debug.xcconfig */,
+				5AA23A68E53D60BFB51B5553DAF4243D /* Pods-PerfectPath WatchKit Extension.release.xcconfig */,
+			);
+			name = "Pods-PerfectPath WatchKit Extension";
+			path = "Target Support Files/Pods-PerfectPath WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		D8C5595F0406E5A260848F0649B680E6 /* Pods-PerfectPathUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C044B1E70A79A7D2BB60BFC2333A376D /* Info.plist */,
+				4CF71EF26B01196B18B3FA47BA05B777 /* Pods-PerfectPathUITests.modulemap */,
+				C39C8A4BC496F02C446EB2EB26F26A7A /* Pods-PerfectPathUITests-acknowledgements.markdown */,
+				B948ACA544D6120882AB6769EED48066 /* Pods-PerfectPathUITests-acknowledgements.plist */,
+				9DDCD821CF55267B8BD2830BA859C6DA /* Pods-PerfectPathUITests-dummy.m */,
+				3DCC6E3E66B7E3BC6BAA0594C8B6F3CE /* Pods-PerfectPathUITests-frameworks.sh */,
+				11EB160BAC46D3817500332BACC95622 /* Pods-PerfectPathUITests-resources.sh */,
+				BEA2AD138D420D6044180F05CF5676B7 /* Pods-PerfectPathUITests-umbrella.h */,
+				55C5EAFCCB1AD284A6631AB05E7ADB1C /* Pods-PerfectPathUITests.debug.xcconfig */,
+				30C80A815502C1CB27D04872CC509FD7 /* Pods-PerfectPathUITests.release.xcconfig */,
+			);
+			name = "Pods-PerfectPathUITests";
+			path = "Target Support Files/Pods-PerfectPathUITests";
+			sourceTree = "<group>";
+		};
+		DD3A40A5414B21FDD8FC8F3258B79CED /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				20FCB9F370E6E0DF2829A71D3AC2637D /* GoogleToolboxForMac.modulemap */,
+				89776470BE73F249FD8EEF3C350A54FC /* GoogleToolboxForMac.xcconfig */,
+				B2A7291714F1AFB288EBD6B7AD923825 /* GoogleToolboxForMac-dummy.m */,
+				A21B846AC67CF7696C36BE2F0F0D83AB /* GoogleToolboxForMac-prefix.pch */,
+				1BF6E1E29787F5CB39A8070C28D96016 /* GoogleToolboxForMac-umbrella.h */,
+				C7141B9842B6353055EFAB5E4B503153 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/GoogleToolboxForMac";
+			sourceTree = "<group>";
+		};
+		E87A63BCF37F31D242208A3C2B333B8B /* FirebaseInstanceID */ = {
+			isa = PBXGroup;
+			children = (
+				A74D88AB047B2B5C4DE5A5AA644ADCAB /* Frameworks */,
+			);
+			name = FirebaseInstanceID;
+			path = FirebaseInstanceID;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1A648589203E2A9DD4C26F875FBAA490 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4824A297380191C6A7A5A1F34CCDE74 /* Pods-PerfectPath WatchKit App-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F2F9A461F45EF8A3D4EDDF92E15EA34 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A289310C12680B8BC81B5093907A5EC0 /* Pods-PerfectPathTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AD89DEDB9981EC799953434345C9625 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				659DAA6A95DF54DB4F8E9558CA9F3A79 /* Pods-PerfectPath-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F57A203B7C2C8178855DE06AD2A7FB51 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC75D7B5E24CB5C901FC70D1FB51B902 /* Pods-PerfectPathUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7BC577AF4D647196ECAA634FDEEEE9D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A755F6B8D9184BE81C6933CF76CEE9AB /* Pods-PerfectPath WatchKit Extension-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDA600FDC48ED17BA03DA2D85D4EDA97 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81E4B6988FF26F9249B79C6C8CC667B4 /* GoogleToolboxForMac-umbrella.h in Headers */,
+				541C5362289CC44D4F067D097F231250 /* GTMDefines.h in Headers */,
+				DBFECCB0BBE3F11CC41A3C1A8C4879D3 /* GTMNSData+zlib.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		00103D6C821BE85971C563025527BA5D /* GoogleToolboxForMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C43D9CA5106C6CCEF973B7EDF833947B /* Build configuration list for PBXNativeTarget "GoogleToolboxForMac" */;
+			buildPhases = (
+				63D7DA997053F6B5D01DE8CB5817CB51 /* Sources */,
+				F9BC43EEAF05BCB201B3D28C244AA7E1 /* Frameworks */,
+				FDA600FDC48ED17BA03DA2D85D4EDA97 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GoogleToolboxForMac;
+			productName = GoogleToolboxForMac;
+			productReference = BC9C1F9826ADF91E249C84143FE9E09E /* GoogleToolboxForMac.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		14E26EF20A3CF06529158AA65461B0D3 /* Pods-PerfectPath WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A841FA53BA102EFA6A4298F2CE0206B9 /* Build configuration list for PBXNativeTarget "Pods-PerfectPath WatchKit Extension" */;
+			buildPhases = (
+				2FA27206B6D554C89E5AED4C0DE1800F /* Sources */,
+				C280E891071E280A391089AD684757C8 /* Frameworks */,
+				F7BC577AF4D647196ECAA634FDEEEE9D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-PerfectPath WatchKit Extension";
+			productName = "Pods-PerfectPath WatchKit Extension";
+			productReference = 7E46F11D9C5822D3717DB23F00ACBBE3 /* Pods_PerfectPath_WatchKit_Extension.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		2E9BA21DA3E76728A861B371320DCD58 /* Pods-PerfectPath WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A1268CD76BBD8B6FF6326282E808E8E /* Build configuration list for PBXNativeTarget "Pods-PerfectPath WatchKit App" */;
+			buildPhases = (
+				8FE8AD3183106965E243FB1BA61897F1 /* Sources */,
+				E2A27E6AA91DC00B7E920D99573B1044 /* Frameworks */,
+				1A648589203E2A9DD4C26F875FBAA490 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-PerfectPath WatchKit App";
+			productName = "Pods-PerfectPath WatchKit App";
+			productReference = C622A9C2854728ECAA52D4F01FB97C31 /* Pods_PerfectPath_WatchKit_App.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		82BEBE80EE2AB4FF2ACE863DB7444AA1 /* Pods-PerfectPathTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 667F930929E7962B1ED7A3BC396DDE84 /* Build configuration list for PBXNativeTarget "Pods-PerfectPathTests" */;
+			buildPhases = (
+				65CAD36C419431EB33DBB7736FA601D9 /* Sources */,
+				9254ED31355F254F20A5F067F0D1FF29 /* Frameworks */,
+				6F2F9A461F45EF8A3D4EDDF92E15EA34 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-PerfectPathTests";
+			productName = "Pods-PerfectPathTests";
+			productReference = 00B066CF63DB0DDA23E27133072D6867 /* Pods_PerfectPathTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9E52BAA273F12054850C1E4B93F3DC0A /* Pods-PerfectPathUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16A0437E30F2D880C61C66B173E8D224 /* Build configuration list for PBXNativeTarget "Pods-PerfectPathUITests" */;
+			buildPhases = (
+				253ABA8801BAEA45DD61EBAA71F8D76D /* Sources */,
+				DB798797B1C51552FF5D14D6F0987534 /* Frameworks */,
+				F57A203B7C2C8178855DE06AD2A7FB51 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-PerfectPathUITests";
+			productName = "Pods-PerfectPathUITests";
+			productReference = 98BBD0041689225C06FBDDA2E2844B02 /* Pods_PerfectPathUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C536A56ED6F910EA7E4F0A702996A951 /* Pods-PerfectPath */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04FF0F676188323C35C875E137152B4C /* Build configuration list for PBXNativeTarget "Pods-PerfectPath" */;
+			buildPhases = (
+				C972F5C05089BDC01DBF2C47185BDB67 /* Sources */,
+				155BFEBB048FB2802BA77F2E1C8F2D88 /* Frameworks */,
+				7AD89DEDB9981EC799953434345C9625 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				63DD23458A9F700474B4C2FA22B5F54C /* PBXTargetDependency */,
+			);
+			name = "Pods-PerfectPath";
+			productName = "Pods-PerfectPath";
+			productReference = 255CDDAEC576C506D7B7712710AC0A21 /* Pods_PerfectPath.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = B3ECAC5FB5F9D21231D0377574B5AA1B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				00103D6C821BE85971C563025527BA5D /* GoogleToolboxForMac */,
+				C536A56ED6F910EA7E4F0A702996A951 /* Pods-PerfectPath */,
+				2E9BA21DA3E76728A861B371320DCD58 /* Pods-PerfectPath WatchKit App */,
+				14E26EF20A3CF06529158AA65461B0D3 /* Pods-PerfectPath WatchKit Extension */,
+				82BEBE80EE2AB4FF2ACE863DB7444AA1 /* Pods-PerfectPathTests */,
+				9E52BAA273F12054850C1E4B93F3DC0A /* Pods-PerfectPathUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		253ABA8801BAEA45DD61EBAA71F8D76D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				908455CD7A3A996E2E62FF41CD01138E /* Pods-PerfectPathUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FA27206B6D554C89E5AED4C0DE1800F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC5ECBE2DBBE83616C4C2300CEBA1330 /* Pods-PerfectPath WatchKit Extension-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63D7DA997053F6B5D01DE8CB5817CB51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAC3F3CAABA60EF76069431C5BB5032A /* GoogleToolboxForMac-dummy.m in Sources */,
+				F7D889906DECB078EAAECB9D4A320E9C /* GTMNSData+zlib.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65CAD36C419431EB33DBB7736FA601D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83CF3F35B51B57D71E9BFDFE083CE301 /* Pods-PerfectPathTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FE8AD3183106965E243FB1BA61897F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D62C0591D719C47D9D72352945405742 /* Pods-PerfectPath WatchKit App-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C972F5C05089BDC01DBF2C47185BDB67 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDC9034C721C757F2C5D7CEDB7544D4C /* Pods-PerfectPath-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		63DD23458A9F700474B4C2FA22B5F54C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GoogleToolboxForMac;
+			target = 00103D6C821BE85971C563025527BA5D /* GoogleToolboxForMac */;
+			targetProxy = C8A9CD766D0178112C810EEB6D9A7800 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		07A985D0F3A44FBC6CD96C8E565A70AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC8956A908362BD4BDA591E2B46B380B /* Pods-PerfectPath.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PerfectPath/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PerfectPath/Pods-PerfectPath.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PerfectPath;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0AFBDD3E9A2ADF89DF6062141E7B421C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D8AA72E8BA3674893D4232DB3286FAC /* Pods-PerfectPath WatchKit Extension.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PerfectPath WatchKit Extension/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PerfectPath WatchKit Extension/Pods-PerfectPath WatchKit Extension.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PerfectPath_WatchKit_Extension;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		1ADB2DCF27CA89A8F54DE0A43EA977F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		2130A323AA611D8E2FB5932C401A24CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55C5EAFCCB1AD284A6631AB05E7ADB1C /* Pods-PerfectPathUITests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PerfectPathUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PerfectPathUITests/Pods-PerfectPathUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PerfectPathUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6408306AF8CC2472DB1DA6454E340D2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5AA23A68E53D60BFB51B5553DAF4243D /* Pods-PerfectPath WatchKit Extension.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PerfectPath WatchKit Extension/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PerfectPath WatchKit Extension/Pods-PerfectPath WatchKit Extension.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PerfectPath_WatchKit_Extension;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		69E28C04AA06BACCF70E5C4E0D45312F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C3399AD19503307D5238E4DE2570A3B /* Pods-PerfectPathTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PerfectPathTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PerfectPathTests/Pods-PerfectPathTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PerfectPathTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		71EF58E3C32AAC24D7B1B399F7838A0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09D2C92E6A7F1419FFFD23FF3B067C43 /* Pods-PerfectPathTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PerfectPathTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PerfectPathTests/Pods-PerfectPathTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PerfectPathTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A6BF24150E503DEB0B48D404A60B609B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83B4035AD6B053191268B619448652DB /* Pods-PerfectPath WatchKit App.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PerfectPath WatchKit App/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PerfectPath WatchKit App/Pods-PerfectPath WatchKit App.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PerfectPath_WatchKit_App;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		A7F64308DFE3EC0E954228E11607C2E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30C80A815502C1CB27D04872CC509FD7 /* Pods-PerfectPathUITests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PerfectPathUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PerfectPathUITests/Pods-PerfectPathUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PerfectPathUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BE294E3DFE7A306F51DD7CBB8D1D2178 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F5CC8AD02A160475E05657EEEF829DB /* Pods-PerfectPath WatchKit App.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PerfectPath WatchKit App/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PerfectPath WatchKit App/Pods-PerfectPath WatchKit App.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PerfectPath_WatchKit_App;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		D60CD877A708870E2BE96B83BA32F883 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89776470BE73F249FD8EEF3C350A54FC /* GoogleToolboxForMac.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GoogleToolboxForMac/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = GoogleToolboxForMac;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D95C4DF6BA1E1F9AE9519C225244D8CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D4B3E642F1B1A1715539A200A03CF95 /* Pods-PerfectPath.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PerfectPath/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PerfectPath/Pods-PerfectPath.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PerfectPath;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F066921CBDBDB5F45795E50FBC5AC972 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89776470BE73F249FD8EEF3C350A54FC /* GoogleToolboxForMac.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GoogleToolboxForMac/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = GoogleToolboxForMac;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F89D7FF93C2C36CD83C1FC9186564BF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04FF0F676188323C35C875E137152B4C /* Build configuration list for PBXNativeTarget "Pods-PerfectPath" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07A985D0F3A44FBC6CD96C8E565A70AC /* Debug */,
+				D95C4DF6BA1E1F9AE9519C225244D8CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		16A0437E30F2D880C61C66B173E8D224 /* Build configuration list for PBXNativeTarget "Pods-PerfectPathUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2130A323AA611D8E2FB5932C401A24CE /* Debug */,
+				A7F64308DFE3EC0E954228E11607C2E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1ADB2DCF27CA89A8F54DE0A43EA977F5 /* Debug */,
+				F89D7FF93C2C36CD83C1FC9186564BF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A1268CD76BBD8B6FF6326282E808E8E /* Build configuration list for PBXNativeTarget "Pods-PerfectPath WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6BF24150E503DEB0B48D404A60B609B /* Debug */,
+				BE294E3DFE7A306F51DD7CBB8D1D2178 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		667F930929E7962B1ED7A3BC396DDE84 /* Build configuration list for PBXNativeTarget "Pods-PerfectPathTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71EF58E3C32AAC24D7B1B399F7838A0B /* Debug */,
+				69E28C04AA06BACCF70E5C4E0D45312F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A841FA53BA102EFA6A4298F2CE0206B9 /* Build configuration list for PBXNativeTarget "Pods-PerfectPath WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AFBDD3E9A2ADF89DF6062141E7B421C /* Debug */,
+				6408306AF8CC2472DB1DA6454E340D2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C43D9CA5106C6CCEF973B7EDF833947B /* Build configuration list for PBXNativeTarget "GoogleToolboxForMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D60CD877A708870E2BE96B83BA32F883 /* Debug */,
+				F066921CBDBDB5F45795E50FBC5AC972 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
