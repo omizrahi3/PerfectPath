@@ -26,6 +26,7 @@
 		5739F04D1E567FB4000AF4B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5739F04C1E567FB4000AF4B0 /* Assets.xcassets */; };
 		60A115EFE402D38216F03704 /* Pods_PerfectPath_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E047FF3283BB75F38F47D79 /* Pods_PerfectPath_WatchKit_Extension.framework */; };
 		7A329621714993193FD25852 /* Pods_PerfectPathUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F0B4B4F15C15B9337FD562 /* Pods_PerfectPathUITests.framework */; };
+		9018B4F01E6619C300A7CAED /* GeneratePathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9018B4EF1E6619C300A7CAED /* GeneratePathViewController.swift */; };
 		903143C11E654A9900CD450D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903143C01E654A9900CD450D /* LoginViewController.swift */; };
 		907883611E61E0750088EDBF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 907883601E61E0750088EDBF /* GoogleService-Info.plist */; };
 		9099425C1E65589E006E3DCE /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9099425B1E65589E006E3DCE /* DashboardViewController.swift */; };
@@ -124,6 +125,7 @@
 		764452D74BE58758F9782445 /* Pods-PerfectPath.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerfectPath.release.xcconfig"; path = "Pods/Target Support Files/Pods-PerfectPath/Pods-PerfectPath.release.xcconfig"; sourceTree = "<group>"; };
 		84FA1DE13FD23F12F3F846F2 /* Pods_PerfectPath_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PerfectPath_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C8EF712ED335260C1488007 /* Pods-PerfectPath WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerfectPath WatchKit App.release.xcconfig"; path = "Pods/Target Support Files/Pods-PerfectPath WatchKit App/Pods-PerfectPath WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		9018B4EF1E6619C300A7CAED /* GeneratePathViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratePathViewController.swift; sourceTree = "<group>"; };
 		903143C01E654A9900CD450D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		907883601E61E0750088EDBF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9099425B1E65589E006E3DCE /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				5739F0171E567FB3000AF4B0 /* Info.plist */,
 				903143C01E654A9900CD450D /* LoginViewController.swift */,
 				9099425B1E65589E006E3DCE /* DashboardViewController.swift */,
+				9018B4EF1E6619C300A7CAED /* GeneratePathViewController.swift */,
 			);
 			path = PerfectPath;
 			sourceTree = "<group>";
@@ -725,6 +728,7 @@
 			files = (
 				9099425C1E65589E006E3DCE /* DashboardViewController.swift in Sources */,
 				5739F00E1E567FB3000AF4B0 /* ViewController.swift in Sources */,
+				9018B4F01E6619C300A7CAED /* GeneratePathViewController.swift in Sources */,
 				903143C11E654A9900CD450D /* LoginViewController.swift in Sources */,
 				5739F00C1E567FB3000AF4B0 /* AppDelegate.swift in Sources */,
 			);
