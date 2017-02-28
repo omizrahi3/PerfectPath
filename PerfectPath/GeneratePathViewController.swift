@@ -1,5 +1,5 @@
 //
-//  DashboardViewController.swift
+//  GeneratePathViewController.swift
 //  PerfectPath
 //
 //  Created by Odell Mizrahi on 2/28/17.
@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import Firebase
 
-class DashboardViewController: UIViewController {
+class GeneratePathViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,14 +19,6 @@ class DashboardViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    @IBAction func didTapLogout(_ sender: Any) {
-        try! FIRAuth.auth()!.signOut()
-    }
-    @IBAction func didTapLogout2(_ sender: Any) {
-        print("triggered")
-        try! FIRAuth.auth()!.signOut()
-        self.appDelegate.showLoginViewController()
     }
     
 
