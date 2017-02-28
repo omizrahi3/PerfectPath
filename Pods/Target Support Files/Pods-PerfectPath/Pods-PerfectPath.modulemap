@@ -1,0 +1,6 @@
+framework module Pods_PerfectPath {
+  umbrella header "Pods-PerfectPath-umbrella.h"
+
+  export *
+  module * { export * }
+}
