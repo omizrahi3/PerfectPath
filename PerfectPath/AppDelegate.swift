@@ -19,6 +19,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         FIRApp.configure()
+
+        // To give the iOS status bar light icons & text
+        UIApplication.shared.statusBarStyle = .lightContent
+        
+        // Programatically initialize the first view controller.
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let showLoginScreen = false
+        if showLoginScreen {
+            showLoginViewController();
+        } else {
+            showDashboardViewController();
+        }
+        window?.makeKeyAndVisible()
         
         return true
     }
@@ -43,6 +57,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func handleLogin() {
+        print("TODO: Implement logging from the AppDelegate")
+    }
+    
+    func handleLogout() {
+        print("TODO: Implement logout from the AppDelegate")
+    }
+    
+    func showLoginViewController() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        window!.rootViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+    }
+    
+    func showDashboardViewController() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        window!.rootViewController = storyboard.instantiateViewController(withIdentifier: "DashboardViewController")
     }
 
 

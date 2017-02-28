@@ -8,6 +8,7 @@ target 'PerfectPath' do
   # Pods for PerfectPath
     pod 'Firebase/Core'
     pod 'Firebase/Auth'
+    pod 'Firebase/Database'
 
   target 'PerfectPathTests' do
     inherit! :search_paths
