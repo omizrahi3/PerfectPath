@@ -1,0 +1,6 @@
+framework module Pods_PerfectPath_WatchKit_Extension {
+  umbrella header "Pods-PerfectPath WatchKit Extension-umbrella.h"
+
+  export *
+  module * { export * }
+}

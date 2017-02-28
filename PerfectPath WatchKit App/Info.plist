@@ -28,7 +28,7 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>WKCompanionAppBundleIdentifier</key>
-	<string>PerfectPath.PerfectPath</string>
+	<string>com.cs4261.PerfectPath</string>
 	<key>WKWatchKitApp</key>
 	<true/>
 </dict>
