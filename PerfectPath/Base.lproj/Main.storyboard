@@ -306,7 +306,7 @@
                                 <rect key="frame" x="100" y="147" width="176" height="29"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
-                                    <segment title="bike"/>
+                                    <segment title="" image="black-bike.png"/>
                                     <segment title="" image="stickman.png"/>
                                 </segments>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -515,6 +515,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="stickman.png" width="16" height="16"/>
+        <image name="black-bike.png" width="24" height="20"/>
+        <image name="stickman.png" width="14" height="20"/>
     </resources>
 </document>
