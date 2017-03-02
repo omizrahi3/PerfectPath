@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Resources">
+   </FileRef>
+   <FileRef
       location = "group:PerfectPath.xcodeproj">
    </FileRef>
    <FileRef
