@@ -20,22 +20,19 @@ class LoginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    @IBAction func didTapLoginButton(_ sender: Any) {
-        emailLabel.text = "Login: \(emailTextField.text!)"
-        passwordLabel.text = passwordTextField.text!
-        handleEmailPasswordLogin()
-    }
-    @IBAction func didTapSignupButton(_ sender: Any) {
-        emailLabel.text = "Signup: \(emailTextField.text!)"
-        passwordLabel.text = passwordTextField.text!
-        handleEmailPasswordSignUp()
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func didTapLoginButton(_ sender: Any) {
+        handleEmailPasswordLogin()
+    }
+    
+    @IBAction func didTapSignupButton(_ sender: Any) {
+        handleEmailPasswordSignUp()
+    }
 
     /*
     // MARK: - Navigation
