@@ -21,11 +21,8 @@ class DashboardViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func didTapLogout(_ sender: Any) {
-        try! FIRAuth.auth()!.signOut()
-    }
+
     @IBAction func didTapLogout2(_ sender: Any) {
-        print("triggered")
         try! FIRAuth.auth()!.signOut()
         self.appDelegate.showLoginViewController()
     }
