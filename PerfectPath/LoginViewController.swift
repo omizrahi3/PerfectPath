@@ -7,13 +7,28 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var passwordLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    @IBAction func didTapLoginButton(_ sender: Any) {
+        emailLabel.text = "Login: \(emailTextField.text!)"
+        passwordLabel.text = passwordTextField.text!
+        handleEmailPasswordLogin()
+    }
+    @IBAction func didTapSignupButton(_ sender: Any) {
+        emailLabel.text = "Signup: \(emailTextField.text!)"
+        passwordLabel.text = passwordTextField.text!
+        handleEmailPasswordSignUp()
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,5 +46,58 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func loginCompletionCallback(user: FIRUser?, error: NSError?) {
+        if error == nil
+        {
+            self.appDelegate.handleLogin()
+        }
+        else
+        {
+            let alertController = UIAlertController(title: "Login failed", message: error?.localizedDescription, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    func handleEmailPasswordSignUp() {
+        FIRAuth.auth()?.createUser(withEmail: emailTextField.text!,
+                                   password: passwordTextField.text!,
+                                   completion: { (user, err) in
+                                    if let error = err
+                                    {
+                                        let alertController = UIAlertController(title: "Login Failed", message: error.localizedDescription, preferredStyle: .alert)
+                                        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+                                        alertController.addAction(okAction)
+                                        self.present(alertController, animated: true, completion: nil)
+                                    }
+                                    else
+                                    {
+                                        print("WORKED")
+                                        self.appDelegate.handleLogin()
+                                    }
+                                    
+        })
+    }
+    
+    func handleEmailPasswordLogin() {
+        FIRAuth.auth()?.signIn(withEmail: emailTextField.text!,
+                               password: passwordTextField.text!,
+                               completion: { (user, err) in
+                                if let error = err
+                                {
+                                    let alertController = UIAlertController(title: "Login Failed", message: error.localizedDescription, preferredStyle: .alert)
+                                    let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+                                    alertController.addAction(okAction)
+                                    self.present(alertController, animated: true, completion: nil)
+                                }
+                                else
+                                {
+                                    print("WORKED")
+                                    self.appDelegate.handleLogin()
+                                }
+        })
+    }
 
 }

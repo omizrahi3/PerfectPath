@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Programatically initialize the first view controller.
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        let showLoginScreen = false
+        let showLoginScreen = FIRAuth.auth()?.currentUser == nil
         if showLoginScreen {
             showLoginViewController();
         } else {
@@ -60,11 +60,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func handleLogin() {
-        print("TODO: Implement logging from the AppDelegate")
+        showDashboardViewController()
     }
     
     func handleLogout() {
-        print("TODO: Implement logout from the AppDelegate")
+        try! FIRAuth.auth()!.signOut()
+        showLoginViewController()
     }
     
     func showLoginViewController() {
@@ -74,9 +75,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func showDashboardViewController() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        window!.rootViewController = storyboard.instantiateViewController(withIdentifier: "DashboardViewController")
+        window!.rootViewController = storyboard.instantiateViewController(withIdentifier: "dashboardNav")
     }
-
+    
 
 }
+
+extension UIViewController {
+    var appDelegate : AppDelegate {
+        get {
+            return UIApplication.shared.delegate as! AppDelegate
+        }
+    }
+}
+
 
