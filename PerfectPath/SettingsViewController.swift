@@ -1,14 +1,14 @@
 //
-//  GeneratePathViewController.swift
+//  SettingsViewController.swift
 //  PerfectPath
 //
-//  Created by Odell Mizrahi on 2/28/17.
+//  Created by Kasey Clark on 3/2/17.
 //  Copyright © 2017 PerfectPath. All rights reserved.
 //
 
 import UIKit
 
-class GeneratePathViewController: UIViewController {
+class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,9 +21,6 @@ class GeneratePathViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func didTapGeneratePath(_ sender: Any) {
-        print("yay gen path")
-    }
 
     /*
     // MARK: - Navigation

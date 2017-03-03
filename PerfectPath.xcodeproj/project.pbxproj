@@ -8,7 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		201C5B089428F74237A04FE0 /* Pods_PerfectPathTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70ADE7CADA66DB0DCBAE054E /* Pods_PerfectPathTests.framework */; };
+		570B846C1E68DB0D00060521 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B846B1E68DB0D00060521 /* SettingsViewController.swift */; };
+		570B846E1E68DB5100060521 /* SavedPathsViewControlloer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B846D1E68DB5100060521 /* SavedPathsViewControlloer.swift */; };
+		570B84701E68DBE300060521 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B846F1E68DBE300060521 /* ResetPasswordViewController.swift */; };
+		570B84721E68DCAA00060521 /* NewPathGeneratedControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B84711E68DCAA00060521 /* NewPathGeneratedControllerView.swift */; };
 		572941C71A8D97C65AF9CD3F /* Pods_PerfectPath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C6847A5BDC54C3C5BE6529B /* Pods_PerfectPath.framework */; };
+		572B63161E68FB5500A56786 /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B63151E68FB5500A56786 /* MainMenuController.swift */; };
+		572B63181E68FBB000A56786 /* FavoritePathListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B63171E68FBB000A56786 /* FavoritePathListController.swift */; };
+		572B631A1E68FBEF00A56786 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B63191E68FBEF00A56786 /* MapController.swift */; };
+		572B631C1E68FC1600A56786 /* SetCheckInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B631B1E68FC1600A56786 /* SetCheckInController.swift */; };
+		572B631E1E68FC3A00A56786 /* AlertTimerCountdownController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B631D1E68FC3A00A56786 /* AlertTimerCountdownController.swift */; };
 		5739F00C1E567FB3000AF4B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5739F00B1E567FB3000AF4B0 /* AppDelegate.swift */; };
 		5739F00E1E567FB3000AF4B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5739F00D1E567FB3000AF4B0 /* ViewController.swift */; };
 		5739F0111E567FB3000AF4B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5739F00F1E567FB3000AF4B0 /* Main.storyboard */; };
@@ -97,6 +106,15 @@
 		4B3D7E31C84F95EAF6894F83 /* Pods-PerfectPath WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerfectPath WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-PerfectPath WatchKit Extension/Pods-PerfectPath WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
 		4E047FF3283BB75F38F47D79 /* Pods_PerfectPath_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PerfectPath_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53AB53A8818C8632BAED57E5 /* Pods-PerfectPathTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerfectPathTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PerfectPathTests/Pods-PerfectPathTests.release.xcconfig"; sourceTree = "<group>"; };
+		570B846B1E68DB0D00060521 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		570B846D1E68DB5100060521 /* SavedPathsViewControlloer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedPathsViewControlloer.swift; sourceTree = "<group>"; };
+		570B846F1E68DBE300060521 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		570B84711E68DCAA00060521 /* NewPathGeneratedControllerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPathGeneratedControllerView.swift; sourceTree = "<group>"; };
+		572B63151E68FB5500A56786 /* MainMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
+		572B63171E68FBB000A56786 /* FavoritePathListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritePathListController.swift; sourceTree = "<group>"; };
+		572B63191E68FBEF00A56786 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
+		572B631B1E68FC1600A56786 /* SetCheckInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetCheckInController.swift; sourceTree = "<group>"; };
+		572B631D1E68FC3A00A56786 /* AlertTimerCountdownController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertTimerCountdownController.swift; sourceTree = "<group>"; };
 		5739F0081E567FB3000AF4B0 /* PerfectPath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PerfectPath.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5739F00B1E567FB3000AF4B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5739F00D1E567FB3000AF4B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -230,6 +248,10 @@
 				903143C01E654A9900CD450D /* LoginViewController.swift */,
 				9099425B1E65589E006E3DCE /* DashboardViewController.swift */,
 				9018B4EF1E6619C300A7CAED /* GeneratePathViewController.swift */,
+				570B846B1E68DB0D00060521 /* SettingsViewController.swift */,
+				570B846D1E68DB5100060521 /* SavedPathsViewControlloer.swift */,
+				570B846F1E68DBE300060521 /* ResetPasswordViewController.swift */,
+				570B84711E68DCAA00060521 /* NewPathGeneratedControllerView.swift */,
 			);
 			path = PerfectPath;
 			sourceTree = "<group>";
@@ -271,6 +293,11 @@
 				5739F04C1E567FB4000AF4B0 /* Assets.xcassets */,
 				5739F04E1E567FB4000AF4B0 /* Info.plist */,
 				5739F0441E567FB4000AF4B0 /* Supporting Files */,
+				572B63151E68FB5500A56786 /* MainMenuController.swift */,
+				572B63171E68FBB000A56786 /* FavoritePathListController.swift */,
+				572B63191E68FBEF00A56786 /* MapController.swift */,
+				572B631B1E68FC1600A56786 /* SetCheckInController.swift */,
+				572B631D1E68FC3A00A56786 /* AlertTimerCountdownController.swift */,
 			);
 			path = "PerfectPath WatchKit Extension";
 			sourceTree = "<group>";
@@ -729,8 +756,12 @@
 				9099425C1E65589E006E3DCE /* DashboardViewController.swift in Sources */,
 				5739F00E1E567FB3000AF4B0 /* ViewController.swift in Sources */,
 				9018B4F01E6619C300A7CAED /* GeneratePathViewController.swift in Sources */,
+				570B84701E68DBE300060521 /* ResetPasswordViewController.swift in Sources */,
 				903143C11E654A9900CD450D /* LoginViewController.swift in Sources */,
 				5739F00C1E567FB3000AF4B0 /* AppDelegate.swift in Sources */,
+				570B84721E68DCAA00060521 /* NewPathGeneratedControllerView.swift in Sources */,
+				570B846E1E68DB5100060521 /* SavedPathsViewControlloer.swift in Sources */,
+				570B846C1E68DB0D00060521 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -754,8 +785,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				572B631C1E68FC1600A56786 /* SetCheckInController.swift in Sources */,
+				572B63181E68FBB000A56786 /* FavoritePathListController.swift in Sources */,
 				5739F04B1E567FB4000AF4B0 /* NotificationController.swift in Sources */,
+				572B63161E68FB5500A56786 /* MainMenuController.swift in Sources */,
+				572B631E1E68FC3A00A56786 /* AlertTimerCountdownController.swift in Sources */,
 				5739F0491E567FB4000AF4B0 /* ExtensionDelegate.swift in Sources */,
+				572B631A1E68FBEF00A56786 /* MapController.swift in Sources */,
 				5739F0471E567FB4000AF4B0 /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
