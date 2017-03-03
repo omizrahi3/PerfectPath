@@ -35,7 +35,7 @@
         <!--MainMenuController-->
         <scene sceneID="onI-5f-E49">
             <objects>
-                <controller identifier="MainMenuController" id="7hw-Ns-MjU">
+                <controller identifier="MainMenuController" id="7hw-Ns-MjU" customClass="MainMenuController" customModule="PerfectPath_WatchKit_Extension">
                     <items>
                         <label alignment="left" text="Perfect Path" id="T0J-ZI-efP">
                             <fontDescription key="font" type="system" weight="thin" pointSize="20"/>
@@ -50,7 +50,7 @@
         <!--MapController-->
         <scene sceneID="639-wW-vsT">
             <objects>
-                <controller identifier="MapController" id="Xop-D8-78C">
+                <controller identifier="MapController" id="Xop-D8-78C" customClass="MapController" customModule="PerfectPath_WatchKit_Extension">
                     <items>
                         <map width="135" height="92" alignment="left" id="hDg-Cz-obo"/>
                         <separator alignment="left" id="LR1-3B-ReS"/>
@@ -72,7 +72,7 @@
         <!--AlertTimerCountdownController-->
         <scene sceneID="uFM-hY-q9b">
             <objects>
-                <controller identifier="AlertTimerCountdownController" id="kyw-oC-TAG">
+                <controller identifier="AlertTimerCountdownController" id="kyw-oC-TAG" customClass="AlertTimerCountdownController" customModule="PerfectPath_WatchKit_Extension">
                     <items>
                         <label alignment="left" text="Timer Expired! Sending alert in:" textAlignment="center" numberOfLines="2" id="gcu-mI-sUN">
                             <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
@@ -94,7 +94,7 @@
         <!--SetCheckInController-->
         <scene sceneID="hxl-Pf-PX6">
             <objects>
-                <controller identifier="SetCheckInController" id="4Qq-AX-j8F">
+                <controller identifier="SetCheckInController" id="4Qq-AX-j8F" customClass="SetCheckInController" customModule="PerfectPath_WatchKit_Extension">
                     <items>
                         <label width="136" height="23" alignment="left" text="Guardian Check In" textAlignment="left" id="eJ9-X2-G4c">
                             <fontDescription key="font" style="UICTFontTextStyleBody"/>
@@ -114,21 +114,15 @@
             </objects>
             <point key="canvasLocation" x="500" y="1206"/>
         </scene>
-        <!--Interface Controller-->
+        <!--FavoritePathListController-->
         <scene sceneID="TCh-jT-usp">
             <objects>
-                <controller id="H1D-mb-WEx">
+                <controller identifier="FavoritePathListController" id="H1D-mb-WEx" customClass="FavoritePathListController" customModule="PerfectPath_WatchKit_Extension">
                     <items>
                         <label alignment="left" text="Favorite Paths" id="TlK-zf-9ej">
                             <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                         </label>
-                        <table alignment="left" id="BP2-Yu-eTy">
-                            <items>
-                                <tableRow id="ssH-NY-feh">
-                                    <group key="rootItem" width="1" alignment="left" id="WeF-m1-OJJ"/>
-                                </tableRow>
-                            </items>
-                        </table>
+                        <table alignment="left" id="BP2-Yu-eTy"/>
                     </items>
                 </controller>
             </objects>
