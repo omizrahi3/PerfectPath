@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1ABCA6BA1E6B2D5C009872B3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABCA6B91E6B2D5C009872B3 /* CoreLocation.framework */; };
 		201C5B089428F74237A04FE0 /* Pods_PerfectPathTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70ADE7CADA66DB0DCBAE054E /* Pods_PerfectPathTests.framework */; };
 		570B846C1E68DB0D00060521 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B846B1E68DB0D00060521 /* SettingsViewController.swift */; };
 		570B846E1E68DB5100060521 /* SavedPathsViewControlloer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B846D1E68DB5100060521 /* SavedPathsViewControlloer.swift */; };
@@ -100,6 +101,7 @@
 
 /* Begin PBXFileReference section */
 		032752E1F5F0F57038024CE5 /* Pods-PerfectPath WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerfectPath WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PerfectPath WatchKit Extension/Pods-PerfectPath WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		1ABCA6B91E6B2D5C009872B3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		27E41B6A6A1910BD9773313E /* Pods-PerfectPathTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerfectPathTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PerfectPathTests/Pods-PerfectPathTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2B6E29E7E85B6A1685863E03 /* Pods-PerfectPathUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerfectPathUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PerfectPathUITests/Pods-PerfectPathUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		2C6847A5BDC54C3C5BE6529B /* Pods_PerfectPath.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PerfectPath.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				572941C71A8D97C65AF9CD3F /* Pods_PerfectPath.framework in Frameworks */,
+				1ABCA6BA1E6B2D5C009872B3 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +203,7 @@
 		3F0E9C23AEC074876A067F4D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1ABCA6B91E6B2D5C009872B3 /* CoreLocation.framework */,
 				2C6847A5BDC54C3C5BE6529B /* Pods_PerfectPath.framework */,
 				84FA1DE13FD23F12F3F846F2 /* Pods_PerfectPath_WatchKit_App.framework */,
 				4E047FF3283BB75F38F47D79 /* Pods_PerfectPath_WatchKit_Extension.framework */,

@@ -7,13 +7,48 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
+import AddressBookUI
 
-class GeneratePathViewController: UIViewController {
+class GeneratePathViewController: UIViewController, CLLocationManagerDelegate {
 
+    let manager = CLLocationManager()
+    lazy var geocoder = CLGeocoder()
+    
+    @IBAction func useCurrentLocationClicked(_ sender: Any) {
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
+    }
+    
+    private func processResponse( placemarks: [CLPlacemark]? , error: Error?) {
+        // Update View
+        
+        if let error = error {
+            print("Unable to Reverse Geocode Location (\(error))")
+        } else {
+            if let placemarks = placemarks, let placemark = placemarks.first {
+                print(placemark)
+            } else {
+                print("No Matching Addresses Found")
+            }
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[0]
+        geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
+            // Process Response
+            self.processResponse(placemarks: placemarks, error: error)
+            manager.stopUpdatingLocation()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
