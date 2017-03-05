@@ -492,6 +492,9 @@
                             <constraint firstItem="4b9-ma-jh3" firstAttribute="leading" secondItem="UK7-Wn-bSA" secondAttribute="leading" id="v6P-Tv-SAh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="startingLocationSearchBar" destination="xVa-Cs-ftf" id="8zK-Di-5kS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A4D-FB-wgu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

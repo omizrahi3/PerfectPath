@@ -11,10 +11,12 @@ import MapKit
 import CoreLocation
 import AddressBookUI
 
-class GeneratePathViewController: UIViewController, CLLocationManagerDelegate {
+class GeneratePathViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDelegate {
 
     let manager = CLLocationManager()
     lazy var geocoder = CLGeocoder()
+    
+    @IBOutlet weak var startingLocationSearchBar: UISearchBar!
     
     @IBAction func useCurrentLocationClicked(_ sender: Any) {
         manager.delegate = self
@@ -24,17 +26,24 @@ class GeneratePathViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     private func processResponse( placemarks: [CLPlacemark]? , error: Error?) {
-        // Update View
-        
         if let error = error {
             print("Unable to Reverse Geocode Location (\(error))")
         } else {
             if let placemarks = placemarks, let placemark = placemarks.first {
-                print(placemark)
+                changeSearchBarText(placemark: placemark)
             } else {
                 print("No Matching Addresses Found")
             }
         }
+    }
+    
+    private func changeSearchBarText(placemark: CLPlacemark) {
+        let address = placemark.addressDictionary
+        let street = address?["Street"] as? String ?? ""
+        let city = address?["City"] as? String ?? ""
+        let state = address?["State"] as? String ?? ""
+        let zipcode = address?["ZIP"] as? String ?? ""
+        startingLocationSearchBar.text = "\(street) \(city) \(state) \(zipcode)"
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -48,7 +57,7 @@ class GeneratePathViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        startingLocationSearchBar.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
