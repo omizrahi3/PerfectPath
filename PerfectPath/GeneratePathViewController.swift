@@ -10,19 +10,49 @@ import UIKit
 import MapKit
 import CoreLocation
 import AddressBookUI
+import Foundation
 
 class GeneratePathViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDelegate {
 
     let manager = CLLocationManager()
     lazy var geocoder = CLGeocoder()
+    var dictionary: [String : Any?] = [:]
+    var dataString : String = ""
+    var startingLocation : Any? = ""
+    var distance : Double = 0
+    var guardianPathEnabled : Bool = false
+    var pathType: String = "Bike"
     
     @IBOutlet weak var startingLocationSearchBar: UISearchBar!
-    
     @IBOutlet weak var stepper: UIStepper!
     @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var segmentedControlBikeRun: UISegmentedControl!
+    @IBOutlet weak var guardianPathGeneratedSwitch: UISwitch!
+    
+    
+    @IBAction func changedGuardianPathSwitch(_ sender: Any) {
+        if guardianPathGeneratedSwitch.isOn {
+            guardianPathEnabled = true
+        } else {
+            guardianPathEnabled = false
+        }
+    }
+    
+    @IBAction func bikeOrRunButtons(_ sender: Any) {
+        switch segmentedControlBikeRun.selectedSegmentIndex {
+        case 0:
+            pathType = "Bike";
+        case 1:
+            pathType = "Run";
+        default:
+            break
+        }
+    }
+    
     
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
         distanceLabel.text = String(format:"%.1f", sender.value)
+        distance = sender.value
     }
     
     @IBAction func useCurrentLocationClicked(_ sender: Any) {
@@ -50,13 +80,14 @@ class GeneratePathViewController: UIViewController, CLLocationManagerDelegate, U
         let city = address?["City"] as? String ?? ""
         let state = address?["State"] as? String ?? ""
         let zipcode = address?["ZIP"] as? String ?? ""
+        startingLocation = placemark.addressDictionary
         startingLocationSearchBar.text = "\(street) \(city) \(state) \(zipcode)"
     }
     
     public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         geocoder.geocodeAddressString(searchBar.text!, completionHandler: { (placemarks, error) in
             if error != nil {
-                print(error)
+                print(error as Any)
                 return
             }
             if (placemarks?.count)! > 0 {
@@ -90,7 +121,25 @@ class GeneratePathViewController: UIViewController, CLLocationManagerDelegate, U
     }
     
     @IBAction func didTapGeneratePath(_ sender: Any) {
-        print("yay gen path")
+        do {
+            dictionary["Path Type"] = pathType
+            dictionary["Starting Location"] = startingLocation
+            dictionary["Ending Location"] = startingLocation
+            dictionary["Distance"] = distance
+            dictionary["Guardian Path Enabled"] = guardianPathEnabled
+            let data = try JSONSerialization.data(withJSONObject:dictionary, options:[])
+            dataString = String(data: data, encoding: String.Encoding.utf8)!
+            print(dataString)
+            // do other stuff on success
+            
+        } catch {
+            print("JSON serialization failed:  \(error)")
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destViewController : PathJSONViewController = segue.destination as! PathJSONViewController
+        destViewController.jsonLabelText = dataString
     }
 
     /*
