@@ -17,6 +17,12 @@ class GeneratePathViewController: UIViewController, CLLocationManagerDelegate, U
     lazy var geocoder = CLGeocoder()
     
     @IBOutlet weak var startingLocationSearchBar: UISearchBar!
+    @IBOutlet weak var stepper: UIStepper!
+    @IBOutlet weak var distanceLabel: UILabel!
+    
+    @IBAction func stepperValueChanged(_ sender: UIStepper) {
+        distanceLabel.text = Double(sender.value).description
+    }
     
     @IBAction func useCurrentLocationClicked(_ sender: Any) {
         manager.delegate = self
@@ -58,6 +64,8 @@ class GeneratePathViewController: UIViewController, CLLocationManagerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         startingLocationSearchBar.delegate = self
+        stepper.autorepeat = true
+        stepper.maximumValue = 100.0
     }
 
     override func didReceiveMemoryWarning() {

@@ -374,12 +374,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="EJ3-k4-zaS">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="EJ3-k4-zaS">
                                 <rect key="frame" x="265" y="320" width="94" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="gVe-50-oum"/>
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="stepperValueChanged:" destination="esU-6W-uuJ" eventType="valueChanged" id="5fe-8L-VZt"/>
+                                </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guardian Path Generation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d76-6g-QPq">
                                 <rect key="frame" x="16" y="394" width="292" height="21"/>
@@ -463,6 +466,15 @@
                                     <action selector="didTapGeneratePath:" destination="esU-6W-uuJ" eventType="touchUpInside" id="mVp-2C-e2R"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o76-8b-ByD">
+                                <rect key="frame" x="166" y="324" width="51" height="21"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
@@ -478,9 +490,13 @@
                             <constraint firstItem="d76-6g-QPq" firstAttribute="top" secondItem="UK7-Wn-bSA" secondAttribute="bottom" constant="51" id="QD6-TB-dnq"/>
                             <constraint firstItem="EJ3-k4-zaS" firstAttribute="trailing" secondItem="zhf-7R-sai" secondAttribute="trailing" id="QRa-iM-V2d"/>
                             <constraint firstItem="d76-6g-QPq" firstAttribute="centerY" secondItem="zhf-7R-sai" secondAttribute="centerY" id="Qxe-gB-9HK"/>
+                            <constraint firstItem="EJ3-k4-zaS" firstAttribute="leading" secondItem="o76-8b-ByD" secondAttribute="trailing" constant="48" id="RXl-Z5-PDf"/>
                             <constraint firstItem="xVa-Cs-ftf" firstAttribute="top" secondItem="Ubk-to-YiS" secondAttribute="bottom" constant="41" id="RlE-OG-EI5"/>
+                            <constraint firstItem="o76-8b-ByD" firstAttribute="centerY" secondItem="EJ3-k4-zaS" secondAttribute="centerY" id="RuO-wK-xPk"/>
                             <constraint firstItem="4b9-ma-jh3" firstAttribute="top" secondItem="xVa-Cs-ftf" secondAttribute="bottom" id="Tee-CX-Uev"/>
                             <constraint firstItem="SAZ-M8-Ecv" firstAttribute="leading" secondItem="xVa-Cs-ftf" secondAttribute="leading" id="elV-Yw-pVU"/>
+                            <constraint firstItem="o76-8b-ByD" firstAttribute="leading" secondItem="UK7-Wn-bSA" secondAttribute="trailing" constant="41" id="er6-5L-JoW"/>
+                            <constraint firstItem="o76-8b-ByD" firstAttribute="top" secondItem="4b9-ma-jh3" secondAttribute="bottom" constant="38" id="f6X-gE-kck"/>
                             <constraint firstItem="xVa-Cs-ftf" firstAttribute="leading" secondItem="4b9-ma-jh3" secondAttribute="leading" id="ger-yJ-bzc"/>
                             <constraint firstItem="UK7-Wn-bSA" firstAttribute="leading" secondItem="d76-6g-QPq" secondAttribute="leading" id="kp0-PA-aNi"/>
                             <constraint firstItem="d76-6g-QPq" firstAttribute="leading" secondItem="Pzx-qz-1J2" secondAttribute="leading" id="mMa-nc-Goy"/>
@@ -493,12 +509,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="distanceLabel" destination="o76-8b-ByD" id="HkJ-iy-MNJ"/>
                         <outlet property="startingLocationSearchBar" destination="xVa-Cs-ftf" id="8zK-Di-5kS"/>
+                        <outlet property="stepper" destination="EJ3-k4-zaS" id="fvx-O2-oTL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A4D-FB-wgu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1492" y="-823"/>
+            <point key="canvasLocation" x="1492" y="-823.53823088455783"/>
         </scene>
         <!--Saved Paths View Controlloer-->
         <scene sceneID="TbZ-MR-4cf">
