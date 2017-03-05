@@ -17,11 +17,12 @@ class GeneratePathViewController: UIViewController, CLLocationManagerDelegate, U
     lazy var geocoder = CLGeocoder()
     
     @IBOutlet weak var startingLocationSearchBar: UISearchBar!
+    
     @IBOutlet weak var stepper: UIStepper!
     @IBOutlet weak var distanceLabel: UILabel!
     
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
-        distanceLabel.text = Double(sender.value).description
+        distanceLabel.text = String(format:"%.1f", sender.value)
     }
     
     @IBAction func useCurrentLocationClicked(_ sender: Any) {
@@ -52,6 +53,22 @@ class GeneratePathViewController: UIViewController, CLLocationManagerDelegate, U
         startingLocationSearchBar.text = "\(street) \(city) \(state) \(zipcode)"
     }
     
+    public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        geocoder.geocodeAddressString(searchBar.text!, completionHandler: { (placemarks, error) in
+            if error != nil {
+                print(error)
+                return
+            }
+            if (placemarks?.count)! > 0 {
+                let placemark = placemarks?.first
+                self.changeSearchBarText(placemark: placemark!)
+            } else {
+                print("not found")
+            }
+        })
+    }
+    
+
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[0]
         geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
@@ -65,7 +82,6 @@ class GeneratePathViewController: UIViewController, CLLocationManagerDelegate, U
         super.viewDidLoad()
         startingLocationSearchBar.delegate = self
         stepper.autorepeat = true
-        stepper.maximumValue = 100.0
     }
 
     override func didReceiveMemoryWarning() {
