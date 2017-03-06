@@ -82,6 +82,7 @@ class GeneratePathViewController: UIViewController, CLLocationManagerDelegate, U
     
     //verify address that user has searched for
     public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.view.endEditing(true)
         geocoder.geocodeAddressString(searchBar.text!, completionHandler: { (placemarks, error) in
             if error != nil {
                 print(error as Any)
@@ -120,6 +121,11 @@ class GeneratePathViewController: UIViewController, CLLocationManagerDelegate, U
         } else {
             guardianPathEnabled = false
         }
+    }
+    
+    func searchbarShouldReturn(_ searchBar: UISearchBar) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     //Generate clicked and JSON generated
