@@ -458,11 +458,13 @@
 					5739F01B1E567FB3000AF4B0 = {
 						CreatedOnToolsVersion = 7.3;
 						LastSwiftMigration = 0820;
+						ProvisioningStyle = Manual;
 						TestTargetID = 5739F0071E567FB3000AF4B0;
 					};
 					5739F0261E567FB3000AF4B0 = {
 						CreatedOnToolsVersion = 7.3;
 						LastSwiftMigration = 0820;
+						ProvisioningStyle = Manual;
 						TestTargetID = 5739F0071E567FB3000AF4B0;
 					};
 					5739F02F1E567FB3000AF4B0 = {
@@ -951,6 +953,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 032752E1F5F0F57038024CE5 /* Pods-PerfectPath WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "PerfectPath WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cs4261.PerfectPath.watchkitapp.watchkitextension;
@@ -967,6 +970,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4B3D7E31C84F95EAF6894F83 /* Pods-PerfectPath WatchKit Extension.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "PerfectPath WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cs4261.PerfectPath.watchkitapp.watchkitextension;
@@ -985,6 +989,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				IBSC_MODULE = PerfectPath_WatchKit_Extension;
 				INFOPLIST_FILE = "PerfectPath WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cs4261.PerfectPath.watchkitapp;
@@ -1003,6 +1008,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				IBSC_MODULE = PerfectPath_WatchKit_Extension;
 				INFOPLIST_FILE = "PerfectPath WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cs4261.PerfectPath.watchkitapp;
@@ -1020,6 +1026,8 @@
 			baseConfigurationReference = AD02E450BF22F70DA4A12D25 /* Pods-PerfectPath.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PerfectPath/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cs4261.PerfectPath;
@@ -1033,6 +1041,8 @@
 			baseConfigurationReference = 764452D74BE58758F9782445 /* Pods-PerfectPath.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PerfectPath/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cs4261.PerfectPath;
@@ -1046,6 +1056,7 @@
 			baseConfigurationReference = 27E41B6A6A1910BD9773313E /* Pods-PerfectPathTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PerfectPathTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PerfectPath.PerfectPathTests;
@@ -1060,6 +1071,7 @@
 			baseConfigurationReference = 53AB53A8818C8632BAED57E5 /* Pods-PerfectPathTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PerfectPathTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PerfectPath.PerfectPathTests;
@@ -1073,6 +1085,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2B6E29E7E85B6A1685863E03 /* Pods-PerfectPathUITests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PerfectPathUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PerfectPath.PerfectPathUITests;
@@ -1086,6 +1099,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 941B86785EEB007AE229D544 /* Pods-PerfectPathUITests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PerfectPathUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PerfectPath.PerfectPathUITests;
