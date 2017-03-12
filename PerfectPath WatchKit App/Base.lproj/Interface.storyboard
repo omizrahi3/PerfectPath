@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7hw-Ns-MjU">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,13 +9,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
-        <scene sceneID="aou-V4-d1y">
-            <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="PerfectPath_WatchKit_App" customModuleProvider="target"/>
-            </objects>
-            <point key="canvasLocation" x="220" y="345"/>
-        </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
             <objects>
@@ -41,7 +34,11 @@
                             <fontDescription key="font" type="system" weight="thin" pointSize="20"/>
                         </label>
                         <separator alignment="left" id="OLN-Dx-1zN"/>
-                        <button width="1" alignment="left" title="Favorite Paths" id="VGL-SX-97o"/>
+                        <button width="1" alignment="left" title="Favorite Paths" id="VGL-SX-97o">
+                            <connections>
+                                <segue destination="H1D-mb-WEx" kind="push" id="UIC-xz-hpA"/>
+                            </connections>
+                        </button>
                     </items>
                 </controller>
             </objects>
@@ -57,17 +54,22 @@
                         <group width="1" alignment="left" id="rx9-yd-WNU">
                             <items>
                                 <timer width="70" height="26" alignment="left" id="kGs-d3-A4Z"/>
-                                <button width="48" height="41" alignment="right" verticalAlignment="bottom" backgroundImage="warning-icon_white" id="BCJ-gO-fZK">
+                                <button width="52" height="48" alignment="right" verticalAlignment="bottom" title="G" id="BCJ-gO-fZK">
                                     <gestureRecognizers>
                                         <longPressGestureRecognizer id="Nxa-Gy-WWU"/>
                                     </gestureRecognizers>
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="40"/>
+                                    <connections>
+                                        <segue destination="4Qq-AX-j8F" kind="push" id="wTa-YU-VZN"/>
+                                    </connections>
                                 </button>
                             </items>
                         </group>
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="223" y="1206"/>
+            <point key="canvasLocation" x="525" y="1206"/>
         </scene>
         <!--AlertTimerCountdownController-->
         <scene sceneID="uFM-hY-q9b">
@@ -89,30 +91,45 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="228" y="1500"/>
+            <point key="canvasLocation" x="787" y="1603"/>
         </scene>
         <!--SetCheckInController-->
         <scene sceneID="hxl-Pf-PX6">
             <objects>
                 <controller identifier="SetCheckInController" id="4Qq-AX-j8F" customClass="SetCheckInController" customModule="PerfectPath_WatchKit_Extension">
                     <items>
-                        <label width="136" height="23" alignment="left" text="Guardian Check In" textAlignment="left" id="eJ9-X2-G4c">
+                        <label width="136" height="23" alignment="left" text="Guardian Check In" textAlignment="center" id="eJ9-X2-G4c">
                             <fontDescription key="font" style="UICTFontTextStyleBody"/>
                         </label>
-                        <label width="136" height="46" alignment="left" text="5 mins" textAlignment="center" id="IU0-6s-yAf">
+                        <label width="136" height="46" alignment="left" text="5 mins" textAlignment="center" id="IU0-6s-yAf" userLabel="minutesLabel">
                             <gestureRecognizers>
-                                <swipeGestureRecognizer direction="2" id="taD-B8-B3W"/>
-                                <swipeGestureRecognizer id="73q-0b-W3O"/>
+                                <swipeGestureRecognizer direction="2" id="taD-B8-B3W" userLabel="SwipeLeftToIncreaseTime">
+                                    <connections>
+                                        <action selector="swipedLeft:" destination="4Qq-AX-j8F" id="QtK-25-oIg"/>
+                                    </connections>
+                                </swipeGestureRecognizer>
+                                <swipeGestureRecognizer id="73q-0b-W3O" userLabel="SwipeRightToDecreaseTime">
+                                    <connections>
+                                        <action selector="swipedRight:" destination="4Qq-AX-j8F" id="3o3-93-0Dp"/>
+                                    </connections>
+                                </swipeGestureRecognizer>
                             </gestureRecognizers>
                             <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="font" type="system" pointSize="46"/>
+                            <fontDescription key="font" type="system" pointSize="40"/>
                         </label>
                         <button width="1" height="33" alignment="left" verticalAlignment="bottom" title="Set Check-In" id="fDq-fV-WRV"/>
-                        <button width="1" height="32" alignment="left" verticalAlignment="bottom" title="Cancel" id="uUy-Yz-BIW"/>
+                        <button width="1" height="32" alignment="left" verticalAlignment="bottom" title="Cancel" id="uUy-Yz-BIW">
+                            <connections>
+                                <segue destination="Xop-D8-78C" kind="push" id="NjZ-8z-fhu"/>
+                            </connections>
+                        </button>
                     </items>
+                    <connections>
+                        <outlet property="minutesLabel" destination="IU0-6s-yAf" id="6wA-Ct-tyc"/>
+                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="500" y="1206"/>
+            <point key="canvasLocation" x="220" y="1603"/>
         </scene>
         <!--FavoritePathListController-->
         <scene sceneID="TCh-jT-usp">
@@ -123,10 +140,17 @@
                             <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                         </label>
                         <table alignment="left" id="BP2-Yu-eTy"/>
+                        <separator alignment="left" id="ChE-YR-JU9"/>
+                        <table alignment="left" id="as4-KM-w8Q"/>
+                        <button width="1" alignment="left" title="Select Path" id="75Q-2b-AdZ">
+                            <connections>
+                                <segue destination="Xop-D8-78C" kind="push" id="L0S-kU-JLy"/>
+                            </connections>
+                        </button>
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="469" y="928"/>
+            <point key="canvasLocation" x="525" y="922"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
@@ -136,4 +160,7 @@
             <point key="canvasLocation" x="468" y="643"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="NjZ-8z-fhu"/>
+    </inferredMetricsTieBreakers>
 </document>
