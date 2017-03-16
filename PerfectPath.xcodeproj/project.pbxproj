@@ -41,6 +41,8 @@
 		903143C11E654A9900CD450D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903143C01E654A9900CD450D /* LoginViewController.swift */; };
 		907883611E61E0750088EDBF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 907883601E61E0750088EDBF /* GoogleService-Info.plist */; };
 		9099425C1E65589E006E3DCE /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9099425B1E65589E006E3DCE /* DashboardViewController.swift */; };
+		90F67F6B1E7A01E8000191C7 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F67F6A1E7A01E8000191C7 /* Contact.swift */; };
+		90F67F6D1E7A0C6A000191C7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F67F6C1E7A0C6A000191C7 /* ProfileViewController.swift */; };
 		FD7AA16A98DFE6FCEB268542 /* Pods_PerfectPath_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FA1DE13FD23F12F3F846F2 /* Pods_PerfectPath_WatchKit_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -151,6 +153,8 @@
 		903143C01E654A9900CD450D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		907883601E61E0750088EDBF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9099425B1E65589E006E3DCE /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		90F67F6A1E7A01E8000191C7 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		90F67F6C1E7A0C6A000191C7 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		941B86785EEB007AE229D544 /* Pods-PerfectPathUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerfectPathUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PerfectPathUITests/Pods-PerfectPathUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AD02E450BF22F70DA4A12D25 /* Pods-PerfectPath.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerfectPath.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PerfectPath/Pods-PerfectPath.debug.xcconfig"; sourceTree = "<group>"; };
 		C3F0B4B4F15C15B9337FD562 /* Pods_PerfectPathUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PerfectPathUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -259,6 +263,8 @@
 				570B846F1E68DBE300060521 /* ResetPasswordViewController.swift */,
 				570B84711E68DCAA00060521 /* NewPathGeneratedControllerView.swift */,
 				1ABCA6BB1E6C7F1A009872B3 /* PathJSONViewController.swift */,
+				90F67F6A1E7A01E8000191C7 /* Contact.swift */,
+				90F67F6C1E7A0C6A000191C7 /* ProfileViewController.swift */,
 			);
 			path = PerfectPath;
 			sourceTree = "<group>";
@@ -762,11 +768,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90F67F6B1E7A01E8000191C7 /* Contact.swift in Sources */,
 				9099425C1E65589E006E3DCE /* DashboardViewController.swift in Sources */,
 				1ABCA6BC1E6C7F1A009872B3 /* PathJSONViewController.swift in Sources */,
 				5739F00E1E567FB3000AF4B0 /* ViewController.swift in Sources */,
 				9018B4F01E6619C300A7CAED /* GeneratePathViewController.swift in Sources */,
 				570B84701E68DBE300060521 /* ResetPasswordViewController.swift in Sources */,
+				90F67F6D1E7A0C6A000191C7 /* ProfileViewController.swift in Sources */,
 				903143C11E654A9900CD450D /* LoginViewController.swift in Sources */,
 				5739F00C1E567FB3000AF4B0 /* AppDelegate.swift in Sources */,
 				570B84721E68DCAA00060521 /* NewPathGeneratedControllerView.swift in Sources */,

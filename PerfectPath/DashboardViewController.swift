@@ -10,11 +10,32 @@ import UIKit
 import Firebase
 
 class DashboardViewController: UIViewController {
+    @IBOutlet weak var welcome: UILabel!
+    
+    var currentUserRef: FIRDatabaseReference!
+    var profileRef: FIRDatabaseReference!
+    var contactRef: FIRDatabaseReference!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupFirebaseObservers()
+        
+        
+    }
+    
+    func setupFirebaseObservers() {
+        let firebaseRef = FIRDatabase.database().reference()
+        let currentUsersUid = FIRAuth.auth()!.currentUser!.uid
+        self.currentUserRef = firebaseRef.child("users").child(currentUsersUid)
+        self.profileRef = firebaseRef.child("profiles").child(currentUsersUid)
+        self.contactRef = firebaseRef.child("contacts").child(currentUsersUid)
+        
+        profileRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            let dictionary = snapshot.value as? NSDictionary
+            self.welcome.text = dictionary!["firstname"] as? String ?? "wrong"
+        })
     }
 
     override func didReceiveMemoryWarning() {

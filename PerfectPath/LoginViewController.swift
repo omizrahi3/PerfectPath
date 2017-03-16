@@ -14,6 +14,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var firstnameTextField: UITextField!
+    @IBOutlet weak var lastnameTextField: UITextField!
+    @IBOutlet weak var phonenumberTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +74,13 @@ class LoginViewController: UIViewController {
                                     }
                                     else
                                     {
-                                        print("WORKED")
+                                        var profileRef: FIRDatabaseReference!
+                                        let firebaseRef = FIRDatabase.database().reference()
+                                        profileRef = firebaseRef.child("profiles").child(user!.uid)
+                                        
+                                        profileRef.child("firstname").setValue(self.firstnameTextField.text!)
+                                        profileRef.child("lastname").setValue(self.lastnameTextField.text!)
+                                        profileRef.child("phonenumber").setValue(self.phonenumberTextField.text!)
                                         self.appDelegate.handleLogin()
                                     }
                                     
