@@ -30,8 +30,14 @@ class MapController: WKInterfaceController {
         // Make sure data was passed properly from SetCheckInController
         if let timerVal: [Int] = context as? [Int] {
             self.testLabel.setText(String(timerVal[0]))
-            // TODO: Start the timer here
-            binaryCount = oneMinBinary
+            
+            binaryCount = testTenSecondBinary
+            
+            // TODO set the binary timer according to the user value
+            
+            
+            
+            // Start the timer here
             start()
             
             // change the color of the guardian button once it is enabled
@@ -67,8 +73,8 @@ class MapController: WKInterfaceController {
             //stop timer when it reaches 0
             internalTimer.invalidate()
             
-            //set value of button back to light grey 170 RGB and 1.0 alpha
-            self.guardianBtn.setBackgroundColor(UIColor(red:200, green:200, blue:200, alpha:1.0))
+            //set value of button back to light grey 85 RGB and 1.0 alpha
+            self.guardianBtn.setBackgroundColor(UIColor(red:85, green:85, blue:85, alpha:1.0))
             
             //trigger AlertTimerCountdownController to pop up
             self.pushController(withName: "AlertTimerCountdownController", context: nil)
