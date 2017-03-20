@@ -74,7 +74,7 @@ class MapController: WKInterfaceController {
             internalTimer.invalidate()
             
             //set value of button back to light grey 85 RGB and 1.0 alpha
-            self.guardianBtn.setBackgroundColor(UIColor(red:85, green:85, blue:85, alpha:1.0))
+            self.guardianBtn.setBackgroundColor(UIColor(red:0.66, green:0.66, blue:0.66, alpha:1.0))
             
             //trigger AlertTimerCountdownController to pop up
             self.pushController(withName: "AlertTimerCountdownController", context: nil)
