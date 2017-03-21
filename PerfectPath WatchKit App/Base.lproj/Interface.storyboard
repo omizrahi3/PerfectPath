@@ -49,16 +49,18 @@
             <objects>
                 <controller identifier="MapController" id="Xop-D8-78C" customClass="MapController" customModule="PerfectPath_WatchKit_Extension">
                     <items>
-                        <map width="135" height="92" alignment="left" id="hDg-Cz-obo"/>
+                        <map width="136" height="92" alignment="left" id="hDg-Cz-obo"/>
                         <separator alignment="left" id="LR1-3B-ReS"/>
                         <group width="1" alignment="left" id="rx9-yd-WNU">
                             <items>
-                                <timer width="70" height="26" alignment="left" id="kGs-d3-A4Z"/>
+                                <timer width="57" height="26" alignment="left" id="kGs-d3-A4Z" userLabel="GuardianTimer"/>
+                                <label alignment="left" text="KA" id="r3z-9y-YdK"/>
                                 <button width="52" height="48" alignment="right" verticalAlignment="bottom" title="G" id="BCJ-gO-fZK">
                                     <gestureRecognizers>
                                         <longPressGestureRecognizer id="Nxa-Gy-WWU"/>
                                     </gestureRecognizers>
-                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <fontDescription key="font" type="system" pointSize="40"/>
                                     <connections>
                                         <segue destination="4Qq-AX-j8F" kind="push" id="wTa-YU-VZN"/>
@@ -67,6 +69,11 @@
                             </items>
                         </group>
                     </items>
+                    <connections>
+                        <outlet property="guardianBtn" destination="BCJ-gO-fZK" id="Sup-W7-lb4"/>
+                        <outlet property="guardianTimer" destination="kGs-d3-A4Z" id="beI-Cx-nwd"/>
+                        <outlet property="testLabel" destination="r3z-9y-YdK" id="2Fw-xX-fRc"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="525" y="1206"/>
@@ -101,7 +108,7 @@
                         <label width="136" height="23" alignment="left" text="Guardian Check In" textAlignment="center" id="eJ9-X2-G4c">
                             <fontDescription key="font" style="UICTFontTextStyleBody"/>
                         </label>
-                        <label width="136" height="46" alignment="left" text="5 mins" textAlignment="center" id="IU0-6s-yAf" userLabel="minutesLabel">
+                        <label width="136" height="84" alignment="left" text="5 mins" textAlignment="center" id="IU0-6s-yAf" userLabel="minutesLabel">
                             <gestureRecognizers>
                                 <swipeGestureRecognizer direction="2" id="taD-B8-B3W" userLabel="SwipeLeftToIncreaseTime">
                                     <connections>
@@ -117,10 +124,10 @@
                             <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="font" type="system" pointSize="40"/>
                         </label>
-                        <button width="1" height="33" alignment="left" verticalAlignment="bottom" title="Set Check-In" id="fDq-fV-WRV"/>
-                        <button width="1" height="32" alignment="left" verticalAlignment="bottom" title="Cancel" id="uUy-Yz-BIW">
+                        <button width="1" height="33" alignment="left" verticalAlignment="bottom" title="Set Check-In" id="fDq-fV-WRV">
                             <connections>
-                                <segue destination="Xop-D8-78C" kind="push" id="NjZ-8z-fhu"/>
+                                <action selector="didTapSetCheckInBtn" destination="4Qq-AX-j8F" id="fa1-hl-FsV"/>
+                                <segue destination="Xop-D8-78C" kind="push" id="ywq-aw-MzM"/>
                             </connections>
                         </button>
                     </items>
@@ -129,7 +136,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="1603"/>
+            <point key="canvasLocation" x="77" y="1368"/>
         </scene>
         <!--FavoritePathListController-->
         <scene sceneID="TCh-jT-usp">
@@ -161,6 +168,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NjZ-8z-fhu"/>
+        <segue reference="L0S-kU-JLy"/>
     </inferredMetricsTieBreakers>
 </document>
