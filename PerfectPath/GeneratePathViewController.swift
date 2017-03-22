@@ -19,8 +19,9 @@ class GeneratePathViewController: UIViewController, CLLocationManagerDelegate, U
     
     //dictionary used to create JSON
     var dictionary: [String : Any?] = [:]
+    var pathInformation: [String : Any?] = [:]
     var dataString : String = ""
-    var startingLocation : Any? = ""
+    var startingLocation : CLPlacemark? = nil
     var distance : Double = 0
     var guardianPathEnabled : Bool = true
     var pathType: String = "Bike"
@@ -104,7 +105,7 @@ class GeneratePathViewController: UIViewController, CLLocationManagerDelegate, U
         let city = address?["City"] as? String ?? ""
         let state = address?["State"] as? String ?? ""
         let zipcode = address?["ZIP"] as? String ?? ""
-        startingLocation = placemark.addressDictionary
+        startingLocation = placemark
         startingLocationSearchBar.text = "\(street) \(city) \(state) \(zipcode)"
     }
     
@@ -130,6 +131,10 @@ class GeneratePathViewController: UIViewController, CLLocationManagerDelegate, U
     
     //Generate clicked and JSON generated
     @IBAction func didTapGeneratePath(_ sender: Any) {
+        guard startingLocation != nil else {
+            print ("starting location must be entered")
+            return
+        }
         createDictionaryForJSON()
         do {
             let data = try JSONSerialization.data(withJSONObject:dictionary, options:[])
@@ -141,8 +146,8 @@ class GeneratePathViewController: UIViewController, CLLocationManagerDelegate, U
     
     private func createDictionaryForJSON() {
         dictionary["Path Type"] = pathType
-        dictionary["Starting Location"] = startingLocation
-        dictionary["Ending Location"] = startingLocation
+        dictionary["Starting Location"] = startingLocation?.addressDictionary
+        dictionary["Ending Location"] = startingLocation?.addressDictionary
         let distanceTimesTen: Double = distance*10
         let roundedDistance: Double = round(distanceTimesTen)
         distance = roundedDistance/10
@@ -152,8 +157,16 @@ class GeneratePathViewController: UIViewController, CLLocationManagerDelegate, U
     
     //pass json to next page
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destViewController : PathJSONViewController = segue.destination as! PathJSONViewController
-        destViewController.jsonLabelText = dataString
+        pathInformation["Path Type"] = pathType
+        pathInformation["Starting Location"] = startingLocation
+        pathInformation["Ending Location"] = startingLocation
+        let distanceTimesTen: Double = distance*10
+        let roundedDistance: Double = round(distanceTimesTen)
+        distance = roundedDistance/10
+        pathInformation["Distance"] = distance
+        pathInformation["Guardian Path Enabled"] = guardianPathEnabled
+        let destViewController : NewPathGeneratedControllerView = segue.destination as! NewPathGeneratedControllerView
+        destViewController.pathInformation = pathInformation
     }
     
     override func didReceiveMemoryWarning() {
