@@ -13,14 +13,13 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
     var pathInformation: [String : Any?] = [:]
 
     @IBOutlet weak var mapView: MKMapView!
-    
     @IBOutlet weak var distanceLabel: UILabel!        
     @IBOutlet weak var guardianEnabledLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapView.delegate = self
+        mapView.delegate = self        
         guard pathInformation["Starting Location"] != nil else {
             print ("starting location not entered")
             return
@@ -73,6 +72,11 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
             return polylineRenderer
         }
         return nil
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destViewController : PathNavigationViewController = segue.destination as! PathNavigationViewController
+        destViewController.pathInformation = pathInformation
     }
     
     /*

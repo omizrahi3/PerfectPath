@@ -23,6 +23,7 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
     @IBOutlet weak var paceLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
+    var pathInformation: [String : Any?] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,7 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
         locationManager.activityType = .fitness
-        locationManager.distanceFilter = 10.0
+        locationManager.distanceFilter = 1.0
         let status = CLLocationManager.authorizationStatus()
         if status == .notDetermined || status == .denied || status == .authorizedWhenInUse {
             locationManager.requestAlwaysAuthorization()
@@ -43,10 +44,16 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
         mapView.userTrackingMode = MKUserTrackingMode(rawValue: 2)!
         
         //create dummy route for testing
+        let clStartingPoint : CLPlacemark = pathInformation["Starting Location"] as! CLPlacemark
+        let mkStartingPoint: MKPlacemark
+        let addressDict : [String: Any] = clStartingPoint.addressDictionary as! [String : Any]
+        let coordinate = clStartingPoint.location?.coordinate
+        mkStartingPoint = MKPlacemark(coordinate: coordinate!, addressDictionary: addressDict)
+        
+        //generate placeholder path
         let request = MKDirectionsRequest()
-        request.source = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2DMake(37.33115792,-122.03076853), addressDictionary: nil))
+        request.source = MKMapItem(placemark: mkStartingPoint)
         request.destination = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2DMake(37.33069, -122.03066), addressDictionary: nil))
-        request.requestsAlternateRoutes = true
         request.transportType = .walking
         let directions = MKDirections(request: request)
         directions.calculate { [unowned self] response, error in
@@ -72,11 +79,13 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
         seconds += 1
         let secondsQuantity = HKQuantity(unit: HKUnit.second(), doubleValue: seconds)
         timeLabel.text = "Time: " + secondsQuantity.description
-        let distanceQuantity = HKQuantity(unit: HKUnit.meter(), doubleValue: distance)
+        let distanceInMiles = ((distance/1609)*100).rounded()/100
+        let distanceQuantity = HKQuantity(unit: HKUnit.mile(), doubleValue: distanceInMiles)
         distanceLabel.text = "Distance: " + distanceQuantity.description
-        let paceUnit = HKUnit.second().unitDivided(by: HKUnit.meter())
-        let paceQuantity = HKQuantity(unit: paceUnit, doubleValue: seconds / distance)
-        paceLabel.text = "Pace: " + paceQuantity.description
+        let speedUnit = HKUnit.mile().unitDivided(by: HKUnit.hour())
+        let speed = ((distanceInMiles*60*60/(seconds))*100).rounded()/100
+        let paceQuantity = HKQuantity(unit: speedUnit, doubleValue: speed)
+        paceLabel.text = "Speed: " + paceQuantity.description
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -89,6 +98,17 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        for location in locations {
+            if location.horizontalAccuracy < 20 {
+                //update distance
+                if self.locations.count > 0 {
+                    distance += location.distance(from: self.locations.last!)
+                }
+                
+                //save location
+                self.locations.append(location)
+            }
+        }
         let newLocation:CLLocation = locations[locations.count - 1]
         if let oldLocationNew = oldLocation as CLLocation? {
             let oldCoordinates = oldLocationNew.coordinate
