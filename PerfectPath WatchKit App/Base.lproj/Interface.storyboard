@@ -53,8 +53,6 @@
                         <separator alignment="left" id="LR1-3B-ReS"/>
                         <group width="1" alignment="left" id="rx9-yd-WNU">
                             <items>
-                                <timer width="57" height="26" alignment="left" id="kGs-d3-A4Z" userLabel="GuardianTimer"/>
-                                <label alignment="left" text="KA" id="r3z-9y-YdK"/>
                                 <button width="52" height="48" alignment="right" verticalAlignment="bottom" title="G" id="BCJ-gO-fZK">
                                     <gestureRecognizers>
                                         <longPressGestureRecognizer id="Nxa-Gy-WWU"/>
@@ -71,31 +69,35 @@
                     </items>
                     <connections>
                         <outlet property="guardianBtn" destination="BCJ-gO-fZK" id="Sup-W7-lb4"/>
-                        <outlet property="guardianTimer" destination="kGs-d3-A4Z" id="beI-Cx-nwd"/>
-                        <outlet property="testLabel" destination="r3z-9y-YdK" id="2Fw-xX-fRc"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="525" y="1206"/>
+            <point key="canvasLocation" x="578" y="1176"/>
         </scene>
         <!--AlertTimerCountdownController-->
         <scene sceneID="uFM-hY-q9b">
             <objects>
                 <controller identifier="AlertTimerCountdownController" id="kyw-oC-TAG" customClass="AlertTimerCountdownController" customModule="PerfectPath_WatchKit_Extension">
                     <items>
-                        <label alignment="left" text="Timer Expired! Sending alert in:" textAlignment="center" numberOfLines="2" id="gcu-mI-sUN">
+                        <label width="136" alignment="left" text="Timer Expired! Sending alert in:" textAlignment="center" numberOfLines="2" id="gcu-mI-sUN">
                             <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                         </label>
-                        <timer width="136" height="65" alignment="center" textAlignment="center" id="3UM-DX-LQW">
+                        <label width="136" height="63" alignment="left" text="60" textAlignment="center" id="bBk-4t-r4J">
                             <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="font" type="system" pointSize="52"/>
-                            <calendarUnit key="units" minute="YES" second="YES"/>
-                        </timer>
+                            <fontDescription key="font" type="system" pointSize="61"/>
+                        </label>
                         <button width="1" alignment="left" verticalAlignment="bottom" title="Cancel Alerts" id="QCR-bC-Slr">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="didTapCancelAlertsBtn" destination="kyw-oC-TAG" id="7GW-Fc-Ayg"/>
+                            </connections>
                         </button>
                     </items>
+                    <connections>
+                        <outlet property="cancelBtn" destination="QCR-bC-Slr" id="b68-bf-qeg"/>
+                        <outlet property="timerLabel" destination="bBk-4t-r4J" id="wCs-gE-Pfq"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="787" y="1603"/>
@@ -157,7 +159,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="525" y="922"/>
+            <point key="canvasLocation" x="905" y="780"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
@@ -168,6 +170,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="L0S-kU-JLy"/>
+        <segue reference="ywq-aw-MzM"/>
     </inferredMetricsTieBreakers>
 </document>
