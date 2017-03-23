@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1AA29BF01E81FBB0008169E8 /* PathNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA29BEF1E81FBB0008169E8 /* PathNavigationViewController.swift */; };
 		1ABCA6BA1E6B2D5C009872B3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABCA6B91E6B2D5C009872B3 /* CoreLocation.framework */; };
 		1ABCA6BC1E6C7F1A009872B3 /* PathJSONViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABCA6BB1E6C7F1A009872B3 /* PathJSONViewController.swift */; };
 		201C5B089428F74237A04FE0 /* Pods_PerfectPathTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70ADE7CADA66DB0DCBAE054E /* Pods_PerfectPathTests.framework */; };
@@ -104,6 +105,7 @@
 
 /* Begin PBXFileReference section */
 		032752E1F5F0F57038024CE5 /* Pods-PerfectPath WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerfectPath WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PerfectPath WatchKit Extension/Pods-PerfectPath WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		1AA29BEF1E81FBB0008169E8 /* PathNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathNavigationViewController.swift; sourceTree = "<group>"; };
 		1ABCA6B91E6B2D5C009872B3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1ABCA6BB1E6C7F1A009872B3 /* PathJSONViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathJSONViewController.swift; sourceTree = "<group>"; };
 		27E41B6A6A1910BD9773313E /* Pods-PerfectPathTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerfectPathTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PerfectPathTests/Pods-PerfectPathTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				1ABCA6BB1E6C7F1A009872B3 /* PathJSONViewController.swift */,
 				90F67F6A1E7A01E8000191C7 /* Contact.swift */,
 				90F67F6C1E7A0C6A000191C7 /* ProfileViewController.swift */,
+				1AA29BEF1E81FBB0008169E8 /* PathNavigationViewController.swift */,
 			);
 			path = PerfectPath;
 			sourceTree = "<group>";
@@ -769,6 +772,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				90F67F6B1E7A01E8000191C7 /* Contact.swift in Sources */,
+				1AA29BF01E81FBB0008169E8 /* PathNavigationViewController.swift in Sources */,
 				9099425C1E65589E006E3DCE /* DashboardViewController.swift in Sources */,
 				1ABCA6BC1E6C7F1A009872B3 /* PathJSONViewController.swift in Sources */,
 				5739F00E1E567FB3000AF4B0 /* ViewController.swift in Sources */,
