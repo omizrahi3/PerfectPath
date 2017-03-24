@@ -27,11 +27,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         
         let showLoginScreen = FIRAuth.auth()?.currentUser == nil
+        
         if showLoginScreen {
             showLoginViewController();
         } else {
             showDashboardViewController();
         }
+        
         window?.makeKeyAndVisible()
         
         return true
@@ -48,15 +50,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func showLoginViewController() {
         let storyboard = UIStoryboard(name: "Login", bundle: nil)
-        window!.rootViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+
+        let LVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+        
+        window!.rootViewController = AppNavigationController(rootViewController: LVC)
     }
     
     func showDashboardViewController() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
         window!.rootViewController = storyboard.instantiateViewController(withIdentifier: "dashboardNav")
     }
     
-
 }
 
 extension UIViewController {
