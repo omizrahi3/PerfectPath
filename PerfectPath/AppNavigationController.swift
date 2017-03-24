@@ -16,7 +16,8 @@ class AppNavigationController: NavigationController {
             return
         }
         
-        v.depthPreset = .none
-        v.dividerColor = Color.grey.lighten3
+        v.depthPreset = .depth1
+        v.dividerColor = Color.blueGrey.lighten3
+        v.backgroundColor = Color.blueGrey.lighten3
     }
 }

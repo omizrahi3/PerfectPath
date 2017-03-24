@@ -110,6 +110,6 @@ extension LoginViewController {
     
     fileprivate func prepareNavigationItem() {
         navigationItem.title = "PerfectPath"
-        navigationItem.detail = ""
+        navigationItem.detail = "Login"
     }
 }

@@ -17,7 +17,7 @@ class ResetPasswordViewController: UIViewController {
     }
     
     private func prepareNavigationItem() {
-        navigationItem.title = "Forgot Password"
-        navigationItem.detail = ""
+        navigationItem.title = "PerfectPath"
+        navigationItem.detail = "Forgot Password"
     }
 }
