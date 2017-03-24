@@ -7,29 +7,32 @@
 //
 
 import UIKit
+import Material
 
 class SettingsViewController: UIViewController {
+    fileprivate var logoutButton: IconButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        prepareLogoutButton()
+        prepareNavigationItem()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+    }
+
+}
+
+extension SettingsViewController {
+    fileprivate func prepareLogoutButton() {
+        logoutButton = IconButton(image: Icon.cm.close)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    fileprivate func prepareNavigationItem() {
+        navigationItem.title = "PerfectPath"
+        navigationItem.detail = "Settings"
+        navigationItem.rightViews = [logoutButton]
     }
-    */
-
 }

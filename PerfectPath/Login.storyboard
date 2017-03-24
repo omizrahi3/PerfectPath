@@ -14,7 +14,7 @@
         <scene sceneID="UXq-M8-WMi">
             <objects>
                 <navigationController storyboardIdentifier="LoginAppNav" id="5pj-ig-s9u" customClass="AppNavigationController" customModule="PerfectPath" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="SgA-8w-8G3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SgA-8w-8G3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

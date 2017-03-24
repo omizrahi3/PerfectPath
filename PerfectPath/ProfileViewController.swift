@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Material
 
 class ProfileViewController: UIViewController {
     @IBOutlet weak var firstnameTextField: UITextField!
@@ -16,6 +17,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var contactFnTextField: UITextField!
     @IBOutlet weak var contactLnTextField: UITextField!
     @IBOutlet weak var contactPnTextField: UITextField!
+    fileprivate var logoutButton: IconButton!
     
     var currentUserRef: FIRDatabaseReference!
     var profileRef: FIRDatabaseReference!
@@ -23,7 +25,10 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = Color.grey.lighten2
         setupFirebaseObservers()
+        prepareLogoutButton()
+        prepareNavigationItem()
     }
     @IBAction func didTapAddContact(_ sender: Any) {
         handleAddContact()
@@ -58,4 +63,16 @@ class ProfileViewController: UIViewController {
         print(newContact)
     }
 
+}
+
+extension ProfileViewController {
+    fileprivate func prepareLogoutButton() {
+        logoutButton = IconButton(image: Icon.cm.close)
+    }
+    
+    fileprivate func prepareNavigationItem() {
+        navigationItem.title = "PerfectPath"
+        navigationItem.detail = "Profile"
+        navigationItem.rightViews = [logoutButton]
+    }
 }

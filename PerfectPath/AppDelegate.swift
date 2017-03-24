@@ -59,7 +59,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func showDashboardViewController() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        window!.rootViewController = storyboard.instantiateViewController(withIdentifier: "dashboardNav")
+        let DVC = storyboard.instantiateViewController(withIdentifier: "DashboardViewController")
+        
+        window!.rootViewController = AppNavigationController(rootViewController: DVC)
     }
     
 }
