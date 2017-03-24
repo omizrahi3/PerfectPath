@@ -54,6 +54,9 @@ class DashboardViewController: UIViewController {
 extension DashboardViewController {
     fileprivate func prepareLogoutButton() {
         logoutButton = IconButton(image: Icon.cm.close)
+        logoutButton.addTarget(appDelegate,
+                               action: #selector(AppDelegate.handleLogout),
+                               for: .touchUpInside)
     }
     
     fileprivate func prepareNavigationItem() {
