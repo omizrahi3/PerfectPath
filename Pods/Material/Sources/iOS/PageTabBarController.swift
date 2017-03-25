@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 - 2016, Daniel Dahan and CosmicMind, Inc. <http://cosmicmind.com>.
+ * Copyright (C) 2015 - 2017, Daniel Dahan and CosmicMind, Inc. <http://cosmicmind.com>.
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -31,7 +31,7 @@
 import UIKit
 
 /// A memory reference to the PageTabBarItem instance for UIViewController extensions.
-private var PageTabBarItemKey: UInt8 = 0
+fileprivate var PageTabBarItemKey: UInt8 = 0
 
 open class PageTabBarItem: FlatButton {
     open override func prepare() {
@@ -54,7 +54,6 @@ public enum PageTabBarAlignment: Int {
     case bottom
 }
 
-/// Grid extension for UIView.
 extension UIViewController {
     /// Grid reference.
     public private(set) var pageTabBarItem: PageTabBarItem {

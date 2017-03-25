@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 - 2016, Daniel Dahan and CosmicMind, Inc. <http://cosmicmind.com>.
+ * Copyright (C) 2015 - 2017, Daniel Dahan and CosmicMind, Inc. <http://cosmicmind.com>.
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -198,7 +198,7 @@ open class Card: PulseView {
         }
         
         container.height = h
-        height = h
+        bounds.size.height = h
     }
     
     /**
@@ -255,9 +255,11 @@ open class Card: PulseView {
         self.contentView = contentView
         self.bottomBar = bottomBar
     }
-    
+}
+
+extension Card {
     /// Prepares the container.
-    private func prepareContainer() {
+    fileprivate func prepareContainer() {
         container.clipsToBounds = true
         addSubview(container)
     }

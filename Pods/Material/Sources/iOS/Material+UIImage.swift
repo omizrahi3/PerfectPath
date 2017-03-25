@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 - 2016, Daniel Dahan and CosmicMind, Inc. <http://cosmicmind.com>.
+ * Copyright (C) 2015 - 2017, Daniel Dahan and CosmicMind, Inc. <http://cosmicmind.com>.
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -178,7 +178,7 @@ extension UIImage {
 
 extension UIImage {
     /**
-     Creates an clear image.
+     Creates a clear image.
      - Returns: A UIImage that is clear.
      */
     open class func clear(size: CGSize = CGSize(width: 16, height: 16)) -> UIImage? {

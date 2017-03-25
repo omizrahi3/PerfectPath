@@ -15,7 +15,6 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var lastnameTextField: UITextField!
     @IBOutlet weak var phonenumberTextField: UITextField!
     @IBOutlet weak var contactFnTextField: UITextField!
-    @IBOutlet weak var contactLnTextField: UITextField!
     @IBOutlet weak var contactPnTextField: UITextField!
     fileprivate var logoutButton: IconButton!
     
@@ -50,14 +49,8 @@ class ProfileViewController: UIViewController {
         })
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     func handleAddContact() {
-        let newContact = Contact(firstname: contactFnTextField.text!,
-                                 lastname: contactLnTextField.text!,
+        let newContact = Contact(fullname: contactFnTextField.text!,
                                  phonenumber: contactPnTextField.text!)
         self.contactsRef.childByAutoId().setValue(newContact.getSnapshotValue())
         print(newContact)

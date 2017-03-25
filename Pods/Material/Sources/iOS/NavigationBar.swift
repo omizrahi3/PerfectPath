@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 - 2016, Daniel Dahan and CosmicMind, Inc. <http://cosmicmind.com>.
+ * Copyright (C) 2015 - 2017, Daniel Dahan and CosmicMind, Inc. <http://cosmicmind.com>.
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -98,9 +98,12 @@ open class NavigationBar: UINavigationBar {
 	/// A property that accesses the backing layer's background
 	@IBInspectable
     open override var backgroundColor: UIColor? {
-		didSet {
-			barTintColor = backgroundColor
-		}
+        get {
+            return barTintColor
+        }
+        set(value) {
+            barTintColor = value
+        }
 	}
 	
 	/**
@@ -287,13 +290,14 @@ open class NavigationBar: UINavigationBar {
      */
 	open func prepare() {
         barStyle = .black
+        isTranslucent = false
         depthPreset = .depth1
         interimSpacePreset = .interimSpace3
         contentEdgeInsetsPreset = .square1
         contentScaleFactor = Screen.scale
 		backButtonImage = Icon.cm.arrowBack
-        let image = UIImage.image(with: .clear, size: CGSize(width: bounds.width, height: bounds.height))
-		shadowImage = image
+        let image = UIImage()
+        shadowImage = image
 		setBackgroundImage(image, for: .default)
 		backgroundColor = .white
 	}
