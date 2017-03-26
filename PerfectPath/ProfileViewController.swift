@@ -8,14 +8,15 @@
 
 import UIKit
 import Firebase
+import Material
 
 class ProfileViewController: UIViewController {
     @IBOutlet weak var firstnameTextField: UITextField!
     @IBOutlet weak var lastnameTextField: UITextField!
     @IBOutlet weak var phonenumberTextField: UITextField!
     @IBOutlet weak var contactFnTextField: UITextField!
-    @IBOutlet weak var contactLnTextField: UITextField!
     @IBOutlet weak var contactPnTextField: UITextField!
+    fileprivate var logoutButton: IconButton!
     
     var currentUserRef: FIRDatabaseReference!
     var profileRef: FIRDatabaseReference!
@@ -23,7 +24,10 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = Color.grey.lighten2
         setupFirebaseObservers()
+        prepareLogoutButton()
+        prepareNavigationItem()
     }
     @IBAction func didTapAddContact(_ sender: Any) {
         handleAddContact()
@@ -45,17 +49,26 @@ class ProfileViewController: UIViewController {
         })
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     func handleAddContact() {
-        let newContact = Contact(firstname: contactFnTextField.text!,
-                                 lastname: contactLnTextField.text!,
+        let newContact = Contact(fullname: contactFnTextField.text!,
                                  phonenumber: contactPnTextField.text!)
         self.contactsRef.childByAutoId().setValue(newContact.getSnapshotValue())
         print(newContact)
     }
 
+}
+
+extension ProfileViewController {
+    fileprivate func prepareLogoutButton() {
+        logoutButton = IconButton(image: Icon.cm.close)
+        logoutButton.addTarget(appDelegate,
+                               action: #selector(AppDelegate.handleLogout),
+                               for: .touchUpInside)
+    }
+    
+    fileprivate func prepareNavigationItem() {
+        navigationItem.title = "PerfectPath"
+        navigationItem.detail = "Profile"
+        navigationItem.rightViews = [logoutButton]
+    }
 }

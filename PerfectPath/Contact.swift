@@ -11,17 +11,14 @@ import Firebase
 
 class Contact: NSObject {
     var key: String?
-    var firstname: String!
-    var lastname: String!
+    var fullname: String!
     var phonenumber: String!
     
-    let fnKey = "firstname"
-    let lnKey = "lastname"
+    let fnKey = "fullname"
     let pnKey = "phonenumber"
     
-    init (firstname: String!, lastname: String!, phonenumber: String!) {
-        self.firstname = firstname
-        self.lastname = lastname
+    init (fullname: String!, phonenumber: String!) {
+        self.fullname = fullname
         self.phonenumber = phonenumber
     }
     
@@ -30,13 +27,13 @@ class Contact: NSObject {
         let dictionary = snapshot.value as? NSDictionary
         //self.welcome.text = dictionary!["firstname"] as? String ?? "wrong"
 
-        self.firstname = dictionary![fnKey] as? String ?? ""
-        self.lastname = dictionary![lnKey] as? String ?? ""
+        self.fullname = dictionary![fnKey] as? String ?? ""
         self.phonenumber = dictionary![pnKey] as? String ?? ""
+        print(self.key!+" "+self.fullname+" "+self.phonenumber)
     }
     
     func getSnapshotValue() -> NSDictionary {
-        let valueDict = [fnKey: firstname, lnKey: lastname, pnKey: phonenumber] as? NSDictionary
+        let valueDict = [fnKey: fullname, pnKey: phonenumber] as? NSDictionary
         return valueDict!
     }
 }

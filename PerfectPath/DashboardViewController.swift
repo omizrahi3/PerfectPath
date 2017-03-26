@@ -8,9 +8,12 @@
 
 import UIKit
 import Firebase
+import Material
 
 class DashboardViewController: UIViewController {
     @IBOutlet weak var welcome: UILabel!
+    
+    fileprivate var logoutButton: IconButton!
     
     var currentUserRef: FIRDatabaseReference!
     var profileRef: FIRDatabaseReference!
@@ -18,11 +21,9 @@ class DashboardViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         setupFirebaseObservers()
-        
-        
+        prepareLogoutButton()
+        prepareNavigationItem()
     }
     
     func setupFirebaseObservers() {
@@ -47,16 +48,20 @@ class DashboardViewController: UIViewController {
         try! FIRAuth.auth()!.signOut()
         self.appDelegate.showLoginViewController()
     }
-    
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension DashboardViewController {
+    fileprivate func prepareLogoutButton() {
+        logoutButton = IconButton(image: Icon.cm.close)
+        logoutButton.addTarget(appDelegate,
+                               action: #selector(AppDelegate.handleLogout),
+                               for: .touchUpInside)
     }
-    */
-
+    
+    fileprivate func prepareNavigationItem() {
+        navigationItem.title = "PerfectPath"
+        navigationItem.detail = "Dashboard"
+        navigationItem.rightViews = [logoutButton]
+    }
 }
