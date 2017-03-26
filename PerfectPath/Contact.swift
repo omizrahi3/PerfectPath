@@ -29,7 +29,6 @@ class Contact: NSObject {
 
         self.fullname = dictionary![fnKey] as? String ?? ""
         self.phonenumber = dictionary![pnKey] as? String ?? ""
-        print(self.key!+" "+self.fullname+" "+self.phonenumber)
     }
     
     func getSnapshotValue() -> NSDictionary {
