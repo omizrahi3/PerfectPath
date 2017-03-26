@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Material
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
@@ -17,16 +18,15 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var firstnameTextField: UITextField!
     @IBOutlet weak var lastnameTextField: UITextField!
     @IBOutlet weak var phonenumberTextField: UITextField!
+    
+    fileprivate var menuButton: IconButton!
+    fileprivate var starButton: IconButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        //prepareMenuButton()
+        //prepareStarButton()
+        prepareNavigationItem()
     }
     
     @IBAction func didTapLoginButton(_ sender: Any) {
@@ -37,15 +37,6 @@ class LoginViewController: UIViewController {
         handleEmailPasswordSignUp()
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     func loginCompletionCallback(user: FIRUser?, error: NSError?) {
         if error == nil
@@ -106,4 +97,19 @@ class LoginViewController: UIViewController {
         })
     }
 
+}
+
+extension LoginViewController {
+    fileprivate func prepareMenuButton() {
+        menuButton = IconButton(image: Icon.cm.menu)
+    }
+    
+    fileprivate func prepareStarButton() {
+        starButton = IconButton(image: Icon.cm.star)
+    }
+    
+    fileprivate func prepareNavigationItem() {
+        navigationItem.title = "PerfectPath"
+        navigationItem.detail = "Login"
+    }
 }

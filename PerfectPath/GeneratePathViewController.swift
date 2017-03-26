@@ -11,9 +11,10 @@ import MapKit
 import CoreLocation
 import AddressBookUI
 import Foundation
+import Material
 
 class GeneratePathViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDelegate {
-
+    fileprivate var logoutButton: IconButton!
     let manager = CLLocationManager()
     lazy var geocoder = CLGeocoder()
     
@@ -35,6 +36,8 @@ class GeneratePathViewController: UIViewController, CLLocationManagerDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        prepareLogoutButton()
+        prepareNavigationItem()
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestWhenInUseAuthorization()
@@ -168,20 +171,20 @@ class GeneratePathViewController: UIViewController, CLLocationManagerDelegate, U
         let destViewController : NewPathGeneratedControllerView = segue.destination as! NewPathGeneratedControllerView
         destViewController.pathInformation = pathInformation
     }
+
+}
+
+extension GeneratePathViewController {
+    fileprivate func prepareLogoutButton() {
+        logoutButton = IconButton(image: Icon.cm.close)
+        logoutButton.addTarget(appDelegate,
+                               action: #selector(AppDelegate.handleLogout),
+                               for: .touchUpInside)
+    }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    fileprivate func prepareNavigationItem() {
+        navigationItem.title = "PerfectPath"
+        navigationItem.detail = "Generate Path"
+        navigationItem.rightViews = [logoutButton]
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
