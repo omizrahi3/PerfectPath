@@ -14,13 +14,36 @@ class SetCheckInViewController: UIViewController {
     // variables
     @IBOutlet weak var minutesLabel: UILabel!
     @IBOutlet weak var minutesValueLabel: UILabel!
-    var minutes = 5
-
+    var minutes : Int = 5
+    var guardianInfo: [String : Any?] = [:]
+    var guardianStarted: Bool = false
+    
+    @IBAction func didTapCheckInBtn(_ sender: Any) {
+        // mark guardianStarted with true
+        print("guardianStarted is now set to true")
+        self.guardianStarted = true;
+        
+        // go to PathNavigationViewController screen
+        
+        //performSegue(withIdentifier: "SetGuardian", sender: nil)
+        
+    }
+    
 
     @IBAction func stepperChanged(_ sender: UIStepper) {
         minutes = Int(sender.value)
         minutesValueLabel.text = String(minutes)
+        print("stepperChanged, setting minutes to " + String(minutes))
         
     }
+    
+    //pass json to next page
+
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guardianInfo["Guardian Started"] = guardianStarted
+//        guardianInfo["Minutes"] = minutes
+//                let destViewController : PathNavigationViewController = segue.destination as! PathNavigationViewController
+//        destViewController.guardianInfo = guardianInfo
+//    }
 
 }

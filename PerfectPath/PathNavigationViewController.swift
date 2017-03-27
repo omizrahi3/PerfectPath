@@ -13,6 +13,7 @@ import HealthKit
 
 class PathNavigationViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
+    @IBOutlet weak var guardianBtn: UIButton!
     var locationManager: CLLocationManager!
     var locations = [CLLocation]()
     var oldLocation: CLLocation!
@@ -24,6 +25,7 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     var pathInformation: [String : Any?] = [:]
+    var guardianInfo: [String : Any?] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -138,6 +140,17 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+
+    //TODO is there a way to make guardian view pop up but keep the path nav controller running still so it doesn't have to recalc
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let destViewController : SetCheckInViewController = segue.destination as! SetCheckInViewController
+//        destViewController.guardianInfo = guardianInfo
+//        print("in PathNavigationViewController in prepare with guardian info: " + (String(describing: destViewController.guardianInfo["Minutes"])))
+//    }
+
+    
 
     
 }
