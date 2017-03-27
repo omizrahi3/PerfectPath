@@ -14,8 +14,6 @@ class MapController: WKInterfaceController {
     
     //variables
     @IBOutlet var guardianBtn: WKInterfaceButton!
-    @IBOutlet var guardianTimer: WKInterfaceTimer!
-    @IBOutlet var testLabel: WKInterfaceLabel!
     var internalTimer = Timer()
     var binaryCount = 0b0000
     let testTenSecondBinary = 0b00001010
@@ -28,9 +26,7 @@ class MapController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         // Make sure data was passed properly from SetCheckInController
-        if let timerVal: [Int] = context as? [Int] {
-            self.testLabel.setText(String(timerVal[0]))
-            
+        if let _: [Int] = context as? [Int] {
             binaryCount = testTenSecondBinary
             
             // TODO set the binary timer according to the user value
@@ -78,29 +74,10 @@ class MapController: WKInterfaceController {
             
             //trigger AlertTimerCountdownController to pop up
             self.pushController(withName: "AlertTimerCountdownController", context: nil)
-            
-            
-            
         }
-        
-        
-        //updateText()
+
     }
     
     
-    
-//    // Update the text from the label, by always maintaining 4 digits.
-//    func updateText() {
-//        
-//        // Convert from Binary to String
-//        var text = String(binaryCount, radix:2)
-//        
-//        // Pad "0" to the left, to always have 4 binary digits
-//        for i in 0..<4 - count(text) {
-//            text = "0" + text;
-//        }
-//        
-//        testLabel.text = text
-//    }
 
 }
