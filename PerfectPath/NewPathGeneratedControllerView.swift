@@ -13,6 +13,8 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
     var pathInformation: [String : Any?] = [:]
     var waypoints = [MKMapItem]()
     let numWaypoints = 3
+    
+    var activityIndicator: UIActivityIndicatorView?
 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var distanceLabel: UILabel!        
@@ -26,7 +28,7 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
             print ("starting location not entered")
             return
         }
-        
+        addActivityIndicator()
         let clStartingPoint : CLPlacemark = pathInformation["Starting Location"] as! CLPlacemark
         waypoints.append(MKMapItem(placemark: MKPlacemark(placemark: clStartingPoint)))
 
@@ -90,6 +92,7 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
                 if index + 1 < self.waypoints.count {
                     self.calculateSegmentDirections(index: index+1, time: timeVar, routes: routeVar)
                 } else {
+                    self.hideActivityIndicator()
                     self.showRoute(routes: routeVar)
                     var distance = 0.0
                     for i in 0..<routes.count {
@@ -158,6 +161,7 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
     @IBAction func generateNewPath() {
         waypoints.removeAll()
         mapView.removeOverlays(mapView.overlays)
+        addActivityIndicator()
         
         let clStartingPoint : CLPlacemark = pathInformation["Starting Location"] as! CLPlacemark
         waypoints.append(MKMapItem(placemark: MKPlacemark(placemark: clStartingPoint)))
@@ -167,6 +171,21 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
         let waypointDistance = prefferedDistanceMeters / Double(numWaypoints+1)
         let initialBearing = Double(arc4random_uniform(360))
         findPath(index: 1, initialBearing: initialBearing, waypointDistance: waypointDistance)
+    }
+    
+    func addActivityIndicator() {
+        activityIndicator = UIActivityIndicatorView(frame: UIScreen.main.bounds)
+        activityIndicator?.activityIndicatorViewStyle = .whiteLarge
+        activityIndicator?.backgroundColor = UIColor.darkGray
+        activityIndicator?.startAnimating()
+        view.addSubview(activityIndicator!)
+    }
+    
+    func hideActivityIndicator() {
+        if activityIndicator != nil {
+            activityIndicator?.removeFromSuperview()
+            activityIndicator = nil
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
