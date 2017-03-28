@@ -155,6 +155,20 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
         return nil
     }
     
+    @IBAction func generateNewPath() {
+        waypoints.removeAll()
+        mapView.removeOverlays(mapView.overlays)
+        
+        let clStartingPoint : CLPlacemark = pathInformation["Starting Location"] as! CLPlacemark
+        waypoints.append(MKMapItem(placemark: MKPlacemark(placemark: clStartingPoint)))
+    
+        let prefferedDistanceMiles = pathInformation["Distance"] as! Double
+        let prefferedDistanceMeters = prefferedDistanceMiles * 1609.34
+        let waypointDistance = prefferedDistanceMeters / Double(numWaypoints+1)
+        let initialBearing = Double(arc4random_uniform(360))
+        findPath(index: 1, initialBearing: initialBearing, waypointDistance: waypointDistance)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destViewController : PathNavigationViewController = segue.destination as! PathNavigationViewController
         destViewController.pathInformation = pathInformation

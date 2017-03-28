@@ -497,18 +497,18 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="107"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sJY-WB-eCC" id="Xt3-aQ-leK">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="106"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="106.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EXX-tn-qrE">
-                                            <rect key="frame" x="15" y="35" width="34" height="21"/>
+                                            <rect key="frame" x="15" y="36" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hxH-MD-ZIP">
-                                            <rect key="frame" x="15" y="56" width="44" height="15"/>
+                                            <rect key="frame" x="15" y="56.5" width="44" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -525,11 +525,11 @@
                                 <rect key="frame" x="0.0" y="135" width="375" height="107"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6fd-Mr-ft5" id="bzm-Zu-hiB">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="106.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="No Contacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bbe-C1-h66">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="106"/>
+                                            <rect key="frame" x="15" y="0.0" width="345" height="106.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -590,6 +590,9 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="generateNewPath" destination="fsI-cr-4MR" eventType="touchUpInside" id="zRh-U2-uyk"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQn-UC-Dey">
                                 <rect key="frame" x="16" y="417" width="343" height="21"/>
@@ -724,7 +727,7 @@
             <objects>
                 <navigationController storyboardIdentifier="dashboardNav" automaticallyAdjustsScrollViewInsets="NO" id="LHW-94-WSN" customClass="AppNavigationController" customModule="PerfectPath" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zO6-bE-LHg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="zO6-bE-LHg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1138,9 +1141,9 @@
         <image name="icon.png" width="449" height="259"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MOZ-lm-RPs"/>
-        <segue reference="wX5-4n-BJr"/>
         <segue reference="S61-p9-ShG"/>
+        <segue reference="wX5-4n-BJr"/>
+        <segue reference="Jo1-U4-B5f"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
 </document>
