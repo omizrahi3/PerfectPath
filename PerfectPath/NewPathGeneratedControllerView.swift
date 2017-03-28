@@ -91,6 +91,14 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
                     self.calculateSegmentDirections(index: index+1, time: timeVar, routes: routeVar)
                 } else {
                     self.showRoute(routes: routeVar)
+                    var distance = 0.0
+                    for i in 0..<routes.count {
+                        let temp = routeVar[i]
+                        distance += temp.distance
+                    }
+                    distance = distance/1609.34
+                    let distString = String(format: "%.1f",distance)
+                    self.distanceLabel.text = "Distance: \(distString) mi"
                 }
             } else if let _ = error {
                 let alert = UIAlertController(title: nil, message: "Directions not available.", preferredStyle: .alert)
