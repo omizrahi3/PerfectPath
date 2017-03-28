@@ -11,6 +11,8 @@ import MapKit
 
 class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
     var pathInformation: [String : Any?] = [:]
+    var waypoints = [MKMapItem]()
+    let numWaypoints = 3
 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var distanceLabel: UILabel!        
@@ -24,32 +26,16 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
             print ("starting location not entered")
             return
         }
-        let clStartingPoint : CLPlacemark = pathInformation["Starting Location"] as! CLPlacemark
-        let mkStartingPoint: MKPlacemark
-        let addressDict : [String: Any] = clStartingPoint.addressDictionary as! [String : Any]
-        let coordinate = clStartingPoint.location?.coordinate
-        mkStartingPoint = MKPlacemark(coordinate: coordinate!, addressDictionary: addressDict)
         
-        //generate placeholder path
-        let request = MKDirectionsRequest()
-        request.source = MKMapItem(placemark: mkStartingPoint)
-        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2DMake(37.33069, -122.03066), addressDictionary: nil))
-        request.transportType = .walking
-        let directions = MKDirections(request: request)
-        directions.calculate { [unowned self] response, error in
-            guard let unwrappedResponse = response else { return }
-            if (unwrappedResponse.routes.count > 0) {
-                //display route as overlay
-                let route: MKRoute = unwrappedResponse.routes[0]
-                let distanceInMiles = route.distance/1609
-                let formattedDistance = (Double(distanceInMiles)*100).rounded()/100
-                self.distanceLabel.text = "Distance: " + String(formattedDistance) + " mi"
-                let line: MKPolyline = route.polyline
-                line.title = "route"
-                self.mapView.add(line)
-                self.mapView.setVisibleMapRect(line.boundingMapRect, edgePadding: UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0) ,animated: false)
-            }
-        }
+        let clStartingPoint : CLPlacemark = pathInformation["Starting Location"] as! CLPlacemark
+        waypoints.append(MKMapItem(placemark: MKPlacemark(placemark: clStartingPoint)))
+        
+        let prefferedDistanceMiles = pathInformation["Distance"] as! Double
+        let prefferedDistanceMeters = prefferedDistanceMiles * 1609.34
+        let waypointDistance = prefferedDistanceMeters / Double(numWaypoints+1)
+        let initialBearing = Double(arc4random_uniform(360))
+        
+        findPath(index: 1, initialBearing: initialBearing, waypointDistance: waypointDistance)
         
         let guardianPathEnabled = pathInformation["Guardian Path Enabled"] as! Bool
         if guardianPathEnabled {
@@ -57,6 +43,93 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
         } else {
             guardianEnabledLabel.text = "Guardian Enabled: No"
         }
+    }
+    
+    func findPath(index: Int, initialBearing: Double, waypointDistance: Double) {
+        let lastMKPoint = waypoints[index-1]
+        let lastCoords = lastMKPoint.placemark.coordinate
+        let bearing = (initialBearing + (90 * (Double(index)-1))).truncatingRemainder(dividingBy: 360)
+        let newCoords = locationWithBearing(bearing: bearing, distanceMeters: waypointDistance, origin: lastCoords)
+        let newPoint = CLLocation(latitude: newCoords.latitude, longitude: newCoords.longitude)
+        CLGeocoder().reverseGeocodeLocation(newPoint, completionHandler: {(placemarks: [CLPlacemark]?, error: Error?) -> Void in
+            if let placemarks = placemarks {
+                let mapItem = MKMapItem(placemark: MKPlacemark(placemark: placemarks.last!))
+                self.waypoints.append(mapItem)
+                //print("point resolved, signaling semaphore")
+                //semaphore.signal()
+                //print("point resolved, semaphore signaleds")
+                if index < self.numWaypoints {
+                    self.findPath(index: index + 1, initialBearing: initialBearing, waypointDistance: waypointDistance)
+                } else {
+                    self.calculateSegmentDirections(index: 0, time: 0, routes: [])
+                }
+            } else if let _ = error {
+                print("Error: \(error)")
+            }
+        })
+    }
+    
+    func calculateSegmentDirections(index: Int, time: TimeInterval, routes: [MKRoute]) {
+        let request: MKDirectionsRequest = MKDirectionsRequest()
+        if index < waypoints.count-1 {
+            request.source = waypoints[index]
+            request.destination = waypoints[index + 1]
+            request.transportType = .walking
+        } else {
+            request.source = waypoints[index]
+            request.destination = waypoints[0]
+            request.transportType = .walking
+        }
+        let directions = MKDirections(request: request)
+        directions.calculate(completionHandler: {(response: MKDirectionsResponse?, error: Error?) in
+            if let routeResponse = response?.routes {
+                let routeForSegment: MKRoute = routeResponse.sorted(by: {$0.expectedTravelTime < $1.expectedTravelTime})[0]
+                var timeVar = time
+                var routeVar = routes
+                routeVar.append(routeForSegment)
+                timeVar += routeForSegment.expectedTravelTime
+                if index + 1 < self.waypoints.count {
+                    self.calculateSegmentDirections(index: index+1, time: timeVar, routes: routeVar)
+                } else {
+                    self.showRoute(routes: routeVar)
+                }
+            } else if let _ = error {
+                let alert = UIAlertController(title: nil, message: "Directions not available.", preferredStyle: .alert)
+                let okButton = UIAlertAction(title: "OK", style: .cancel) {(alert) -> Void in
+                    self.navigationController?.popViewController(animated: true)
+                }
+                alert.addAction(okButton)
+                self.present(alert, animated: true, completion: nil)
+            }
+        })
+    }
+    
+    func showRoute(routes: [MKRoute]) {
+        for i in 0..<routes.count {
+            plotPolyline(route: routes[i])
+        }
+    }
+    
+    func plotPolyline(route: MKRoute) {
+        mapView.add(route.polyline)
+        if mapView.overlays.count == 1 {
+            mapView.setVisibleMapRect(route.polyline.boundingMapRect,
+                                      edgePadding: UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0), animated: false)
+        } else {
+            let polylinesBoundingRect = MKMapRectUnion(mapView.visibleMapRect, route.polyline.boundingMapRect)
+            mapView.setVisibleMapRect(polylinesBoundingRect, edgePadding: UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0), animated: false)
+        }
+    }
+    
+    func locationWithBearing(bearing: Double, distanceMeters:Double, origin: CLLocationCoordinate2D) -> CLLocationCoordinate2D {
+        let distRadians = distanceMeters / (6372797.6) //earth radius in meters
+        let lat1 = origin.latitude * M_PI / 180
+        let lon1 = origin.longitude * M_PI / 180
+        
+        let lat2 = asin(sin(lat1) * cos(distRadians) + cos(lat1) * sin(distRadians) * cos(bearing))
+        let lon2 = lon1 + atan2(sin(bearing) * sin(distRadians) * cos(lat1), cos(distRadians) - sin(lat1) * sin(lat2))
+        
+        return CLLocationCoordinate2D(latitude: lat2 * 180 / M_PI, longitude: lon2 * 180 / M_PI)
     }
 
     override func didReceiveMemoryWarning() {
