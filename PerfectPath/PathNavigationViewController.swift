@@ -143,7 +143,7 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
             if buttonName == "Start" {
                 seconds = 0.0; distance = 0.0
                 mapView.showsUserLocation = true
-                //mapView.userTrackingMode = MKUserTrackingMode(rawValue: 2)!
+                mapView.userTrackingMode = MKUserTrackingMode(rawValue: 2)!
             }
             startPauseButton.setTitle("Pause", for: .normal)
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.eachSecond(timer:)), userInfo: nil, repeats: true)

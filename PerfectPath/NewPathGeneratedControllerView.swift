@@ -34,7 +34,6 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
         let prefferedDistanceMeters = prefferedDistanceMiles * 1609.34
         let waypointDistance = prefferedDistanceMeters / Double(numWaypoints+1)
         let initialBearing = Double(arc4random_uniform(360))
-        
         findPath(index: 1, initialBearing: initialBearing, waypointDistance: waypointDistance)
         
         let guardianPathEnabled = pathInformation["Guardian Path Enabled"] as! Bool
