@@ -24,15 +24,54 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
             print ("starting location not entered")
             return
         }
+        /*
         let clStartingPoint : CLPlacemark = pathInformation["Starting Location"] as! CLPlacemark
         let mkStartingPoint: MKPlacemark
         let addressDict : [String: Any] = clStartingPoint.addressDictionary as! [String : Any]
         let coordinate = clStartingPoint.location?.coordinate
-        mkStartingPoint = MKPlacemark(coordinate: coordinate!, addressDictionary: addressDict)
+        mkStartingPoint = MKPlacemark(coordinate: coordinate!, addressDictionary: addressDict)*/
         
         //generate placeholder path
         let request = MKDirectionsRequest()
-        request.source = MKMapItem(placemark: mkStartingPoint)
+        request.source = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2DMake(33.774920,  -84.396415), addressDictionary: nil))
+        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2DMake(33.775735, -84.403970), addressDictionary: nil))
+        
+        request.transportType = .walking
+        let directions = MKDirections(request: request)
+        directions.calculate { [unowned self] response, error in
+            guard let unwrappedResponse = response else { return }
+            if (unwrappedResponse.routes.count > 0) {
+                //display route as overlay
+                let route: MKRoute = unwrappedResponse.routes[0]
+                let distanceInMiles = route.distance/1609
+                let formattedDistance = (Double(distanceInMiles)*100).rounded()/100
+                self.distanceLabel.text = "Distance: " + String(formattedDistance) + " mi"
+                let line: MKPolyline = route.polyline
+                self.mapView.add(line)
+                self.mapView.setVisibleMapRect(line.boundingMapRect, edgePadding: UIEdgeInsetsMake(50.0, 20.0, 20.0, 50.0) ,animated: false)
+            }
+        }
+        let request2 = MKDirectionsRequest()
+        request2.source = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2DMake(33.774920,  -84.396415), addressDictionary: nil))
+        request2.destination = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2DMake(33.7723281, -84.3929827), addressDictionary: nil))
+        request2.transportType = .walking
+        let directions2 = MKDirections(request: request2)
+        directions2.calculate { [unowned self] response2, error in
+            guard let unwrappedResponse2 = response2 else { return }
+            if (unwrappedResponse2.routes.count > 0) {
+                //display route as overlay
+                let route: MKRoute = unwrappedResponse2.routes[0]
+                let distanceInMiles = route.distance/1609
+                let formattedDistance = (Double(distanceInMiles)*100).rounded()/100
+                //self.distanceLabel.text = "Distance: " + String(formattedDistance) + " mi"
+                let line: MKPolyline = route.polyline
+                self.mapView.add(line)
+                //self.mapView.setVisibleMapRect(line.boundingMapRect, edgePadding: UIEdgeInsetsMake(50.0, 20.0, 20.0, 50.0) ,animated: false)
+            }
+        }
+        
+        /*let request2 = MKDirectionsRequest()
+        request.source = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2DMake(33.775735, -84.403970), addressDictionary: nil))
         request.destination = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2DMake(37.33019786,  -122.02628653), addressDictionary: nil))
         request.transportType = .walking
         let directions = MKDirections(request: request)
@@ -49,41 +88,7 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
                 self.mapView.setVisibleMapRect(line.boundingMapRect, edgePadding: UIEdgeInsetsMake(50.0, 20.0, 20.0, 50.0) ,animated: false)
             }
         }
-        /*let request2 = MKDirectionsRequest()
-        request2.source = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2DMake(37.33019786,  -122.02628653), addressDictionary: nil))
-        request2.destination = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2DMake(37.33509587,  -122.02356672), addressDictionary: nil))
-        request2.transportType = .walking
-        let directions2 = MKDirections(request: request2)
-        directions2.calculate { [unowned self] response, error in
-            guard let unwrappedResponse = response else { return }
-            if (unwrappedResponse.routes.count > 0) {
-                //display route as overlay
-                let route: MKRoute = unwrappedResponse.routes[0]
-                let distanceInMiles = route.distance/1609
-                self.distance += distanceInMiles
-                let line: MKPolyline = route.polyline
-                line.title = "route"
-                self.mapView.add(line)
-                //self.mapView.setVisibleMapRect(line.boundingMapRect, edgePadding: UIEdgeInsetsMake(20.0, 20.0, 20.0, 20.0) ,animated: false)
-            }
-        }
-        let request3 = MKDirectionsRequest()
-        request3.source = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2DMake(37.33509587,  -122.02356672), addressDictionary: nil))
-        request3.destination = MKMapItem(placemark: mkStartingPoint)
-        request3.transportType = .walking
-        let directions3 = MKDirections(request: request3)
-        directions3.calculate { [unowned self] response, error in
-            guard let unwrappedResponse = response else { return }
-            if (unwrappedResponse.routes.count > 0) {
-                //display route as overlay
-                let route: MKRoute = unwrappedResponse.routes[0]
-                let distanceInMiles = route.distance/1609
-                self.distance += distanceInMiles
-                let line: MKPolyline = route.polyline
-                self.mapView.add(line)
-                //self.mapView.setVisibleMapRect(line.boundingMapRect, edgePadding: UIEdgeInsetsMake(20.0, 20.0, 20.0, 20.0) ,animated: false)
-            }
-        }*/
+        */
         
         let guardianPathEnabled = pathInformation["Guardian Path Enabled"] as! Bool
         if guardianPathEnabled {
@@ -102,7 +107,8 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
         if (overlay is MKPolyline) {
             let polylineRenderer = MKPolylineRenderer(overlay: overlay)
             polylineRenderer.strokeColor = UIColor.blue
-            polylineRenderer.lineWidth = 3
+            polylineRenderer.lineWidth = 4
+            polylineRenderer.lineDashPattern = [5, 10, 5, 10]
             return polylineRenderer
         }
         return nil

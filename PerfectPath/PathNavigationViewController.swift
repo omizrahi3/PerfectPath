@@ -29,6 +29,7 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
     var pathInformation: [String : Any?] = [:]
     var guardianInfo: [String : Any?] = [:]
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //set up location manager to track user
@@ -125,8 +126,10 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
             let polylineRenderer = MKPolylineRenderer(overlay: overlay)
             if overlay.title! == "route" {
                 polylineRenderer.strokeColor = UIColor.blue
+                polylineRenderer.lineDashPattern = [5, 10, 5, 10]
             } else if overlay.title! == "user path"{
                 polylineRenderer.strokeColor = UIColor.red
+                polylineRenderer.lineDashPattern = [5, 10, 5, 10]
             }
             polylineRenderer.lineWidth = 4
             return polylineRenderer
@@ -160,9 +163,11 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
     //TODO is there a way to make guardian view pop up but keep the path nav controller running still so it doesn't have to recalc
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destViewController : SetCheckInViewController = segue.destination as! SetCheckInViewController
-        destViewController.guardianInfo = guardianInfo
-        destViewController.pathInformation = pathInformation
-        print("in PathNavigationViewController in prepare with guardian info: " + (String(describing: destViewController.guardianInfo["Minutes"])))
+        if segue.identifier == "SetCheckInViewController" {
+            let destViewController : SetCheckInViewController = segue.destination as! SetCheckInViewController
+            destViewController.guardianInfo = guardianInfo
+            destViewController.pathInformation = pathInformation
+            print("in PathNavigationViewController in prepare with guardian info: " + (String(describing: destViewController.guardianInfo["Minutes"])))
+        }
     }
 }

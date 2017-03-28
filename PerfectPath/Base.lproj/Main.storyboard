@@ -814,6 +814,9 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="VVI-XC-Yyj" kind="show" id="Rjq-hA-Iks"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKg-Ix-9h4">
                                 <rect key="frame" x="16" y="523" width="342" height="30"/>
@@ -1042,13 +1045,102 @@
             </objects>
             <point key="canvasLocation" x="-276" y="-712"/>
         </scene>
+        <!--Path Completed View Controller-->
+        <scene sceneID="IkW-j3-x9O">
+            <objects>
+                <viewController id="VVI-XC-Yyj" customClass="PathCompletedViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2v0-YN-SEF"/>
+                        <viewControllerLayoutGuide type="bottom" id="bwd-4R-Uiw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="taR-Cq-1OO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHq-js-Kif">
+                                <rect key="frame" x="16" y="519" width="343" height="58"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Save Path to Favorites">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="wrL-mw-KA4" kind="show" id="wX5-4n-BJr"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Run Completed!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpR-9Q-0rm">
+                                <rect key="frame" x="-17" y="49" width="422" height="107"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="107" id="HSB-K2-Wmp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Time: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bha-ac-bAI">
+                                <rect key="frame" x="16" y="230" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="O4r-vh-5fo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Distance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GzP-mA-p8w">
+                                <rect key="frame" x="16" y="169" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="uiz-Tx-yGv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Speed:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZ4-tL-nYJ">
+                                <rect key="frame" x="17" y="295" width="342" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="T72-b9-9dM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="dpR-9Q-0rm" secondAttribute="trailing" constant="-46" id="1GL-FA-UzL"/>
+                            <constraint firstItem="Bha-ac-bAI" firstAttribute="trailing" secondItem="oZ4-tL-nYJ" secondAttribute="trailing" id="2nw-AS-Ycq"/>
+                            <constraint firstItem="GzP-mA-p8w" firstAttribute="trailing" secondItem="Bha-ac-bAI" secondAttribute="trailing" id="8Fw-gM-OwM"/>
+                            <constraint firstItem="bwd-4R-Uiw" firstAttribute="top" secondItem="dHq-js-Kif" secondAttribute="bottom" constant="46" id="924-eT-Kkb"/>
+                            <constraint firstItem="dpR-9Q-0rm" firstAttribute="leading" secondItem="taR-Cq-1OO" secondAttribute="leadingMargin" constant="-33" id="AqJ-iy-ys0"/>
+                            <constraint firstItem="GzP-mA-p8w" firstAttribute="leading" secondItem="Bha-ac-bAI" secondAttribute="leading" id="CFi-sA-gqn"/>
+                            <constraint firstItem="GzP-mA-p8w" firstAttribute="leading" secondItem="taR-Cq-1OO" secondAttribute="leadingMargin" id="DIR-5q-yqw"/>
+                            <constraint firstItem="GzP-mA-p8w" firstAttribute="trailing" secondItem="taR-Cq-1OO" secondAttribute="trailingMargin" id="JMZ-jz-02H"/>
+                            <constraint firstItem="oZ4-tL-nYJ" firstAttribute="top" secondItem="Bha-ac-bAI" secondAttribute="bottom" constant="35" id="NMX-LB-RVh"/>
+                            <constraint firstItem="dpR-9Q-0rm" firstAttribute="top" secondItem="2v0-YN-SEF" secondAttribute="bottom" constant="29" id="XHf-UE-I9T"/>
+                            <constraint firstItem="Bha-ac-bAI" firstAttribute="centerX" secondItem="oZ4-tL-nYJ" secondAttribute="centerX" id="fPh-sg-VA5"/>
+                            <constraint firstItem="Bha-ac-bAI" firstAttribute="leading" secondItem="dHq-js-Kif" secondAttribute="leading" id="hmB-EZ-i1g"/>
+                            <constraint firstItem="Bha-ac-bAI" firstAttribute="top" secondItem="GzP-mA-p8w" secondAttribute="bottom" constant="40" id="im4-7h-UNR"/>
+                            <constraint firstItem="GzP-mA-p8w" firstAttribute="top" secondItem="dpR-9Q-0rm" secondAttribute="bottom" constant="8" symbolic="YES" id="pbo-PS-X4d"/>
+                            <constraint firstItem="oZ4-tL-nYJ" firstAttribute="trailing" secondItem="dHq-js-Kif" secondAttribute="trailing" id="zZA-8Z-pZJ"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="3KK-8u-I3Z"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kby-9w-q8e" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3664.8000000000002" y="1065.5172413793105"/>
+        </scene>
     </scenes>
     <resources>
         <image name="icon.png" width="449" height="259"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="MOZ-lm-RPs"/>
+        <segue reference="wX5-4n-BJr"/>
         <segue reference="S61-p9-ShG"/>
-        <segue reference="NSI-dM-2I0"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
 </document>
