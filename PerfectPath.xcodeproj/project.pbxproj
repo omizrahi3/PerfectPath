@@ -10,6 +10,12 @@
 		1AA29BF01E81FBB0008169E8 /* PathNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA29BEF1E81FBB0008169E8 /* PathNavigationViewController.swift */; };
 		1ABCA6BA1E6B2D5C009872B3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABCA6B91E6B2D5C009872B3 /* CoreLocation.framework */; };
 		1ABCA6BC1E6C7F1A009872B3 /* PathJSONViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABCA6BB1E6C7F1A009872B3 /* PathJSONViewController.swift */; };
+		1AD4CB5B1E89F79900A8E042 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4CB5A1E89F79900A8E042 /* icon.png */; };
+		1AD4CB601E89F7D200A8E042 /* black-bike.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4CB5C1E89F7D200A8E042 /* black-bike.png */; };
+		1AD4CB621E89F7D200A8E042 /* stickman.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4CB5E1E89F7D200A8E042 /* stickman.png */; };
+		1AD4CB631E89F7D200A8E042 /* warning-icon_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4CB5F1E89F7D200A8E042 /* warning-icon_white.png */; };
+		1AD4CB671E8AAEBD00A8E042 /* PathCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD4CB661E8AAEBD00A8E042 /* PathCompletedViewController.swift */; };
+		1AD4CB691E8AC3B900A8E042 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD4CB681E8AC3B900A8E042 /* Path.swift */; };
 		201C5B089428F74237A04FE0 /* Pods_PerfectPathTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70ADE7CADA66DB0DCBAE054E /* Pods_PerfectPathTests.framework */; };
 		570B846C1E68DB0D00060521 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B846B1E68DB0D00060521 /* SettingsViewController.swift */; };
 		570B846E1E68DB5100060521 /* SavedPathsViewControlloer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B846D1E68DB5100060521 /* SavedPathsViewControlloer.swift */; };
@@ -112,6 +118,12 @@
 		1AA29BEF1E81FBB0008169E8 /* PathNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathNavigationViewController.swift; sourceTree = "<group>"; };
 		1ABCA6B91E6B2D5C009872B3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1ABCA6BB1E6C7F1A009872B3 /* PathJSONViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathJSONViewController.swift; sourceTree = "<group>"; };
+		1AD4CB5A1E89F79900A8E042 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Resources/Images/icon.png; sourceTree = "<group>"; };
+		1AD4CB5C1E89F7D200A8E042 /* black-bike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "black-bike.png"; path = "Resources/Images/black-bike.png"; sourceTree = "<group>"; };
+		1AD4CB5E1E89F7D200A8E042 /* stickman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stickman.png; path = Resources/Images/stickman.png; sourceTree = "<group>"; };
+		1AD4CB5F1E89F7D200A8E042 /* warning-icon_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "warning-icon_white.png"; path = "Resources/Images/warning-icon_white.png"; sourceTree = "<group>"; };
+		1AD4CB661E8AAEBD00A8E042 /* PathCompletedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathCompletedViewController.swift; sourceTree = "<group>"; };
+		1AD4CB681E8AC3B900A8E042 /* Path.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		27E41B6A6A1910BD9773313E /* Pods-PerfectPathTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerfectPathTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PerfectPathTests/Pods-PerfectPathTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2B6E29E7E85B6A1685863E03 /* Pods-PerfectPathUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerfectPathUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PerfectPathUITests/Pods-PerfectPathUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		2C6847A5BDC54C3C5BE6529B /* Pods_PerfectPath.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PerfectPath.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,6 +228,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1AD4CB581E89F73C00A8E042 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1AD4CB651E89F7F700A8E042 /* Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		1AD4CB651E89F7F700A8E042 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				1AD4CB5A1E89F79900A8E042 /* icon.png */,
+				1AD4CB5C1E89F7D200A8E042 /* black-bike.png */,
+				1AD4CB5E1E89F7D200A8E042 /* stickman.png */,
+				1AD4CB5F1E89F7D200A8E042 /* warning-icon_white.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		3F0E9C23AEC074876A067F4D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +263,7 @@
 		5739EFFF1E567FB3000AF4B0 = {
 			isa = PBXGroup;
 			children = (
+				1AD4CB581E89F73C00A8E042 /* Resources */,
 				5739F00A1E567FB3000AF4B0 /* PerfectPath */,
 				5739F01F1E567FB3000AF4B0 /* PerfectPathTests */,
 				5739F02A1E567FB3000AF4B0 /* PerfectPathUITests */,
@@ -280,6 +312,8 @@
 				90AABC8D1E88417700CA10AD /* ProfileDetailViewController.swift */,
 				90AABC8F1E884B3E00CA10AD /* Profile.swift */,
 				57DBE90D1E88A801003192BF /* SetCheckInViewController.swift */,
+				1AD4CB661E8AAEBD00A8E042 /* PathCompletedViewController.swift */,
+				1AD4CB681E8AC3B900A8E042 /* Path.swift */,
 			);
 			path = PerfectPath;
 			sourceTree = "<group>";
@@ -468,16 +502,21 @@
 		5739F0001E567FB3000AF4B0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = PerfectPath;
 				TargetAttributes = {
 					5739F0071E567FB3000AF4B0 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = N8977XM2RQ;
 						LastSwiftMigration = 0820;
 					};
 					5739F01B1E567FB3000AF4B0 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = N8977XM2RQ;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Manual;
 						TestTargetID = 5739F0071E567FB3000AF4B0;
@@ -490,10 +529,12 @@
 					};
 					5739F02F1E567FB3000AF4B0 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = N8977XM2RQ;
 						LastSwiftMigration = 0820;
 					};
 					5739F03E1E567FB4000AF4B0 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = N8977XM2RQ;
 						LastSwiftMigration = 0820;
 					};
 				};
@@ -525,9 +566,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AD4CB631E89F7D200A8E042 /* warning-icon_white.png in Resources */,
 				905D320F1E859E620014C4DD /* Login.storyboard in Resources */,
+				1AD4CB621E89F7D200A8E042 /* stickman.png in Resources */,
+				1AD4CB5B1E89F79900A8E042 /* icon.png in Resources */,
 				907883611E61E0750088EDBF /* GoogleService-Info.plist in Resources */,
 				5739F0131E567FB3000AF4B0 /* Assets.xcassets in Resources */,
+				1AD4CB601E89F7D200A8E042 /* black-bike.png in Resources */,
 				5739F0111E567FB3000AF4B0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -784,6 +829,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				90AABC901E884B3E00CA10AD /* Profile.swift in Sources */,
+				1AD4CB671E8AAEBD00A8E042 /* PathCompletedViewController.swift in Sources */,
 				90F67F6B1E7A01E8000191C7 /* Contact.swift in Sources */,
 				901BE1431E865E6700B67073 /* ContactDetailViewController.swift in Sources */,
 				57DBE90E1E88A801003192BF /* SetCheckInViewController.swift in Sources */,
@@ -796,6 +842,7 @@
 				903143C11E654A9900CD450D /* LoginViewController.swift in Sources */,
 				5739F00C1E567FB3000AF4B0 /* AppDelegate.swift in Sources */,
 				570B84721E68DCAA00060521 /* NewPathGeneratedControllerView.swift in Sources */,
+				1AD4CB691E8AC3B900A8E042 /* Path.swift in Sources */,
 				570B846E1E68DB5100060521 /* SavedPathsViewControlloer.swift in Sources */,
 				90AABC8E1E88417700CA10AD /* ProfileDetailViewController.swift in Sources */,
 				90DB90701E85A82100FB47F1 /* AppNavigationController.swift in Sources */,
@@ -899,6 +946,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: rach6447@comcast.net (BZEMNYM42B)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -947,6 +995,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: rach6447@comcast.net (BZEMNYM42B)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -973,7 +1022,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 032752E1F5F0F57038024CE5 /* Pods-PerfectPath WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = N8977XM2RQ;
 				INFOPLIST_FILE = "PerfectPath WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cs4261.PerfectPath.watchkitapp.watchkitextension;
@@ -990,7 +1040,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4B3D7E31C84F95EAF6894F83 /* Pods-PerfectPath WatchKit Extension.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = N8977XM2RQ;
 				INFOPLIST_FILE = "PerfectPath WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cs4261.PerfectPath.watchkitapp.watchkitextension;
@@ -1009,7 +1060,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = N8977XM2RQ;
 				IBSC_MODULE = PerfectPath_WatchKit_Extension;
 				INFOPLIST_FILE = "PerfectPath WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cs4261.PerfectPath.watchkitapp;
@@ -1028,7 +1080,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = N8977XM2RQ;
 				IBSC_MODULE = PerfectPath_WatchKit_Extension;
 				INFOPLIST_FILE = "PerfectPath WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cs4261.PerfectPath.watchkitapp;
@@ -1047,7 +1100,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = N8977XM2RQ;
 				INFOPLIST_FILE = PerfectPath/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cs4261.PerfectPath;
@@ -1062,7 +1115,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = N8977XM2RQ;
 				INFOPLIST_FILE = PerfectPath/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cs4261.PerfectPath;
@@ -1076,7 +1129,8 @@
 			baseConfigurationReference = 27E41B6A6A1910BD9773313E /* Pods-PerfectPathTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = N8977XM2RQ;
 				INFOPLIST_FILE = PerfectPathTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PerfectPath.PerfectPathTests;
@@ -1091,6 +1145,7 @@
 			baseConfigurationReference = 53AB53A8818C8632BAED57E5 /* Pods-PerfectPathTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PerfectPathTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1105,6 +1160,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2B6E29E7E85B6A1685863E03 /* Pods-PerfectPathUITests.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PerfectPathUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1119,6 +1175,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 941B86785EEB007AE229D544 /* Pods-PerfectPathUITests.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PerfectPathUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
