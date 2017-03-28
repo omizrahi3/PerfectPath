@@ -17,6 +17,7 @@ class SetCheckInViewController: UIViewController {
     var minutes : Int = 5
     var guardianInfo: [String : Any?] = [:]
     var guardianStarted: Bool = false
+    var pathInformation: [String : Any?] = [:]
     
     @IBAction func didTapCheckInBtn(_ sender: Any) {
         // mark guardianStarted with true
@@ -38,12 +39,12 @@ class SetCheckInViewController: UIViewController {
     }
     
     //pass json to next page
-
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guardianInfo["Guardian Started"] = guardianStarted
-//        guardianInfo["Minutes"] = minutes
-//                let destViewController : PathNavigationViewController = segue.destination as! PathNavigationViewController
-//        destViewController.guardianInfo = guardianInfo
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guardianInfo["Guardian Started"] = guardianStarted
+        guardianInfo["Minutes"] = minutes
+                let destViewController : PathNavigationViewController = segue.destination as! PathNavigationViewController
+        destViewController.guardianInfo = guardianInfo
+        destViewController.pathInformation = pathInformation
+    }
 
 }

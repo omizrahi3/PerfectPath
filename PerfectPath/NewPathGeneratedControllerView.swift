@@ -18,7 +18,7 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var distanceLabel: UILabel!        
     @IBOutlet weak var guardianEnabledLabel: UILabel!
     
-    
+    //load view of route and metrics
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self        
@@ -29,12 +29,11 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
         
         let clStartingPoint : CLPlacemark = pathInformation["Starting Location"] as! CLPlacemark
         waypoints.append(MKMapItem(placemark: MKPlacemark(placemark: clStartingPoint)))
-        
+
         let prefferedDistanceMiles = pathInformation["Distance"] as! Double
         let prefferedDistanceMeters = prefferedDistanceMiles * 1609.34
         let waypointDistance = prefferedDistanceMeters / Double(numWaypoints+1)
         let initialBearing = Double(arc4random_uniform(360))
-        
         findPath(index: 1, initialBearing: initialBearing, waypointDistance: waypointDistance)
         
         let guardianPathEnabled = pathInformation["Guardian Path Enabled"] as! Bool
@@ -141,7 +140,8 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
         if (overlay is MKPolyline) {
             let polylineRenderer = MKPolylineRenderer(overlay: overlay)
             polylineRenderer.strokeColor = UIColor.blue
-            polylineRenderer.lineWidth = 3
+            polylineRenderer.lineWidth = 4
+            polylineRenderer.lineDashPattern = [5, 10, 5, 10]
             return polylineRenderer
         }
         return nil
