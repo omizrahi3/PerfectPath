@@ -16,7 +16,7 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var distanceLabel: UILabel!        
     @IBOutlet weak var guardianEnabledLabel: UILabel!
     
-    
+    //load view of route and metrics
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self        
@@ -33,7 +33,7 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
         //generate placeholder path
         let request = MKDirectionsRequest()
         request.source = MKMapItem(placemark: mkStartingPoint)
-        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2DMake(37.33069, -122.03066), addressDictionary: nil))
+        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2DMake(37.33019786,  -122.02628653), addressDictionary: nil))
         request.transportType = .walking
         let directions = MKDirections(request: request)
         directions.calculate { [unowned self] response, error in
@@ -45,11 +45,45 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
                 let formattedDistance = (Double(distanceInMiles)*100).rounded()/100
                 self.distanceLabel.text = "Distance: " + String(formattedDistance) + " mi"
                 let line: MKPolyline = route.polyline
-                line.title = "route"
                 self.mapView.add(line)
-                self.mapView.setVisibleMapRect(line.boundingMapRect, edgePadding: UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0) ,animated: false)
+                self.mapView.setVisibleMapRect(line.boundingMapRect, edgePadding: UIEdgeInsetsMake(50.0, 20.0, 20.0, 50.0) ,animated: false)
             }
         }
+        /*let request2 = MKDirectionsRequest()
+        request2.source = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2DMake(37.33019786,  -122.02628653), addressDictionary: nil))
+        request2.destination = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2DMake(37.33509587,  -122.02356672), addressDictionary: nil))
+        request2.transportType = .walking
+        let directions2 = MKDirections(request: request2)
+        directions2.calculate { [unowned self] response, error in
+            guard let unwrappedResponse = response else { return }
+            if (unwrappedResponse.routes.count > 0) {
+                //display route as overlay
+                let route: MKRoute = unwrappedResponse.routes[0]
+                let distanceInMiles = route.distance/1609
+                self.distance += distanceInMiles
+                let line: MKPolyline = route.polyline
+                line.title = "route"
+                self.mapView.add(line)
+                //self.mapView.setVisibleMapRect(line.boundingMapRect, edgePadding: UIEdgeInsetsMake(20.0, 20.0, 20.0, 20.0) ,animated: false)
+            }
+        }
+        let request3 = MKDirectionsRequest()
+        request3.source = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2DMake(37.33509587,  -122.02356672), addressDictionary: nil))
+        request3.destination = MKMapItem(placemark: mkStartingPoint)
+        request3.transportType = .walking
+        let directions3 = MKDirections(request: request3)
+        directions3.calculate { [unowned self] response, error in
+            guard let unwrappedResponse = response else { return }
+            if (unwrappedResponse.routes.count > 0) {
+                //display route as overlay
+                let route: MKRoute = unwrappedResponse.routes[0]
+                let distanceInMiles = route.distance/1609
+                self.distance += distanceInMiles
+                let line: MKPolyline = route.polyline
+                self.mapView.add(line)
+                //self.mapView.setVisibleMapRect(line.boundingMapRect, edgePadding: UIEdgeInsetsMake(20.0, 20.0, 20.0, 20.0) ,animated: false)
+            }
+        }*/
         
         let guardianPathEnabled = pathInformation["Guardian Path Enabled"] as! Bool
         if guardianPathEnabled {
