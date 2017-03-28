@@ -39,6 +39,7 @@
                                 <segue destination="H1D-mb-WEx" kind="push" id="UIC-xz-hpA"/>
                             </connections>
                         </button>
+                        <button width="1" alignment="left" title="Emergency Contacts" id="Gol-XX-NA1"/>
                     </items>
                 </controller>
             </objects>
@@ -102,6 +103,41 @@
             </objects>
             <point key="canvasLocation" x="787" y="1603"/>
         </scene>
+        <!--Interface Controller-->
+        <scene sceneID="9AS-me-Guz">
+            <objects>
+                <controller id="fqT-AL-aVA">
+                    <items>
+                        <table alignment="left" id="dl1-bQ-buf">
+                            <items>
+                                <tableRow id="YAy-Fr-dT9">
+                                    <group key="rootItem" width="1" alignment="left" id="Ngd-30-fo0">
+                                        <gestureRecognizers>
+                                            <tapGestureRecognizer id="X62-wp-9mp"/>
+                                        </gestureRecognizers>
+                                    </group>
+                                </tableRow>
+                                <tableRow id="ayk-ef-noB">
+                                    <group key="rootItem" width="1" alignment="left" id="ene-kq-j82">
+                                        <gestureRecognizers>
+                                            <tapGestureRecognizer id="laR-M9-CPk"/>
+                                        </gestureRecognizers>
+                                    </group>
+                                </tableRow>
+                                <tableRow id="Ooy-RF-Fup">
+                                    <group key="rootItem" width="1" alignment="left" id="l3L-5N-IrG">
+                                        <gestureRecognizers>
+                                            <tapGestureRecognizer id="a3x-w2-grd"/>
+                                        </gestureRecognizers>
+                                    </group>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="905" y="285"/>
+        </scene>
         <!--SetCheckInController-->
         <scene sceneID="hxl-Pf-PX6">
             <objects>
@@ -151,11 +187,13 @@
                         <table alignment="left" id="BP2-Yu-eTy"/>
                         <separator alignment="left" id="ChE-YR-JU9"/>
                         <table alignment="left" id="as4-KM-w8Q"/>
-                        <button width="1" alignment="left" title="Select Path" id="75Q-2b-AdZ">
+                        <button width="1" alignment="left" title="Morning Path" id="75Q-2b-AdZ">
                             <connections>
                                 <segue destination="Xop-D8-78C" kind="push" id="L0S-kU-JLy"/>
                             </connections>
                         </button>
+                        <button width="1" alignment="left" title="Shady Path" id="glu-mr-VFO"/>
+                        <button width="1" alignment="left" title="East Campus" id="1vm-F1-rTp"/>
                     </items>
                 </controller>
             </objects>
@@ -170,6 +208,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ywq-aw-MzM"/>
+        <segue reference="L0S-kU-JLy"/>
     </inferredMetricsTieBreakers>
 </document>
