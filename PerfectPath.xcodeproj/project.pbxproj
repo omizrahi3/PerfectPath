@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A8436141E8B2846000C327B /* Screen Shot 2017-03-28 at 7.23.54 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8436131E8B2846000C327B /* Screen Shot 2017-03-28 at 7.23.54 PM.png */; };
 		1AA29BF01E81FBB0008169E8 /* PathNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA29BEF1E81FBB0008169E8 /* PathNavigationViewController.swift */; };
 		1ABCA6BA1E6B2D5C009872B3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABCA6B91E6B2D5C009872B3 /* CoreLocation.framework */; };
 		1ABCA6BC1E6C7F1A009872B3 /* PathJSONViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABCA6BB1E6C7F1A009872B3 /* PathJSONViewController.swift */; };
@@ -115,6 +116,7 @@
 
 /* Begin PBXFileReference section */
 		032752E1F5F0F57038024CE5 /* Pods-PerfectPath WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerfectPath WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PerfectPath WatchKit Extension/Pods-PerfectPath WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		1A8436131E8B2846000C327B /* Screen Shot 2017-03-28 at 7.23.54 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2017-03-28 at 7.23.54 PM.png"; sourceTree = "<group>"; };
 		1AA29BEF1E81FBB0008169E8 /* PathNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathNavigationViewController.swift; sourceTree = "<group>"; };
 		1ABCA6B91E6B2D5C009872B3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1ABCA6BB1E6C7F1A009872B3 /* PathJSONViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathJSONViewController.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 			children = (
 				1AD4CB5A1E89F79900A8E042 /* icon.png */,
 				1AD4CB5C1E89F7D200A8E042 /* black-bike.png */,
+				1A8436131E8B2846000C327B /* Screen Shot 2017-03-28 at 7.23.54 PM.png */,
 				1AD4CB5E1E89F7D200A8E042 /* stickman.png */,
 				1AD4CB5F1E89F7D200A8E042 /* warning-icon_white.png */,
 			);
@@ -574,6 +577,7 @@
 				5739F0131E567FB3000AF4B0 /* Assets.xcassets in Resources */,
 				1AD4CB601E89F7D200A8E042 /* black-bike.png in Resources */,
 				5739F0111E567FB3000AF4B0 /* Main.storyboard in Resources */,
+				1A8436141E8B2846000C327B /* Screen Shot 2017-03-28 at 7.23.54 PM.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

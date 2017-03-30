@@ -22,13 +22,9 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
 
     var locationManager: CLLocationManager!
     var locations = [CLLocation]()
-    var oldLocation: CLLocation!
     var timer = Timer()
-    var seconds = 0.0
-    var distance = 0.0
-    var pathInformation: [String : Any?] = [:]
     var guardianInfo: [String : Any?] = [:]
-    
+    var path : Path?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,47 +39,40 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
             locationManager.requestAlwaysAuthorization()
             locationManager.requestWhenInUseAuthorization()
         }
-        
         mapView.delegate = self
         mapView.mapType = MKMapType(rawValue: 0)!
-        
-        //create dummy route for testing
-        let clStartingPoint : CLPlacemark = pathInformation["Starting Location"] as! CLPlacemark
-        let mkStartingPoint: MKPlacemark
-        let addressDict : [String: Any] = clStartingPoint.addressDictionary as! [String : Any]
-        let coordinate = clStartingPoint.location?.coordinate
-        mkStartingPoint = MKPlacemark(coordinate: coordinate!, addressDictionary: addressDict)
-        
-        //generate placeholder path
-        let request = MKDirectionsRequest()
-        request.source = MKMapItem(placemark: mkStartingPoint)
-        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2DMake(37.33019786, -122.02628653), addressDictionary: nil))
-        request.transportType = .walking
-        let directions = MKDirections(request: request)
-        directions.calculate { [unowned self] response, error in
-            guard let unwrappedResponse = response else { return }
-            if (unwrappedResponse.routes.count > 0) {
-                //display route as overlay
-                let route: MKPolyline = unwrappedResponse.routes[0].polyline
-                //overlay rendering and zoom out
-                route.title = "route"
-                self.mapView.add(route)
-                self.mapView.setVisibleMapRect(route.boundingMapRect, edgePadding: UIEdgeInsetsMake(30.0, 30.0, 30.0, 30.0) ,animated: false)
-            }
-        }
-        
+        self.showRoute(routes: (path?.routes)!)
     }
     
+    func showRoute(routes: [MKRoute]) {
+        for i in 0..<routes.count {
+            plotPolyline(route: routes[i])
+        }
+    }
+    
+    func plotPolyline(route: MKRoute) {
+        mapView.add(route.polyline)
+        if mapView.overlays.count == 1 {
+            mapView.setVisibleMapRect(route.polyline.boundingMapRect,
+                                      edgePadding: UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0), animated: false)
+        } else {
+            let polylinesBoundingRect = MKMapRectUnion(mapView.visibleMapRect, route.polyline.boundingMapRect)
+            mapView.setVisibleMapRect(polylinesBoundingRect, edgePadding: UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0), animated: false)
+        }
+    }
+
+    
     func eachSecond(timer: Timer) {
-        seconds += 1
+        path?.secondsTraveled! += 1
+        let seconds = Double((path?.secondsTraveled)!)
         let secondsQuantity = HKQuantity(unit: HKUnit.second(), doubleValue: seconds)
         timeLabel.text = "Time: " + secondsQuantity.description
-        let distanceInMiles = distance/1609
+        let distanceInMiles = (path?.metersTraveled)!/1609
         let distanceRounded = ((distanceInMiles)*100).rounded()/100
         let distanceQuantity = HKQuantity(unit: HKUnit.mile(), doubleValue: distanceRounded)
         distanceLabel.text = "Distance: " + distanceQuantity.description
         let speedUnit = HKUnit.mile().unitDivided(by: HKUnit.hour())
-        let speed = ((distanceInMiles*60*60/(seconds))*10).rounded()/10
+        let speed = ((((distanceInMiles*60*60)/seconds)*10).rounded())/10
         let paceQuantity = HKQuantity(unit: speedUnit, doubleValue: speed)
         paceLabel.text = "Speed: " + paceQuantity.description
     }
@@ -102,36 +91,20 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
             if location.horizontalAccuracy < 20 {
                 //update distance
                 if self.locations.count > 0 {
-                    distance += location.distance(from: self.locations.last!)
+                    path?.metersTraveled! += location.distance(from: self.locations.last!)
                 }
                 //save location
                 self.locations.append(location)
             }
         }
-        let newLocation:CLLocation = locations[locations.count - 1]
-        if let oldLocationNew = oldLocation as CLLocation? {
-            let oldCoordinates = oldLocationNew.coordinate
-            let newCoordinates = newLocation.coordinate
-            var area = [oldCoordinates, newCoordinates]
-            let polyline = MKPolyline(coordinates: &area, count: area.count)
-            polyline.title = "user path"
-            mapView.add(polyline)
-        }
-        oldLocation = newLocation
-        print("oldLocation latitude: ", oldLocation.coordinate.latitude,  " longitude: ", oldLocation.coordinate.longitude)
     }
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer! {
         if (overlay is MKPolyline) {
             let polylineRenderer = MKPolylineRenderer(overlay: overlay)
-            if overlay.title! == "route" {
-                polylineRenderer.strokeColor = UIColor.blue
-                polylineRenderer.lineDashPattern = [5, 10, 5, 10]
-            } else if overlay.title! == "user path"{
-                polylineRenderer.strokeColor = UIColor.red
-                polylineRenderer.lineDashPattern = [5, 10, 5, 10]
-            }
+            polylineRenderer.strokeColor = UIColor.blue
             polylineRenderer.lineWidth = 4
+            polylineRenderer.lineDashPattern = [5, 10, 5, 10]
             return polylineRenderer
         }
         return nil
@@ -141,24 +114,31 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
         let buttonName = startPauseButton.titleLabel?.text
         if buttonName == "Start" || buttonName == "Resume" {
             if buttonName == "Start" {
-                seconds = 0.0; distance = 0.0
-                mapView.showsUserLocation = true
-                mapView.userTrackingMode = MKUserTrackingMode(rawValue: 2)!
+                path?.secondsTraveled = 0; path?.metersTraveled = 0.0
             }
-            startPauseButton.setTitle("Pause", for: .normal)
-            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.eachSecond(timer:)), userInfo: nil, repeats: true)
-            locationManager.startUpdatingLocation()
+            start()
         } else {
             startPauseButton.setTitle("Resume", for: .normal)
             locationManager.stopUpdatingLocation()
+            mapView.userTrackingMode = MKUserTrackingMode(rawValue: 0)!
+            mapView.showsUserLocation = false
             timer.invalidate()
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    @IBAction func unwindCheckInView(segue: UIStoryboardSegue) {
+        if let svc = segue.source as? SetCheckInViewController {
+            self.path = svc.path
+        }
     }
     
+    func start() {
+        mapView.showsUserLocation = true
+        mapView.userTrackingMode = MKUserTrackingMode(rawValue: 2)!
+        startPauseButton.setTitle("Pause", for: .normal)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.eachSecond(timer:)), userInfo: nil, repeats: true)
+        locationManager.startUpdatingLocation()
+    }
 
     //TODO is there a way to make guardian view pop up but keep the path nav controller running still so it doesn't have to recalc
     
@@ -166,8 +146,17 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
         if segue.identifier == "SetCheckInViewController" {
             let destViewController : SetCheckInViewController = segue.destination as! SetCheckInViewController
             destViewController.guardianInfo = guardianInfo
-            destViewController.pathInformation = pathInformation
+            destViewController.path = path
+            if (startPauseButton.titleLabel?.text == "Start" || startPauseButton.titleLabel?.text == "Resume") {
+                destViewController.isPaused = true
+            } else {
+                destViewController.isPaused = false
+            }
             print("in PathNavigationViewController in prepare with guardian info: " + (String(describing: destViewController.guardianInfo["Minutes"])))
         }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
 }
