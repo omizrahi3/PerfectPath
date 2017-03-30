@@ -17,6 +17,8 @@ class Path: NSObject {
     var routes = [MKRoute]()
     var prefferedDistanceMeters = 0.0
     var actualDistance : Double?
+    var secondsTraveled : Int?
+    var metersTraveled : Double?
     
     init (startingLocation: CLPlacemark, distanceInMiles: Double, guardianPathEnabled: Bool) {
         self.startingLocation = startingLocation

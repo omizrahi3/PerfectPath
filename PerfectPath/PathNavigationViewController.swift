@@ -22,13 +22,9 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
 
     var locationManager: CLLocationManager!
     var locations = [CLLocation]()
-    var oldLocation: CLLocation!
     var timer = Timer()
-    var seconds = 0.0
-    var distance = 0.0
     var guardianInfo: [String : Any?] = [:]
     var path : Path?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,8 +43,6 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
         mapView.mapType = MKMapType(rawValue: 0)!
         self.showRoute(routes: (path?.routes)!)
     }
-    
-    
     
     func showRoute(routes: [MKRoute]) {
         for i in 0..<routes.count {
@@ -69,15 +63,16 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
 
     
     func eachSecond(timer: Timer) {
-        seconds += 1
+        path?.secondsTraveled! += 1
+        let seconds = Double((path?.secondsTraveled)!)
         let secondsQuantity = HKQuantity(unit: HKUnit.second(), doubleValue: seconds)
         timeLabel.text = "Time: " + secondsQuantity.description
-        let distanceInMiles = distance/1609
+        let distanceInMiles = (path?.metersTraveled)!/1609
         let distanceRounded = ((distanceInMiles)*100).rounded()/100
         let distanceQuantity = HKQuantity(unit: HKUnit.mile(), doubleValue: distanceRounded)
         distanceLabel.text = "Distance: " + distanceQuantity.description
         let speedUnit = HKUnit.mile().unitDivided(by: HKUnit.hour())
-        let speed = ((distanceInMiles*60*60/(seconds))*10).rounded()/10
+        let speed = ((((distanceInMiles*60*60)/seconds)*10).rounded())/10
         let paceQuantity = HKQuantity(unit: speedUnit, doubleValue: speed)
         paceLabel.text = "Speed: " + paceQuantity.description
     }
@@ -96,40 +91,13 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
             if location.horizontalAccuracy < 20 {
                 //update distance
                 if self.locations.count > 0 {
-                    distance += location.distance(from: self.locations.last!)
+                    path?.metersTraveled! += location.distance(from: self.locations.last!)
                 }
                 //save location
                 self.locations.append(location)
             }
         }
-        /*let newLocation:CLLocation = locations[locations.count - 1]
-        if let oldLocationNew = oldLocation as CLLocation? {
-            let oldCoordinates = oldLocationNew.coordinate
-            let newCoordinates = newLocation.coordinate
-            var area = [oldCoordinates, newCoordinates]
-            let polyline = MKPolyline(coordinates: &area, count: area.count)
-            polyline.title = "user path"
-            mapView.add(polyline)
-        }
-        oldLocation = newLocation
-        print("oldLocation latitude: ", oldLocation.coordinate.latitude,  " longitude: ", oldLocation.coordinate.longitude)*/
     }
-    
-    /*func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer! {
-        if (overlay is MKPolyline) {
-            let polylineRenderer = MKPolylineRenderer(overlay: overlay)
-            if overlay.title! == "route" {
-                polylineRenderer.strokeColor = UIColor.blue
-                polylineRenderer.lineDashPattern = [5, 10, 5, 10]
-            } else if overlay.title! == "user path"{
-                polylineRenderer.strokeColor = UIColor.red
-                polylineRenderer.lineDashPattern = [5, 10, 5, 10]
-            }
-            polylineRenderer.lineWidth = 4
-            return polylineRenderer
-        }
-        return nil
-    }*/
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer! {
         if (overlay is MKPolyline) {
@@ -146,24 +114,31 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
         let buttonName = startPauseButton.titleLabel?.text
         if buttonName == "Start" || buttonName == "Resume" {
             if buttonName == "Start" {
-                seconds = 0.0; distance = 0.0
-                mapView.showsUserLocation = true
-                mapView.userTrackingMode = MKUserTrackingMode(rawValue: 2)!
+                path?.secondsTraveled = 0; path?.metersTraveled = 0.0
             }
-            startPauseButton.setTitle("Pause", for: .normal)
-            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.eachSecond(timer:)), userInfo: nil, repeats: true)
-            locationManager.startUpdatingLocation()
+            start()
         } else {
             startPauseButton.setTitle("Resume", for: .normal)
             locationManager.stopUpdatingLocation()
+            mapView.userTrackingMode = MKUserTrackingMode(rawValue: 0)!
+            mapView.showsUserLocation = false
             timer.invalidate()
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    @IBAction func unwindCheckInView(segue: UIStoryboardSegue) {
+        if let svc = segue.source as? SetCheckInViewController {
+            self.path = svc.path
+        }
     }
     
+    func start() {
+        mapView.showsUserLocation = true
+        mapView.userTrackingMode = MKUserTrackingMode(rawValue: 2)!
+        startPauseButton.setTitle("Pause", for: .normal)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.eachSecond(timer:)), userInfo: nil, repeats: true)
+        locationManager.startUpdatingLocation()
+    }
 
     //TODO is there a way to make guardian view pop up but keep the path nav controller running still so it doesn't have to recalc
     
@@ -174,5 +149,9 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
             destViewController.path = path
             print("in PathNavigationViewController in prepare with guardian info: " + (String(describing: destViewController.guardianInfo["Minutes"])))
         }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
 }

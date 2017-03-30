@@ -23,7 +23,7 @@ class SetCheckInViewController: UIViewController {
         // mark guardianStarted with true
         print("guardianStarted is now set to true")
         self.guardianStarted = true;
-        
+        dismiss(animated: true, completion: nil)
         // go to PathNavigationViewController screen
         
         //performSegue(withIdentifier: "SetGuardian", sender: nil)
