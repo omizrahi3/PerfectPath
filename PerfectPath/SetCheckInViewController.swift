@@ -18,6 +18,15 @@ class SetCheckInViewController: UIViewController {
     var guardianInfo: [String : Any?] = [:]
     var guardianStarted: Bool = false
     var path : Path?
+    var timer = Timer()
+    var isPaused : Bool = false
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if isPaused == false {
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.eachSecond(timer:)), userInfo: nil, repeats: true)
+        }
+    }
     
     @IBAction func didTapCheckInBtn(_ sender: Any) {
         // mark guardianStarted with true
@@ -27,9 +36,11 @@ class SetCheckInViewController: UIViewController {
         // go to PathNavigationViewController screen
         
         //performSegue(withIdentifier: "SetGuardian", sender: nil)
-        
     }
     
+    func eachSecond(timer: Timer) {
+        path?.secondsTraveled! += 1
+    }
 
     @IBAction func stepperChanged(_ sender: UIStepper) {
         minutes = Int(sender.value)

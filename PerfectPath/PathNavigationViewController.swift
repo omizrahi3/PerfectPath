@@ -147,6 +147,11 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
             let destViewController : SetCheckInViewController = segue.destination as! SetCheckInViewController
             destViewController.guardianInfo = guardianInfo
             destViewController.path = path
+            if (startPauseButton.titleLabel?.text == "Start" || startPauseButton.titleLabel?.text == "Resume") {
+                destViewController.isPaused = true
+            } else {
+                destViewController.isPaused = false
+            }
             print("in PathNavigationViewController in prepare with guardian info: " + (String(describing: destViewController.guardianInfo["Minutes"])))
         }
     }
