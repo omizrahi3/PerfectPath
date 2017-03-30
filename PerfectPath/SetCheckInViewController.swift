@@ -17,7 +17,7 @@ class SetCheckInViewController: UIViewController {
     var minutes : Int = 5
     var guardianInfo: [String : Any?] = [:]
     var guardianStarted: Bool = false
-    var pathInformation: [String : Any?] = [:]
+    var path : Path?
     
     @IBAction func didTapCheckInBtn(_ sender: Any) {
         // mark guardianStarted with true
@@ -44,7 +44,7 @@ class SetCheckInViewController: UIViewController {
         guardianInfo["Minutes"] = minutes
                 let destViewController : PathNavigationViewController = segue.destination as! PathNavigationViewController
         destViewController.guardianInfo = guardianInfo
-        destViewController.pathInformation = pathInformation
+        destViewController.path = path
     }
 
 }

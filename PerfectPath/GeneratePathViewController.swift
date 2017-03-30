@@ -26,6 +26,7 @@ class GeneratePathViewController: UIViewController, CLLocationManagerDelegate, U
     var distance : Double = 0
     var guardianPathEnabled : Bool = true
     var pathType: String = "Bike"
+    var path: Path?
     
     //UI elements
     @IBOutlet weak var segmentedControlBikeRun: UISegmentedControl!
@@ -57,7 +58,7 @@ class GeneratePathViewController: UIViewController, CLLocationManagerDelegate, U
         }
     }
 
-    //user clicked "Use current location" for starting and ending location
+    //user clicked "Use current location" for starting location
     @IBAction func useCurrentLocationClicked(_ sender: Any) {
         manager.startUpdatingLocation()
     }
@@ -114,7 +115,7 @@ class GeneratePathViewController: UIViewController, CLLocationManagerDelegate, U
     
     //distance value increased or decreased. Label updated accordingly
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
-        distanceLabel.text = String(format:"%.1f", sender.value)
+        distanceLabel.text = String(format:"%.2f", sender.value)
         distance = sender.value
     }
     
@@ -138,6 +139,10 @@ class GeneratePathViewController: UIViewController, CLLocationManagerDelegate, U
             print ("starting location must be entered")
             return
         }
+        let distanceTimesTen: Double = distance*10
+        let roundedDistance: Double = round(distanceTimesTen)
+        distance = roundedDistance/10
+        path = Path(startingLocation: startingLocation!, distanceInMiles: distance, guardianPathEnabled: guardianPathEnabled)
         createDictionaryForJSON()
         do {
             let data = try JSONSerialization.data(withJSONObject:dictionary, options:[])
@@ -150,26 +155,23 @@ class GeneratePathViewController: UIViewController, CLLocationManagerDelegate, U
     private func createDictionaryForJSON() {
         dictionary["Path Type"] = pathType
         dictionary["Starting Location"] = startingLocation?.addressDictionary
-        dictionary["Ending Location"] = startingLocation?.addressDictionary
-        let distanceTimesTen: Double = distance*10
-        let roundedDistance: Double = round(distanceTimesTen)
-        distance = roundedDistance/10
-        dictionary["Distance"] = distance
+        dictionary["Distance"] = path?.prefferedDistanceMeters
         dictionary["Guardian Path Enabled"] = guardianPathEnabled
     }
     
     //pass json to next page
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        pathInformation["Path Type"] = pathType
+        let destViewController : NewPathGeneratedControllerView = segue.destination as! NewPathGeneratedControllerView
+        destViewController.path = path
+        /*pathInformation["Path Type"] = pathType
         pathInformation["Starting Location"] = startingLocation
-        pathInformation["Ending Location"] = startingLocation
         let distanceTimesTen: Double = distance*10
         let roundedDistance: Double = round(distanceTimesTen)
         distance = roundedDistance/10
         pathInformation["Distance"] = distance
         pathInformation["Guardian Path Enabled"] = guardianPathEnabled
         let destViewController : NewPathGeneratedControllerView = segue.destination as! NewPathGeneratedControllerView
-        destViewController.pathInformation = pathInformation
+        destViewController.pathInformation = pathInformation*/
     }
 
 }

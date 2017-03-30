@@ -26,8 +26,8 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
     var timer = Timer()
     var seconds = 0.0
     var distance = 0.0
-    var pathInformation: [String : Any?] = [:]
     var guardianInfo: [String : Any?] = [:]
+    var path : Path?
     
     
     override func viewDidLoad() {
@@ -43,36 +43,30 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
             locationManager.requestAlwaysAuthorization()
             locationManager.requestWhenInUseAuthorization()
         }
-        
         mapView.delegate = self
         mapView.mapType = MKMapType(rawValue: 0)!
-        
-        //create dummy route for testing
-        let clStartingPoint : CLPlacemark = pathInformation["Starting Location"] as! CLPlacemark
-        let mkStartingPoint: MKPlacemark
-        let addressDict : [String: Any] = clStartingPoint.addressDictionary as! [String : Any]
-        let coordinate = clStartingPoint.location?.coordinate
-        mkStartingPoint = MKPlacemark(coordinate: coordinate!, addressDictionary: addressDict)
-        
-        //generate placeholder path
-        let request = MKDirectionsRequest()
-        request.source = MKMapItem(placemark: mkStartingPoint)
-        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2DMake(37.33019786, -122.02628653), addressDictionary: nil))
-        request.transportType = .walking
-        let directions = MKDirections(request: request)
-        directions.calculate { [unowned self] response, error in
-            guard let unwrappedResponse = response else { return }
-            if (unwrappedResponse.routes.count > 0) {
-                //display route as overlay
-                let route: MKPolyline = unwrappedResponse.routes[0].polyline
-                //overlay rendering and zoom out
-                route.title = "route"
-                self.mapView.add(route)
-                self.mapView.setVisibleMapRect(route.boundingMapRect, edgePadding: UIEdgeInsetsMake(30.0, 30.0, 30.0, 30.0) ,animated: false)
-            }
-        }
-        
+        self.showRoute(routes: (path?.routes)!)
     }
+    
+    
+    
+    func showRoute(routes: [MKRoute]) {
+        for i in 0..<routes.count {
+            plotPolyline(route: routes[i])
+        }
+    }
+    
+    func plotPolyline(route: MKRoute) {
+        mapView.add(route.polyline)
+        if mapView.overlays.count == 1 {
+            mapView.setVisibleMapRect(route.polyline.boundingMapRect,
+                                      edgePadding: UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0), animated: false)
+        } else {
+            let polylinesBoundingRect = MKMapRectUnion(mapView.visibleMapRect, route.polyline.boundingMapRect)
+            mapView.setVisibleMapRect(polylinesBoundingRect, edgePadding: UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0), animated: false)
+        }
+    }
+
     
     func eachSecond(timer: Timer) {
         seconds += 1
@@ -108,7 +102,7 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
                 self.locations.append(location)
             }
         }
-        let newLocation:CLLocation = locations[locations.count - 1]
+        /*let newLocation:CLLocation = locations[locations.count - 1]
         if let oldLocationNew = oldLocation as CLLocation? {
             let oldCoordinates = oldLocationNew.coordinate
             let newCoordinates = newLocation.coordinate
@@ -118,10 +112,10 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
             mapView.add(polyline)
         }
         oldLocation = newLocation
-        print("oldLocation latitude: ", oldLocation.coordinate.latitude,  " longitude: ", oldLocation.coordinate.longitude)
+        print("oldLocation latitude: ", oldLocation.coordinate.latitude,  " longitude: ", oldLocation.coordinate.longitude)*/
     }
     
-    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer! {
+    /*func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer! {
         if (overlay is MKPolyline) {
             let polylineRenderer = MKPolylineRenderer(overlay: overlay)
             if overlay.title! == "route" {
@@ -132,6 +126,17 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
                 polylineRenderer.lineDashPattern = [5, 10, 5, 10]
             }
             polylineRenderer.lineWidth = 4
+            return polylineRenderer
+        }
+        return nil
+    }*/
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer! {
+        if (overlay is MKPolyline) {
+            let polylineRenderer = MKPolylineRenderer(overlay: overlay)
+            polylineRenderer.strokeColor = UIColor.blue
+            polylineRenderer.lineWidth = 4
+            polylineRenderer.lineDashPattern = [5, 10, 5, 10]
             return polylineRenderer
         }
         return nil
@@ -166,7 +171,7 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
         if segue.identifier == "SetCheckInViewController" {
             let destViewController : SetCheckInViewController = segue.destination as! SetCheckInViewController
             destViewController.guardianInfo = guardianInfo
-            destViewController.pathInformation = pathInformation
+            destViewController.path = path
             print("in PathNavigationViewController in prepare with guardian info: " + (String(describing: destViewController.guardianInfo["Minutes"])))
         }
     }

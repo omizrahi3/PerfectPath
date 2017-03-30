@@ -50,11 +50,11 @@
             <objects>
                 <controller identifier="MapController" id="Xop-D8-78C" customClass="MapController" customModule="PerfectPath_WatchKit_Extension">
                     <items>
-                        <map width="136" height="92" alignment="left" id="hDg-Cz-obo"/>
                         <separator alignment="left" id="LR1-3B-ReS"/>
+                        <map height="100" alignment="left" id="yNE-Yg-o5J"/>
                         <group width="1" alignment="left" id="rx9-yd-WNU">
                             <items>
-                                <button width="52" height="48" alignment="right" verticalAlignment="bottom" title="G" id="BCJ-gO-fZK">
+                                <button width="65" height="46" alignment="right" verticalAlignment="bottom" title="G" id="BCJ-gO-fZK">
                                     <gestureRecognizers>
                                         <longPressGestureRecognizer id="Nxa-Gy-WWU"/>
                                     </gestureRecognizers>
@@ -64,6 +64,10 @@
                                     <connections>
                                         <segue destination="4Qq-AX-j8F" kind="push" id="wTa-YU-VZN"/>
                                     </connections>
+                                </button>
+                                <button width="65" height="25" alignment="left" title="Start" id="YAR-cz-ksp">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.34356227649999999" green="0.80329096499999997" blue="0.381021728" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </button>
                             </items>
                         </group>

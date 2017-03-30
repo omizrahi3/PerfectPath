@@ -13,9 +13,9 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
     var pathInformation: [String : Any?] = [:]
     var waypoints = [MKMapItem]()
     let numWaypoints = 3
-    
+    var path : Path?
     var activityIndicator: UIActivityIndicatorView?
-
+    
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var distanceLabel: UILabel!        
     @IBOutlet weak var guardianEnabledLabel: UILabel!
@@ -23,27 +23,14 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
     //load view of route and metrics
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapView.delegate = self        
-        guard pathInformation["Starting Location"] != nil else {
-            print ("starting location not entered")
-            return
-        }
+        mapView.delegate = self
         addActivityIndicator()
-        let clStartingPoint : CLPlacemark = pathInformation["Starting Location"] as! CLPlacemark
-        waypoints.append(MKMapItem(placemark: MKPlacemark(placemark: clStartingPoint)))
-
-        let prefferedDistanceMiles = pathInformation["Distance"] as! Double
-        let prefferedDistanceMeters = prefferedDistanceMiles * 1609.34
-        let waypointDistance = prefferedDistanceMeters / Double(numWaypoints+1)
+        waypoints.append(MKMapItem(placemark: MKPlacemark(placemark: (path?.startingLocation)!)))
+        let prefferedDistanceMeters = path?.prefferedDistanceMeters
+        let waypointDistance = prefferedDistanceMeters! / Double(numWaypoints+1)
         let initialBearing = Double(arc4random_uniform(360))
         findPath(index: 1, initialBearing: initialBearing, waypointDistance: waypointDistance)
-        
-        let guardianPathEnabled = pathInformation["Guardian Path Enabled"] as! Bool
-        if guardianPathEnabled {
-            guardianEnabledLabel.text = "Guardian Enabled: Yes"
-        } else {
-            guardianEnabledLabel.text = "Guardian Enabled: No"
-        }
+        addGuardianLabel()
     }
     
     func findPath(index: Int, initialBearing: Double, waypointDistance: Double) {
@@ -93,6 +80,7 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
                     self.calculateSegmentDirections(index: index+1, time: timeVar, routes: routeVar)
                 } else {
                     self.hideActivityIndicator()
+                    self.path?.routes = routeVar 
                     self.showRoute(routes: routeVar)
                     var distance = 0.0
                     for i in 0..<routes.count {
@@ -100,6 +88,7 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
                         distance += temp.distance
                     }
                     distance = distance/1609.34
+                    self.path?.actualDistance = distance
                     let distString = String(format: "%.1f",distance)
                     self.distanceLabel.text = "Distance: \(distString) mi"
                 }
@@ -162,13 +151,9 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
         waypoints.removeAll()
         mapView.removeOverlays(mapView.overlays)
         addActivityIndicator()
-        
-        let clStartingPoint : CLPlacemark = pathInformation["Starting Location"] as! CLPlacemark
-        waypoints.append(MKMapItem(placemark: MKPlacemark(placemark: clStartingPoint)))
-    
-        let prefferedDistanceMiles = pathInformation["Distance"] as! Double
-        let prefferedDistanceMeters = prefferedDistanceMiles * 1609.34
-        let waypointDistance = prefferedDistanceMeters / Double(numWaypoints+1)
+        waypoints.append(MKMapItem(placemark: MKPlacemark(placemark: (path?.startingLocation)!)))
+        let prefferedDistanceMeters = path?.prefferedDistanceMeters
+        let waypointDistance = prefferedDistanceMeters! / Double(numWaypoints+1)
         let initialBearing = Double(arc4random_uniform(360))
         findPath(index: 1, initialBearing: initialBearing, waypointDistance: waypointDistance)
     }
@@ -190,7 +175,16 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destViewController : PathNavigationViewController = segue.destination as! PathNavigationViewController
-        destViewController.pathInformation = pathInformation
+        //destViewController.pathInformation = pathInformation
+        destViewController.path = path
+    }
+    
+    func addGuardianLabel() {
+        if (path?.guardianPathEnabled)! {
+            guardianEnabledLabel.text = "Guardian Enabled: Yes"
+        } else {
+            guardianEnabledLabel.text = "Guardian Enabled: No"
+        }
     }
     
     /*
