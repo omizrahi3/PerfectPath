@@ -25,6 +25,7 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
     var timer = Timer()
     var guardianInfo: [String : Any?] = [:]
     var path : Path?
+    var heading : CLLocationDirection?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,7 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
         locationManager.activityType = .fitness
-        locationManager.distanceFilter = 1.0
+        locationManager.distanceFilter = kCLDistanceFilterNone
         let status = CLLocationManager.authorizationStatus()
         if status == .notDetermined || status == .denied || status == .authorizedWhenInUse {
             locationManager.requestAlwaysAuthorization()
@@ -41,10 +42,10 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
         }
         mapView.delegate = self
         mapView.mapType = MKMapType(rawValue: 0)!
-        for route in (path?.routes)! {
+        /*for route in (path?.routes)! {
             print(route)
         }
-        self.showRoute(routes: (path?.routes)!)
+        self.showRoute(routes: (path?.routes)!)*/
     }
     
     func showRoute(routes: [MKRoute]) {
@@ -98,9 +99,38 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
                 }
                 //save location
                 self.locations.append(location)
+                let camLocation : CLLocationCoordinate2D = location.coordinate
+                let altitude: CLLocationDistance  = 5
+                let heading: CLLocationDirection = 0
+                let pitch = CGFloat(45)
+                let camera = MKMapCamera(lookingAtCenter: camLocation, fromDistance: altitude, pitch: pitch, heading: heading)
+                mapView.setCamera(camera, animated: true)
             }
         }
+
+        /*if (self.locations.count > 0 && self.heading != nil) {
+            let camLocation : CLLocationCoordinate2D = (self.locations.last?.coordinate)!
+            let altitude: CLLocationDistance  = 3
+            let heading: CLLocationDirection = self.heading!
+            let pitch = CGFloat(45)
+            let camera = MKMapCamera(lookingAtCenter: camLocation, fromDistance: altitude, pitch: pitch, heading: heading)
+            mapView.setCamera(camera, animated: true)
+        }*/
     }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        if (newHeading.headingAccuracy < 0) {
+            return
+        }
+        
+        // Use the true heading if it is valid.
+        let theHeading = ((newHeading.trueHeading > 0) ?
+            newHeading.trueHeading : newHeading.magneticHeading);
+        
+        self.heading = theHeading;
+
+    }
+    
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer! {
         if (overlay is MKPolyline) {
@@ -123,7 +153,7 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
         } else {
             startPauseButton.setTitle("Resume", for: .normal)
             locationManager.stopUpdatingLocation()
-            mapView.userTrackingMode = MKUserTrackingMode(rawValue: 0)!
+            //mapView.userTrackingMode = MKUserTrackingMode(rawValue: 0)!
             mapView.showsUserLocation = false
             timer.invalidate()
         }
@@ -137,13 +167,21 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
     
     func start() {
         mapView.showsUserLocation = true
-        mapView.userTrackingMode = MKUserTrackingMode(rawValue: 2)!
+        //mapView.userTrackingMode = MKUserTrackingMode(rawValue: 2)!
         startPauseButton.setTitle("Pause", for: .normal)
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.eachSecond(timer:)), userInfo: nil, repeats: true)
+        mapView.userTrackingMode = MKUserTrackingMode.followWithHeading
+        locationManager.headingFilter = 15
         locationManager.startUpdatingLocation()
+        locationManager.startUpdatingHeading()
+        
+        /*let camLocation = self.locations.last?.coordinate
+        let altitude: CLLocationDistance  = 10
+        let heading: CLLocationDirection = locationManager.heading!.trueHeading
+        let pitch = CGFloat(85)
+        let camera = MKMapCamera(lookingAtCenter: camLocation!, fromDistance: altitude, pitch: pitch, heading: heading)
+        mapView.setCamera(camera, animated: true)*/
     }
-
-    //TODO is there a way to make guardian view pop up but keep the path nav controller running still so it doesn't have to recalc
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SetCheckInViewController" {
