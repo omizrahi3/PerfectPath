@@ -41,6 +41,9 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
         }
         mapView.delegate = self
         mapView.mapType = MKMapType(rawValue: 0)!
+        for route in (path?.routes)! {
+            print(route)
+        }
         self.showRoute(routes: (path?.routes)!)
     }
     
