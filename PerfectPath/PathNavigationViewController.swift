@@ -20,15 +20,32 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var startPauseButton: UIButton!
 
+    var returningFromSetCheckInViewController: Int = 0
+    
+    
+    let testTenSecondBinary = 0b00001010
+    let oneMinBinary = 0b00111100
+    let fiveMinBinary = 0b100101100
+    let tenMinBinary = 0b1001011000
+    var guardianInternalTimer = Timer()
+    var guardianInfo: [(Int)] = [0,5]
+    var guardianBinaryCount = 0b0000
+    
     var locationManager: CLLocationManager!
     var locations = [CLLocation]()
     var timer = Timer()
-    var guardianInfo: [String : Any?] = [:]
+    
     var path : Path?
     var heading : CLLocationDirection?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if (returningFromSetCheckInViewController == 1) {
+            start()
+        }
+        
+        
         //set up location manager to track user
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -42,10 +59,48 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
         }
         mapView.delegate = self
         mapView.mapType = MKMapType(rawValue: 0)!
-        /*for route in (path?.routes)! {
-            print(route)
+        self.showRoute(routes: (path?.routes)!)
+        
+        // if guardian is set
+        if (guardianInfo[0] == 1) {
+            print("Guardian Started")
+            // change color of btn
+            self.guardianBtn.backgroundColor = (UIColor.green)
+            self.guardianBinaryCount = testTenSecondBinary
+            //start timer
+            self.startGuardianTimer()
         }
-        self.showRoute(routes: (path?.routes)!)*/
+        
+        
+    }
+    
+    
+    func startGuardianTimer() {
+        print("Starting Guardian Timer")
+        guardianInternalTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.countDown(guardianInternalTimer:)), userInfo: nil, repeats: true)
+    }
+    
+    func countDown(guardianInternalTimer: Timer) {
+        var attemptToPresentPopUp = false
+        print("PathNavigationViewController, In countDown")
+        
+        self.guardianBinaryCount -= 0b0001
+        // if the counter reached 16, reset it to 0
+        if (self.guardianBinaryCount == 0b0000) {
+            print("binaryCount: 0")
+            
+            //stop timer when it reaches 0
+            self.guardianInternalTimer.invalidate()
+            
+            //set value of button back to light grey 85 RGB and 1.0 alpha
+            //self.guardianBtn.backgroundColor = (UIColor(red:0.66, green:0.66, blue:0.66, alpha:1.0))
+            self.guardianBtn.backgroundColor = UIColor.darkGray
+            if !attemptToPresentPopUp {
+                //trigger AlertTimerCountdownController to pop up
+                self.performSegue(withIdentifier: "GuardianPopUpViewController", sender: PathNavigationViewController.self)
+            }
+            attemptToPresentPopUp = true
+        }
     }
     
     func showRoute(routes: [MKRoute]) {
@@ -160,8 +215,10 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
     }
     
     @IBAction func unwindCheckInView(segue: UIStoryboardSegue) {
+        print("In unwindCheckInView...")
         if let svc = segue.source as? SetCheckInViewController {
             self.path = svc.path
+            self.guardianInfo = svc.guardianInfo
         }
     }
     
@@ -188,13 +245,25 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
             let destViewController : SetCheckInViewController = segue.destination as! SetCheckInViewController
             destViewController.guardianInfo = guardianInfo
             destViewController.path = path
+            destViewController.locationManager = locationManager
+            destViewController.returningFromSetCheckInViewController = returningFromSetCheckInViewController
             if (startPauseButton.titleLabel?.text == "Start" || startPauseButton.titleLabel?.text == "Resume") {
                 destViewController.isPaused = true
             } else {
                 destViewController.isPaused = false
             }
-            print("in PathNavigationViewController in prepare with guardian info: " + (String(describing: destViewController.guardianInfo["Minutes"])))
         }
+        if segue.identifier == "GuardianPopUpViewController" {
+            let destViewController : GuardianPopUpViewController = segue.destination as! GuardianPopUpViewController
+            destViewController.guardianInfo = guardianInfo
+            destViewController.path = path
+            if (startPauseButton.titleLabel?.text == "Start" || startPauseButton.titleLabel?.text == "Resume") {
+                destViewController.isPaused = true
+            } else {
+                destViewController.isPaused = false
+            }
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
