@@ -634,7 +634,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEQ-8M-8Hp">
                                 <rect key="frame" x="16" y="37" width="347" height="62"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="62" id="7EY-Rg-1gP"/>
+                                    <constraint firstAttribute="height" constant="62" id="AKY-vG-LN3"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Path Generated!">
@@ -648,11 +648,11 @@
                                 <color key="highlightedColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SmR-oB-6jB">
-                                <rect key="frame" x="16" y="567" width="343" height="49"/>
+                                <rect key="frame" x="16" y="597" width="343" height="49"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="rw2-8e-yck"/>
+                                    <constraint firstAttribute="height" constant="49" id="7Wh-Ns-zba"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="26"/>
                                 <state key="normal" title="Generate Another Path">
@@ -664,18 +664,20 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQn-UC-Dey">
-                                <rect key="frame" x="16" y="417" width="343" height="21"/>
+                                <rect key="frame" x="16" y="404" width="231" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="JqR-Je-iyB"/>
+                                    <constraint firstAttribute="height" constant="21" id="47d-Nq-Kdu"/>
+                                    <constraint firstAttribute="width" constant="231" id="9Pl-Rd-HUk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guardian Path:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75K-Oj-DoA">
-                                <rect key="frame" x="16" y="458" width="164" height="21"/>
+                                <rect key="frame" x="16" y="445" width="224" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="YRx-e1-QIU"/>
+                                    <constraint firstAttribute="width" constant="224" id="Q02-bs-nVb"/>
+                                    <constraint firstAttribute="height" constant="21" id="rgT-Mp-PAX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
@@ -685,14 +687,14 @@
                                 <rect key="frame" x="16" y="107" width="343" height="283"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OeE-XT-IU2">
-                                <rect key="frame" x="16" y="505" width="343" height="49"/>
+                                <rect key="frame" x="16" y="482" width="343" height="49"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="c2J-GG-sT1"/>
+                                    <constraint firstAttribute="height" constant="49" id="RsG-pX-BHS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="26"/>
-                                <state key="normal" title="Select Path">
+                                <state key="normal" title="Start Path on iOS Device">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -700,27 +702,45 @@
                                     <segue destination="DTX-TM-c1o" kind="show" id="Jo1-U4-B5f"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="788-fU-cdC">
+                                <rect key="frame" x="16" y="540" width="343" height="49"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="hyb-Oe-zCb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="26"/>
+                                <state key="normal" title="Start Path on Apple Watch">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapStartPathOnWatch:" destination="fsI-cr-4MR" eventType="touchUpInside" id="oH2-EQ-GJR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="aEQ-8M-8Hp" firstAttribute="top" secondItem="iq7-fW-qa5" secondAttribute="bottom" constant="17" id="2Qx-6h-T72"/>
-                            <constraint firstItem="aEQ-8M-8Hp" firstAttribute="leading" secondItem="pRp-zS-ews" secondAttribute="leading" id="2jR-4l-324"/>
-                            <constraint firstItem="FQn-UC-Dey" firstAttribute="trailing" secondItem="OeE-XT-IU2" secondAttribute="trailing" id="5DG-Mk-Sa5"/>
-                            <constraint firstItem="aEQ-8M-8Hp" firstAttribute="leading" secondItem="20e-nX-iMb" secondAttribute="leadingMargin" id="5sm-qj-Uxa"/>
-                            <constraint firstItem="OeE-XT-IU2" firstAttribute="leading" secondItem="SmR-oB-6jB" secondAttribute="leading" id="7eU-OO-W0n"/>
-                            <constraint firstItem="SmR-oB-6jB" firstAttribute="top" secondItem="OeE-XT-IU2" secondAttribute="bottom" constant="13" id="J2L-6a-6CM"/>
-                            <constraint firstItem="pRp-zS-ews" firstAttribute="trailing" secondItem="FQn-UC-Dey" secondAttribute="trailing" id="PEI-cF-Mbq"/>
-                            <constraint firstItem="15Z-tt-L1g" firstAttribute="top" secondItem="SmR-oB-6jB" secondAttribute="bottom" constant="51" id="VXQ-f0-qk8"/>
-                            <constraint firstItem="FQn-UC-Dey" firstAttribute="leading" secondItem="75K-Oj-DoA" secondAttribute="leading" id="WYp-qj-tcj"/>
-                            <constraint firstItem="pRp-zS-ews" firstAttribute="trailing" secondItem="20e-nX-iMb" secondAttribute="trailingMargin" id="cJB-KM-ses"/>
-                            <constraint firstItem="75K-Oj-DoA" firstAttribute="leading" secondItem="OeE-XT-IU2" secondAttribute="leading" id="fuc-s5-LgE"/>
-                            <constraint firstItem="OeE-XT-IU2" firstAttribute="top" secondItem="75K-Oj-DoA" secondAttribute="bottom" constant="26" id="hNr-YV-l4b"/>
-                            <constraint firstItem="pRp-zS-ews" firstAttribute="top" secondItem="aEQ-8M-8Hp" secondAttribute="bottom" constant="8" symbolic="YES" id="hgM-Rt-3wE"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="aEQ-8M-8Hp" secondAttribute="trailing" constant="-4" id="lAW-bh-tgb"/>
-                            <constraint firstItem="OeE-XT-IU2" firstAttribute="trailing" secondItem="SmR-oB-6jB" secondAttribute="trailing" id="qdc-8D-shF"/>
-                            <constraint firstItem="FQn-UC-Dey" firstAttribute="top" secondItem="pRp-zS-ews" secondAttribute="bottom" constant="27" id="umj-ZO-jBv"/>
-                            <constraint firstItem="pRp-zS-ews" firstAttribute="leading" secondItem="FQn-UC-Dey" secondAttribute="leading" id="wTa-CS-WGB"/>
-                            <constraint firstItem="75K-Oj-DoA" firstAttribute="top" secondItem="FQn-UC-Dey" secondAttribute="bottom" constant="20" id="z5Z-jQ-69J"/>
+                            <constraint firstItem="pRp-zS-ews" firstAttribute="leading" secondItem="FQn-UC-Dey" secondAttribute="leading" id="0z2-fZ-yjK"/>
+                            <constraint firstItem="FQn-UC-Dey" firstAttribute="top" secondItem="pRp-zS-ews" secondAttribute="bottom" constant="14" id="4XY-Qu-TIe"/>
+                            <constraint firstItem="FQn-UC-Dey" firstAttribute="leading" secondItem="75K-Oj-DoA" secondAttribute="leading" id="6eo-4B-rcF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aEQ-8M-8Hp" secondAttribute="trailing" constant="-4" id="GXO-Yn-C3L"/>
+                            <constraint firstItem="pRp-zS-ews" firstAttribute="trailing" secondItem="OeE-XT-IU2" secondAttribute="trailing" id="JEv-WG-h4v"/>
+                            <constraint firstItem="aEQ-8M-8Hp" firstAttribute="top" secondItem="iq7-fW-qa5" secondAttribute="bottom" constant="17" id="JH9-3r-zNf"/>
+                            <constraint firstItem="15Z-tt-L1g" firstAttribute="top" secondItem="SmR-oB-6jB" secondAttribute="bottom" constant="21" id="Kee-e4-kEz"/>
+                            <constraint firstItem="75K-Oj-DoA" firstAttribute="top" secondItem="FQn-UC-Dey" secondAttribute="bottom" constant="20" id="POs-MR-yvl"/>
+                            <constraint firstItem="OeE-XT-IU2" firstAttribute="top" secondItem="75K-Oj-DoA" secondAttribute="bottom" constant="16" id="S7r-Eq-5CW"/>
+                            <constraint firstItem="SmR-oB-6jB" firstAttribute="top" secondItem="788-fU-cdC" secondAttribute="bottom" constant="8" symbolic="YES" id="aCd-Te-thM"/>
+                            <constraint firstItem="788-fU-cdC" firstAttribute="top" secondItem="OeE-XT-IU2" secondAttribute="bottom" constant="9" id="fEA-PR-aiP"/>
+                            <constraint firstItem="pRp-zS-ews" firstAttribute="trailing" secondItem="20e-nX-iMb" secondAttribute="trailingMargin" id="gKD-Ir-kUS"/>
+                            <constraint firstItem="788-fU-cdC" firstAttribute="leading" secondItem="SmR-oB-6jB" secondAttribute="leading" id="kf6-wW-QPt"/>
+                            <constraint firstItem="75K-Oj-DoA" firstAttribute="leading" secondItem="OeE-XT-IU2" secondAttribute="leading" id="knm-yS-fd9"/>
+                            <constraint firstItem="788-fU-cdC" firstAttribute="trailing" secondItem="SmR-oB-6jB" secondAttribute="trailing" id="lGS-R5-Kj4"/>
+                            <constraint firstItem="OeE-XT-IU2" firstAttribute="leading" secondItem="788-fU-cdC" secondAttribute="leading" id="lmC-s9-0AV"/>
+                            <constraint firstItem="aEQ-8M-8Hp" firstAttribute="leading" secondItem="20e-nX-iMb" secondAttribute="leadingMargin" id="rfy-sY-nFz"/>
+                            <constraint firstItem="aEQ-8M-8Hp" firstAttribute="leading" secondItem="pRp-zS-ews" secondAttribute="leading" id="yNl-MP-5ry"/>
+                            <constraint firstItem="pRp-zS-ews" firstAttribute="top" secondItem="aEQ-8M-8Hp" secondAttribute="bottom" constant="8" symbolic="YES" id="ycc-bE-KuO"/>
+                            <constraint firstItem="OeE-XT-IU2" firstAttribute="trailing" secondItem="788-fU-cdC" secondAttribute="trailing" id="z6i-Ge-Pac"/>
                         </constraints>
                     </view>
                     <connections>
@@ -731,7 +751,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dzH-FK-YGY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1585" y="600"/>
+            <point key="canvasLocation" x="1584.8" y="599.55022488755628"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="MrP-p8-o8k">
@@ -1209,9 +1229,9 @@
         <image name="icon.png" width="449" height="259"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="P7J-g2-7N3"/>
-        <segue reference="wX5-4n-BJr"/>
+        <segue reference="Jo1-U4-B5f"/>
         <segue reference="S61-p9-ShG"/>
+        <segue reference="wX5-4n-BJr"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
 </document>
