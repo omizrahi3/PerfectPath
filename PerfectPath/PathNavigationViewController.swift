@@ -20,6 +20,8 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var startPauseButton: UIButton!
 
+    var returningFromSetCheckInViewController: Int = 0
+    
     
     let testTenSecondBinary = 0b00001010
     let oneMinBinary = 0b00111100
@@ -37,6 +39,12 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if (returningFromSetCheckInViewController == 1) {
+            start()
+        }
+        
+        
         //set up location manager to track user
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -61,6 +69,7 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
             //start timer
             self.startGuardianTimer()
         }
+        
         
     }
     
@@ -136,14 +145,21 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("0")
         for location in locations {
+            print("1")
             if location.horizontalAccuracy < 20 {
+                print("2")
                 //update distance
                 if self.locations.count > 0 {
+                    print("3")
                     path?.metersTraveled! += location.distance(from: self.locations.last!)
+                    print("4")
                 }
                 //save location
+                print("5")
                 self.locations.append(location)
+                print("6")
             }
         }
     }
@@ -197,6 +213,8 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
             let destViewController : SetCheckInViewController = segue.destination as! SetCheckInViewController
             destViewController.guardianInfo = guardianInfo
             destViewController.path = path
+            destViewController.locationManager = locationManager
+            destViewController.returningFromSetCheckInViewController = returningFromSetCheckInViewController
             if (startPauseButton.titleLabel?.text == "Start" || startPauseButton.titleLabel?.text == "Resume") {
                 destViewController.isPaused = true
             } else {

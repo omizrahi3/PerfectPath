@@ -7,19 +7,26 @@
 //
 import UIKit
 import Material
+import CoreLocation
+import HealthKit
 
-class SetCheckInViewController: UIViewController {
+class SetCheckInViewController: UIViewController, CLLocationManagerDelegate{
 
 
-    // variables
+    // UI and guardian variables
     @IBOutlet weak var minutesLabel: UILabel!
     @IBOutlet weak var minutesValueLabel: UILabel!
     var guardianInfo: [(Int)] = [0,5] // contains guardianStarted bool at 0 and minutes at [1]
     var guardianStarted: Int = 0
     var guardianMinutes: Int = 0
+    var returningFromSetCheckInViewController: Int = 0
+    
+    //path related
     var path : Path?
     var timer = Timer()
     var isPaused : Bool = false
+    var locationManager: CLLocationManager!
+    var locations = [CLLocation]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +34,13 @@ class SetCheckInViewController: UIViewController {
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.eachSecond(timer:)), userInfo: nil, repeats: true)
         }
         self.guardianStarted = 0
+        
+        locationManager = CLLocationManager()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.delegate = self
+        locationManager.activityType = .fitness
+        locationManager.distanceFilter = kCLDistanceFilterNone
+        
     }
     
     @IBAction func didTapCheckInBtn(_ sender: Any) {
@@ -40,13 +54,26 @@ class SetCheckInViewController: UIViewController {
 //        performSegue(withIdentifier: "PathNavigationViewController", sender: SetCheckInViewController.self)
     }
     
-    
-    
-    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        for location in locations {
+            if location.horizontalAccuracy < 20 {
+                //update distance
+                if self.locations.count > 0 {
+                    path?.metersTraveled! += location.distance(from: self.locations.last!)
+                }
+            }
+        }
+    }
     
     func eachSecond(timer: Timer) {
         path?.secondsTraveled! += 1
     }
+    
+
+    
+//    func eachSecond(timer: Timer) {
+//        path?.secondsTraveled! += 1
+//    }
 
     @IBAction func stepperChanged(_ sender: UIStepper) {
         self.guardianMinutes = Int(sender.value)
@@ -58,12 +85,16 @@ class SetCheckInViewController: UIViewController {
     //pass json to next page
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("SetCheckInViewController in prepare")
+        print("setting returningFromSetCheckInViewController to 1")
+        returningFromSetCheckInViewController = 1
         print("sending guardian started as " + String(self.guardianStarted))
         print("sending guardian minutes as " + String(self.guardianMinutes))
     
         let destViewController : PathNavigationViewController = segue.destination as! PathNavigationViewController
         destViewController.guardianInfo = self.guardianInfo
         destViewController.path = path
+        destViewController.locationManager = locationManager
+        destViewController.returningFromSetCheckInViewController = returningFromSetCheckInViewController
     }
 
 }
