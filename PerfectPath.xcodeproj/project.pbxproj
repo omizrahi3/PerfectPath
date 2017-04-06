@@ -22,6 +22,7 @@
 		570B846E1E68DB5100060521 /* SavedPathsViewControlloer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B846D1E68DB5100060521 /* SavedPathsViewControlloer.swift */; };
 		570B84701E68DBE300060521 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B846F1E68DBE300060521 /* ResetPasswordViewController.swift */; };
 		570B84721E68DCAA00060521 /* NewPathGeneratedControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B84711E68DCAA00060521 /* NewPathGeneratedControllerView.swift */; };
+		571C06041E95BD3800353FC5 /* GuardianPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C06031E95BD3800353FC5 /* GuardianPopUpViewController.swift */; };
 		572941C71A8D97C65AF9CD3F /* Pods_PerfectPath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C6847A5BDC54C3C5BE6529B /* Pods_PerfectPath.framework */; };
 		572B63161E68FB5500A56786 /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B63151E68FB5500A56786 /* MainMenuController.swift */; };
 		572B63181E68FBB000A56786 /* FavoritePathListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B63171E68FBB000A56786 /* FavoritePathListController.swift */; };
@@ -136,6 +137,7 @@
 		570B846D1E68DB5100060521 /* SavedPathsViewControlloer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedPathsViewControlloer.swift; sourceTree = "<group>"; };
 		570B846F1E68DBE300060521 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		570B84711E68DCAA00060521 /* NewPathGeneratedControllerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPathGeneratedControllerView.swift; sourceTree = "<group>"; };
+		571C06031E95BD3800353FC5 /* GuardianPopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuardianPopUpViewController.swift; sourceTree = "<group>"; };
 		572B63151E68FB5500A56786 /* MainMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
 		572B63171E68FBB000A56786 /* FavoritePathListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritePathListController.swift; sourceTree = "<group>"; };
 		572B63191E68FBEF00A56786 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 				57DBE90D1E88A801003192BF /* SetCheckInViewController.swift */,
 				1AD4CB661E8AAEBD00A8E042 /* PathCompletedViewController.swift */,
 				1AD4CB681E8AC3B900A8E042 /* Path.swift */,
+				571C06031E95BD3800353FC5 /* GuardianPopUpViewController.swift */,
 			);
 			path = PerfectPath;
 			sourceTree = "<group>";
@@ -846,6 +849,7 @@
 				903143C11E654A9900CD450D /* LoginViewController.swift in Sources */,
 				5739F00C1E567FB3000AF4B0 /* AppDelegate.swift in Sources */,
 				570B84721E68DCAA00060521 /* NewPathGeneratedControllerView.swift in Sources */,
+				571C06041E95BD3800353FC5 /* GuardianPopUpViewController.swift in Sources */,
 				1AD4CB691E8AC3B900A8E042 /* Path.swift in Sources */,
 				570B846E1E68DB5100060521 /* SavedPathsViewControlloer.swift in Sources */,
 				90AABC8E1E88417700CA10AD /* ProfileDetailViewController.swift in Sources */,
