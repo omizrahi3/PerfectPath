@@ -8,8 +8,10 @@
 
 import UIKit
 import MapKit
+import WatchConnectivity
 
-class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
+
+class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate, WCSessionDelegate {
     var pathInformation: [String : Any?] = [:]
     var waypoints = [MKMapItem]()
     let numWaypoints = 3
@@ -19,6 +21,13 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var distanceLabel: UILabel!        
     @IBOutlet weak var guardianEnabledLabel: UILabel!
+    
+    //for watch communication
+    var lastMessage: CFAbsoluteTime = 0
+    
+    
+    
+    
     
     //load view of route and metrics
     override func viewDidLoad() {
@@ -32,7 +41,55 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
         findPath(index: 1, initialBearing: initialBearing, waypointDistance: waypointDistance)
         addGuardianLabel()
     }
+    //############################## CODE FOR WATCH COMMUNICATION #################################
+//    // Start the path on the watch
+//    @IBAction func didTapStartPathOnWatch(_ sender: Any) {
+//        print("Entering didTapStartPathOnWatch...")
+//        
+//   
+//        if WCSession.isSupported() {
+//            let watchSession = WCSession.default()
+//            watchSession.delegate = self
+//            watchSession.activate()
+//            if watchSession.isPaired && watchSession.isWatchAppInstalled {
+//                do {
+//                    try watchSession.updateApplicationContext(["foo": "bar"])
+//                } catch let error as NSError {
+//                    print(error.description)
+//                }
+//            }
+//        }
+//        
+//        self.sendWatchMessage(msg: "Hello")
+//        
+//    } //end didTapStartPathOnWatch
+//    
+//    
+//    
+//    
+//    func sendWatchMessage(msg: String) {
+//        let currentTime = CFAbsoluteTimeGetCurrent()
+//        
+//        // if less than half a second has passed, bail out
+//        if lastMessage + 0.5 > currentTime {
+//            return
+//        }
+//        
+//        // send a message to the watch if it's reachable
+//        if (WCSession.default().isReachable) {
+//            // this is a meaningless message, but it's enough for our purposes
+//            let message = ["Message": msg]
+//            WCSession.default().sendMessage(message, replyHandler: nil)
+//        }
+//        
+//        // update our rate limiting property
+//        lastMessage = CFAbsoluteTimeGetCurrent()
+//    }
     
+    
+    
+    
+    //##############################################################################################
     func findPath(index: Int, initialBearing: Double, waypointDistance: Double) {
         let lastMKPoint = waypoints[index-1]
         let lastCoords = lastMKPoint.placemark.coordinate
@@ -196,5 +253,24 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    
+    // Below methods are required to conform to protocol WCSessionDelegate
+    
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        
+    }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        
+    }
+    
+    
+    
 
 }
