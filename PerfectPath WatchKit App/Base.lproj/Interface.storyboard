@@ -39,6 +39,11 @@
                                 <segue destination="H1D-mb-WEx" kind="push" id="UIC-xz-hpA"/>
                             </connections>
                         </button>
+                        <button width="1" alignment="left" title="Start Path from iOS Device" id="305-XG-Eof" userLabel="Start Customized Path">
+                            <connections>
+                                <action selector="didTapStartPathFromPhone" destination="7hw-Ns-MjU" id="lSa-gf-WVC"/>
+                            </connections>
+                        </button>
                         <button width="1" alignment="left" title="Emergency Contacts" id="Gol-XX-NA1"/>
                     </items>
                 </controller>

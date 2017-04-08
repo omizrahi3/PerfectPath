@@ -44,15 +44,42 @@ class MapController: WKInterfaceController {
             }, errorHandler: { error in
                 print("error: \(error)")
             })
-            
-            
         }
+    }
+
+    // didn't work - never rec message
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+        print("Entering didReceiveMessage with a reply handler in map controller...")
+        
+        var replyValues = Dictionary<String, AnyObject>()
+        
+        //        let viewController = self.window!.rootViewController!
+        //            as UIViewController
+        
+        print("in session with message in map controller")
+        switch message["command"] as! String {
+        case "startPathNow" :
+            self.startBtn.setBackgroundColor(UIColor.purple)
+            let path = message["data"]
+            print("path val: " + String(describing: path))
+            print("ios -> watch, watch got startPathNow, replying now...")
+            replyValues["data"] = "OK" as AnyObject?
+            
+            
+        default:
+            break
+        }
+        replyHandler(replyValues)
     }
 
     // Override to grab information pushed from SetCheckInController
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         print("Entering awake...")
+        
+        if let path = context as? String {
+            print("Awake in MapControlling with String path context")
+        }
         
         // Make sure data was passed properly from SetCheckInController
         if let _: [Int] = context as? [Int] {
@@ -65,30 +92,6 @@ class MapController: WKInterfaceController {
     override func didAppear() {
         super.didAppear()
         print("Entering didAppear...")
-        // 1
-//        if WCSession.isSupported() {
-//            print("WCSession is supported")
-//            
-//            
-//            // 2
-//            session = WCSession.default()
-//            // 3
-//            session!.sendMessage(["favPathName": "PI Path"], replyHandler: { (response) -> Void in
-//                // 4
-//                let favPathData = response["favPathData"]
-//                if  favPathData != nil {
-//                    print("favPathData is not nil")
-//                    // 5
-//                    DispatchQueue.main.async(execute: { () -> Void in
-//                        self.guardianBtn.setBackgroundColor(UIColor.purple)
-//                    })
-//                }
-//                print("favPathData is nil")
-//            }, errorHandler: { (error) -> Void in
-//                // 6
-//                print(error)
-//            })
-//        }
     }
     
     override func willActivate() {
@@ -128,31 +131,3 @@ class MapController: WKInterfaceController {
     }
 }
 
-
-//extension MapController: WCSessionDelegate {
-//    /** Called when the session has completed activation. If session state is WCSessionActivationStateNotActivated there will be an error with more details. */
-//    @available(watchOS 2.2, *)
-//    public func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-//        print("in session in map controller extension")
-//        
-//    }
-//    
-//    
-////    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
-////        print("Entering session with didReceiveMessage...")
-////
-////        if let currPath = message["currPath"] as? Any {
-////            print("Watch received currPath message")
-////            replyHandler: {
-////
-////            
-////        }
-////    }
-//    
-////    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
-////        print("Entering session with didReceiveApplicationContext...")
-////        if WCSession.default()
-////    }
-//
-//}
-//

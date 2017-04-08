@@ -91,7 +91,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
         case "start" :
             print("In app delegate session in case start")
             //            viewController.startPlay()
-            replyValues["data"] = "KK" as AnyObject?
+            replyValues["data"] = "KK1" as AnyObject?
         case "stop" :
             //            viewController.stopPlay()
             replyValues["status"] = "Stopped" as AnyObject?
@@ -118,10 +118,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
         case "start" :
             print("In app delegate session in case start")
             //            viewController.startPlay()
-            replyValues["data"] = "KK" as AnyObject?
-        case "stop" :
-            //            viewController.stopPlay()
-            replyValues["status"] = "Stopped" as AnyObject?
+            replyValues["data"] = "KK2" as AnyObject?
+        case "startPathNow" :
+            print("received command: startPathNow")
+            print("with data: " + String(describing: message["data"]))
+//            replyValues["data"] = "OK" as AnyObject?
+//            print("reply command: startPathNow")
             //        case "volume" :
             //            let level = message["level"] as! Float
             //            viewController.adjustVolume(level)
@@ -143,7 +145,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
         case "start" :
             print("In app delegate session in case start")
             //            viewController.startPlay()
-            replyValues["data"] = "KK" as AnyObject?
+            replyValues["data"] = "KK3" as AnyObject?
         case "stop" :
             //            viewController.stopPlay()
             replyValues["status"] = "Stopped" as AnyObject?
@@ -151,6 +153,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
             //            let level = message["level"] as! Float
             //            viewController.adjustVolume(level)
         //            replyValues["status"] = "Vol = \(level)" as AnyObject?
+        case "startPathNow" :
+            print("received command: startPathNow")
+            print("with data: " + String(describing: message["data"]))
         default:
             break
         }

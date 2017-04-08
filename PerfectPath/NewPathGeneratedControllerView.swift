@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import WatchConnectivity
 
 
 
@@ -21,13 +22,6 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var distanceLabel: UILabel!        
     @IBOutlet weak var guardianEnabledLabel: UILabel!
-    //var session: WCSession?
-    
-    //for watch communication
-    var lastMessage: CFAbsoluteTime = 0
-    
-    
-    
     
     
     //load view of route and metrics
@@ -42,83 +36,29 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
         let initialBearing = Double(arc4random_uniform(360))
         findPath(index: 1, initialBearing: initialBearing, waypointDistance: waypointDistance)
         addGuardianLabel()
-        
-        
-
-//        if WCSession.isSupported() {
-//            print("WCSession is supported in new path generation")
-//            let watchSession = WCSession.default()
-//            watchSession.delegate = self
-//            watchSession.activate()
-//            if (watchSession.isPaired) {
-//                print("watch is paired")
-//                if (watchSession.isWatchAppInstalled) {
-//                    print("watch has app installed")
-////                    do {
-////                        try watchSession.updateApplicationContext(["foo": "bar"])
-////                    } catch let error as NSError {
-////                        print(error.description)
-////                    }
-//                }
-//            }
-//        }
     }
-//    //############################## CODE FOR WATCH COMMUNICATION #################################
-////    // Start the path on the watch
-//    @IBAction func didTapStartPathOnWatch(_ sender: Any) {
-//        print("Entering didTapStartPathOnWatch...")
-//        
-//   
-//        if WCSession.isSupported() {
-//            let watchSession = WCSession.default()
-//            watchSession.delegate = self
-//            watchSession.activate()
-//            if (watchSession.isPaired) {
-//                print("watch is paired")
-//                if (watchSession.isWatchAppInstalled) {
-//                    print("watch has app installed")
-//                    self.sendWatchMessageCurrPath()
-////                    do {
-////                        try watchSession.updateApplicationContext(["foo": "bar"])
-////                    } catch let error as NSError {
-////                        print(error.description)
-////                    }
-//                }
-//            }
-//        
-//            
-//        }
-//        
-//    } //end didTapStartPathOnWatch
-////
-////    
-//    
-//    
-//    func sendWatchMessageCurrPath() {
-//        print("Entering sendWatchMessageCurrentPath...")
-//        let currentTime = CFAbsoluteTimeGetCurrent()
-//        
-//        // if less than half a second has passed, bail out
-//        if lastMessage + 0.5 > currentTime {
-//            return
-//        }
-//        
-//        // send a message to the watch if it's reachable
-//        if (WCSession.default().isReachable) {
-//            // this is a meaningless message, but it's enough for our purposes
-//            print("WCSession is reachable, sending path")
-//            let message = ["currPath": path]
-//            WCSession.default().sendMessage(message, replyHandler: nil)
-//        }
-//        
-//        // update our rate limiting property
-//        lastMessage = CFAbsoluteTimeGetCurrent()
-//    }
-//    
-//    
-//    
     
-    //##############################################################################################
+    @IBAction func didTapStartPathOnWatch(_ sender: Any) {
+        print("Entering didTapStartPathOnAppleWatch...")
+        if WCSession.default().isReachable == true {
+            print("Session is reachable on iOS")
+            
+            let requestValues = ["command" : "startPathNow","data" : "pathString" as Any]
+            let session = WCSession.default()
+            
+            session.sendMessage(requestValues, replyHandler: { (reply) -> Void in
+                print("sent command: " + String(describing: requestValues["command"]))
+                print("sent data: " + String(describing: requestValues["data"]))
+                print("rec command: " + String(describing: reply["command"]))
+                print("rec data: " + String(describing: reply["data"]))
+            }, errorHandler: { error in
+                print("error: \(error)")
+            })
+        }
+        
+        
+    }
+
     func findPath(index: Int, initialBearing: Double, waypointDistance: Double) {
         let lastMKPoint = waypoints[index-1]
         let lastCoords = lastMKPoint.placemark.coordinate
@@ -273,24 +213,6 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
         }
     }
     
-    // Below methods are required to conform to protocol WCSessionDelegate
-    
-//    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-//        
-//    }
-//    
-//    func sessionDidBecomeInactive(_ session: WCSession) {
-//        
-//    }
-//    
-//    func sessionDidDeactivate(_ session: WCSession) {
-//        
-//    }
-    
-//    func getPathByName(pathName: String) {
-//        print("Entering getPathByName...")
-//        var pathTest = findPath(index: 1, initialBearing: 20, waypointDistance: 3000)
-//    }
     
 }
 
