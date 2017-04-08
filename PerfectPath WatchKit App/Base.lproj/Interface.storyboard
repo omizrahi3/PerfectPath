@@ -54,7 +54,7 @@
                         <map height="100" alignment="left" id="yNE-Yg-o5J"/>
                         <group width="1" alignment="left" id="rx9-yd-WNU">
                             <items>
-                                <button width="65" height="46" alignment="right" verticalAlignment="bottom" title="G" id="BCJ-gO-fZK">
+                                <button width="54" height="40" alignment="right" verticalAlignment="bottom" title="G" id="BCJ-gO-fZK">
                                     <gestureRecognizers>
                                         <longPressGestureRecognizer id="Nxa-Gy-WWU"/>
                                     </gestureRecognizers>
@@ -65,19 +65,25 @@
                                         <segue destination="4Qq-AX-j8F" kind="push" id="wTa-YU-VZN"/>
                                     </connections>
                                 </button>
-                                <button width="65" height="25" alignment="left" title="Start" id="YAR-cz-ksp">
+                                <button width="54" height="25" alignment="left" title="Start" id="YAR-cz-ksp">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="backgroundColor" red="0.34356227649999999" green="0.80329096499999997" blue="0.381021728" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="didTapStartBtn" destination="Xop-D8-78C" id="WJw-fa-dKE"/>
+                                    </connections>
                                 </button>
+                                <label width="32" alignment="left" text="1" id="tGk-k8-YPJ"/>
                             </items>
                         </group>
                     </items>
                     <connections>
                         <outlet property="guardianBtn" destination="BCJ-gO-fZK" id="Sup-W7-lb4"/>
+                        <outlet property="startBtn" destination="YAR-cz-ksp" id="fHn-Fn-2dT"/>
+                        <outlet property="testLabel" destination="tGk-k8-YPJ" id="8Px-Zf-A7q"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="578" y="1176"/>
+            <point key="canvasLocation" x="578" y="1175"/>
         </scene>
         <!--AlertTimerCountdownController-->
         <scene sceneID="uFM-hY-q9b">

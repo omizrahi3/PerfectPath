@@ -8,10 +8,10 @@
 
 import UIKit
 import MapKit
-import WatchConnectivity
 
 
-class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate, WCSessionDelegate {
+
+class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
     var pathInformation: [String : Any?] = [:]
     var waypoints = [MKMapItem]()
     let numWaypoints = 3
@@ -21,6 +21,7 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate, WCSes
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var distanceLabel: UILabel!        
     @IBOutlet weak var guardianEnabledLabel: UILabel!
+    //var session: WCSession?
     
     //for watch communication
     var lastMessage: CFAbsoluteTime = 0
@@ -31,6 +32,7 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate, WCSes
     
     //load view of route and metrics
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         mapView.delegate = self
         addActivityIndicator()
@@ -40,9 +42,29 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate, WCSes
         let initialBearing = Double(arc4random_uniform(360))
         findPath(index: 1, initialBearing: initialBearing, waypointDistance: waypointDistance)
         addGuardianLabel()
+        
+        
+
+//        if WCSession.isSupported() {
+//            print("WCSession is supported in new path generation")
+//            let watchSession = WCSession.default()
+//            watchSession.delegate = self
+//            watchSession.activate()
+//            if (watchSession.isPaired) {
+//                print("watch is paired")
+//                if (watchSession.isWatchAppInstalled) {
+//                    print("watch has app installed")
+////                    do {
+////                        try watchSession.updateApplicationContext(["foo": "bar"])
+////                    } catch let error as NSError {
+////                        print(error.description)
+////                    }
+//                }
+//            }
+//        }
     }
-    //############################## CODE FOR WATCH COMMUNICATION #################################
-//    // Start the path on the watch
+//    //############################## CODE FOR WATCH COMMUNICATION #################################
+////    // Start the path on the watch
 //    @IBAction func didTapStartPathOnWatch(_ sender: Any) {
 //        print("Entering didTapStartPathOnWatch...")
 //        
@@ -51,23 +73,29 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate, WCSes
 //            let watchSession = WCSession.default()
 //            watchSession.delegate = self
 //            watchSession.activate()
-//            if watchSession.isPaired && watchSession.isWatchAppInstalled {
-//                do {
-//                    try watchSession.updateApplicationContext(["foo": "bar"])
-//                } catch let error as NSError {
-//                    print(error.description)
+//            if (watchSession.isPaired) {
+//                print("watch is paired")
+//                if (watchSession.isWatchAppInstalled) {
+//                    print("watch has app installed")
+//                    self.sendWatchMessageCurrPath()
+////                    do {
+////                        try watchSession.updateApplicationContext(["foo": "bar"])
+////                    } catch let error as NSError {
+////                        print(error.description)
+////                    }
 //                }
 //            }
+//        
+//            
 //        }
 //        
-//        self.sendWatchMessage(msg: "Hello")
-//        
 //    } //end didTapStartPathOnWatch
+////
+////    
 //    
 //    
-//    
-//    
-//    func sendWatchMessage(msg: String) {
+//    func sendWatchMessageCurrPath() {
+//        print("Entering sendWatchMessageCurrentPath...")
 //        let currentTime = CFAbsoluteTimeGetCurrent()
 //        
 //        // if less than half a second has passed, bail out
@@ -78,16 +106,17 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate, WCSes
 //        // send a message to the watch if it's reachable
 //        if (WCSession.default().isReachable) {
 //            // this is a meaningless message, but it's enough for our purposes
-//            let message = ["Message": msg]
+//            print("WCSession is reachable, sending path")
+//            let message = ["currPath": path]
 //            WCSession.default().sendMessage(message, replyHandler: nil)
 //        }
 //        
 //        // update our rate limiting property
 //        lastMessage = CFAbsoluteTimeGetCurrent()
 //    }
-    
-    
-    
+//    
+//    
+//    
     
     //##############################################################################################
     func findPath(index: Int, initialBearing: Double, waypointDistance: Double) {
@@ -244,33 +273,67 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate, WCSes
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-    
-    
     // Below methods are required to conform to protocol WCSessionDelegate
     
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        
-    }
+//    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+//        
+//    }
+//    
+//    func sessionDidBecomeInactive(_ session: WCSession) {
+//        
+//    }
+//    
+//    func sessionDidDeactivate(_ session: WCSession) {
+//        
+//    }
     
-    func sessionDidBecomeInactive(_ session: WCSession) {
-        
-    }
+//    func getPathByName(pathName: String) {
+//        print("Entering getPathByName...")
+//        var pathTest = findPath(index: 1, initialBearing: 20, waypointDistance: 3000)
+//    }
     
-    func sessionDidDeactivate(_ session: WCSession) {
-        
-    }
-    
-    
-    
-
 }
+
+
+
+//extension NewPathGeneratedControllerView: WCSessionDelegate {
+//    /** Called when all delegate callbacks for the previously selected watch has occurred. The session can be re-activated for the now selected watch using activateSession. */
+//    @available(iOS 9.3, *)
+//    public func sessionDidDeactivate(_ session: WCSession) {
+//        
+//    }
+//    
+//    /** Called when the session can no longer be used to modify or add any new transfers and, all interactive messages will be cancelled, but delegate callbacks for background transfers can still occur. This will happen when the selected watch is being changed. */
+//    @available(iOS 9.3, *)
+//    public func sessionDidBecomeInactive(_ session: WCSession) {
+//        
+//    }
+//    
+//    /** Called when the session has completed activation. If session state is WCSessionActivationStateNotActivated there will be an error with more details. */
+//    @available(iOS 9.3, *)
+//    public func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+//        
+//    }
+//    
+//    
+//    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+//        print("Entering session...")
+////                if let reference = message["reference"] as? String, let boardingPass = QRCode(reference) {
+////                    replyHandler(["boardingPassData": boardingPass.PNGData])
+////                }
+//        if let favPathName = message["favPathName"] as? String {
+//            print("favPathName was in message")
+//            var pathTest = findPath(index: 1, initialBearing: 20, waypointDistance: 3000)
+//            //let pathData = getPathByName(pathName: favPathName)
+//            replyHandler(["favPathData": pathTest])
+////            let favPathData = getPathByName(favPathName) {
+////                
+////            }
+//        }
+//    }
+//    
+//    
+//    
+//    
+//}
+//
