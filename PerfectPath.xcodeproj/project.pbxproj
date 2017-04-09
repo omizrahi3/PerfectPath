@@ -45,6 +45,8 @@
 		574D79A81E99423600EB4AC5 /* Pods_PerfectPath_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 574D79A71E99423600EB4AC5 /* Pods_PerfectPath_WatchKit_App.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		574D79AA1E99424700EB4AC5 /* Pods_PerfectPath_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 574D79A91E99424700EB4AC5 /* Pods_PerfectPath_WatchKit_Extension.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		574D79AB1E99424E00EB4AC5 /* Pods_PerfectPath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C6847A5BDC54C3C5BE6529B /* Pods_PerfectPath.framework */; };
+		574D79AD1E99C28800EB4AC5 /* WatchPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574D79AC1E99C28800EB4AC5 /* WatchPath.swift */; };
+		574D79AF1E99C79B00EB4AC5 /* WatchPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574D79AE1E99C79B00EB4AC5 /* WatchPath.swift */; };
 		57DBE90E1E88A801003192BF /* SetCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DBE90D1E88A801003192BF /* SetCheckInViewController.swift */; };
 		60A115EFE402D38216F03704 /* Pods_PerfectPath_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E047FF3283BB75F38F47D79 /* Pods_PerfectPath_WatchKit_Extension.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		7A329621714993193FD25852 /* Pods_PerfectPathUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F0B4B4F15C15B9337FD562 /* Pods_PerfectPathUITests.framework */; };
@@ -170,6 +172,8 @@
 		5739F04E1E567FB4000AF4B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		574D79A71E99423600EB4AC5 /* Pods_PerfectPath_WatchKit_App.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_PerfectPath_WatchKit_App.framework; path = "Pods/../build/Debug-iphoneos/Pods_PerfectPath_WatchKit_App.framework"; sourceTree = "<group>"; };
 		574D79A91E99424700EB4AC5 /* Pods_PerfectPath_WatchKit_Extension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_PerfectPath_WatchKit_Extension.framework; path = "Pods/../build/Debug-iphoneos/Pods_PerfectPath_WatchKit_Extension.framework"; sourceTree = "<group>"; };
+		574D79AC1E99C28800EB4AC5 /* WatchPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchPath.swift; sourceTree = "<group>"; };
+		574D79AE1E99C79B00EB4AC5 /* WatchPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchPath.swift; sourceTree = "<group>"; };
 		57DBE90D1E88A801003192BF /* SetCheckInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetCheckInViewController.swift; sourceTree = "<group>"; };
 		70ADE7CADA66DB0DCBAE054E /* Pods_PerfectPathTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PerfectPathTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		764452D74BE58758F9782445 /* Pods-PerfectPath.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerfectPath.release.xcconfig"; path = "Pods/Target Support Files/Pods-PerfectPath/Pods-PerfectPath.release.xcconfig"; sourceTree = "<group>"; };
@@ -329,6 +333,7 @@
 				57DBE90D1E88A801003192BF /* SetCheckInViewController.swift */,
 				1AD4CB661E8AAEBD00A8E042 /* PathCompletedViewController.swift */,
 				1AD4CB681E8AC3B900A8E042 /* Path.swift */,
+				574D79AC1E99C28800EB4AC5 /* WatchPath.swift */,
 				571C06031E95BD3800353FC5 /* GuardianPopUpViewController.swift */,
 			);
 			path = PerfectPath;
@@ -367,6 +372,7 @@
 			children = (
 				5739F0461E567FB4000AF4B0 /* InterfaceController.swift */,
 				5739F0481E567FB4000AF4B0 /* ExtensionDelegate.swift */,
+				574D79AE1E99C79B00EB4AC5 /* WatchPath.swift */,
 				5739F04A1E567FB4000AF4B0 /* NotificationController.swift */,
 				572B63191E68FBEF00A56786 /* MapController.swift */,
 				572B63171E68FBB000A56786 /* FavoritePathListController.swift */,
@@ -851,6 +857,7 @@
 				901BE1431E865E6700B67073 /* ContactDetailViewController.swift in Sources */,
 				57DBE90E1E88A801003192BF /* SetCheckInViewController.swift in Sources */,
 				1AA29BF01E81FBB0008169E8 /* PathNavigationViewController.swift in Sources */,
+				574D79AD1E99C28800EB4AC5 /* WatchPath.swift in Sources */,
 				9099425C1E65589E006E3DCE /* DashboardViewController.swift in Sources */,
 				1ABCA6BC1E6C7F1A009872B3 /* PathJSONViewController.swift in Sources */,
 				9018B4F01E6619C300A7CAED /* GeneratePathViewController.swift in Sources */,
@@ -888,6 +895,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				574D79AF1E99C79B00EB4AC5 /* WatchPath.swift in Sources */,
 				572B631C1E68FC1600A56786 /* SetCheckInController.swift in Sources */,
 				572B63181E68FBB000A56786 /* FavoritePathListController.swift in Sources */,
 				5739F04B1E567FB4000AF4B0 /* NotificationController.swift in Sources */,

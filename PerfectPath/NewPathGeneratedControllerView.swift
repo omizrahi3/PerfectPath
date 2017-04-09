@@ -18,6 +18,7 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
     let numWaypoints = 3
     var path : Path?
     var activityIndicator: UIActivityIndicatorView?
+    var watchPath : WatchPath?
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var distanceLabel: UILabel!        
@@ -42,7 +43,8 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
         print("Entering didTapStartPathOnAppleWatch...")
         if WCSession.default().isReachable == true {
             print("Session is reachable on iOS")
-            
+            watchPath?.longitude = -84.396415
+            watchPath?.latitude = 33.774920
             let requestValues = ["command" : "startPathNow","data" : "pathString" as Any]
             let session = WCSession.default()
             
@@ -218,44 +220,3 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
 
 
 
-//extension NewPathGeneratedControllerView: WCSessionDelegate {
-//    /** Called when all delegate callbacks for the previously selected watch has occurred. The session can be re-activated for the now selected watch using activateSession. */
-//    @available(iOS 9.3, *)
-//    public func sessionDidDeactivate(_ session: WCSession) {
-//        
-//    }
-//    
-//    /** Called when the session can no longer be used to modify or add any new transfers and, all interactive messages will be cancelled, but delegate callbacks for background transfers can still occur. This will happen when the selected watch is being changed. */
-//    @available(iOS 9.3, *)
-//    public func sessionDidBecomeInactive(_ session: WCSession) {
-//        
-//    }
-//    
-//    /** Called when the session has completed activation. If session state is WCSessionActivationStateNotActivated there will be an error with more details. */
-//    @available(iOS 9.3, *)
-//    public func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-//        
-//    }
-//    
-//    
-//    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
-//        print("Entering session...")
-////                if let reference = message["reference"] as? String, let boardingPass = QRCode(reference) {
-////                    replyHandler(["boardingPassData": boardingPass.PNGData])
-////                }
-//        if let favPathName = message["favPathName"] as? String {
-//            print("favPathName was in message")
-//            var pathTest = findPath(index: 1, initialBearing: 20, waypointDistance: 3000)
-//            //let pathData = getPathByName(pathName: favPathName)
-//            replyHandler(["favPathData": pathTest])
-////            let favPathData = getPathByName(favPathName) {
-////                
-////            }
-//        }
-//    }
-//    
-//    
-//    
-//    
-//}
-//
