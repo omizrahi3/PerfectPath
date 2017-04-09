@@ -163,15 +163,6 @@ class GeneratePathViewController: UIViewController, CLLocationManagerDelegate, U
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destViewController : NewPathGeneratedControllerView = segue.destination as! NewPathGeneratedControllerView
         destViewController.path = path
-        /*pathInformation["Path Type"] = pathType
-        pathInformation["Starting Location"] = startingLocation
-        let distanceTimesTen: Double = distance*10
-        let roundedDistance: Double = round(distanceTimesTen)
-        distance = roundedDistance/10
-        pathInformation["Distance"] = distance
-        pathInformation["Guardian Path Enabled"] = guardianPathEnabled
-        let destViewController : NewPathGeneratedControllerView = segue.destination as! NewPathGeneratedControllerView
-        destViewController.pathInformation = pathInformation*/
     }
 
 }

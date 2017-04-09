@@ -22,7 +22,6 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
 
     var returningFromSetCheckInViewController: Int = 0
     
-    
     let testTenSecondBinary = 0b00001010
     let oneMinBinary = 0b00111100
     let fiveMinBinary = 0b100101100
@@ -36,6 +35,7 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
     var timer = Timer()
     
     var path : Path?
+    var heading : CLLocationDirection?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,13 +44,12 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
             start()
         }
         
-        
         //set up location manager to track user
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
         locationManager.activityType = .fitness
-        locationManager.distanceFilter = 1.0
+        locationManager.distanceFilter = kCLDistanceFilterNone
         let status = CLLocationManager.authorizationStatus()
         if status == .notDetermined || status == .denied || status == .authorizedWhenInUse {
             locationManager.requestAlwaysAuthorization()
@@ -69,8 +68,6 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
             //start timer
             self.startGuardianTimer()
         }
-        
-        
     }
     
     
@@ -145,24 +142,34 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("0")
         for location in locations {
-            print("1")
             if location.horizontalAccuracy < 20 {
-                print("2")
                 //update distance
                 if self.locations.count > 0 {
-                    print("3")
                     path?.metersTraveled! += location.distance(from: self.locations.last!)
-                    print("4")
                 }
                 //save location
-                print("5")
                 self.locations.append(location)
-                print("6")
+                let camLocation : CLLocationCoordinate2D = location.coordinate
+                let altitude: CLLocationDistance  = 5
+                let heading: CLLocationDirection = 0
+                let pitch = CGFloat(45)
+                let camera = MKMapCamera(lookingAtCenter: camLocation, fromDistance: altitude, pitch: pitch, heading: heading)
+                mapView.setCamera(camera, animated: true)
             }
         }
     }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        if (newHeading.headingAccuracy < 0) {
+            return
+        }
+        // Use the true heading if it is valid.
+        let theHeading = ((newHeading.trueHeading > 0) ?
+            newHeading.trueHeading : newHeading.magneticHeading);
+        self.heading = theHeading;
+    }
+    
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer! {
         if (overlay is MKPolyline) {
@@ -185,7 +192,7 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
         } else {
             startPauseButton.setTitle("Resume", for: .normal)
             locationManager.stopUpdatingLocation()
-            mapView.userTrackingMode = MKUserTrackingMode(rawValue: 0)!
+            //mapView.userTrackingMode = MKUserTrackingMode(rawValue: 0)!
             mapView.showsUserLocation = false
             timer.invalidate()
         }
@@ -199,14 +206,18 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
         }
     }
     
+    /**
+     When user clicks start or resume button, start tracking location and exercise timer
+     */
     func start() {
         mapView.showsUserLocation = true
-        mapView.userTrackingMode = MKUserTrackingMode(rawValue: 2)!
         startPauseButton.setTitle("Pause", for: .normal)
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.eachSecond(timer:)), userInfo: nil, repeats: true)
+        //mapView.userTrackingMode = MKUserTrackingMode.followWithHeading
+        locationManager.headingFilter = 15
         locationManager.startUpdatingLocation()
+        locationManager.startUpdatingHeading()
     }
-
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SetCheckInViewController" {
@@ -231,7 +242,6 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
                 destViewController.isPaused = false
             }
         }
-        
     }
     
     override func didReceiveMemoryWarning() {
