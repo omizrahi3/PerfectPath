@@ -11,6 +11,11 @@ import Foundation
 
 
 class MainMenuController: WKInterfaceController {
+    
+    
+    @IBAction func didTapStartPathFromPhone() {
+    }
+    
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)

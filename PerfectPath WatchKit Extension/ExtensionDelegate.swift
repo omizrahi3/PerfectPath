@@ -7,11 +7,18 @@
 //
 
 import WatchKit
+import WatchConnectivity
 
-class ExtensionDelegate: NSObject, WKExtensionDelegate {
+class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
 
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
+        if (WCSession.isSupported()) {
+            print("WCSession is supported on watch")
+            let session = WCSession.default()
+            session.delegate = self
+            session.activate()
+        }
     }
 
     func applicationDidBecomeActive() {
@@ -22,5 +29,42 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, etc.
     }
+    
+    @available(watchOS 2.2, *)
+    public func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        print("Entering session activationDidCompleteWith...")
+    }
+    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        print("Entering session didReceiveMessage with no reply handler...")
+        
+    }
+    
+    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
+        print("Entering session didReceiveApplicationContext...")
+    }
+    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+        print("Entering didReceiveMessage with a reply handler...")
+        
+        var replyValues = Dictionary<String, AnyObject>()
+        
+        //        let viewController = self.window!.rootViewController!
+        //            as UIViewController
+        
+        print("in session with message in app delegate")
+        switch message["command"] as! String {
+        case "startPathNow" :
+            let path = message["data"]
+            print("ios -> watch, watch got startPathNow, replying now...")
+            replyValues["data"] = "OK" as AnyObject?
+            let rootInterfaceController = WKExtension.shared().rootInterfaceController
+            rootInterfaceController?.pushController(withName: "MapController", context: path)
+        default:
+            break
+        }
+        replyHandler(replyValues)
+    }
+    
 
 }
