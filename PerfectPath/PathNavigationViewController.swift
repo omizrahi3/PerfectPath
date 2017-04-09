@@ -22,7 +22,6 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
 
     var returningFromSetCheckInViewController: Int = 0
     
-    
     let testTenSecondBinary = 0b00001010
     let oneMinBinary = 0b00111100
     let fiveMinBinary = 0b100101100
@@ -44,7 +43,6 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
         if (returningFromSetCheckInViewController == 1) {
             start()
         }
-        
         
         //set up location manager to track user
         locationManager = CLLocationManager()
@@ -70,8 +68,6 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
             //start timer
             self.startGuardianTimer()
         }
-        
-        
     }
     
     
@@ -162,28 +158,16 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
                 mapView.setCamera(camera, animated: true)
             }
         }
-
-        /*if (self.locations.count > 0 && self.heading != nil) {
-            let camLocation : CLLocationCoordinate2D = (self.locations.last?.coordinate)!
-            let altitude: CLLocationDistance  = 3
-            let heading: CLLocationDirection = self.heading!
-            let pitch = CGFloat(45)
-            let camera = MKMapCamera(lookingAtCenter: camLocation, fromDistance: altitude, pitch: pitch, heading: heading)
-            mapView.setCamera(camera, animated: true)
-        }*/
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         if (newHeading.headingAccuracy < 0) {
             return
         }
-        
         // Use the true heading if it is valid.
         let theHeading = ((newHeading.trueHeading > 0) ?
             newHeading.trueHeading : newHeading.magneticHeading);
-        
         self.heading = theHeading;
-
     }
     
     
@@ -222,22 +206,17 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
         }
     }
     
+    /**
+     When user clicks start or resume button, start tracking location and exercise timer
+     */
     func start() {
         mapView.showsUserLocation = true
-        //mapView.userTrackingMode = MKUserTrackingMode(rawValue: 2)!
         startPauseButton.setTitle("Pause", for: .normal)
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.eachSecond(timer:)), userInfo: nil, repeats: true)
-        mapView.userTrackingMode = MKUserTrackingMode.followWithHeading
+        //mapView.userTrackingMode = MKUserTrackingMode.followWithHeading
         locationManager.headingFilter = 15
         locationManager.startUpdatingLocation()
         locationManager.startUpdatingHeading()
-        
-        /*let camLocation = self.locations.last?.coordinate
-        let altitude: CLLocationDistance  = 10
-        let heading: CLLocationDirection = locationManager.heading!.trueHeading
-        let pitch = CGFloat(85)
-        let camera = MKMapCamera(lookingAtCenter: camLocation!, fromDistance: altitude, pitch: pitch, heading: heading)
-        mapView.setCamera(camera, animated: true)*/
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -263,7 +242,6 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
                 destViewController.isPaused = false
             }
         }
-        
     }
     
     override func didReceiveMemoryWarning() {
