@@ -215,7 +215,7 @@
                                 </state>
                                 <connections>
                                     <action selector="didTapGeneratePath:" destination="esU-6W-uuJ" eventType="touchUpInside" id="mVp-2C-e2R"/>
-                                    <segue destination="fsI-cr-4MR" kind="show" id="3Tc-AS-iAe"/>
+                                    <segue destination="fsI-cr-4MR" kind="show" identifier="generatePathSegue" id="3Tc-AS-iAe"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o76-8b-ByD">
@@ -816,7 +816,7 @@
             <objects>
                 <navigationController storyboardIdentifier="dashboardNav" automaticallyAdjustsScrollViewInsets="NO" id="LHW-94-WSN" customClass="AppNavigationController" customModule="PerfectPath" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="zO6-bE-LHg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zO6-bE-LHg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
