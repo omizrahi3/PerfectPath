@@ -19,7 +19,7 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var startPauseButton: UIButton!
-    @IBOutlet weak var directionsLabel: UILabel!
+    //@IBOutlet weak var directionsLabel: UILabel!
 
 
     var returningFromSetCheckInViewController: Int = 0
@@ -116,7 +116,7 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
             mapView.setVisibleMapRect(route.polyline.boundingMapRect,
                                       edgePadding: UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0), animated: false)
             let steps = route.steps
-            directionsLabel.text = steps[0].instructions
+            //directionsLabel.text = steps[0].instructions
         } else {
             let polylinesBoundingRect = MKMapRectUnion(mapView.visibleMapRect, route.polyline.boundingMapRect)
             mapView.setVisibleMapRect(polylinesBoundingRect, edgePadding: UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0), animated: false)
