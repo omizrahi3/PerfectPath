@@ -19,6 +19,7 @@ class Path: NSObject {
     var actualDistance : Double?
     var secondsTraveled : Int?
     var metersTraveled : Double?
+    var mapItemWaypoints = [MKMapItem]()
     
     init (startingLocation: CLPlacemark, distanceInMiles: Double, guardianPathEnabled: Bool) {
         self.startingLocation = startingLocation

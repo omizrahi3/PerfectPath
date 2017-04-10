@@ -25,10 +25,6 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate, WCSes
     //for watch communication
     var lastMessage: CFAbsoluteTime = 0
     
-    
-    
-    
-    
     //load view of route and metrics
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -137,7 +133,8 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate, WCSes
                     self.calculateSegmentDirections(index: index+1, time: timeVar, routes: routeVar)
                 } else {
                     self.hideActivityIndicator()
-                    self.path?.routes = routeVar 
+                    self.path?.routes = routeVar
+                    self.path?.mapItemWaypoints = self.waypoints
                     self.showRoute(routes: routeVar)
                     var distance = 0.0
                     for i in 0..<routes.count {
