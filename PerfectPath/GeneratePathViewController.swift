@@ -89,15 +89,18 @@ class GeneratePathViewController: UIViewController, CLLocationManagerDelegate, U
     public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.view.endEditing(true)
         geocoder.geocodeAddressString(searchBar.text!, completionHandler: { (placemarks, error) in
-            if error != nil {
-                print(error as Any)
-                return
-            }
-            if (placemarks?.count)! > 0 {
-                let placemark = placemarks?.first
-                self.changeSearchBarText(placemark: placemark!)
+            if let _ = error {
+                let alert = UIAlertController(title: nil, message: "Location was not found.", preferredStyle: .alert)
+                let okButton = UIAlertAction(title: "OK", style: .cancel)
+                alert.addAction(okButton)
+                self.present(alert, animated: true, completion: nil)
             } else {
-                print("not found")
+                if (placemarks?.count)! > 0 {
+                    let placemark = placemarks?.first
+                    self.changeSearchBarText(placemark: placemark!)
+                } else {
+                    print("not found")
+                }
             }
         })
     }
