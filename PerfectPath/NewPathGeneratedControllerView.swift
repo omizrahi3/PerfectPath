@@ -24,6 +24,8 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var distanceLabel: UILabel!        
     @IBOutlet weak var guardianEnabledLabel: UILabel!
     
+    //for watch communication
+    var lastMessage: CFAbsoluteTime = 0
     
     //load view of route and metrics
     override func viewDidLoad() {
@@ -108,7 +110,8 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
                     self.calculateSegmentDirections(index: index+1, time: timeVar, routes: routeVar)
                 } else {
                     self.hideActivityIndicator()
-                    self.path?.routes = routeVar 
+                    self.path?.routes = routeVar
+                    self.path?.mapItemWaypoints = self.waypoints
                     self.showRoute(routes: routeVar)
                     var distance = 0.0
                     for i in 0..<routes.count {
