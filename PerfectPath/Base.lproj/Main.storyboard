@@ -715,7 +715,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="didTapStartPathOnWatch:" destination="fsI-cr-4MR" eventType="touchUpInside" id="oH2-EQ-GJR"/>
+                                    <action selector="didTapStartPathOnWatch:" destination="fsI-cr-4MR" eventType="touchUpInside" id="x4A-JM-y5u"/>
                                 </connections>
                             </button>
                         </subviews>

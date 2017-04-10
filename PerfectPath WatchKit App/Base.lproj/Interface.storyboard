@@ -34,12 +34,12 @@
                             <fontDescription key="font" type="system" weight="thin" pointSize="20"/>
                         </label>
                         <separator alignment="left" id="OLN-Dx-1zN"/>
-                        <button width="1" alignment="left" title="Favorite Paths" id="VGL-SX-97o">
+                        <button width="1" height="53" alignment="left" title="Favorite Paths" id="VGL-SX-97o">
                             <connections>
                                 <segue destination="H1D-mb-WEx" kind="push" id="UIC-xz-hpA"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="Emergency Contacts" id="Gol-XX-NA1"/>
+                        <button width="1" height="52" alignment="left" title="Emergency Contacts" id="Gol-XX-NA1"/>
                     </items>
                 </controller>
             </objects>
@@ -51,10 +51,10 @@
                 <controller identifier="MapController" id="Xop-D8-78C" customClass="MapController" customModule="PerfectPath_WatchKit_Extension">
                     <items>
                         <separator alignment="left" id="LR1-3B-ReS"/>
-                        <map height="100" alignment="left" id="yNE-Yg-o5J"/>
+                        <map height="100" alignment="left" id="yNE-Yg-o5J" userLabel="MapObject"/>
                         <group width="1" alignment="left" id="rx9-yd-WNU">
                             <items>
-                                <button width="65" height="46" alignment="right" verticalAlignment="bottom" title="G" id="BCJ-gO-fZK">
+                                <button width="63" height="40" alignment="right" verticalAlignment="bottom" title="G" id="BCJ-gO-fZK">
                                     <gestureRecognizers>
                                         <longPressGestureRecognizer id="Nxa-Gy-WWU"/>
                                     </gestureRecognizers>
@@ -65,19 +65,24 @@
                                         <segue destination="4Qq-AX-j8F" kind="push" id="wTa-YU-VZN"/>
                                     </connections>
                                 </button>
-                                <button width="65" height="25" alignment="left" title="Start" id="YAR-cz-ksp">
+                                <button width="63" height="40" alignment="left" title="Start" id="YAR-cz-ksp">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="backgroundColor" red="0.34356227649999999" green="0.80329096499999997" blue="0.381021728" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="didTapStartBtn" destination="Xop-D8-78C" id="WJw-fa-dKE"/>
+                                    </connections>
                                 </button>
                             </items>
                         </group>
                     </items>
                     <connections>
                         <outlet property="guardianBtn" destination="BCJ-gO-fZK" id="Sup-W7-lb4"/>
+                        <outlet property="mapObject" destination="yNE-Yg-o5J" id="hab-nO-QI5"/>
+                        <outlet property="startBtn" destination="YAR-cz-ksp" id="fHn-Fn-2dT"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="578" y="1176"/>
+            <point key="canvasLocation" x="578" y="1175"/>
         </scene>
         <!--AlertTimerCountdownController-->
         <scene sceneID="uFM-hY-q9b">

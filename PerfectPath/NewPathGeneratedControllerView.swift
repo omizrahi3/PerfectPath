@@ -11,12 +11,14 @@ import MapKit
 import WatchConnectivity
 
 
-class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate, WCSessionDelegate {
+
+class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
     var pathInformation: [String : Any?] = [:]
     var waypoints = [MKMapItem]()
     let numWaypoints = 3
     var path : Path?
     var activityIndicator: UIActivityIndicatorView?
+    var watchPath : WatchPath?
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var distanceLabel: UILabel!        
@@ -27,6 +29,7 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate, WCSes
     
     //load view of route and metrics
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         mapView.delegate = self
         addActivityIndicator()
@@ -37,55 +40,29 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate, WCSes
         findPath(index: 1, initialBearing: initialBearing, waypointDistance: waypointDistance)
         addGuardianLabel()
     }
-    //############################## CODE FOR WATCH COMMUNICATION #################################
-//    // Start the path on the watch
-//    @IBAction func didTapStartPathOnWatch(_ sender: Any) {
-//        print("Entering didTapStartPathOnWatch...")
-//        
-//   
-//        if WCSession.isSupported() {
-//            let watchSession = WCSession.default()
-//            watchSession.delegate = self
-//            watchSession.activate()
-//            if watchSession.isPaired && watchSession.isWatchAppInstalled {
-//                do {
-//                    try watchSession.updateApplicationContext(["foo": "bar"])
-//                } catch let error as NSError {
-//                    print(error.description)
-//                }
-//            }
-//        }
-//        
-//        self.sendWatchMessage(msg: "Hello")
-//        
-//    } //end didTapStartPathOnWatch
-//    
-//    
-//    
-//    
-//    func sendWatchMessage(msg: String) {
-//        let currentTime = CFAbsoluteTimeGetCurrent()
-//        
-//        // if less than half a second has passed, bail out
-//        if lastMessage + 0.5 > currentTime {
-//            return
-//        }
-//        
-//        // send a message to the watch if it's reachable
-//        if (WCSession.default().isReachable) {
-//            // this is a meaningless message, but it's enough for our purposes
-//            let message = ["Message": msg]
-//            WCSession.default().sendMessage(message, replyHandler: nil)
-//        }
-//        
-//        // update our rate limiting property
-//        lastMessage = CFAbsoluteTimeGetCurrent()
-//    }
     
-    
-    
-    
-    //##############################################################################################
+    @IBAction func didTapStartPathOnWatch(_ sender: Any) {
+        print("Entering didTapStartPathOnAppleWatch...")
+        if WCSession.default().isReachable == true {
+            print("Session is reachable on iOS")
+            watchPath?.longitude = -84.396415
+            watchPath?.latitude = 33.774920
+            let requestValues = ["command" : "startPathNow","data" : "pathString" as Any]
+            let session = WCSession.default()
+            
+            session.sendMessage(requestValues, replyHandler: { (reply) -> Void in
+                print("sent command: " + String(describing: requestValues["command"]))
+                print("sent data: " + String(describing: requestValues["data"]))
+                print("rec command: " + String(describing: reply["command"]))
+                print("rec data: " + String(describing: reply["data"]))
+            }, errorHandler: { error in
+                print("error: \(error)")
+            })
+        }
+        
+        
+    }
+
     func findPath(index: Int, initialBearing: Double, waypointDistance: Double) {
         let lastMKPoint = waypoints[index-1]
         let lastCoords = lastMKPoint.placemark.coordinate
@@ -241,33 +218,8 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate, WCSes
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
-    
-    
-    // Below methods are required to conform to protocol WCSessionDelegate
-    
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        
-    }
-    
-    func sessionDidBecomeInactive(_ session: WCSession) {
-        
-    }
-    
-    func sessionDidDeactivate(_ session: WCSession) {
-        
-    }
-    
-    
-    
-
 }
+
+
+
