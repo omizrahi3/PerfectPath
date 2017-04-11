@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.4.0)
   - Firebase/Auth (3.13.0):
     - Firebase/Core
     - FirebaseAuth (= 3.1.1)
@@ -37,12 +38,14 @@ PODS:
   - Material/Core (2.6.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.4)
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
   - Material
 
 SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   Firebase: 5bc34d7b5ff5792e3386c8b28dc6265deeab0da4
   FirebaseAnalytics: 0d1b7d81d5021155be37702a94ba1ec16d45365d
   FirebaseAuth: cc8a1824170adbd351edb7f994490a3fb5c18be6
@@ -53,6 +56,6 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
   Material: f7165e4f995fda1d1ba7737a561cbfa1b80e72b6
 
-PODFILE CHECKSUM: 828fc1d00a941317fab7c22eb32cdad8d58f5afd
+PODFILE CHECKSUM: 694dd27de45cce56b2c745e34d18e6b5c952ae56
 
 COCOAPODS: 1.2.0

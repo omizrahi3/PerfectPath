@@ -8,9 +8,16 @@
 
 import Foundation
 import UIKit
+import Firebase
+import Alamofire
 
 class GuardianPopUpViewController: UIViewController {
     
+    var contacts = [Contact]()
+    var contactsRef: FIRDatabaseReference!
+    var profileRef: FIRDatabaseReference!
+    
+    var latestRecievedProfile: Profile?
     
     @IBOutlet weak var secondsLabel: UILabel!
     var secondsVal : Int = 60
@@ -29,27 +36,65 @@ class GuardianPopUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupFirebaseObservers()
         if isPaused == false {
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.eachSecond(timer:)), userInfo: nil, repeats: true)
         }
-        secondsVal = 60
+        secondsVal = 10
         countdownToAlert = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.countDown(countdownToAlert:)), userInfo: nil, repeats: true)
         
         //update label
     }
     
+    func setupFirebaseObservers() {
+        let firebaseRef = FIRDatabase.database().reference()
+        let currentUsersUid = FIRAuth.auth()!.currentUser!.uid
+        contactsRef = firebaseRef.child("contacts").child(currentUsersUid)
+        profileRef = firebaseRef.child("profiles").child(currentUsersUid)
+    }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        contacts.removeAll()
+        
+        //TODO Add child to listen child added
+        contactsRef.observe(.childAdded, with: { (snapshot) in
+            print("childAdded")
+            let addedContact = Contact(snapshot: snapshot)
+            print(addedContact.getSnapshotValue())
+            self.contacts.insert(addedContact, at: 0)
+        })
+        
+        profileRef.observe(.value, with: { (snapshot) in
+            self.latestRecievedProfile = Profile(snapshot: snapshot)
+        })
+    }
     
     //TODO : this should handle the sending of your current location via sms to your emergency contacts
     func sendMessagesToEmergencyContacts() {
         print("TODO : In sendMessagesToEmergencyContacts...")
-        //TODO : Get your location
-        
-        //TODO : Get your emergency contacts
-        
-        //TODO : Form messages
-        
-        //TODO : Send messages
+        for contact in contacts {
+            print ("sending message to "+contact.fullname)
+            print (contact.phonenumber)
+            
+            let str1 = "EMERGENCY MESSAGE FROM PERFECT PATH. Please contact your friend "
+            let str2 = (self.latestRecievedProfile?.firstname)! + " " + (self.latestRecievedProfile?.lastname)!
+            let str3 = " as they did not respond from their Guardian Check in."
+            let message = "\(str1) \(str2) \(str3)"
+            
+            let headers = [
+                "Content-Type": "application/x-www-form-urlencoded"
+            ]
+            
+            let parameters: Parameters = [
+                "To": contact.phonenumber,
+                "Body": message
+            ]
+            Alamofire.request("https://warm-inlet-35920.herokuapp.com/sms", method: .post, parameters: parameters, headers: headers).response { response in
+                print(response)
+                
+            }
+        }
     }
     
     
