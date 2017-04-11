@@ -11,11 +11,7 @@ import Material
 import Firebase
 
 class RegisterViewController: UIViewController {
-    //fileprivate var card: ImageCard!
-    //fileprivate var fabButton: FABButton!
     fileprivate var registerButton: RaisedButton!
-    //fileprivate var registerButton: FlatButton!
-    //fileprivate var imageView: UIImageView!
     fileprivate var emailTextField: TextField!
     fileprivate var passwordTextField: TextField!
     fileprivate var firstnameTextField: TextField!

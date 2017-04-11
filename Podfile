@@ -10,6 +10,7 @@ target 'PerfectPath' do
     pod 'Firebase/Auth'
     pod 'Firebase/Database'
     pod 'Material'
+    pod 'Alamofire', '~> 4.4'
 
   target 'PerfectPathTests' do
     inherit! :search_paths
