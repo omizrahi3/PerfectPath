@@ -10,7 +10,7 @@ import UIKit
 import Material
 import Firebase
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UITextFieldDelegate {
     fileprivate var registerButton: RaisedButton!
     fileprivate var emailTextField: TextField!
     fileprivate var passwordTextField: TextField!
@@ -30,8 +30,25 @@ class RegisterViewController: UIViewController {
         preparePNField()
         prepareRegisterButton()
         prepareLayout()
+        
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        firstnameTextField.delegate = self
+        lastnameTextField.delegate = self
+        phonenumberTextField.delegate = self
+        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 }
+//extension RegisterViewController: UITextFieldDelegate{
+//    func textFieldShouldReturn(textField: UITextField) -> Bool {
+//        textField.resignFirstResponder()
+//        return true
+//    }}
 
 extension RegisterViewController {
     fileprivate func prepareEmailField() {
