@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7hw-Ns-MjU">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7hw-Ns-MjU">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
     </dependencies>
     <scenes>
         <!--Static Notification Interface Controller-->
@@ -39,7 +39,11 @@
                                 <segue destination="H1D-mb-WEx" kind="push" id="UIC-xz-hpA"/>
                             </connections>
                         </button>
-                        <button width="1" height="52" alignment="left" title="Emergency Contacts" id="Gol-XX-NA1"/>
+                        <button width="1" height="52" alignment="left" title="Emergency Contacts" id="Gol-XX-NA1">
+                            <connections>
+                                <segue destination="do4-by-d3m" kind="push" id="pMZ-4J-kTe"/>
+                            </connections>
+                        </button>
                     </items>
                 </controller>
             </objects>
@@ -147,6 +151,22 @@
             </objects>
             <point key="canvasLocation" x="905" y="285"/>
         </scene>
+        <!--Interface Controller-->
+        <scene sceneID="sQq-n7-4v1">
+            <objects>
+                <controller id="do4-by-d3m">
+                    <items>
+                        <label height="24" alignment="left" text="View Contacts" id="eNb-m1-Nfa">
+                            <fontDescription key="font" type="system" weight="thin" pointSize="20"/>
+                        </label>
+                        <separator alignment="left" id="39I-EW-ecq"/>
+                        <label width="131" height="28" alignment="left" text="Mom" id="pha-jd-GhG"/>
+                        <label width="131" height="28" alignment="left" text="Dad" id="tiw-nD-WLZ"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-62" y="1082"/>
+        </scene>
         <!--SetCheckInController-->
         <scene sceneID="hxl-Pf-PX6">
             <objects>
@@ -201,8 +221,6 @@
                                 <segue destination="Xop-D8-78C" kind="push" id="L0S-kU-JLy"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="Shady Path" id="glu-mr-VFO"/>
-                        <button width="1" alignment="left" title="East Campus" id="1vm-F1-rTp"/>
                     </items>
                 </controller>
             </objects>
