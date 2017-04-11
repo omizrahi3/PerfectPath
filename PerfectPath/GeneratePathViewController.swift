@@ -18,8 +18,6 @@ class GeneratePathViewController: UIViewController, CLLocationManagerDelegate, U
     let manager = CLLocationManager()
     lazy var geocoder = CLGeocoder()
     
-    //dictionary used to create JSON
-    var dictionary: [String : Any?] = [:]
     var pathInformation: [String : Any?] = [:]
     var dataString : String = ""
     var startingLocation : CLPlacemark? = nil
@@ -89,15 +87,19 @@ class GeneratePathViewController: UIViewController, CLLocationManagerDelegate, U
     public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.view.endEditing(true)
         geocoder.geocodeAddressString(searchBar.text!, completionHandler: { (placemarks, error) in
-            if error != nil {
-                print(error as Any)
-                return
-            }
-            if (placemarks?.count)! > 0 {
-                let placemark = placemarks?.first
-                self.changeSearchBarText(placemark: placemark!)
+            if let _ = error {
+                self.startingLocation = nil
+                let alert = UIAlertController(title: nil, message: "Location was not found.", preferredStyle: .alert)
+                let okButton = UIAlertAction(title: "OK", style: .cancel)
+                alert.addAction(okButton)
+                self.present(alert, animated: true, completion: nil)
             } else {
-                print("not found")
+                if (placemarks?.count)! > 0 {
+                    let placemark = placemarks?.first
+                    self.changeSearchBarText(placemark: placemark!)
+                } else {
+                    print("not found")
+                }
             }
         })
     }
@@ -135,34 +137,43 @@ class GeneratePathViewController: UIViewController, CLLocationManagerDelegate, U
     
     //Generate clicked and JSON generated
     @IBAction func didTapGeneratePath(_ sender: Any) {
-        guard startingLocation != nil else {
-            print ("starting location must be entered")
-            return
-        }
         let distanceTimesTen: Double = distance*10
         let roundedDistance: Double = round(distanceTimesTen)
         distance = roundedDistance/10
-        path = Path(startingLocation: startingLocation!, distanceInMiles: distance, guardianPathEnabled: guardianPathEnabled)
-        createDictionaryForJSON()
-        do {
-            let data = try JSONSerialization.data(withJSONObject:dictionary, options:[])
-            dataString = String(data: data, encoding: String.Encoding.utf8)!
-        } catch {
-            print("JSON serialization failed:  \(error)")
+        if startingLocation != nil {
+            path = Path(startingLocation: startingLocation!, distanceInMiles: distance, guardianPathEnabled: guardianPathEnabled)
         }
     }
+
     
-    private func createDictionaryForJSON() {
-        dictionary["Path Type"] = pathType
-        dictionary["Starting Location"] = startingLocation?.addressDictionary
-        dictionary["Distance"] = path?.prefferedDistanceMeters
-        dictionary["Guardian Path Enabled"] = guardianPathEnabled
-    }
-    
-    //pass json to next page
+    //pass path to next page
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        startingLocation = nil
         let destViewController : NewPathGeneratedControllerView = segue.destination as! NewPathGeneratedControllerView
         destViewController.path = path
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
+        if let ident = identifier {
+            if ident == "generatePathSegue" {
+                print("in should perform segue")
+                if distance <= 0 {
+                    print("in distance less than 0")
+                    let alert = UIAlertController(title: nil, message: "Please enter preferred distance.", preferredStyle: .alert)
+                    let okButton = UIAlertAction(title: "OK", style: .cancel)
+                    alert.addAction(okButton)
+                    self.present(alert, animated: true, completion: nil)
+                    return false
+                } else if (startingLocation == nil) {
+                    let alert = UIAlertController(title: nil, message: "Please enter starting location.", preferredStyle: .alert)
+                    let okButton = UIAlertAction(title: "OK", style: .cancel)
+                    alert.addAction(okButton)
+                    self.present(alert, animated: true, completion: nil)
+                    return false
+                }
+            }
+        }
+        return true
     }
 
 }
