@@ -33,7 +33,7 @@ struct ButtonLayout {
     }
 }
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     fileprivate var card: ImageCard!
     fileprivate var fabButton: FABButton!
     fileprivate var loginButton: RaisedButton!
@@ -54,7 +54,17 @@ class LoginViewController: UIViewController {
         prepareFABButton()
         preparePresenterCard()
         prepareLayout()
+        
+        emailField.delegate = self
+        passwordField.delegate = self
+        
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
 }
 
 extension LoginViewController {
