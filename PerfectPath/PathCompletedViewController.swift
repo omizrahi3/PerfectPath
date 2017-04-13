@@ -11,5 +11,12 @@ import UIKit
 
 class PathCompletedViewController: UIViewController {
     
+
+    @IBOutlet weak var savePathButton: UIButton!
+    
+    @IBAction func savePathClicked(_ sender: Any) {
+        print("save path button clicked")
+    }
+    
     
 }
