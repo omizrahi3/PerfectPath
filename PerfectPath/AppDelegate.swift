@@ -14,6 +14,12 @@ import WatchConnectivity
 class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
 
     var window: UIWindow?
+    var contacts = [Contact]()
+    var contactsRef: FIRDatabaseReference!
+    var nameArray = [String]()
+    var numberArray = [String]()
+    var contactsTableViewController: ContactsTableViewController?
+    
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -84,21 +90,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
         
         var replyValues = Dictionary<String, AnyObject>()
         
-        //        let viewController = self.window!.rootViewController!
-        //            as UIViewController
         print("in session with message in app delegate")
         switch message["command"] as! String {
         case "start" :
             print("In app delegate session in case start")
             //            viewController.startPlay()
             replyValues["data"] = "KK1" as AnyObject?
-        case "stop" :
-            //            viewController.stopPlay()
-            replyValues["status"] = "Stopped" as AnyObject?
-            //        case "volume" :
-            //            let level = message["level"] as! Float
-            //            viewController.adjustVolume(level)
-        //            replyValues["status"] = "Vol = \(level)" as AnyObject?
+        case "startPathNow" :
+            print("received command: startPathNow")
+            print("with data: " + String(describing: message["data"]))
+        case "emergencyContacts" :
+            // request from watch looks like ["command" : "emergencyContacts"]
+            // reply from ios looks like ["command" : "emergencyContacts","nameArray" : nameArray as Any, "numberArray": numberArray as Any]
+            print("emergencyContacts case")
+            //contactsTableViewController?.viewDidLoad()
+            print("first name and num is : " + (nameArray[0]) + " and " + (numberArray[0]))
+            replyValues["command"] = "emergencyContacts" as AnyObject?
+            replyValues["nameArray"] = nameArray as AnyObject?
+            replyValues["numberArray"] = numberArray as AnyObject?
         default:
             break
         }
@@ -110,24 +119,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
         print("Entering didReceiveMessage for a nil reply handler...")
         
         var replyValues = Dictionary<String, AnyObject>()
-        
-        //        let viewController = self.window!.rootViewController!
-        //            as UIViewController
         print("in session with message in app delegate")
         switch message["command"] as! String {
-        case "start" :
-            print("In app delegate session in case start")
-            //            viewController.startPlay()
-            replyValues["data"] = "KK2" as AnyObject?
         case "startPathNow" :
             print("received command: startPathNow")
             print("with data: " + String(describing: message["data"]))
-//            replyValues["data"] = "OK" as AnyObject?
-//            print("reply command: startPathNow")
-            //        case "volume" :
-            //            let level = message["level"] as! Float
-            //            viewController.adjustVolume(level)
-        //            replyValues["status"] = "Vol = \(level)" as AnyObject?
         default:
             break
         }
@@ -142,20 +138,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
         //            as UIViewController
         print("in session with message in app delegate")
         switch message["command"] as! String {
-        case "start" :
-            print("In app delegate session in case start")
-            //            viewController.startPlay()
-            replyValues["data"] = "KK3" as AnyObject?
-        case "stop" :
-            //            viewController.stopPlay()
-            replyValues["status"] = "Stopped" as AnyObject?
-            //        case "volume" :
-            //            let level = message["level"] as! Float
-            //            viewController.adjustVolume(level)
-        //            replyValues["status"] = "Vol = \(level)" as AnyObject?
         case "startPathNow" :
             print("received command: startPathNow")
             print("with data: " + String(describing: message["data"]))
+        case "emergencyContacts" :
+            // request from watch looks like ["command" : "emergencyContacts"]
+            // reply from ios looks like ["command" : "emergencyContacts","nameArray" : nameArray as Any, "numberArray": numberArray as Any]
+            print("emergencyContacts case")
+            replyValues["command"] = "emergencyContacts" as AnyObject?
+            replyValues["nameArray"] = ["molly", "sadie"] as AnyObject?
+            replyValues["numberArray"] = ["1234567899","1234567899"] as AnyObject?
         default:
             break
         }

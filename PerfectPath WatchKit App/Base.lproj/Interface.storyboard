@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7hw-Ns-MjU">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7hw-Ns-MjU">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
     </dependencies>
     <scenes>
         <!--Static Notification Interface Controller-->
@@ -39,7 +39,11 @@
                                 <segue destination="H1D-mb-WEx" kind="push" id="UIC-xz-hpA"/>
                             </connections>
                         </button>
-                        <button width="1" height="52" alignment="left" title="Emergency Contacts" id="Gol-XX-NA1"/>
+                        <button width="1" height="52" alignment="left" title="Emergency Contacts" id="Gol-XX-NA1">
+                            <connections>
+                                <segue destination="do4-by-d3m" kind="push" id="pMZ-4J-kTe"/>
+                            </connections>
+                        </button>
                     </items>
                 </controller>
             </objects>
@@ -112,40 +116,42 @@
             </objects>
             <point key="canvasLocation" x="787" y="1603"/>
         </scene>
-        <!--Interface Controller-->
-        <scene sceneID="9AS-me-Guz">
+        <!--EmergencyContactsController-->
+        <scene sceneID="sQq-n7-4v1">
             <objects>
-                <controller id="fqT-AL-aVA">
+                <controller identifier="EmergencyContactsController" id="do4-by-d3m" customClass="EmergencyContactsController" customModule="PerfectPath_WatchKit_Extension">
                     <items>
-                        <table alignment="left" id="dl1-bQ-buf">
+                        <label height="24" alignment="left" text="View Contacts" id="eNb-m1-Nfa">
+                            <fontDescription key="font" type="system" weight="thin" pointSize="20"/>
+                        </label>
+                        <separator alignment="left" id="39I-EW-ecq"/>
+                        <table alignment="left" id="h3W-dZ-kmi">
                             <items>
-                                <tableRow id="YAy-Fr-dT9">
-                                    <group key="rootItem" width="1" alignment="left" id="Ngd-30-fo0">
-                                        <gestureRecognizers>
-                                            <tapGestureRecognizer id="X62-wp-9mp"/>
-                                        </gestureRecognizers>
+                                <tableRow identifier="ContactsRowControllerIdentifier" id="ZOj-G1-ERf" customClass="ContactsRowController" customModule="PerfectPath_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="JCD-cN-Gwz">
+                                        <items>
+                                            <label height="45" alignment="left" verticalAlignment="center" text="Label" textAlignment="left" id="jSJ-Dt-qfR" userLabel="Name Label">
+                                                <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                            </label>
+                                            <label height="45" alignment="right" verticalAlignment="center" text="Label" textAlignment="right" id="VJm-jJ-frI" userLabel="Number Label">
+                                                <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                            </label>
+                                        </items>
                                     </group>
-                                </tableRow>
-                                <tableRow id="ayk-ef-noB">
-                                    <group key="rootItem" width="1" alignment="left" id="ene-kq-j82">
-                                        <gestureRecognizers>
-                                            <tapGestureRecognizer id="laR-M9-CPk"/>
-                                        </gestureRecognizers>
-                                    </group>
-                                </tableRow>
-                                <tableRow id="Ooy-RF-Fup">
-                                    <group key="rootItem" width="1" alignment="left" id="l3L-5N-IrG">
-                                        <gestureRecognizers>
-                                            <tapGestureRecognizer id="a3x-w2-grd"/>
-                                        </gestureRecognizers>
-                                    </group>
+                                    <connections>
+                                        <outlet property="nameLabel" destination="jSJ-Dt-qfR" id="1SA-5A-u14"/>
+                                        <outlet property="numberLabel" destination="VJm-jJ-frI" id="M0A-c9-pXP"/>
+                                    </connections>
                                 </tableRow>
                             </items>
                         </table>
                     </items>
+                    <connections>
+                        <outlet property="contactsTable" destination="h3W-dZ-kmi" id="G0V-PJ-cIa"/>
+                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="905" y="285"/>
+            <point key="canvasLocation" x="-62" y="1082"/>
         </scene>
         <!--SetCheckInController-->
         <scene sceneID="hxl-Pf-PX6">
@@ -201,8 +207,6 @@
                                 <segue destination="Xop-D8-78C" kind="push" id="L0S-kU-JLy"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="Shady Path" id="glu-mr-VFO"/>
-                        <button width="1" alignment="left" title="East Campus" id="1vm-F1-rTp"/>
                     </items>
                 </controller>
             </objects>
@@ -211,7 +215,7 @@
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="PerfectPath_WatchKit_App" customModuleProvider="target"/>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="PerfectPath_WatchKit_Extension"/>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
         </scene>

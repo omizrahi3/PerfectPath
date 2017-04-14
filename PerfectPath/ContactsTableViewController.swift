@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import Material
+import WatchConnectivity
 
 class ContactsTableViewController: UITableViewController {
     
@@ -21,6 +22,11 @@ class ContactsTableViewController: UITableViewController {
     
     var contacts = [Contact]()
     var contactsRef: FIRDatabaseReference!
+    var nameArray = [String]()
+    var numberArray = [String]()
+    let appDelegateRef = UIApplication.shared.delegate as! AppDelegate
+
+
     
     
     override func viewDidLoad() {
@@ -29,6 +35,8 @@ class ContactsTableViewController: UITableViewController {
         setupFirebaseObservers()
         prepareAddEditButtons()
         prepareNavigationItem()
+        
+
     }
     
     func setupFirebaseObservers() {
@@ -46,7 +54,10 @@ class ContactsTableViewController: UITableViewController {
         contactsRef.observe(.childAdded, with: { (snapshot) in
             print("childAdded")
             let addedContact = Contact(snapshot: snapshot)
-            self.contacts.insert(addedContact, at: 0)
+            self.contacts.insert(addedContact, at: 0)            
+            self.appDelegateRef.nameArray.insert(addedContact.fullname, at: 0)
+            self.appDelegateRef.numberArray.insert(addedContact.phonenumber, at: 0)
+            
             if (self.contacts.count == 1) {
                 self.tableView.reloadData()
             } else {
@@ -61,9 +72,14 @@ class ContactsTableViewController: UITableViewController {
             let modifiedContact = Contact(snapshot: snapshot)
             for c in self.contacts {
                 if c.key == modifiedContact.key {
+                    let contactIndex = self.contacts.index(of: c) // for watch
                     c.key = modifiedContact.key
                     c.fullname = modifiedContact.fullname
                     c.phonenumber = modifiedContact.phonenumber
+                    self.appDelegateRef.nameArray.remove(at: contactIndex!)
+                    self.appDelegateRef.numberArray.remove(at: contactIndex!)
+                    self.appDelegateRef.nameArray.insert(c.fullname, at: contactIndex!)
+                    self.appDelegateRef.numberArray.insert(c.phonenumber, at: contactIndex!)
                     break
                 }
             }
@@ -77,6 +93,8 @@ class ContactsTableViewController: UITableViewController {
                 if c.key == deletedContact.key {
                     let contactIndex = self.contacts.index(of: c)
                     self.contacts.remove(at: contactIndex!)
+                    self.appDelegateRef.nameArray.remove(at: contactIndex!)
+                    self.appDelegateRef.numberArray.remove(at: contactIndex!)
                     break
                 }
             }
@@ -87,6 +105,18 @@ class ContactsTableViewController: UITableViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         contactsRef.removeAllObservers()
+    }
+    
+    public func getNameArrayForWatch() -> [String] {
+        print("In getNameArrayForWatch...")
+        if self.nameArray == nil {
+            print("nameArray is nil")
+        }
+        return self.nameArray
+    }
+    public func getNumberArrayForWatch() -> [String] {
+        print("In getNumberArrayForWatch...")
+        return self.numberArray
     }
     
     func showAddContactDialog() {
@@ -121,6 +151,7 @@ class ContactsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : UITableViewCell
+        
         if contacts.count == 0 {
             cell = tableView.dequeueReusableCell(withIdentifier: noContactsCellIdentifier, for: indexPath)
         } else {
@@ -128,7 +159,9 @@ class ContactsTableViewController: UITableViewController {
             let contact = contacts[indexPath.row]
             cell.textLabel?.text = contact.fullname
             cell.detailTextLabel?.text = contact.phonenumber
+            
         }
+        
         return cell
     }
     

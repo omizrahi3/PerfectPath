@@ -60,6 +60,14 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
             replyValues["data"] = "OK" as AnyObject?
             let rootInterfaceController = WKExtension.shared().rootInterfaceController
             rootInterfaceController?.pushController(withName: "MapController", context: path)
+//        case "emergencyContacts" :
+//            print("In extension delegate with emegency contact info...")
+//            let nameArray: [String] = message["nameArray"] as! [String]
+//            let numberArray: [String] = message["numberArray"] as! [String]
+//            print("Received emergency contacts from phone")
+//            replyValues["data"] = "OK" as AnyObject?
+//            let rootInterfaceController = WKExtension.shared().rootInterfaceController
+//            rootInterfaceController?.pushController(withName: "EmergencyContactsController", context: [nameArray, numberArray]) as AnyObject
         default:
             break
         }
