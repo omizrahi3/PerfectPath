@@ -138,7 +138,19 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
         for i in 0..<routes.count {
             plotPolyline(route: routes[i])
         }
+        createAnnotations()
     }
+    
+    //TODO pull actual crime locations, types, and time
+    func createAnnotations() {
+        let annotation: MKPointAnnotation = MKPointAnnotation()
+        let culcCoordinates: CLLocationCoordinate2D = CLLocationCoordinate2DMake(33.774920, -84.396415)
+        annotation.coordinate = culcCoordinates
+        annotation.title = "Theft"
+        annotation.subtitle = "3/8/2016 11:03 am"
+        self.mapView.addAnnotation(annotation)
+    }
+    
     
     func plotPolyline(route: MKRoute) {
         mapView.add(route.polyline)
@@ -203,6 +215,7 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
             activityIndicator = nil
         }
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destViewController : PathNavigationViewController = segue.destination as! PathNavigationViewController
