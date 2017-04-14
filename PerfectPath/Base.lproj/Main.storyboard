@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LHW-94-WSN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LHW-94-WSN">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -556,7 +556,7 @@
         <!--Contacts-->
         <scene sceneID="63E-Nr-CHg">
             <objects>
-                <tableViewController id="vIY-xj-RTa" userLabel="Contacts" customClass="ContactsTableViewController" customModule="PerfectPath" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="vIY-xj-RTa" userLabel="Contacts" customClass="ContactsTableViewController" customModule="PerfectPath" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="107" sectionHeaderHeight="28" sectionFooterHeight="28" id="BPE-gi-f7W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -816,7 +816,7 @@
             <objects>
                 <navigationController storyboardIdentifier="dashboardNav" automaticallyAdjustsScrollViewInsets="NO" id="LHW-94-WSN" customClass="AppNavigationController" customModule="PerfectPath" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zO6-bE-LHg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="zO6-bE-LHg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1231,7 +1231,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="Jo1-U4-B5f"/>
         <segue reference="S61-p9-ShG"/>
-        <segue reference="wX5-4n-BJr"/>
+        <segue reference="lV7-UW-ect"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
 </document>
