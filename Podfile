@@ -11,6 +11,13 @@ target 'PerfectPath' do
     pod 'Firebase/Database'
     pod 'Material'
     pod 'Alamofire', '~> 4.4'
+    
+    pod 'Mapbox-iOS-SDK', '~> 3.5'
+    pod 'MapboxDirections.swift', '~> 0.8'
+    
+    pod 'MapboxNavigation.swift', :git => 'https://github.com/mapbox/MapboxNavigation.swift.git', :tag => 'v0.1.0'
+    pod 'MapboxNavigationUI.swift', :git => 'https://github.com/mapbox/MapboxNavigation.swift.git', :tag => 'v0.1.0'
+
 
   target 'PerfectPathTests' do
     inherit! :search_paths
