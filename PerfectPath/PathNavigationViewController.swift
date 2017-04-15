@@ -13,6 +13,7 @@ import HealthKit
 
 class PathNavigationViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
+    @IBOutlet weak var directionsLabel2: UILabel!
     @IBOutlet weak var guardianBtn: UIButton!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var paceLabel: UILabel!
@@ -116,7 +117,7 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
             mapView.setVisibleMapRect(route.polyline.boundingMapRect,
                                       edgePadding: UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0), animated: false)
             let steps = route.steps
-            //directionsLabel.text = steps[0].instructions
+            directionsLabel2.text = steps[0].instructions
         } else {
             let polylinesBoundingRect = MKMapRectUnion(mapView.visibleMapRect, route.polyline.boundingMapRect)
             mapView.setVisibleMapRect(polylinesBoundingRect, edgePadding: UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0), animated: false)
@@ -211,13 +212,6 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
         }
     }
     
-    /*@IBAction func unwindCheckInView(segue: UIStoryboardSegue) {
-        print("In unwindCheckInView...")
-        if let svc = segue.source as? SetCheckInViewController {
-            self.path = svc.path
-            self.guardianInfo = svc.guardianInfo
-        }
-    }*/
     
     /**
      When user clicks start or resume button, start tracking location and exercise timer
@@ -244,8 +238,10 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
             } else {
                 destViewController.isPaused = false
             }
-        }
-        if segue.identifier == "GuardianPopUpViewController" {
+        } else if segue.identifier == "PathCompletedViewController" {
+            let destViewController2 : PathCompletedViewController = segue.destination as! PathCompletedViewController
+            destViewController2.path = path
+        } else if segue.identifier == "GuardianPopUpViewController" {
             let destViewController : GuardianPopUpViewController = segue.destination as! GuardianPopUpViewController
             destViewController.guardianInfo = guardianInfo
             destViewController.path = path
