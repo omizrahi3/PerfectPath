@@ -187,8 +187,8 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
             let annotation: MKPointAnnotation = MKPointAnnotation()
             let culcCoordinates: CLLocationCoordinate2D = CLLocationCoordinate2DMake(crime.y_coord as CLLocationDegrees, crime.x_coord as CLLocationDegrees)
             annotation.coordinate = culcCoordinates
-            annotation.title = crime.crimetype
-            annotation.subtitle = crime.location
+            annotation.title = crime.crimetype+"-"+crime.dateof
+            annotation.subtitle = crime.shift+"-"+crime.location
             self.mapView.addAnnotation(annotation)
         }
     }
