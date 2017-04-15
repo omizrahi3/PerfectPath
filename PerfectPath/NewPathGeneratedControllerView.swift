@@ -8,11 +8,15 @@
 
 import UIKit
 import MapKit
+import Firebase
 import WatchConnectivity
 
 
-
 class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
+    
+    var crimes = [Crime]()
+    var crimesRef: FIRDatabaseReference!
+    
     var pathInformation: [String : Any?] = [:]
     var waypoints = [MKMapItem]()
     let numWaypoints = 3
@@ -31,6 +35,7 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        setupFirebaseObservers()
         mapView.delegate = self
         addActivityIndicator()
         waypoints.append(MKMapItem(placemark: MKPlacemark(placemark: (path?.startingLocation)!)))
@@ -41,6 +46,32 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
         addGuardianLabel()
     }
     
+    func setupFirebaseObservers() {
+        let firebaseRef = FIRDatabase.database().reference()
+        crimesRef = firebaseRef.child("crimes")
+        crimes.removeAll()
+        
+        crimesRef.observe(.childAdded, with: { (snapshot) in
+            //print("childAdded")
+            let addedCrime = Crime(snapshot: snapshot)
+            //print(addedCrime.getSnapshotValue())
+            self.crimes.insert(addedCrime, at: 0)
+        })
+    }
+    /*
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        crimes.removeAll()
+        
+        //TODO Add child to listen child added
+        crimesRef.observe(.childAdded, with: { (snapshot) in
+            print("childAdded")
+            let addedCrime = Crime(snapshot: snapshot)
+            print(addedCrime.getSnapshotValue())
+            self.crimes.insert(addedCrime, at: 0)
+        })
+    }
+    */
     @IBAction func didTapStartPathOnWatch(_ sender: Any) {
         print("Entering didTapStartPathOnAppleWatch...")
         if WCSession.default().isReachable == true {
@@ -143,12 +174,23 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
     
     //TODO pull actual crime locations, types, and time
     func createAnnotations() {
+        /*
         let annotation: MKPointAnnotation = MKPointAnnotation()
         let culcCoordinates: CLLocationCoordinate2D = CLLocationCoordinate2DMake(33.774920, -84.396415)
         annotation.coordinate = culcCoordinates
         annotation.title = "Theft"
         annotation.subtitle = "3/8/2016 11:03 am"
         self.mapView.addAnnotation(annotation)
+         */
+        
+        for crime in crimes {
+            let annotation: MKPointAnnotation = MKPointAnnotation()
+            let culcCoordinates: CLLocationCoordinate2D = CLLocationCoordinate2DMake(crime.y_coord as CLLocationDegrees, crime.x_coord as CLLocationDegrees)
+            annotation.coordinate = culcCoordinates
+            annotation.title = crime.crimetype
+            annotation.subtitle = crime.location
+            self.mapView.addAnnotation(annotation)
+        }
     }
     
     func plotPolyline(route: MKRoute) {
