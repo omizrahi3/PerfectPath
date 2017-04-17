@@ -36,7 +36,7 @@
                         <separator alignment="left" id="OLN-Dx-1zN"/>
                         <button width="1" height="53" alignment="left" title="Favorite Paths" id="VGL-SX-97o">
                             <connections>
-                                <segue destination="H1D-mb-WEx" kind="push" id="UIC-xz-hpA"/>
+                                <segue destination="H1D-mb-WEx" kind="push" id="KAn-Dm-FJE"/>
                             </connections>
                         </button>
                         <button width="1" height="52" alignment="left" title="Emergency Contacts" id="Gol-XX-NA1">
@@ -196,21 +196,31 @@
             <objects>
                 <controller identifier="FavoritePathListController" id="H1D-mb-WEx" customClass="FavoritePathListController" customModule="PerfectPath_WatchKit_Extension">
                     <items>
-                        <label alignment="left" text="Favorite Paths" id="TlK-zf-9ej">
-                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        <label height="24" alignment="left" text="Favorite Paths" id="2RJ-iv-hRO">
+                            <fontDescription key="font" type="system" weight="thin" pointSize="20"/>
                         </label>
-                        <table alignment="left" id="BP2-Yu-eTy"/>
                         <separator alignment="left" id="ChE-YR-JU9"/>
-                        <table alignment="left" id="as4-KM-w8Q"/>
-                        <button width="1" alignment="left" title="Morning Path" id="75Q-2b-AdZ">
-                            <connections>
-                                <segue destination="Xop-D8-78C" kind="push" id="L0S-kU-JLy"/>
-                            </connections>
-                        </button>
+                        <table alignment="left" id="QN0-wf-zNQ" userLabel="Favorite Path Table">
+                            <items>
+                                <tableRow identifier="FavPathRowControllerIdentifier" id="7Nt-w0-1kv" customClass="FavPathRowController" customModule="PerfectPath_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="HA8-vd-KDc">
+                                        <items>
+                                            <label alignment="left" text="PathName" id="xUh-kL-xom"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="pathName" destination="xUh-kL-xom" id="1TV-qk-Xju"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
                     </items>
+                    <connections>
+                        <outlet property="favPathsTable" destination="QN0-wf-zNQ" id="4YZ-ka-vaj"/>
+                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="905" y="780"/>
+            <point key="canvasLocation" x="533" y="922"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
@@ -220,7 +230,4 @@
             <point key="canvasLocation" x="468" y="643"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="L0S-kU-JLy"/>
-    </inferredMetricsTieBreakers>
 </document>

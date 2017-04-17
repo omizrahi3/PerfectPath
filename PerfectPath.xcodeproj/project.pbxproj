@@ -50,6 +50,7 @@
 		574D79AF1E99C79B00EB4AC5 /* WatchPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574D79AE1E99C79B00EB4AC5 /* WatchPath.swift */; };
 		57C6B7471E9FB8BE00641495 /* EmergencyContactsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C6B7461E9FB8BE00641495 /* EmergencyContactsController.swift */; };
 		57DBE90E1E88A801003192BF /* SetCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DBE90D1E88A801003192BF /* SetCheckInViewController.swift */; };
+		57F157111EA50D5B008AF894 /* FavPathRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F157101EA50D5B008AF894 /* FavPathRowController.swift */; };
 		60A115EFE402D38216F03704 /* Pods_PerfectPath_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E047FF3283BB75F38F47D79 /* Pods_PerfectPath_WatchKit_Extension.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		7A329621714993193FD25852 /* Pods_PerfectPathUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F0B4B4F15C15B9337FD562 /* Pods_PerfectPathUITests.framework */; };
 		9018B4F01E6619C300A7CAED /* GeneratePathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9018B4EF1E6619C300A7CAED /* GeneratePathViewController.swift */; };
@@ -181,6 +182,7 @@
 		574D79AE1E99C79B00EB4AC5 /* WatchPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchPath.swift; sourceTree = "<group>"; };
 		57C6B7461E9FB8BE00641495 /* EmergencyContactsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyContactsController.swift; sourceTree = "<group>"; };
 		57DBE90D1E88A801003192BF /* SetCheckInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetCheckInViewController.swift; sourceTree = "<group>"; };
+		57F157101EA50D5B008AF894 /* FavPathRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavPathRowController.swift; sourceTree = "<group>"; };
 		70ADE7CADA66DB0DCBAE054E /* Pods_PerfectPathTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PerfectPathTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		764452D74BE58758F9782445 /* Pods-PerfectPath.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerfectPath.release.xcconfig"; path = "Pods/Target Support Files/Pods-PerfectPath/Pods-PerfectPath.release.xcconfig"; sourceTree = "<group>"; };
 		84FA1DE13FD23F12F3F846F2 /* Pods_PerfectPath_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PerfectPath_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -390,6 +392,7 @@
 				57C6B7461E9FB8BE00641495 /* EmergencyContactsController.swift */,
 				572B631B1E68FC1600A56786 /* SetCheckInController.swift */,
 				572B631D1E68FC3A00A56786 /* AlertTimerCountdownController.swift */,
+				57F157101EA50D5B008AF894 /* FavPathRowController.swift */,
 				572B63151E68FB5500A56786 /* MainMenuController.swift */,
 				5739F04C1E567FB4000AF4B0 /* Assets.xcassets */,
 				5739F04E1E567FB4000AF4B0 /* Info.plist */,
@@ -920,6 +923,7 @@
 				5739F0491E567FB4000AF4B0 /* ExtensionDelegate.swift in Sources */,
 				572B631A1E68FBEF00A56786 /* MapController.swift in Sources */,
 				5739F0471E567FB4000AF4B0 /* InterfaceController.swift in Sources */,
+				57F157111EA50D5B008AF894 /* FavPathRowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
     var nameArray = [String]()
     var numberArray = [String]()
     var contactsTableViewController: ContactsTableViewController?
+    var favPathNames = [String]()
+    var favPathArray = [WatchPath]()
     
 
 
@@ -108,6 +110,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
             replyValues["command"] = "emergencyContacts" as AnyObject?
             replyValues["nameArray"] = nameArray as AnyObject?
             replyValues["numberArray"] = numberArray as AnyObject?
+        case "favPathsList" :
+            // request from watch looks like ["command" : "favPathsList"]
+            // reply from ios looks like ["command" : "favPathsList","favPaths" : favPathArray as Any, "favPathNames" : favPathNames]
+            print("favPathList case")
+            replyValues["command"] = "favPathList" as AnyObject?
+            self.favPathNames = ["Morning Walk", "Tech Square"]
+            replyValues["favPathNames"] = self.favPathNames as AnyObject?
+            replyValues["favPaths"] = self.favPathArray as AnyObject?
         default:
             break
         }
