@@ -207,6 +207,9 @@
                                         <items>
                                             <label alignment="left" text="PathName" id="xUh-kL-xom"/>
                                         </items>
+                                        <connections>
+                                            <segue destination="Xop-D8-78C" kind="push" identifier="FavPathToMapController" id="I4W-e6-iZO"/>
+                                        </connections>
                                     </group>
                                     <connections>
                                         <outlet property="pathName" destination="xUh-kL-xom" id="1TV-qk-Xju"/>
@@ -220,7 +223,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="533" y="922"/>
+            <point key="canvasLocation" x="787" y="775"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
@@ -230,4 +233,7 @@
             <point key="canvasLocation" x="468" y="643"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ywq-aw-MzM"/>
+    </inferredMetricsTieBreakers>
 </document>
