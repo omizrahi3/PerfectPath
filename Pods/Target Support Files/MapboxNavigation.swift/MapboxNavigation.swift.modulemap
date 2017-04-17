@@ -1,0 +1,6 @@
+framework module MapboxNavigation {
+  umbrella header "MapboxNavigation.swift-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -945,7 +945,7 @@
                     <connections>
                         <outlet property="distanceLabel" destination="aaJ-Cc-Joc" id="Aba-86-Rrd"/>
                         <outlet property="guardianBtn" destination="rib-tG-EQK" id="A4Z-Bh-gXv"/>
-                        <outlet property="mapView" destination="3Ki-MS-Gsf" id="A1z-kW-IAh"/>
+                        <outlet property="mapVV" destination="3Ki-MS-Gsf" id="DQS-17-tfg"/>
                         <outlet property="paceLabel" destination="QKg-Ix-9h4" id="kHZ-VV-cMi"/>
                         <outlet property="startPauseButton" destination="xpi-ZW-6hY" id="u5L-pl-pUe"/>
                         <outlet property="timeLabel" destination="PjQ-K0-R5f" id="ZBT-sE-kKd"/>
