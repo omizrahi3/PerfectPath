@@ -10,10 +10,9 @@ import Foundation
 import UIKit
 import CoreLocation
 import MapKit
-import ObjectMapper
 import CoreData
 
-class Path: Mappable {
+class Path {
     var startingLocation : CLPlacemark?
     var guardianPathEnabled : Bool = false
     var routes = [MKRoute]()
@@ -33,13 +32,4 @@ class Path: Mappable {
     init() {
     }
     
-    required convenience init?(map: Map) {
-        self.init()
-        mapping(map: map)
-    }
-    
-    func mapping(map: Map) {
-        mapItemWaypoints <- map["mapItemWaypoint.0.0"]
-        guardianPathEnabled <- map["guardianPathEnabled"]
-    }
 }

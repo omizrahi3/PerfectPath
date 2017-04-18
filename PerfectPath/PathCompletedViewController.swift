@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import CoreData
-import ObjectMapper
 
 class PathCompletedViewController: UIViewController {
     
