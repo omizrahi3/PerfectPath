@@ -42,17 +42,13 @@ class PathCompletedViewController: UIViewController {
     
     //TODO: Save path
     @IBAction func savePathClicked(_ sender: Any) {
-        //let JSONString = path?.toJSONString(prettyPrint: true)
-        //let JSONString = path?.toJSONString(prettyPrint: true)
-        //print(JSONString as Any)
-        //let user = Mapper<User>().map(JSONString: JSONString)
-
         let appDel = UIApplication.shared.delegate as! AppDelegate
         let context:NSManagedObjectContext = appDel.managedObjectContext
         
         let ent = NSEntityDescription.entity(forEntityName: "SavedPath", in: context)
         let savedPath = SavedPath(entity: ent!, insertInto: context)
         savedPath.startingLocation = path?.startingLocation
+        savedPath.distanceInMiles = (path?.actualDistance)!
         var i = 0
         for mapItemWaypoint in (path?.mapItemWaypoints)!{
             let waypointEnt = NSEntityDescription.entity(forEntityName: "Waypoint", in: context)

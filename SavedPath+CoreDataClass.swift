@@ -14,4 +14,5 @@ public class SavedPath: NSManagedObject {
 
     @NSManaged public var startingLocation: CLPlacemark?
     @NSManaged public var waypoints
+    @NSManaged public var distanceInMiles : Double
 }

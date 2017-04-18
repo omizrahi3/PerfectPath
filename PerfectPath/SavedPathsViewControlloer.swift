@@ -41,12 +41,13 @@ class SavedPathsViewControlloer: UIViewController, UITableViewDelegate, UITableV
         do{
             let results:NSArray = try context.fetch(request) as NSArray
             if (results.count > 0) {
-                print("\(results.count) found!")
                 for result in results {
                     let startingLocation = (result as! SavedPath).startingLocation as! CLPlacemark
-                    tableItems.append(String(describing: startingLocation.name!))
+                    let distance = (((result as! SavedPath).distanceInMiles*100).rounded())/100
+                    let tableLabel = "\(distance) miles : \(startingLocation.name!)"
+                    tableItems.append(tableLabel)
+                    //tableItems.append(String(describing: startingLocation.name!))
                     locations.append(result as! SavedPath)
-                    print(((result as! SavedPath).waypoints?[0] as! Waypoint).longitude as Any)
                 }
             }
         } catch {
@@ -69,6 +70,7 @@ class SavedPathsViewControlloer: UIViewController, UITableViewDelegate, UITableV
         let savedPath = (locations[indexPath.row])
         path = Path()
         path?.startingLocation = savedPath.startingLocation as? CLPlacemark
+        path?.actualDistance = savedPath.distanceInMiles
         var mapItemWaypoints = [MKMapItem]()
         for item in savedPath.waypoints! {
             let waypoint = item as! Waypoint
@@ -82,7 +84,6 @@ class SavedPathsViewControlloer: UIViewController, UITableViewDelegate, UITableV
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destViewController : PathNavigationViewController = segue.destination as! PathNavigationViewController
-        //destViewController.guardianInfo = guardianInfo
         destViewController.path = path
         destViewController.comingFromFavoritePath = 1
     }
