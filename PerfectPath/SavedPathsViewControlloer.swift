@@ -72,8 +72,8 @@ class SavedPathsViewControlloer: UIViewController, UITableViewDelegate, UITableV
         path?.startingLocation = savedPath.startingLocation as? CLPlacemark
         path?.actualDistance = savedPath.distanceInMiles
         var mapItemWaypoints = [MKMapItem]()
-        for item in savedPath.waypoints! {
-            let waypoint = item as! Waypoint
+        for item in savedPath.spwaypoints! {
+            let waypoint = item as! SPWaypoint
             let coordinate: CLLocationCoordinate2D = CLLocationCoordinate2DMake(waypoint.latitude, waypoint.longitude)
             let addrDic : [String:Any]? = waypoint.addressDictionary as? [String : Any]
             let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: addrDic)
