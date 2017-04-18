@@ -102,6 +102,28 @@ class GuardianPopUpViewController: UIViewController {
     // TODO : this is called when you cancel the alert after the timer has expired and original message has been sent to emergency contacts -- this message lets ECs know that you are in fact safe.
     func sendImOKMsgToEmergencyContacts() {
         print("TODO : In sendImOKMsgToEmergencyContacts... Alert cancelled after location message sent to Emergency Contacts.")
+        for contact in contacts {
+            print ("sending message to "+contact.fullname)
+            print (contact.phonenumber)
+            
+            let str1 = "ALL-OK MESSAGE FROM PERFECT PATH. Your friend "
+            let str2 = (self.latestRecievedProfile?.firstname)! + " " + (self.latestRecievedProfile?.lastname)!
+            let str3 = " has now marked themselves as OK with Guardian Check in."
+            let message = "\(str1) \(str2) \(str3)"
+            
+            let headers = [
+                "Content-Type": "application/x-www-form-urlencoded"
+            ]
+            
+            let parameters: Parameters = [
+                "To": contact.phonenumber,
+                "Body": message
+            ]
+            Alamofire.request("https://warm-inlet-35920.herokuapp.com/sms", method: .post, parameters: parameters, headers: headers).response { response in
+                print(response)
+                
+            }
+        }
         
     }
     
