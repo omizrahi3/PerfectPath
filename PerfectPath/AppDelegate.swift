@@ -10,16 +10,23 @@ import UIKit
 import Firebase
 import WatchConnectivity
 import CoreData
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
 
     var window: UIWindow?
-    var contacts = [Contact]()
-    var contactsRef: FIRDatabaseReference!
     var nameArray = [String]()
     var numberArray = [String]()
     var contactsTableViewController: ContactsTableViewController?
+    var favPathNames = [String]()
+    var favPathArray = [WatchPath]()
+    
+    var contacts = [Contact]()
+    var contactsRef: FIRDatabaseReference!
+    var profileRef: FIRDatabaseReference!
+    
+    var latestRecievedProfile: Profile?
     
 
 
@@ -63,12 +70,89 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
             print("WatchConnectivity is not supported on this device")
         }
         
+        setupFirebaseObservers()
+        //TODO Add child to listen child added
+//        contactsRef.observe(.childAdded, with: { (snapshot) in
+//            print("childAdded")
+//            let addedContact = Contact(snapshot: snapshot)
+//            print(addedContact.getSnapshotValue())
+//            self.contacts.insert(addedContact, at: 0)
+//        })
+        
+        profileRef.observe(.value, with: { (snapshot) in
+            self.latestRecievedProfile = Profile(snapshot: snapshot)
+        })
+        
         
         return true
     }
     
     
+    func setupFirebaseObservers() {
+        let firebaseRef = FIRDatabase.database().reference()
+        let currentUsersUid = FIRAuth.auth()!.currentUser!.uid
+        contactsRef = firebaseRef.child("contacts").child(currentUsersUid)
+        profileRef = firebaseRef.child("profiles").child(currentUsersUid)
+    }
     
+    func sendMessagesToEmergencyContacts() {
+        print("TODO : In sendMessagesToEmergencyContacts...")
+        for (index, name) in self.nameArray.enumerated() {
+            print ("sending message to " + String(name))
+            print (self.numberArray[index])
+            
+            let str1 = "EMERGENCY MESSAGE FROM PERFECT PATH. Please contact your friend "
+            let str2 = (self.latestRecievedProfile?.firstname)! + " " + (self.latestRecievedProfile?.lastname)!
+            let str3 = " as they did not respond from their Guardian Check in."
+            let message = "\(str1) \(str2) \(str3)"
+            
+            let headers = [
+                "Content-Type": "application/x-www-form-urlencoded"
+            ]
+            
+            let parameters: Parameters = [
+                "To": self.numberArray[index],
+                "Body": message
+            ]
+            Alamofire.request("https://warm-inlet-35920.herokuapp.com/sms", method: .post, parameters: parameters, headers: headers).response { response in
+                print(response)
+                
+            }
+        }
+    }
+    
+    
+    
+    // TODO : this is called when you cancel the alert after the timer has expired and original message has been sent to emergency contacts -- this message lets ECs know that you are in fact safe.
+    func sendImOKMsgToEmergencyContacts() {
+        print("TODO : In sendImOKMsgToEmergencyContacts... Alert cancelled after location message sent to Emergency Contacts.")
+        
+        for (index, name) in self.nameArray.enumerated() {
+            print ("sending message to " + String(name))
+            print (self.numberArray[index])
+            
+            let str1 = "ALL-OK MESSAGE FROM PERFECT PATH. Your friend "
+            let str2 = (self.latestRecievedProfile?.firstname)! + " " + (self.latestRecievedProfile?.lastname)!
+            let str3 = " has now marked themselves as OK with Guardian Check in."
+            let message = "\(str1) \(str2) \(str3)"
+            
+            let headers = [
+                "Content-Type": "application/x-www-form-urlencoded"
+            ]
+            
+            let parameters: Parameters = [
+                "To": self.numberArray[index],
+                "Body": message
+            ]
+            Alamofire.request("https://warm-inlet-35920.herokuapp.com/sms", method: .post, parameters: parameters, headers: headers).response { response in
+                print(response)
+                
+            }
+        }
+
+        
+    }
+
     
     @available(iOS 9.3, *)
     public func sessionDidDeactivate(_ session: WCSession) {
@@ -109,6 +193,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
             replyValues["command"] = "emergencyContacts" as AnyObject?
             replyValues["nameArray"] = nameArray as AnyObject?
             replyValues["numberArray"] = numberArray as AnyObject?
+        case "favPathsList" :
+            // request from watch looks like ["command" : "favPathsList"]
+            // reply from ios looks like ["command" : "favPathsList","favPaths" : favPathArray as Any, "favPathNames" : favPathNames]
+            print("favPathList case")
+            replyValues["command"] = "favPathList" as AnyObject?
+            self.favPathNames = ["Morning Walk", "Tech Square"]
+            replyValues["favPathNames"] = self.favPathNames as AnyObject?
+            replyValues["favPaths"] = self.favPathArray as AnyObject?
+        case "alertContacts" :
+            print("alertContacts case")
+            replyValues["command"] = "alertContacts" as AnyObject?
+            replyValues["status"] = "OK" as AnyObject?
+            self.sendMessagesToEmergencyContacts()
+        case "okContacts" :
+            print("okContacts case")
+            replyValues["command"] = "okContacts" as AnyObject?
+            replyValues["status"] = "OK" as AnyObject?
+            self.sendImOKMsgToEmergencyContacts()
+            
+            
         default:
             break
         }
