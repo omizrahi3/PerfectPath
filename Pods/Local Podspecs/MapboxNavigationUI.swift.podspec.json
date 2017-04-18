@@ -1,0 +1,60 @@
+{
+  "name": "MapboxNavigationUI.swift",
+  "version": "0.1.0",
+  "summary": "Mapbox Navigation UI library",
+  "description": "MapboxNavigationUI.swift makes it easy to get step by step UI for guiding a user along a route.",
+  "homepage": "https://www.mapbox.com/directions/",
+  "license": {
+    "type": "ISC",
+    "file": "LICENSE.md"
+  },
+  "authors": {
+    "Mapbox": "mobile@mapbox.com"
+  },
+  "social_media_url": "https://twitter.com/mapbox",
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source": {
+    "git": "https://github.com/mapbox/MapboxNavigation.swift.git",
+    "tag": "v0.1.0"
+  },
+  "source_files": [
+    "MapboxNavigationUI/*",
+    "MapboxNavigation/Geometry.swift"
+  ],
+  "resources": [
+    "MapboxNavigationUI/Resources/*"
+  ],
+  "requires_arc": true,
+  "module_name": "MapboxNavigationUI",
+  "dependencies": {
+    "MapboxNavigation.swift": [
+
+    ],
+    "MapboxDirections.swift": [
+
+    ],
+    "MapboxGeocoder.swift": [
+
+    ],
+    "Mapbox-iOS-SDK": [
+
+    ],
+    "OSRMTextInstructions": [
+
+    ],
+    "Pulley": [
+
+    ],
+    "SDWebImage": [
+      "~> 4.0"
+    ],
+    "AWSPolly": [
+      "~> 2.5"
+    ]
+  },
+  "xcconfig": {
+    "SWIFT_VERSION": "3.0"
+  }
+}

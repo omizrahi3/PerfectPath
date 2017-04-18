@@ -89,16 +89,38 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/AWSCore/AWSCore.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSPolly/AWSPolly.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
   install_framework "$BUILT_PRODUCTS_DIR/GTMSessionFetcher/GTMSessionFetcher.framework"
   install_framework "$BUILT_PRODUCTS_DIR/GoogleToolboxForMac/GoogleToolboxForMac.framework"
+  install_framework "${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/MapboxDirections.swift/MapboxDirections.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/MapboxGeocoder.swift/MapboxGeocoder.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/MapboxNavigation.swift/MapboxNavigation.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/MapboxNavigationUI.swift/MapboxNavigationUI.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Material/Material.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/OSRMTextInstructions/OSRMTextInstructions.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Polyline/Polyline.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Pulley/Pulley.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SDWebImage/SDWebImage.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/AWSCore/AWSCore.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSPolly/AWSPolly.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
   install_framework "$BUILT_PRODUCTS_DIR/GTMSessionFetcher/GTMSessionFetcher.framework"
   install_framework "$BUILT_PRODUCTS_DIR/GoogleToolboxForMac/GoogleToolboxForMac.framework"
+  install_framework "${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/MapboxDirections.swift/MapboxDirections.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/MapboxGeocoder.swift/MapboxGeocoder.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/MapboxNavigation.swift/MapboxNavigation.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/MapboxNavigationUI.swift/MapboxNavigationUI.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Material/Material.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/OSRMTextInstructions/OSRMTextInstructions.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Polyline/Polyline.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Pulley/Pulley.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SDWebImage/SDWebImage.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
