@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="SavedPath" representedClassName="SavedPath" syncable="YES" codeGenerationType="class">
+        <attribute name="startingLocation" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <relationship name="waypoints" optional="YES" toMany="YES" minCount="4" maxCount="10" deletionRule="Nullify" ordered="YES" destinationEntity="Waypoint" syncable="YES"/>
+    </entity>
+    <entity name="Waypoint" representedClassName="Waypoint" syncable="YES" codeGenerationType="class">
+        <attribute name="addressDictionary" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="index" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="SavedPath" positionX="-54" positionY="-9" width="128" height="73"/>
+        <element name="Waypoint" positionX="-333" positionY="108" width="128" height="105"/>
+    </elements>
+</model>

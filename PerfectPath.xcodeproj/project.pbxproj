@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1A8436141E8B2846000C327B /* Screen Shot 2017-03-28 at 7.23.54 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8436131E8B2846000C327B /* Screen Shot 2017-03-28 at 7.23.54 PM.png */; };
+		1A8B48041EA54D1B00D8DAB3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8B47FD1EA2A86000D8DAB3 /* CoreData.framework */; };
+		1A8B48071EA54D5100D8DAB3 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1A8B48051EA54D5100D8DAB3 /* DataModel.xcdatamodeld */; };
+		1A8B48141EA5640800D8DAB3 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1A8B48051EA54D5100D8DAB3 /* DataModel.xcdatamodeld */; };
+		1A8B48151EA5641400D8DAB3 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1A8B48051EA54D5100D8DAB3 /* DataModel.xcdatamodeld */; };
+		1A8B48161EA5641F00D8DAB3 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1A8B48051EA54D5100D8DAB3 /* DataModel.xcdatamodeld */; };
 		1AA29BF01E81FBB0008169E8 /* PathNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA29BEF1E81FBB0008169E8 /* PathNavigationViewController.swift */; };
 		1ABCA6BA1E6B2D5C009872B3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABCA6B91E6B2D5C009872B3 /* CoreLocation.framework */; };
 		1ABCA6BC1E6C7F1A009872B3 /* PathJSONViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABCA6BB1E6C7F1A009872B3 /* PathJSONViewController.swift */; };
@@ -17,6 +22,7 @@
 		1AD4CB631E89F7D200A8E042 /* warning-icon_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AD4CB5F1E89F7D200A8E042 /* warning-icon_white.png */; };
 		1AD4CB671E8AAEBD00A8E042 /* PathCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD4CB661E8AAEBD00A8E042 /* PathCompletedViewController.swift */; };
 		1AD4CB691E8AC3B900A8E042 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD4CB681E8AC3B900A8E042 /* Path.swift */; };
+		1AE40CA41EA56E9A00A3BA63 /* DataModel.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 1A8B48051EA54D5100D8DAB3 /* DataModel.xcdatamodeld */; };
 		201C5B089428F74237A04FE0 /* Pods_PerfectPathTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70ADE7CADA66DB0DCBAE054E /* Pods_PerfectPathTests.framework */; };
 		570A6A831EA14D8E004F0172 /* ContactsRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570A6A821EA14D8E004F0172 /* ContactsRowController.swift */; };
 		570B846C1E68DB0D00060521 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B846B1E68DB0D00060521 /* SettingsViewController.swift */; };
@@ -127,6 +133,9 @@
 /* Begin PBXFileReference section */
 		032752E1F5F0F57038024CE5 /* Pods-PerfectPath WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerfectPath WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PerfectPath WatchKit Extension/Pods-PerfectPath WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		1A8436131E8B2846000C327B /* Screen Shot 2017-03-28 at 7.23.54 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2017-03-28 at 7.23.54 PM.png"; sourceTree = "<group>"; };
+		1A8B47FD1EA2A86000D8DAB3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1A8B48061EA54D5100D8DAB3 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		1A8B48171EA5667300D8DAB3 /* DataModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "DataModel 2.xcdatamodel"; sourceTree = "<group>"; };
 		1AA29BEF1E81FBB0008169E8 /* PathNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathNavigationViewController.swift; sourceTree = "<group>"; };
 		1ABCA6B91E6B2D5C009872B3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1ABCA6BB1E6C7F1A009872B3 /* PathJSONViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathJSONViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +218,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A8B48041EA54D1B00D8DAB3 /* CoreData.framework in Frameworks */,
 				572941C71A8D97C65AF9CD3F /* Pods_PerfectPath.framework in Frameworks */,
 				1ABCA6BA1E6B2D5C009872B3 /* CoreLocation.framework in Frameworks */,
 			);
@@ -275,6 +285,7 @@
 		3F0E9C23AEC074876A067F4D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A8B47FD1EA2A86000D8DAB3 /* CoreData.framework */,
 				574D79A91E99424700EB4AC5 /* Pods_PerfectPath_WatchKit_Extension.framework */,
 				574D79A71E99423600EB4AC5 /* Pods_PerfectPath_WatchKit_App.framework */,
 				1ABCA6B91E6B2D5C009872B3 /* CoreLocation.framework */,
@@ -290,6 +301,7 @@
 		5739EFFF1E567FB3000AF4B0 = {
 			isa = PBXGroup;
 			children = (
+				1A8B48051EA54D5100D8DAB3 /* DataModel.xcdatamodeld */,
 				1AD4CB581E89F73C00A8E042 /* Resources */,
 				5739F00A1E567FB3000AF4B0 /* PerfectPath */,
 				5739F01F1E567FB3000AF4B0 /* PerfectPathTests */,
@@ -600,6 +612,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AE40CA41EA56E9A00A3BA63 /* DataModel.xcdatamodeld in Resources */,
 				1AD4CB631E89F7D200A8E042 /* warning-icon_white.png in Resources */,
 				905D320F1E859E620014C4DD /* Login.storyboard in Resources */,
 				1AD4CB621E89F7D200A8E042 /* stickman.png in Resources */,
@@ -864,6 +877,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				90AABC901E884B3E00CA10AD /* Profile.swift in Sources */,
+				1A8B48071EA54D5100D8DAB3 /* DataModel.xcdatamodeld in Sources */,
 				9061B9301E9D07EA00D8369A /* RegisterViewController.swift in Sources */,
 				1AD4CB671E8AAEBD00A8E042 /* PathCompletedViewController.swift in Sources */,
 				90F67F6B1E7A01E8000191C7 /* Contact.swift in Sources */,
@@ -894,6 +908,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5739F0211E567FB3000AF4B0 /* PerfectPathTests.swift in Sources */,
+				1A8B48141EA5640800D8DAB3 /* DataModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -902,6 +917,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5739F02C1E567FB3000AF4B0 /* PerfectPathUITests.swift in Sources */,
+				1A8B48151EA5641400D8DAB3 /* DataModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -912,6 +928,7 @@
 				574D79AF1E99C79B00EB4AC5 /* WatchPath.swift in Sources */,
 				572B631C1E68FC1600A56786 /* SetCheckInController.swift in Sources */,
 				572B63181E68FBB000A56786 /* FavoritePathListController.swift in Sources */,
+				1A8B48161EA5641F00D8DAB3 /* DataModel.xcdatamodeld in Sources */,
 				5739F04B1E567FB4000AF4B0 /* NotificationController.swift in Sources */,
 				572B63161E68FB5500A56786 /* MainMenuController.swift in Sources */,
 				572B631E1E68FC3A00A56786 /* AlertTimerCountdownController.swift in Sources */,
@@ -1302,6 +1319,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1A8B48051EA54D5100D8DAB3 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1A8B48171EA5667300D8DAB3 /* DataModel 2.xcdatamodel */,
+				1A8B48061EA54D5100D8DAB3 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 1A8B48061EA54D5100D8DAB3 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5739F0001E567FB3000AF4B0 /* Project object */;
 }

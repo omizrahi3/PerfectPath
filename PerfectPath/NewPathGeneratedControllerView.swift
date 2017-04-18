@@ -38,7 +38,7 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
         setupFirebaseObservers()
         mapView.delegate = self
         addActivityIndicator()
-        waypoints.append(MKMapItem(placemark: MKPlacemark(placemark: (path?.startingLocation)!)))
+        waypoints.append(MKMapItem(placemark: MKPlacemark(placemark: (path?.startingLocation)! as! CLPlacemark)))
         let prefferedDistanceMeters = path?.prefferedDistanceMeters
         let waypointDistance = prefferedDistanceMeters! / Double(numWaypoints+1)
         let initialBearing = Double(arc4random_uniform(360))
@@ -174,14 +174,6 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
     
     //TODO pull actual crime locations, types, and time
     func createAnnotations() {
-        /*
-        let annotation: MKPointAnnotation = MKPointAnnotation()
-        let culcCoordinates: CLLocationCoordinate2D = CLLocationCoordinate2DMake(33.774920, -84.396415)
-        annotation.coordinate = culcCoordinates
-        annotation.title = "Theft"
-        annotation.subtitle = "3/8/2016 11:03 am"
-        self.mapView.addAnnotation(annotation)
-         */
         
         for crime in crimes {
             let annotation: MKPointAnnotation = MKPointAnnotation()
@@ -235,7 +227,7 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
         waypoints.removeAll()
         mapView.removeOverlays(mapView.overlays)
         addActivityIndicator()
-        waypoints.append(MKMapItem(placemark: MKPlacemark(placemark: (path?.startingLocation)!)))
+        waypoints.append(MKMapItem(placemark: MKPlacemark(placemark: (path?.startingLocation)! as! CLPlacemark)))
         let prefferedDistanceMeters = path?.prefferedDistanceMeters
         let waypointDistance = prefferedDistanceMeters! / Double(numWaypoints+1)
         let initialBearing = Double(arc4random_uniform(360))

@@ -8,12 +8,15 @@
 
 import Foundation
 import UIKit
+import CoreData
+import ObjectMapper
 
 class PathCompletedViewController: UIViewController {
     
 
     @IBOutlet weak var savePathButton: UIButton!
     var path: Path?
+    //var pathDataObject: NSManagedObject
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var speedLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
@@ -40,8 +43,56 @@ class PathCompletedViewController: UIViewController {
     
     //TODO: Save path
     @IBAction func savePathClicked(_ sender: Any) {
+        //let JSONString = path?.toJSONString(prettyPrint: true)
+        //let JSONString = path?.toJSONString(prettyPrint: true)
+        //print(JSONString as Any)
+        //let user = Mapper<User>().map(JSONString: JSONString)
+
+        let appDel = UIApplication.shared.delegate as! AppDelegate
+        let context:NSManagedObjectContext = appDel.managedObjectContext
+        
+        let ent = NSEntityDescription.entity(forEntityName: "SavedPath", in: context)
+        let savedPath = SavedPath(entity: ent!, insertInto: context)
+        savedPath.startingLocation = path?.startingLocation
+        var i = 0
+        for mapItemWaypoint in (path?.mapItemWaypoints)!{
+            let waypointEnt = NSEntityDescription.entity(forEntityName: "Waypoint", in: context)
+            let waypointToAdd = Waypoint(entity: waypointEnt!, insertInto: context)
+            let waypointPlacemark = mapItemWaypoint.placemark
+            waypointToAdd.latitude = waypointPlacemark.coordinate.latitude
+            waypointToAdd.longitude = waypointPlacemark.coordinate.longitude
+            waypointToAdd.addressDictionary = waypointPlacemark.addressDictionary! as NSObject
+            waypointToAdd.index = Int16(i)
+            savedPath.addToWaypoints(waypointToAdd)
+            i += 1
+        }
+        do {
+            try context.save()
+        } catch {
+            print(error)
+        }
         print("save path button clicked")
+
+        loadPaths()
     }
+    
+    func loadPaths() {
+        let appDel = UIApplication.shared.delegate as! AppDelegate
+        let context:NSManagedObjectContext = appDel.managedObjectContext
+        let request :NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "SavedPath")
+        request.returnsObjectsAsFaults = false
+        do{
+            let results:NSArray = try context.fetch(request) as NSArray
+            if (results.count > 0) {
+                print("\(results.count) found!")
+                print((results[0] as AnyObject).startingLocation)
+                print((results[0] as! SavedPath).waypoints?[0] as Any)
+            }
+        } catch {
+            print(error)
+        }
+    }
+    
     
     
     

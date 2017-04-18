@@ -2,6 +2,18 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Waypoint+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Waypoint+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:SavedPath+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:SavedPath+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:Resources">
    </FileRef>
    <FileRef
