@@ -10,10 +10,11 @@ import Foundation
 import UIKit
 import CoreLocation
 import MapKit
+import CoreData
 
-class Path: NSObject {
-    var startingLocation : CLPlacemark
-    var guardianPathEnabled : Bool
+class Path {
+    var startingLocation : CLPlacemark?
+    var guardianPathEnabled : Bool = false
     var routes = [MKRoute]()
     var prefferedDistanceMeters = 0.0
     var actualDistance : Double?
@@ -22,10 +23,13 @@ class Path: NSObject {
     var mapItemWaypoints = [MKMapItem]()
     var pace : Double?
     
-    init (startingLocation: CLPlacemark, distanceInMiles: Double, guardianPathEnabled: Bool) {
+    /*init (startingLocation: CLPlacemark, distanceInMiles: Double, guardianPathEnabled: Bool) {
         self.startingLocation = startingLocation
         self.prefferedDistanceMeters = distanceInMiles * 1609.34
         self.guardianPathEnabled = guardianPathEnabled
+    }*/
+    
+    init() {
     }
     
 }

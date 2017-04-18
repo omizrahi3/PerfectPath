@@ -24,7 +24,7 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
 
 
     var returningFromSetCheckInViewController: Int = 0
-    
+    var comingFromFavoritePath: Int = 0
     let testTenSecondBinary = 0b00001010
     let oneMinBinary = 0b00111100
     let fiveMinBinary = 0b100101100
@@ -32,6 +32,7 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
     var guardianInternalTimer = Timer()
     var guardianInfo: [(Int)] = [0,5]
     var guardianBinaryCount = 0b0000
+    var waypoints = [MKMapItem]()
     
     var locationManager: CLLocationManager!
     var locations = [CLLocation]()
@@ -60,7 +61,12 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
         }
         mapView.delegate = self
         mapView.mapType = MKMapType(rawValue: 0)!
-        self.showRoute(routes: (path?.routes)!)
+        if (comingFromFavoritePath == 1) {
+            waypoints = (path?.mapItemWaypoints)!
+            calculateSegmentDirections(index: 0, time: 0, routes: [])
+        }
+        
+        self.showRoute(routes: (path?.routes)! as! [MKRoute])
         
         // if guardian is set
         if (guardianInfo[0] == 1) {
@@ -75,6 +81,53 @@ class PathNavigationViewController: UIViewController, CLLocationManagerDelegate,
             print("Latitude: ", waypoint.placemark.coordinate.latitude, "  Longitude: ", waypoint.placemark.coordinate.longitude)
         }
     }
+    
+    func calculateSegmentDirections(index: Int, time: TimeInterval, routes: [MKRoute]) {
+        let request: MKDirectionsRequest = MKDirectionsRequest()
+        if index < waypoints.count-1 {
+            request.source = waypoints[index]
+            request.destination = waypoints[index + 1]
+            request.transportType = .walking
+        } else {
+            request.source = waypoints[index]
+            request.destination = waypoints[0]
+            request.transportType = .walking
+        }
+        let directions = MKDirections(request: request)
+        directions.calculate(completionHandler: {(response: MKDirectionsResponse?, error: Error?) in
+            if let routeResponse = response?.routes {
+                let routeForSegment: MKRoute = routeResponse.sorted(by: {$0.expectedTravelTime < $1.expectedTravelTime})[0]
+                var timeVar = time
+                var routeVar = routes
+                routeVar.append(routeForSegment)
+                timeVar += routeForSegment.expectedTravelTime
+                if index + 1 < self.waypoints.count {
+                    self.calculateSegmentDirections(index: index+1, time: timeVar, routes: routeVar)
+                } else {
+                    self.path?.routes = routeVar
+                    self.path?.mapItemWaypoints = self.waypoints
+                    self.showRoute(routes: routeVar)
+                    var distance = 0.0
+                    for i in 0..<routes.count {
+                        let temp = routeVar[i]
+                        distance += temp.distance
+                    }
+                    distance = distance/1609.34
+                    self.path?.actualDistance = distance
+                    let distString = String(format: "%.1f",distance)
+                    self.distanceLabel.text = "Distance: \(distString) mi"
+                }
+            } else if let _ = error {
+                let alert = UIAlertController(title: nil, message: "Directions not available.", preferredStyle: .alert)
+                let okButton = UIAlertAction(title: "OK", style: .cancel) {(alert) -> Void in
+                    self.navigationController?.popViewController(animated: true)
+                }
+                alert.addAction(okButton)
+                self.present(alert, animated: true, completion: nil)
+            }
+        })
+    }
+
     
     
     func startGuardianTimer() {

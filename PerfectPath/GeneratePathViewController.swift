@@ -141,7 +141,11 @@ class GeneratePathViewController: UIViewController, CLLocationManagerDelegate, U
         let roundedDistance: Double = round(distanceTimesTen)
         distance = roundedDistance/10
         if startingLocation != nil {
-            path = Path(startingLocation: startingLocation!, distanceInMiles: distance, guardianPathEnabled: guardianPathEnabled)
+            path = Path()
+            path?.startingLocation = startingLocation
+            path?.prefferedDistanceMeters = distance*1609
+            path?.guardianPathEnabled = guardianPathEnabled
+            /*path = Path(startingLocation: startingLocation!, distanceInMiles: distance, guardianPathEnabled: guardianPathEnabled)*/
         }
     }
 
