@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 import Firebase
 import WatchConnectivity
+import Alamofire
 
 
 class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
@@ -23,6 +24,7 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
     var path : Path?
     var activityIndicator: UIActivityIndicatorView?
     var watchPath : WatchPath?
+    var crimescore = 0;
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var distanceLabel: UILabel!        
@@ -39,11 +41,44 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
         mapView.delegate = self
         addActivityIndicator()
         waypoints.append(MKMapItem(placemark: MKPlacemark(placemark: (path?.startingLocation)!)))
+        self.getCrimeScore((path?.startingLocation)!)
         let prefferedDistanceMeters = path?.prefferedDistanceMeters
         let waypointDistance = prefferedDistanceMeters! / Double(numWaypoints+1)
         let initialBearing = Double(arc4random_uniform(360))
         findPath(index: 1, initialBearing: initialBearing, waypointDistance: waypointDistance)
-        addGuardianLabel()
+        //addGuardianLabel()
+    }
+    
+    func getCrimeScore(_ placemark: CLPlacemark) {
+        if let lat = placemark.location?.coordinate.latitude, let long = placemark.location?.coordinate.longitude {
+
+            let parameters: Parameters = [
+                "lat":"\(String(describing: lat))",
+                "lon":"\(String(describing: long))"
+            ]
+        
+            let headers: HTTPHeaders = [
+                "X-Mashape-Key": "00W4vnBdAmmshYx6BIm2EQD2ewMlp1QZSxTjsn0vykoMSjpAzc",
+                "Accept" :"application/json"
+            ]
+        
+            Alamofire.request("https://crimescore.p.mashape.com/crimescore?f=json",parameters: parameters, headers: headers).responseJSON { response in
+                guard let responseJSON = response.result.value as? [String: Any] else {
+                    print("Couldn't retreive crimescore")
+                    return
+                }
+                //print("\(String(describing: responseJSON["score"]))")
+                guard let scoreString = responseJSON["score"] as? String else {
+                    print("Couldn't interprate score")
+                    return
+                }
+                let score = Int(scoreString)
+                //print("\(String(describing: score))")
+                self.crimescore += score!
+                //print("\(self.crimescore)")
+                
+            }
+        }
     }
     
     func setupFirebaseObservers() {
@@ -102,7 +137,9 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
         let newPoint = CLLocation(latitude: newCoords.latitude, longitude: newCoords.longitude)
         CLGeocoder().reverseGeocodeLocation(newPoint, completionHandler: {(placemarks: [CLPlacemark]?, error: Error?) -> Void in
             if let placemarks = placemarks {
+                self.getCrimeScore(placemarks.last!)
                 let mapItem = MKMapItem(placemark: MKPlacemark(placemark: placemarks.last!))
+                
                 self.waypoints.append(mapItem)
                 //print("point resolved, signaling semaphore")
                 //semaphore.signal()
@@ -141,6 +178,10 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
                     self.calculateSegmentDirections(index: index+1, time: timeVar, routes: routeVar)
                 } else {
                     self.hideActivityIndicator()
+                    //print(self.crimescore)
+                    self.crimescore = self.crimescore/4
+                    //print(self.crimescore)
+                    self.addGuardianLabel()
                     self.path?.routes = routeVar
                     self.path?.mapItemWaypoints = self.waypoints
                     self.showRoute(routes: routeVar)
@@ -239,6 +280,8 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
         let prefferedDistanceMeters = path?.prefferedDistanceMeters
         let waypointDistance = prefferedDistanceMeters! / Double(numWaypoints+1)
         let initialBearing = Double(arc4random_uniform(360))
+        crimescore = 0;
+        getCrimeScore((path?.startingLocation)!)
         findPath(index: 1, initialBearing: initialBearing, waypointDistance: waypointDistance)
     }
     
@@ -265,7 +308,7 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
     
     func addGuardianLabel() {
         if (path?.guardianPathEnabled)! {
-            guardianEnabledLabel.text = "Guardian Enabled: Yes"
+            guardianEnabledLabel.text = "Guardian SafeScore: \(crimescore)"
         } else {
             guardianEnabledLabel.text = "Guardian Enabled: No"
         }
