@@ -315,7 +315,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vO5-qf-1Bo">
-                                <rect key="frame" x="16" y="123" width="347" height="347"/>
+                                <rect key="frame" x="16" y="123" width="347" height="409"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="n2O-9R-c6A">
@@ -332,42 +332,10 @@
                                     <outlet property="delegate" destination="wrL-mw-KA4" id="Wzj-dg-jDq"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17D-wF-2UX">
-                                <rect key="frame" x="16" y="497" width="343" height="49"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="miG-zS-dZe"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="26"/>
-                                <state key="normal" title="Start Path on Phone">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="DTX-TM-c1o" kind="show" id="Un8-UI-SOc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E1H-Od-aNP">
-                                <rect key="frame" x="16" y="554" width="343" height="49"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="xvH-Q4-1Mn"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="26"/>
-                                <state key="normal" title="Start Path on Watch">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="didTapStartPathWatch:" destination="wrL-mw-KA4" eventType="touchUpInside" id="emj-Bt-Pb4"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6MD-dm-6VE">
                                 <rect key="frame" x="16" y="64" width="347" height="51"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="51" id="X0L-82-A4N"/>
+                                    <constraint firstAttribute="height" constant="51" id="P2e-qY-6LC"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Favorite Paths">
@@ -380,27 +348,39 @@
                                 </attributedString>
                                 <color key="highlightedColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17D-wF-2UX">
+                                <rect key="frame" x="16" y="540" width="343" height="49"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="9uM-rY-H0U"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="26"/>
+                                <state key="normal" title="Select Path">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="DTX-TM-c1o" kind="show" id="Un8-UI-SOc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="17D-wF-2UX" firstAttribute="leading" secondItem="E1H-Od-aNP" secondAttribute="leading" id="405-Xi-a1x"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="6MD-dm-6VE" secondAttribute="trailing" constant="-4" id="BaL-ox-mSV"/>
-                            <constraint firstItem="17D-wF-2UX" firstAttribute="top" secondItem="vO5-qf-1Bo" secondAttribute="bottom" constant="27" id="Csa-D6-N1e"/>
-                            <constraint firstItem="6MD-dm-6VE" firstAttribute="leading" secondItem="vO5-qf-1Bo" secondAttribute="leading" id="G7r-pK-tY0"/>
-                            <constraint firstItem="17D-wF-2UX" firstAttribute="trailing" secondItem="E1H-Od-aNP" secondAttribute="trailing" id="Lsd-bW-JoL"/>
-                            <constraint firstItem="17D-wF-2UX" firstAttribute="trailing" secondItem="HAU-eB-dIb" secondAttribute="trailingMargin" id="RtT-1j-rzV"/>
-                            <constraint firstItem="6MD-dm-6VE" firstAttribute="top" secondItem="pc5-Fq-iuH" secondAttribute="bottom" constant="44" id="bMb-J9-es5"/>
-                            <constraint firstItem="E1H-Od-aNP" firstAttribute="top" secondItem="17D-wF-2UX" secondAttribute="bottom" constant="8" symbolic="YES" id="gUg-H3-vq0"/>
-                            <constraint firstItem="6MD-dm-6VE" firstAttribute="trailing" secondItem="vO5-qf-1Bo" secondAttribute="trailing" id="kpP-V8-bdc"/>
-                            <constraint firstItem="vO5-qf-1Bo" firstAttribute="top" secondItem="6MD-dm-6VE" secondAttribute="bottom" constant="8" symbolic="YES" id="mEa-aT-F0R"/>
-                            <constraint firstItem="6MD-dm-6VE" firstAttribute="leading" secondItem="HAU-eB-dIb" secondAttribute="leadingMargin" id="nR9-ac-CuW"/>
-                            <constraint firstItem="vO5-qf-1Bo" firstAttribute="leading" secondItem="17D-wF-2UX" secondAttribute="leading" id="p3h-JR-mRN"/>
-                            <constraint firstItem="y0P-bf-nTG" firstAttribute="top" secondItem="E1H-Od-aNP" secondAttribute="bottom" constant="20" id="s6o-uj-KrG"/>
+                            <constraint firstItem="6MD-dm-6VE" firstAttribute="leading" secondItem="HAU-eB-dIb" secondAttribute="leadingMargin" id="6gv-71-eMK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6MD-dm-6VE" secondAttribute="trailing" constant="-4" id="EqM-h0-m6y"/>
+                            <constraint firstItem="17D-wF-2UX" firstAttribute="trailing" secondItem="HAU-eB-dIb" secondAttribute="trailingMargin" id="EtP-1g-QrZ"/>
+                            <constraint firstItem="6MD-dm-6VE" firstAttribute="trailing" secondItem="vO5-qf-1Bo" secondAttribute="trailing" id="Jt5-ol-LJ7"/>
+                            <constraint firstItem="vO5-qf-1Bo" firstAttribute="leading" secondItem="17D-wF-2UX" secondAttribute="leading" id="S9H-xT-xDm"/>
+                            <constraint firstItem="6MD-dm-6VE" firstAttribute="leading" secondItem="vO5-qf-1Bo" secondAttribute="leading" id="SRB-14-3fQ"/>
+                            <constraint firstItem="y0P-bf-nTG" firstAttribute="top" secondItem="17D-wF-2UX" secondAttribute="bottom" constant="34" id="WOH-Be-lzR"/>
+                            <constraint firstItem="6MD-dm-6VE" firstAttribute="top" secondItem="pc5-Fq-iuH" secondAttribute="bottom" constant="44" id="c0A-AV-wcn"/>
+                            <constraint firstItem="17D-wF-2UX" firstAttribute="top" secondItem="vO5-qf-1Bo" secondAttribute="bottom" constant="8" symbolic="YES" id="eJ1-N9-p9n"/>
+                            <constraint firstItem="vO5-qf-1Bo" firstAttribute="top" secondItem="6MD-dm-6VE" secondAttribute="bottom" constant="8" symbolic="YES" id="xZG-UA-9et"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="selectPathButton" destination="17D-wF-2UX" id="Fw5-Jc-Th8"/>
-                        <outlet property="startPathOnWatchBtn" destination="E1H-Od-aNP" id="SbL-Iq-GST"/>
                         <outlet property="tableView" destination="vO5-qf-1Bo" id="QWU-gn-Zzg"/>
                     </connections>
                 </viewController>
@@ -445,7 +425,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8BX-Q4-mag">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8BX-Q4-mag">
                                 <rect key="frame" x="16" y="349" width="163" height="146"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="146" id="JrT-ZU-Ryv"/>
@@ -691,7 +671,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEQ-8M-8Hp">
                                 <rect key="frame" x="16" y="37" width="347" height="62"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="62" id="cJQ-qR-pQL"/>
+                                    <constraint firstAttribute="height" constant="62" id="xkz-UL-Sca"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Path Generated!">
@@ -709,7 +689,7 @@
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="F46-gz-jwO"/>
+                                    <constraint firstAttribute="height" constant="49" id="o6B-0u-ziH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="26"/>
                                 <state key="normal" title="Generate Another Path">
@@ -721,83 +701,65 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQn-UC-Dey">
-                                <rect key="frame" x="16" y="360" width="343" height="21"/>
+                                <rect key="frame" x="16" y="416" width="343" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="X0n-ll-BdK"/>
+                                    <constraint firstAttribute="height" constant="21" id="FAz-0u-YOX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guardian Path:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75K-Oj-DoA">
-                                <rect key="frame" x="16" y="401" width="343" height="21"/>
+                                <rect key="frame" x="16" y="457" width="343" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Tbl-De-32g"/>
+                                    <constraint firstAttribute="height" constant="21" id="mQk-mi-dCN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pRp-zS-ews">
-                                <rect key="frame" x="16" y="107" width="343" height="239"/>
+                                <rect key="frame" x="16" y="107" width="343" height="295"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OeE-XT-IU2">
-                                <rect key="frame" x="16" y="438" width="343" height="49"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="zFw-Tv-Yml"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="26"/>
-                                <state key="normal" title="Start Path on iOS Device">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="DTX-TM-c1o" kind="show" id="Jo1-U4-B5f"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="788-fU-cdC">
                                 <rect key="frame" x="16" y="496" width="343" height="49"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="bWY-pN-wor"/>
+                                    <constraint firstAttribute="height" constant="49" id="TEH-bc-kch"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="26"/>
-                                <state key="normal" title="Start Path on Apple Watch">
+                                <state key="normal" title="Select Path">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="didTapStartPathOnWatch:" destination="fsI-cr-4MR" eventType="touchUpInside" id="x4A-JM-y5u"/>
+                                    <action selector="didTapStartPath:" destination="fsI-cr-4MR" eventType="touchUpInside" id="rmL-af-Zbp"/>
+                                    <segue destination="DTX-TM-c1o" kind="show" id="Jo1-U4-B5f"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="788-fU-cdC" firstAttribute="leading" secondItem="SmR-oB-6jB" secondAttribute="leading" id="4wC-oE-I4N"/>
-                            <constraint firstItem="OeE-XT-IU2" firstAttribute="trailing" secondItem="788-fU-cdC" secondAttribute="trailing" id="7KL-x3-zgK"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="aEQ-8M-8Hp" secondAttribute="trailing" constant="-4" id="94h-WJ-Wcy"/>
-                            <constraint firstItem="SmR-oB-6jB" firstAttribute="top" secondItem="788-fU-cdC" secondAttribute="bottom" constant="8" symbolic="YES" id="IPx-dc-FuV"/>
-                            <constraint firstItem="OeE-XT-IU2" firstAttribute="top" secondItem="75K-Oj-DoA" secondAttribute="bottom" constant="16" id="Ojl-1S-36t"/>
-                            <constraint firstItem="pRp-zS-ews" firstAttribute="top" secondItem="aEQ-8M-8Hp" secondAttribute="bottom" constant="8" symbolic="YES" id="PxW-Lw-tya"/>
-                            <constraint firstItem="aEQ-8M-8Hp" firstAttribute="top" secondItem="iq7-fW-qa5" secondAttribute="bottom" constant="17" id="Qsp-Ih-HOF"/>
-                            <constraint firstItem="FQn-UC-Dey" firstAttribute="leading" secondItem="75K-Oj-DoA" secondAttribute="leading" id="RxO-i9-fMr"/>
-                            <constraint firstItem="788-fU-cdC" firstAttribute="trailing" secondItem="SmR-oB-6jB" secondAttribute="trailing" id="ULO-Az-Aom"/>
-                            <constraint firstItem="pRp-zS-ews" firstAttribute="trailing" secondItem="20e-nX-iMb" secondAttribute="trailingMargin" id="eWT-wi-Frq"/>
-                            <constraint firstItem="15Z-tt-L1g" firstAttribute="top" secondItem="SmR-oB-6jB" secondAttribute="bottom" constant="21" id="ex3-Gv-ksc"/>
-                            <constraint firstItem="aEQ-8M-8Hp" firstAttribute="leading" secondItem="20e-nX-iMb" secondAttribute="leadingMargin" id="fbI-OL-Ivq"/>
-                            <constraint firstItem="75K-Oj-DoA" firstAttribute="leading" secondItem="OeE-XT-IU2" secondAttribute="leading" id="ic2-Vv-KoA"/>
-                            <constraint firstItem="75K-Oj-DoA" firstAttribute="trailing" secondItem="OeE-XT-IU2" secondAttribute="trailing" id="jZi-xE-DQ6"/>
-                            <constraint firstItem="aEQ-8M-8Hp" firstAttribute="leading" secondItem="pRp-zS-ews" secondAttribute="leading" id="k6a-1w-Kgf"/>
-                            <constraint firstItem="pRp-zS-ews" firstAttribute="trailing" secondItem="FQn-UC-Dey" secondAttribute="trailing" id="lKk-AP-USM"/>
-                            <constraint firstItem="FQn-UC-Dey" firstAttribute="trailing" secondItem="75K-Oj-DoA" secondAttribute="trailing" id="lvC-aK-7hs"/>
-                            <constraint firstItem="788-fU-cdC" firstAttribute="top" secondItem="OeE-XT-IU2" secondAttribute="bottom" constant="9" id="nl8-Nu-xJw"/>
-                            <constraint firstItem="75K-Oj-DoA" firstAttribute="top" secondItem="FQn-UC-Dey" secondAttribute="bottom" constant="20" id="ovw-4G-coF"/>
-                            <constraint firstItem="FQn-UC-Dey" firstAttribute="top" secondItem="pRp-zS-ews" secondAttribute="bottom" constant="14" id="pT0-De-OQK"/>
-                            <constraint firstItem="pRp-zS-ews" firstAttribute="leading" secondItem="FQn-UC-Dey" secondAttribute="leading" id="vZb-Ji-5rS"/>
-                            <constraint firstItem="OeE-XT-IU2" firstAttribute="leading" secondItem="788-fU-cdC" secondAttribute="leading" id="xp1-T8-QrV"/>
+                            <constraint firstItem="75K-Oj-DoA" firstAttribute="top" secondItem="FQn-UC-Dey" secondAttribute="bottom" constant="20" id="1PO-kN-7Kt"/>
+                            <constraint firstItem="75K-Oj-DoA" firstAttribute="trailing" secondItem="OeE-XT-IU2" secondAttribute="trailing" id="2sm-wN-5yv"/>
+                            <constraint firstItem="FQn-UC-Dey" firstAttribute="leading" secondItem="75K-Oj-DoA" secondAttribute="leading" id="3xz-Id-uCh"/>
+                            <constraint firstItem="pRp-zS-ews" firstAttribute="trailing" secondItem="20e-nX-iMb" secondAttribute="trailingMargin" id="4bz-bd-PTN"/>
+                            <constraint firstItem="FQn-UC-Dey" firstAttribute="trailing" secondItem="75K-Oj-DoA" secondAttribute="trailing" id="4en-f5-WiF"/>
+                            <constraint firstItem="aEQ-8M-8Hp" firstAttribute="leading" secondItem="20e-nX-iMb" secondAttribute="leadingMargin" id="Drj-Dt-8zz"/>
+                            <constraint firstItem="aEQ-8M-8Hp" firstAttribute="top" secondItem="iq7-fW-qa5" secondAttribute="bottom" constant="17" id="GUH-u8-jmd"/>
+                            <constraint firstItem="pRp-zS-ews" firstAttribute="leading" secondItem="FQn-UC-Dey" secondAttribute="leading" id="HNj-vd-bcq"/>
+                            <constraint firstItem="OeE-XT-IU2" firstAttribute="trailing" secondItem="SmR-oB-6jB" secondAttribute="trailing" id="U27-h2-5Ig"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aEQ-8M-8Hp" secondAttribute="trailing" constant="-4" id="XSF-vq-59h"/>
+                            <constraint firstItem="OeE-XT-IU2" firstAttribute="leading" secondItem="SmR-oB-6jB" secondAttribute="leading" id="aHZ-UK-skH"/>
+                            <constraint firstItem="FQn-UC-Dey" firstAttribute="top" secondItem="pRp-zS-ews" secondAttribute="bottom" constant="14" id="cfv-YY-LSa"/>
+                            <constraint firstItem="15Z-tt-L1g" firstAttribute="top" secondItem="SmR-oB-6jB" secondAttribute="bottom" constant="21" id="dCO-9h-YF9"/>
+                            <constraint firstItem="75K-Oj-DoA" firstAttribute="leading" secondItem="OeE-XT-IU2" secondAttribute="leading" id="kvX-AH-aR0"/>
+                            <constraint firstItem="OeE-XT-IU2" firstAttribute="top" secondItem="75K-Oj-DoA" secondAttribute="bottom" constant="18" id="nrZ-RM-PVQ"/>
+                            <constraint firstItem="pRp-zS-ews" firstAttribute="trailing" secondItem="FQn-UC-Dey" secondAttribute="trailing" id="vSr-4G-kOS"/>
+                            <constraint firstItem="aEQ-8M-8Hp" firstAttribute="leading" secondItem="pRp-zS-ews" secondAttribute="leading" id="xUr-lI-fjN"/>
+                            <constraint firstItem="pRp-zS-ews" firstAttribute="top" secondItem="aEQ-8M-8Hp" secondAttribute="bottom" constant="8" symbolic="YES" id="zIl-va-Mbt"/>
+                            <constraint firstItem="SmR-oB-6jB" firstAttribute="top" secondItem="OeE-XT-IU2" secondAttribute="bottom" constant="8" symbolic="YES" id="zMb-Kv-U9O"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1308,9 +1270,9 @@
         <image name="icon.png" width="449" height="259"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Jo1-U4-B5f"/>
         <segue reference="yyk-IR-g3F"/>
         <segue reference="Kyk-rC-64B"/>
-        <segue reference="Un8-UI-SOc"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
 </document>

@@ -93,26 +93,12 @@ class NewPathGeneratedControllerView: UIViewController, MKMapViewDelegate {
             self.crimes.insert(addedCrime, at: 0)
         })
     }
-    /*
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        crimes.removeAll()
-        
-        //TODO Add child to listen child added
-        crimesRef.observe(.childAdded, with: { (snapshot) in
-            print("childAdded")
-            let addedCrime = Crime(snapshot: snapshot)
-            print(addedCrime.getSnapshotValue())
-            self.crimes.insert(addedCrime, at: 0)
-        })
-    }
-    */
-    @IBAction func didTapStartPathOnWatch(_ sender: Any) {
-        print("Entering didTapStartPathOnAppleWatch...")
+
+    @IBAction func didTapStartPath(_ sender: Any) {
+        print("Entering didTapStartPath...")
         if WCSession.default().isReachable == true {
             print("Session is reachable on iOS")
-            watchPath?.longitude = -84.396415
-            watchPath?.latitude = 33.774920
+
             let requestValues = ["command" : "startPathNow","data" : "pathString" as Any]
             let session = WCSession.default()
             
