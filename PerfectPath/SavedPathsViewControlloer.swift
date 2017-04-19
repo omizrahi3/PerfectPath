@@ -72,7 +72,7 @@ class SavedPathsViewControlloer: UIViewController, UITableViewDelegate, UITableV
                     tableItems.append(tableLabel)
                     //tableItems.append(String(describing: startingLocation.name!))
                     locations.append(result as! SavedPath)
-                    appDelegateRef.favPathNames.append(String(describing: startingLocation.name!))
+                    appDelegateRef.favPathNames.append(tableLabel)
                 }
             }
         } catch {
