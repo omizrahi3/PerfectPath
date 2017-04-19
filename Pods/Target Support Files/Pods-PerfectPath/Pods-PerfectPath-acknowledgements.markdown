@@ -1420,7 +1420,7 @@ limitations under the License.
 
 ## MapboxDirections.swift
 
-Copyright © 2014–2017, Mapbox
+Copyright © 2014–2016, Mapbox
 
 Permission to use, copy, modify, and/or distribute this software for any
 purpose with or without fee is hereby granted, provided that the above
@@ -1492,7 +1492,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 ## OSRMTextInstructions
 
-Copyright (c) 2016–2017, Project OSRM contributors  
+Copyright (c) 2016, Project OSRM contributors  
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification,

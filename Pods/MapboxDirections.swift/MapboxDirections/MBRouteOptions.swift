@@ -143,7 +143,7 @@ open class RouteOptions: NSObject {
     /**
      An array of `Waypoint` objects representing locations that the route should visit in chronological order.
      
-     A waypoint object indicates a location to visit, as well as an optional heading from which to approach the location.
+     A waypoint object indicates a location to visit, as well as an optional heading from which to approach the location. 
      
      The array should contain at least two waypoints (the source and destination) and at most 25 waypoints.
      */
@@ -211,13 +211,6 @@ open class RouteOptions: NSObject {
      */
     open var routeShapeResolution = RouteShapeResolution.low
     
-    /**
-     AttributeOptions for the route. Any combination of `AttributeOptions` can be specified.
-     
-     By default, no attribute options are specified. It is recommended that `routeShapeResolution` be set to `.full`.
-     */
-    open var attributeOptions: AttributeOptions = []
-    
     // MARK: Constructing the Request URL
     
     /**
@@ -259,14 +252,8 @@ open class RouteOptions: NSObject {
         if !waypoints.filter({ $0.coordinateAccuracy >= 0 }).isEmpty {
             let accuracies = waypoints.map {
                 $0.coordinateAccuracy >= 0 ? String($0.coordinateAccuracy) : "unlimited"
-                }.joined(separator: ";")
+            }.joined(separator: ";")
             params.append(URLQueryItem(name: "radiuses", value: accuracies))
-        }
-        
-        if !attributeOptions.isEmpty {
-            let attributesStrings = String(describing:attributeOptions)
-            
-            params.append(URLQueryItem(name: "annotations", value: attributesStrings))
         }
         
         return params
@@ -285,7 +272,7 @@ open class RouteOptions: NSObject {
             return Waypoint(coordinate: coordinate, name: waypoint["name"] as? String)
         }
         let routes = (json["routes"] as? [JSONDictionary])?.map {
-            Route(json: $0, waypoints: waypoints ?? self.waypoints, routeOptions: self)
+            Route(json: $0, waypoints: waypoints ?? self.waypoints, profileIdentifier: profileIdentifier)
         }
         return (waypoints, routes)
     }
@@ -380,7 +367,7 @@ open class RouteOptionsV4: RouteOptions {
         let intermediateWaypoints = (json["waypoints"] as! [JSONDictionary]).flatMap { Waypoint(geoJSON: $0) }
         let waypoints = [sourceWaypoint] + intermediateWaypoints + [destinationWaypoint]
         let routes = (json["routes"] as? [JSONDictionary])?.map {
-            RouteV4(json: $0, waypoints: waypoints, routeOptions: self)
+            RouteV4(json: $0, waypoints: waypoints, profileIdentifier: profileIdentifier)
         }
         return (waypoints, routes)
     }

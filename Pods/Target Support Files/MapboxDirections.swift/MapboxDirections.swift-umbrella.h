@@ -11,7 +11,6 @@
 #endif
 
 #import "MapboxDirections.h"
-#import "MBAttribute.h"
 #import "MBLaneIndication.h"
 #import "MBRouteOptions.h"
 

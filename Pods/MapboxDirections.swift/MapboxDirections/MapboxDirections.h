@@ -8,5 +8,4 @@ FOUNDATION_EXPORT double MapboxDirectionsVersionNumber;
 FOUNDATION_EXPORT const unsigned char MapboxDirectionsVersionString[];
 
 #import "MBLaneIndication.h"
-#import "MBAttribute.h"
 #import "MBRouteOptions.h"

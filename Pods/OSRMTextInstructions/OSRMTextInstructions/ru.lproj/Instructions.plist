@@ -192,9 +192,9 @@
 				<key>default</key>
 				<string>Поверните {modifier}</string>
 				<key>destination</key>
-				<string>Поверните {modifier} в направлении {destination}</string>
+				<string>Двигайтесь {modifier} в направлении {destination}</string>
 				<key>name</key>
-				<string>Поверните {modifier} на {way_name}</string>
+				<string>Двигайтесь {modifier} на {way_name}</string>
 			</dict>
 			<key>straight</key>
 			<dict>
@@ -212,7 +212,7 @@
 				<key>destination</key>
 				<string>В конце дороги развернитесь в направлении {destination}</string>
 				<key>name</key>
-				<string>Развернитесь в конце {way_name}</string>
+				<string>В конце дороги развернитесь на {way_name}</string>
 			</dict>
 		</dict>
 		<key>fork</key>
@@ -346,11 +346,11 @@
 			<key>default</key>
 			<dict>
 				<key>default</key>
-				<string>Двигайтесь {modifier}</string>
+				<string>Поверните {modifier}</string>
 				<key>destination</key>
-				<string>Двигайтесь {modifier} в направлении {destination}</string>
+				<string>Поверните {modifier} и продолжайте движение в направлении {destination}</string>
 				<key>name</key>
-				<string>Двигайтесь {modifier} на {way_name}</string>
+				<string>Поверните {modifier} на {way_name}</string>
 			</dict>
 			<key>sharp left</key>
 			<dict>
