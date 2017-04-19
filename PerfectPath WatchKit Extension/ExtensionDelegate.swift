@@ -60,6 +60,13 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
             replyValues["data"] = "OK" as AnyObject?
             let rootInterfaceController = WKExtension.shared().rootInterfaceController
             rootInterfaceController?.pushController(withName: "MapController", context: path)
+        //["command" : "startFavPath","data" : self.pathToSendToWatch as Any]
+        case "startFavPath" :
+            let path = message["data"]
+            print("ios -> watch, watch got startFavPath, replying now...")
+            replyValues["data"] = "OK" as AnyObject?
+            let rootInterfaceController = WKExtension.shared().rootInterfaceController
+            rootInterfaceController?.pushController(withName: "MapController", context: path)
 //        case "emergencyContacts" :
 //            print("In extension delegate with emegency contact info...")
 //            let nameArray: [String] = message["nameArray"] as! [String]

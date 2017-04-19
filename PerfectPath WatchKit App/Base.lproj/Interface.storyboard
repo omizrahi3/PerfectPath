@@ -205,7 +205,9 @@
                                 <tableRow identifier="FavPathRowControllerIdentifier" id="7Nt-w0-1kv" customClass="FavPathRowController" customModule="PerfectPath_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="HA8-vd-KDc">
                                         <items>
-                                            <label alignment="left" text="PathName" id="xUh-kL-xom"/>
+                                            <label alignment="left" text="PathName" numberOfLines="2" id="xUh-kL-xom">
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            </label>
                                         </items>
                                         <connections>
                                             <segue destination="Xop-D8-78C" kind="push" identifier="FavPathToMapController" id="I4W-e6-iZO"/>
@@ -234,6 +236,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ywq-aw-MzM"/>
+        <segue reference="I4W-e6-iZO"/>
     </inferredMetricsTieBreakers>
 </document>

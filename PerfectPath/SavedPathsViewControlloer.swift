@@ -11,6 +11,7 @@ import Material
 import CoreData
 import CoreLocation
 import MapKit
+import WatchConnectivity
 
 class SavedPathsViewControlloer: UIViewController, UITableViewDelegate, UITableViewDataSource {
     fileprivate var logoutButton: IconButton!
@@ -18,7 +19,10 @@ class SavedPathsViewControlloer: UIViewController, UITableViewDelegate, UITableV
     var tableItems = [String]()
     var locations = [SavedPath]()
     var path : Path?
+    var pathToSendToWatch: SavedPath?
+    let appDelegateRef = UIApplication.shared.delegate as! AppDelegate
     @IBOutlet weak var selectPathButton: UIButton!
+    @IBOutlet weak var startPathOnWatchBtn: UIButton!
     
     override func viewDidLoad() {
         loadPaths()
@@ -32,6 +36,26 @@ class SavedPathsViewControlloer: UIViewController, UITableViewDelegate, UITableV
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func didTapStartPathWatch(_ sender: Any) {
+        print("Entering didTapStartPathWatch...")
+        if (self.pathToSendToWatch != nil) {
+            print("pathToSendToWatch is not nil")
+            if WCSession.default().isReachable == true {
+                print("Session is reachable on iOS")
+                let requestValues = ["command" : "startFavPath","data" : self.pathToSendToWatch as Any]
+                let session = WCSession.default()
+                session.sendMessage(requestValues, replyHandler: { (reply) -> Void in
+                    print("sent command: " + String(describing: requestValues["command"]))
+                    print("rec data: " + String(describing: reply["data"]))
+                }, errorHandler: { error in
+                    print("error: \(error)")
+                })
+        
+            }
+        }
+    }
+    
     
     func loadPaths() {
         let appDel = UIApplication.shared.delegate as! AppDelegate
@@ -48,6 +72,7 @@ class SavedPathsViewControlloer: UIViewController, UITableViewDelegate, UITableV
                     tableItems.append(tableLabel)
                     //tableItems.append(String(describing: startingLocation.name!))
                     locations.append(result as! SavedPath)
+                    appDelegateRef.favPathNames.append(tableLabel)
                 }
             }
         } catch {
@@ -68,6 +93,7 @@ class SavedPathsViewControlloer: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You selected cell #\(indexPath.row)!")
         let savedPath = (locations[indexPath.row])
+        self.pathToSendToWatch = savedPath
         path = Path()
         path?.startingLocation = savedPath.startingLocation as? CLPlacemark
         path?.actualDistance = savedPath.distanceInMiles
