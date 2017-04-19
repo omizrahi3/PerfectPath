@@ -2,6 +2,21 @@
 <Workspace
    version = "1.0">
    <FileRef
+<<<<<<< HEAD
+=======
+      location = "group:SPWaypoint+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:SPWaypoint+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:SavedPath+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:SavedPath+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+>>>>>>> master
       location = "group:Resources">
    </FileRef>
    <FileRef
