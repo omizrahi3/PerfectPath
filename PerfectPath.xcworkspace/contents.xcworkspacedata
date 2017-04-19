@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
-   <FileRef
-<<<<<<< HEAD
-=======
+   <FileRef>
       location = "group:SPWaypoint+CoreDataClass.swift">
    </FileRef>
    <FileRef
@@ -16,7 +14,6 @@
       location = "group:SavedPath+CoreDataProperties.swift">
    </FileRef>
    <FileRef
->>>>>>> master
       location = "group:Resources">
    </FileRef>
    <FileRef
