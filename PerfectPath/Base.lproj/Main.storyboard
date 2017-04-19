@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LHW-94-WSN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LHW-94-WSN">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -315,7 +315,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vO5-qf-1Bo">
-                                <rect key="frame" x="16" y="123" width="347" height="416"/>
+                                <rect key="frame" x="16" y="123" width="347" height="347"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="n2O-9R-c6A">
@@ -333,14 +333,14 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17D-wF-2UX">
-                                <rect key="frame" x="16" y="547" width="343" height="49"/>
+                                <rect key="frame" x="16" y="497" width="343" height="49"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="DPR-Ol-Srs"/>
+                                    <constraint firstAttribute="height" constant="49" id="miG-zS-dZe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="26"/>
-                                <state key="normal" title="Select Path">
+                                <state key="normal" title="Start Path on Phone">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -348,10 +348,26 @@
                                     <segue destination="DTX-TM-c1o" kind="show" id="Un8-UI-SOc"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6MD-dm-6VE">
-                                <rect key="frame" x="16" y="52" width="347" height="62"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E1H-Od-aNP">
+                                <rect key="frame" x="16" y="554" width="343" height="49"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="62" id="ZUb-Yh-GO8"/>
+                                    <constraint firstAttribute="height" constant="49" id="xvH-Q4-1Mn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="26"/>
+                                <state key="normal" title="Start Path on Watch">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapStartPathWatch:" destination="wrL-mw-KA4" eventType="touchUpInside" id="emj-Bt-Pb4"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6MD-dm-6VE">
+                                <rect key="frame" x="16" y="64" width="347" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="X0L-82-A4N"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Favorite Paths">
@@ -367,20 +383,24 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6MD-dm-6VE" firstAttribute="leading" secondItem="HAU-eB-dIb" secondAttribute="leadingMargin" id="1iQ-2b-vhg"/>
-                            <constraint firstItem="vO5-qf-1Bo" firstAttribute="leading" secondItem="17D-wF-2UX" secondAttribute="leading" id="AwH-0o-9gI"/>
-                            <constraint firstItem="17D-wF-2UX" firstAttribute="trailing" secondItem="HAU-eB-dIb" secondAttribute="trailingMargin" id="Bky-Zt-A2a"/>
-                            <constraint firstItem="17D-wF-2UX" firstAttribute="top" secondItem="vO5-qf-1Bo" secondAttribute="bottom" constant="8" symbolic="YES" id="FUk-cb-ImX"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="6MD-dm-6VE" secondAttribute="trailing" constant="-4" id="Ivh-xS-Qgd"/>
-                            <constraint firstItem="6MD-dm-6VE" firstAttribute="trailing" secondItem="vO5-qf-1Bo" secondAttribute="trailing" id="JH6-wn-tqZ"/>
-                            <constraint firstItem="vO5-qf-1Bo" firstAttribute="top" secondItem="6MD-dm-6VE" secondAttribute="bottom" constant="9" id="KT8-k1-mt7"/>
-                            <constraint firstItem="y0P-bf-nTG" firstAttribute="top" secondItem="17D-wF-2UX" secondAttribute="bottom" constant="27" id="LeQ-4r-HcH"/>
-                            <constraint firstItem="6MD-dm-6VE" firstAttribute="top" secondItem="pc5-Fq-iuH" secondAttribute="bottom" constant="32" id="exM-4t-kUC"/>
-                            <constraint firstItem="6MD-dm-6VE" firstAttribute="leading" secondItem="vO5-qf-1Bo" secondAttribute="leading" id="r8d-Hi-cGH"/>
+                            <constraint firstItem="17D-wF-2UX" firstAttribute="leading" secondItem="E1H-Od-aNP" secondAttribute="leading" id="405-Xi-a1x"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6MD-dm-6VE" secondAttribute="trailing" constant="-4" id="BaL-ox-mSV"/>
+                            <constraint firstItem="17D-wF-2UX" firstAttribute="top" secondItem="vO5-qf-1Bo" secondAttribute="bottom" constant="27" id="Csa-D6-N1e"/>
+                            <constraint firstItem="6MD-dm-6VE" firstAttribute="leading" secondItem="vO5-qf-1Bo" secondAttribute="leading" id="G7r-pK-tY0"/>
+                            <constraint firstItem="17D-wF-2UX" firstAttribute="trailing" secondItem="E1H-Od-aNP" secondAttribute="trailing" id="Lsd-bW-JoL"/>
+                            <constraint firstItem="17D-wF-2UX" firstAttribute="trailing" secondItem="HAU-eB-dIb" secondAttribute="trailingMargin" id="RtT-1j-rzV"/>
+                            <constraint firstItem="6MD-dm-6VE" firstAttribute="top" secondItem="pc5-Fq-iuH" secondAttribute="bottom" constant="44" id="bMb-J9-es5"/>
+                            <constraint firstItem="E1H-Od-aNP" firstAttribute="top" secondItem="17D-wF-2UX" secondAttribute="bottom" constant="8" symbolic="YES" id="gUg-H3-vq0"/>
+                            <constraint firstItem="6MD-dm-6VE" firstAttribute="trailing" secondItem="vO5-qf-1Bo" secondAttribute="trailing" id="kpP-V8-bdc"/>
+                            <constraint firstItem="vO5-qf-1Bo" firstAttribute="top" secondItem="6MD-dm-6VE" secondAttribute="bottom" constant="8" symbolic="YES" id="mEa-aT-F0R"/>
+                            <constraint firstItem="6MD-dm-6VE" firstAttribute="leading" secondItem="HAU-eB-dIb" secondAttribute="leadingMargin" id="nR9-ac-CuW"/>
+                            <constraint firstItem="vO5-qf-1Bo" firstAttribute="leading" secondItem="17D-wF-2UX" secondAttribute="leading" id="p3h-JR-mRN"/>
+                            <constraint firstItem="y0P-bf-nTG" firstAttribute="top" secondItem="E1H-Od-aNP" secondAttribute="bottom" constant="20" id="s6o-uj-KrG"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="selectPathButton" destination="17D-wF-2UX" id="Fw5-Jc-Th8"/>
+                        <outlet property="startPathOnWatchBtn" destination="E1H-Od-aNP" id="SbL-Iq-GST"/>
                         <outlet property="tableView" destination="vO5-qf-1Bo" id="QWU-gn-Zzg"/>
                     </connections>
                 </viewController>
