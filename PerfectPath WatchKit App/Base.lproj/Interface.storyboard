@@ -54,26 +54,21 @@
             <objects>
                 <controller identifier="MapController" id="Xop-D8-78C" customClass="MapController" customModule="PerfectPath_WatchKit_Extension">
                     <items>
+                        <label alignment="left" text="Guardian" id="ODH-Ie-jQ2">
+                            <fontDescription key="font" type="system" weight="thin" pointSize="20"/>
+                        </label>
                         <separator alignment="left" id="LR1-3B-ReS"/>
-                        <map height="100" alignment="left" id="yNE-Yg-o5J" userLabel="MapObject"/>
-                        <group width="1" alignment="left" id="rx9-yd-WNU">
+                        <group width="1" height="102" alignment="left" id="rx9-yd-WNU">
                             <items>
-                                <button width="63" height="40" alignment="right" verticalAlignment="bottom" title="G" id="BCJ-gO-fZK">
+                                <button width="136" height="102" alignment="center" verticalAlignment="center" title="G" id="BCJ-gO-fZK">
                                     <gestureRecognizers>
                                         <longPressGestureRecognizer id="Nxa-Gy-WWU"/>
                                     </gestureRecognizers>
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                    <fontDescription key="font" type="system" pointSize="40"/>
+                                    <fontDescription key="font" type="system" pointSize="76"/>
                                     <connections>
                                         <segue destination="4Qq-AX-j8F" kind="push" id="wTa-YU-VZN"/>
-                                    </connections>
-                                </button>
-                                <button width="63" height="40" alignment="left" title="Start" id="YAR-cz-ksp">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="backgroundColor" red="0.34356227649999999" green="0.80329096499999997" blue="0.381021728" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <connections>
-                                        <action selector="didTapStartBtn" destination="Xop-D8-78C" id="WJw-fa-dKE"/>
                                     </connections>
                                 </button>
                             </items>
@@ -81,8 +76,6 @@
                     </items>
                     <connections>
                         <outlet property="guardianBtn" destination="BCJ-gO-fZK" id="Sup-W7-lb4"/>
-                        <outlet property="mapObject" destination="yNE-Yg-o5J" id="hab-nO-QI5"/>
-                        <outlet property="startBtn" destination="YAR-cz-ksp" id="fHn-Fn-2dT"/>
                     </connections>
                 </controller>
             </objects>
@@ -96,7 +89,7 @@
                         <label width="136" alignment="left" text="Timer Expired! Sending alert in:" textAlignment="center" numberOfLines="2" id="gcu-mI-sUN">
                             <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                         </label>
-                        <label width="136" height="63" alignment="left" text="60" textAlignment="center" id="bBk-4t-r4J">
+                        <label width="136" height="63" alignment="left" text="10" textAlignment="center" id="bBk-4t-r4J">
                             <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="font" type="system" pointSize="61"/>
                         </label>

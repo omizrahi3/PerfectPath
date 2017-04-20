@@ -31,6 +31,22 @@ class SavedPathsViewControlloer: UIViewController, UITableViewDelegate, UITableV
         prepareLogoutButton()
         prepareNavigationItem()
     }
+    @IBAction func didTapSelectSavedPath(_ sender: Any) {
+        print("Entering didTapSelectSavedPath...")
+            if WCSession.default().isReachable == true {
+                print("Session is reachable on iOS")
+                let requestValues = ["command" : "startPathNow","data" : "pathString" as Any]
+                let session = WCSession.default()
+                session.sendMessage(requestValues, replyHandler: { (reply) -> Void in
+                    print("sent command: " + String(describing: requestValues["command"]))
+                    print("rec data: " + String(describing: reply["data"]))
+                }, errorHandler: { error in
+                    print("error: \(error)")
+                })
+                
+            }
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -39,11 +55,9 @@ class SavedPathsViewControlloer: UIViewController, UITableViewDelegate, UITableV
     
     @IBAction func didTapStartPathWatch(_ sender: Any) {
         print("Entering didTapStartPathWatch...")
-        if (self.pathToSendToWatch != nil) {
-            print("pathToSendToWatch is not nil")
             if WCSession.default().isReachable == true {
                 print("Session is reachable on iOS")
-                let requestValues = ["command" : "startFavPath","data" : self.pathToSendToWatch as Any]
+                let requestValues = ["command" : "startPathNow","data" : "pathString" as Any]
                 let session = WCSession.default()
                 session.sendMessage(requestValues, replyHandler: { (reply) -> Void in
                     print("sent command: " + String(describing: requestValues["command"]))
@@ -53,7 +67,6 @@ class SavedPathsViewControlloer: UIViewController, UITableViewDelegate, UITableV
                 })
         
             }
-        }
     }
     
     

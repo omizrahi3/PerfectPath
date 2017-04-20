@@ -189,7 +189,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
             // reply from ios looks like ["command" : "emergencyContacts","nameArray" : nameArray as Any, "numberArray": numberArray as Any]
             print("emergencyContacts case")
             //contactsTableViewController?.viewDidLoad()
-            print("first name and num is : " + (nameArray[0]) + " and " + (numberArray[0]))
+//            print("first name and num is : " + (nameArray[0]) + " and " + (numberArray[0]))
             replyValues["command"] = "emergencyContacts" as AnyObject?
             replyValues["nameArray"] = nameArray as AnyObject?
             replyValues["numberArray"] = numberArray as AnyObject?
@@ -199,7 +199,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
             print("favPathList case")
             replyValues["command"] = "favPathList" as AnyObject?
             //self.favPathNames = ["Morning Walk", "Tech Square"]
-            print("favPathName at 0 is: " + String(self.favPathNames[0]) + "and at 1 is : " + String(self.favPathNames[1]))
+//            print("favPathName at 0 is: " + String(self.favPathNames[0]) + "and at 1 is : " + String(self.favPathNames[1]))
             replyValues["favPathNames"] = self.favPathNames as AnyObject?
             replyValues["favPaths"] = self.favPathArray as AnyObject?
         case "alertContacts" :
