@@ -4,4 +4,4 @@ iOS and Apple Watch applications to generate and display customized running rout
 
 - Odell
 - Chris Blackstone
-- Mayur
+- Mayur Maisuria
